@@ -1,0 +1,5393 @@
+{
+  "NguoiDung": {
+    "ND-001": {
+      "Ho": "Nguyen",
+      "Ten": "Van A",
+      "NgaySinh": "2000-03-15",
+      "Email": "NguyenVanA@gmail.com",
+      "MatKhau": "password123",
+      "VaiTro": "User",
+      "AnhDaiDien": "avatar1.png",
+      "TrangThai": "Hoạt động",
+      "NgayTao": "2024-06-01",
+      "SDT": "0123456789"
+    },
+
+    "ND-002": {
+      "Ho": "Le",
+      "Ten": "Minh Toan",
+      "NgaySinh": "2004-10-02",
+      "Email": "LeMinhToan@gmail.com",
+      "MatKhau": "password123",
+      "VaiTro": "User",
+      "AnhDaiDien": "avatar1.png",
+      "TrangThai": "Hoạt động",
+      "NgayTao": "2026-03-12",
+      "SDT": "0123456789"
+    },
+
+    "ND-003": {
+      "Ho": "Dang",
+      "Ten": "Van B",
+      "NgaySinh": "2003-05-20",
+      "Email": "DangVanB@gmail.com",
+      "MatKhau": "password123",
+      "VaiTro": "Admin",
+      "AnhDaiDien": "avatar1.png",
+      "TrangThai": "Hoạt động",
+      "NgayTao": "2026-04-02",
+      "SDT": "0123456789"
+    }
+  },
+
+  "ThongBao": {
+    "TB-001": {
+      "MaNguoiDung": "ND-001",
+      "TieuDe": "Bạn chỉ còn một bước nữa thôi ...",
+      "NoiDung": "Hoàn thành 5 câu hỏi cuối để bạn tìm được nghề phù hợp",
+      "NgayTao": "2026-06-10",
+      "BieuTuong": "icon_task.png",
+      "TrangThai": "Chưa đọc",
+      "LoaiThongBao": "Hệ thống"
+    },
+
+    "TB-002": {
+      "MaNguoiDung": "ND-002",
+      "TieuDe": "Phát hiện tiềm năng mới!",
+      "NoiDung": "AI nhận thấy bạn có tư duy logic rất tốt. Ngành 'Kỹ sư AI' có thể là lựa chọn hoàn hảo cho bạn.",
+      "NgayTao": "2026-04-02",
+      "BieuTuong": "icon_ai.png",
+      "TrangThai": "Chưa đọc",
+      "LoaiThongBao": "Gợi ý AI"
+    },
+
+    "TB-003": {
+      "MaNguoiDung": "ND-002",
+      "TieuDe": "Xu hướng nghề nghiệp tháng 4",
+      "NoiDung": "Ngành Thiết kế vi mạch đang tăng trưởng 20% nhu cầu nhân lực. Xem lộ trình học tập ngay!",
+      "NgayTao": "2026-04-02",
+      "BieuTuong": "icon_trend.png",
+      "TrangThai": "Đã đọc",
+      "LoaiThongBao": "Thị trường"
+    },
+
+    "TB-004": {
+      "MaNguoiDung": "ND-002",
+      "TieuDe": "Chúc mừng bạn!",
+      "NoiDung": "Bạn đã hoàn thành bài trắc nghiệm tính cách Holland. Nhấn để xem kết quả phân tích chi tiết.",
+      "NgayTao": "2026-04-02",
+      "BieuTuong": "icon_success.png",
+      "TrangThai": "Chưa đọc",
+      "LoaiThongBao": "Hệ thống"
+    },
+
+    "TB-005": {
+      "MaNguoiDung": "ND-001",
+      "TieuDe": "Nhắc nhở học tập",
+      "NoiDung": "Hôm nay bạn chưa cập nhật điểm số môn Toán kỳ 2. Cập nhật ngay để AI định hướng chính xác hơn nhé.",
+      "NgayTao": "2026-04-02",
+      "BieuTuong": "icon_warning.png",
+      "TrangThai": "Chưa đọc",
+      "LoaiThongBao": "Nhắc nhở"
+    }
+  },
+
+  "BangDiem": {
+    "BD-001": {
+      "MaNguoiDung": "ND-002",
+      "Toan": "7.8",
+      "Ly": "6.5",
+      "Hoa": "8.0",
+      "Sinh": "8.0",
+      "Van": "5.5",
+      "Anh": "4.5",
+      "TinHoc": "9.5",
+      "DiaLy": "8.0",
+      "LichSu": "6.5"
+    }
+  },
+
+  "BaiTest": {
+    "BT-001": {
+      "TieuDe": "Trắc nghiệm sở thích Holland",
+      "LoaiTest": "Holland",
+      "MoTaLoai": "Hệ thống trắc nghiệm giúp khám phá nghề nghiệp qua 6 nhóm sở thích: Kỹ thuật (R), Nghiên cứu (I), Nghệ thuật (A), Xã hội (S), Doanh nhân (E), Nghiêm túc (C).",
+      "HinhAnh": "holland_cover.png",
+      "ThoiGian": 45,
+      "TrangThai": "Hoạt động",
+      "SoLuongCauHoi": 18,
+      "DanhSachCauHoi": [
+        {
+          "MaCauHoi": "CH-001",
+          "NoiDung": "Tôi là người...",
+          "ThuTu": 1,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-001-01",
+              "NoiDung": "yêu thích động vật",
+              "MaThangDo": "TD-HOLLAND-R",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-001-02",
+              "NoiDung": "hiểu biết rộng",
+              "MaThangDo": "TD-HOLLAND-I",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-001-03",
+              "NoiDung": "rất sáng tạo",
+              "MaThangDo": "TD-HOLLAND-A",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-001-04",
+              "NoiDung": "rất thân thiện, hòa đồng",
+              "MaThangDo": "TD-HOLLAND-S",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-001-05",
+              "NoiDung": "thích phiêu lưu",
+              "MaThangDo": "TD-HOLLAND-E",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-001-06",
+              "NoiDung": "gọn gàng, ngăn nắp",
+              "MaThangDo": "TD-HOLLAND-C",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-002",
+          "NoiDung": "Tôi có thể...",
+          "ThuTu": 2,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-002-01",
+              "NoiDung": "sửa chữa các thiết bị điện/ ô tô, xe máy",
+              "MaThangDo": "TD-HOLLAND-R",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-002-02",
+              "NoiDung": "suy nghĩ trừu tượng",
+              "MaThangDo": "TD-HOLLAND-I",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-002-03",
+              "NoiDung": "phác thảo, vẽ, tô tranh",
+              "MaThangDo": "TD-HOLLAND-A",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-002-04",
+              "NoiDung": "chỉ dẫn hoặc dạy người khác",
+              "MaThangDo": "TD-HOLLAND-S",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-002-05",
+              "NoiDung": "khởi đầu/ đề xuất dự án mới",
+              "MaThangDo": "TD-HOLLAND-E",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-002-06",
+              "NoiDung": "làm việc tốt trong khuôn khổ hệ thống",
+              "MaThangDo": "TD-HOLLAND-C",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-003",
+          "NoiDung": "Tôi thích...",
+          "ThuTu": 3,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-003-01",
+              "NoiDung": "làm vườn / trồng cây xanh",
+              "MaThangDo": "TD-HOLLAND-R",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-003-02",
+              "NoiDung": "đặt câu hỏi và tìm hiểu vấn đề",
+              "MaThangDo": "TD-HOLLAND-I",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-003-03",
+              "NoiDung": "tham gia khóa học thiết kế",
+              "MaThangDo": "TD-HOLLAND-A",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-003-04",
+              "NoiDung": "làm việc nhóm",
+              "MaThangDo": "TD-HOLLAND-S",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-003-05",
+              "NoiDung": "có quyền lực, địa vị",
+              "MaThangDo": "TD-HOLLAND-E",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-003-06",
+              "NoiDung": "sử dụng các thiết bị xử lý dữ liệu",
+              "MaThangDo": "TD-HOLLAND-C",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-004",
+          "NoiDung": "Trong công việc, tôi ưu tiên...",
+          "ThuTu": 4,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-004-01",
+              "NoiDung": "làm việc với máy móc, dụng cụ",
+              "MaThangDo": "TD-HOLLAND-R",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-004-02",
+              "NoiDung": "khả năng phân tích và giải quyết vấn đề",
+              "MaThangDo": "TD-HOLLAND-I",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-004-03",
+              "NoiDung": "sự sáng tạo và tự do",
+              "MaThangDo": "TD-HOLLAND-A",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-004-04",
+              "NoiDung": "giúp đỡ và hỗ trợ người khác",
+              "MaThangDo": "TD-HOLLAND-S",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-004-05",
+              "NoiDung": "lãnh đạo và đạt được mục tiêu",
+              "MaThangDo": "TD-HOLLAND-E",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-004-06",
+              "NoiDung": "tuân thủ quy trình và tổ chức công việc",
+              "MaThangDo": "TD-HOLLAND-C",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-005",
+          "NoiDung": "Môi trường làm việc lý tưởng của tôi là...",
+          "ThuTu": 5,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-005-01",
+              "NoiDung": "ngoài trời, thực tế, vận động nhiều",
+              "MaThangDo": "TD-HOLLAND-R",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-005-02",
+              "NoiDung": "phòng thí nghiệm, thư viện, yên tĩnh",
+              "MaThangDo": "TD-HOLLAND-I",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-005-03",
+              "NoiDung": "studio, sân khấu, không gian sáng tạo",
+              "MaThangDo": "TD-HOLLAND-A",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-005-04",
+              "NoiDung": "trường học, bệnh viện, tổ chức xã hội",
+              "MaThangDo": "TD-HOLLAND-S",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-005-05",
+              "NoiDung": "văn phòng, phòng họp, thương trường",
+              "MaThangDo": "TD-HOLLAND-E",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-005-06",
+              "NoiDung": "văn phòng có quy trình rõ ràng, ngăn nắp",
+              "MaThangDo": "TD-HOLLAND-C",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-006",
+          "NoiDung": "Điểm mạnh của tôi là...",
+          "ThuTu": 6,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-006-01",
+              "NoiDung": "khéo tay, làm việc thực tế",
+              "MaThangDo": "TD-HOLLAND-R",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-006-02",
+              "NoiDung": "tư duy logic, phân tích tốt",
+              "MaThangDo": "TD-HOLLAND-I",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-006-03",
+              "NoiDung": "trí tưởng tượng và cảm thụ nghệ thuật",
+              "MaThangDo": "TD-HOLLAND-A",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-006-04",
+              "NoiDung": "giao tiếp, thấu hiểu và giúp đỡ người khác",
+              "MaThangDo": "TD-HOLLAND-S",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-006-05",
+              "NoiDung": "thuyết phục, lãnh đạo, quyết đoán",
+              "MaThangDo": "TD-HOLLAND-E",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-006-06",
+              "NoiDung": "tỉ mỉ, chính xác, tuân thủ quy tắc",
+              "MaThangDo": "TD-HOLLAND-C",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-007",
+          "NoiDung": "Khi rảnh rỗi, tôi thường...",
+          "ThuTu": 7,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-007-01",
+              "NoiDung": "sửa chữa đồ đạc trong nhà",
+              "MaThangDo": "TD-HOLLAND-R",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-007-02",
+              "NoiDung": "đọc sách khoa học hoặc nghiên cứu",
+              "MaThangDo": "TD-HOLLAND-I",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-007-03",
+              "NoiDung": "vẽ, chụp ảnh hoặc làm thủ công",
+              "MaThangDo": "TD-HOLLAND-A",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-007-04",
+              "NoiDung": "đi chơi, gặp gỡ bạn bè",
+              "MaThangDo": "TD-HOLLAND-S",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-007-05",
+              "NoiDung": "lên kế hoạch kinh doanh nhỏ",
+              "MaThangDo": "TD-HOLLAND-E",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-007-06",
+              "NoiDung": "sắp xếp, dọn dẹp nhà cửa",
+              "MaThangDo": "TD-HOLLAND-C",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-008",
+          "NoiDung": "Ở trường, tôi thích môn học nào nhất?",
+          "ThuTu": 8,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-008-01",
+              "NoiDung": "Công nghệ / Thể dục",
+              "MaThangDo": "TD-HOLLAND-R",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-008-02",
+              "NoiDung": "Toán / Lý / Hóa / Sinh",
+              "MaThangDo": "TD-HOLLAND-I",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-008-03",
+              "NoiDung": "Mỹ thuật / Âm nhạc",
+              "MaThangDo": "TD-HOLLAND-A",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-008-04",
+              "NoiDung": "Văn học / Lịch sử / Giáo dục công dân",
+              "MaThangDo": "TD-HOLLAND-S",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-008-05",
+              "NoiDung": "Kinh tế / Thương mại",
+              "MaThangDo": "TD-HOLLAND-E",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-008-06",
+              "NoiDung": "Tin học văn phòng / Kế toán",
+              "MaThangDo": "TD-HOLLAND-C",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-009",
+          "NoiDung": "Người khác thường nhận xét tôi là người...",
+          "ThuTu": 9,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-009-01",
+              "NoiDung": "thực tế, đáng tin cậy",
+              "MaThangDo": "TD-HOLLAND-R",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-009-02",
+              "NoiDung": "thông minh, hay suy nghĩ",
+              "MaThangDo": "TD-HOLLAND-I",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-009-03",
+              "NoiDung": "độc đáo, khác biệt",
+              "MaThangDo": "TD-HOLLAND-A",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-009-04",
+              "NoiDung": "ấm áp, quan tâm người khác",
+              "MaThangDo": "TD-HOLLAND-S",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-009-05",
+              "NoiDung": "năng động, quyết đoán",
+              "MaThangDo": "TD-HOLLAND-E",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-009-06",
+              "NoiDung": "cẩn thận, chu đáo",
+              "MaThangDo": "TD-HOLLAND-C",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-010",
+          "NoiDung": "Tôi cảm thấy hài lòng nhất khi...",
+          "ThuTu": 10,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-010-01",
+              "NoiDung": "tự tay sửa được một món đồ",
+              "MaThangDo": "TD-HOLLAND-R",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-010-02",
+              "NoiDung": "tìm ra lời giải cho vấn đề khó",
+              "MaThangDo": "TD-HOLLAND-I",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-010-03",
+              "NoiDung": "hoàn thành một tác phẩm nghệ thuật",
+              "MaThangDo": "TD-HOLLAND-A",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-010-04",
+              "NoiDung": "giúp ai đó vượt qua khó khăn",
+              "MaThangDo": "TD-HOLLAND-S",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-010-05",
+              "NoiDung": "đạt được mục tiêu đã đề ra",
+              "MaThangDo": "TD-HOLLAND-E",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-010-06",
+              "NoiDung": "mọi thứ được sắp xếp ngăn nắp, đúng quy trình",
+              "MaThangDo": "TD-HOLLAND-C",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-011",
+          "NoiDung": "Tôi muốn được làm việc trong lĩnh vực...",
+          "ThuTu": 11,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-011-01",
+              "NoiDung": "kỹ thuật, cơ khí, xây dựng",
+              "MaThangDo": "TD-HOLLAND-R",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-011-02",
+              "NoiDung": "nghiên cứu khoa học, công nghệ",
+              "MaThangDo": "TD-HOLLAND-I",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-011-03",
+              "NoiDung": "thiết kế, truyền thông, giải trí",
+              "MaThangDo": "TD-HOLLAND-A",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-011-04",
+              "NoiDung": "giáo dục, y tế, tư vấn, dịch vụ xã hội",
+              "MaThangDo": "TD-HOLLAND-S",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-011-05",
+              "NoiDung": "kinh doanh, bán hàng, quản lý",
+              "MaThangDo": "TD-HOLLAND-E",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-011-06",
+              "NoiDung": "hành chính, kế toán, thủ quỹ",
+              "MaThangDo": "TD-HOLLAND-C",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-012",
+          "NoiDung": "Khi làm việc nhóm, tôi thường đảm nhận vai trò...",
+          "ThuTu": 12,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-012-01",
+              "NoiDung": "người thực hiện công việc cụ thể",
+              "MaThangDo": "TD-HOLLAND-R",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-012-02",
+              "NoiDung": "người nghiên cứu, tìm kiếm thông tin",
+              "MaThangDo": "TD-HOLLAND-I",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-012-03",
+              "NoiDung": "người sáng tạo ý tưởng mới",
+              "MaThangDo": "TD-HOLLAND-A",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-012-04",
+              "NoiDung": "người kết nối, hòa giải các thành viên",
+              "MaThangDo": "TD-HOLLAND-S",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-012-05",
+              "NoiDung": "người lãnh đạo, điều phối nhóm",
+              "MaThangDo": "TD-HOLLAND-E",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-012-06",
+              "NoiDung": "người ghi chép, tổng hợp báo cáo",
+              "MaThangDo": "TD-HOLLAND-C",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-013",
+          "NoiDung": "Điều quan trọng nhất trong công việc đối với tôi là...",
+          "ThuTu": 13,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-013-01",
+              "NoiDung": "được làm việc thực tế, không lý thuyết suông",
+              "MaThangDo": "TD-HOLLAND-R",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-013-02",
+              "NoiDung": "được học hỏi và khám phá kiến thức mới",
+              "MaThangDo": "TD-HOLLAND-I",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-013-03",
+              "NoiDung": "được tự do sáng tạo và thể hiện bản thân",
+              "MaThangDo": "TD-HOLLAND-A",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-013-04",
+              "NoiDung": "được giúp đỡ và tạo ảnh hưởng tích cực đến người khác",
+              "MaThangDo": "TD-HOLLAND-S",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-013-05",
+              "NoiDung": "được thăng tiến và đạt được thành công",
+              "MaThangDo": "TD-HOLLAND-E",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-013-06",
+              "NoiDung": "được làm việc có tổ chức, rõ ràng, ổn định",
+              "MaThangDo": "TD-HOLLAND-C",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-014",
+          "NoiDung": "Tôi thích giải trí bằng cách...",
+          "ThuTu": 14,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-014-01",
+              "NoiDung": "chơi thể thao hoặc làm việc tay chân",
+              "MaThangDo": "TD-HOLLAND-R",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-014-02",
+              "NoiDung": "chơi cờ, giải đố, xem phim khoa học",
+              "MaThangDo": "TD-HOLLAND-I",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-014-03",
+              "NoiDung": "nghe nhạc, xem phim nghệ thuật, triển lãm",
+              "MaThangDo": "TD-HOLLAND-A",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-014-04",
+              "NoiDung": "đi ăn, đi chơi cùng bạn bè",
+              "MaThangDo": "TD-HOLLAND-S",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-014-05",
+              "NoiDung": "tham gia câu lạc bộ, sự kiện xã hội",
+              "MaThangDo": "TD-HOLLAND-E",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-014-06",
+              "NoiDung": "sưu tầm, sắp xếp bộ sưu tập cá nhân",
+              "MaThangDo": "TD-HOLLAND-C",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-015",
+          "NoiDung": "Phong cách học tập của tôi là...",
+          "ThuTu": 15,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-015-01",
+              "NoiDung": "học qua thực hành, làm mẫu, trải nghiệm thực tế",
+              "MaThangDo": "TD-HOLLAND-R",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-015-02",
+              "NoiDung": "học qua lý thuyết, logic, phân tích vấn đề",
+              "MaThangDo": "TD-HOLLAND-I",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-015-03",
+              "NoiDung": "học qua hình ảnh, màu sắc, âm thanh, cảm xúc",
+              "MaThangDo": "TD-HOLLAND-A",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-015-04",
+              "NoiDung": "học qua thảo luận, làm việc nhóm",
+              "MaThangDo": "TD-HOLLAND-S",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-015-05",
+              "NoiDung": "học qua dự án thực tế, có mục tiêu rõ ràng",
+              "MaThangDo": "TD-HOLLAND-E",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-015-06",
+              "NoiDung": "học qua sơ đồ, bảng biểu, ghi chép chi tiết",
+              "MaThangDo": "TD-HOLLAND-C",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-016",
+          "NoiDung": "Nếu có thật nhiều tiền, tôi sẽ...",
+          "ThuTu": 16,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-016-01",
+              "NoiDung": "mua sắm công cụ, thiết bị, xây xưởng",
+              "MaThangDo": "TD-HOLLAND-R",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-016-02",
+              "NoiDung": "tài trợ cho nghiên cứu khoa học",
+              "MaThangDo": "TD-HOLLAND-I",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-016-03",
+              "NoiDung": "đầu tư vào nghệ thuật, mở triển lãm",
+              "MaThangDo": "TD-HOLLAND-A",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-016-04",
+              "NoiDung": "làm từ thiện, giúp đỡ người nghèo",
+              "MaThangDo": "TD-HOLLAND-S",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-016-05",
+              "NoiDung": "đầu tư kinh doanh, mở công ty",
+              "MaThangDo": "TD-HOLLAND-E",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-016-06",
+              "NoiDung": "gửi tiết kiệm, lập kế hoạch tài chính chi tiết",
+              "MaThangDo": "TD-HOLLAND-C",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-017",
+          "NoiDung": "Khi gặp vấn đề khó, tôi thường...",
+          "ThuTu": 17,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-017-01",
+              "NoiDung": "tìm cách khắc phục thực tế ngay lập tức",
+              "MaThangDo": "TD-HOLLAND-R",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-017-02",
+              "NoiDung": "phân tích nguyên nhân và tìm giải pháp logic",
+              "MaThangDo": "TD-HOLLAND-I",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-017-03",
+              "NoiDung": "nghĩ ra cách giải quyết sáng tạo, khác biệt",
+              "MaThangDo": "TD-HOLLAND-A",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-017-04",
+              "NoiDung": "hỏi ý kiến và nhờ người khác giúp đỡ",
+              "MaThangDo": "TD-HOLLAND-S",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-017-05",
+              "NoiDung": "chủ động giải quyết và chịu trách nhiệm",
+              "MaThangDo": "TD-HOLLAND-E",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-017-06",
+              "NoiDung": "làm theo quy trình, hướng dẫn có sẵn",
+              "MaThangDo": "TD-HOLLAND-C",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-018",
+          "NoiDung": "Giá trị sống quan trọng nhất với tôi là...",
+          "ThuTu": 18,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-018-01",
+              "NoiDung": "sự tự lập, thực tế",
+              "MaThangDo": "TD-HOLLAND-R",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-018-02",
+              "NoiDung": "tri thức, sự hiểu biết",
+              "MaThangDo": "TD-HOLLAND-I",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-018-03",
+              "NoiDung": "tự do, sáng tạo, cái đẹp",
+              "MaThangDo": "TD-HOLLAND-A",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-018-04",
+              "NoiDung": "tình yêu thương, sự chia sẻ",
+              "MaThangDo": "TD-HOLLAND-S",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-018-05",
+              "NoiDung": "thành công, quyền lực, sự giàu có",
+              "MaThangDo": "TD-HOLLAND-E",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-018-06",
+              "NoiDung": "sự ổn định, trật tự, kỷ luật",
+              "MaThangDo": "TD-HOLLAND-C",
+              "GiaTri": 1
+            }
+          ]
+        }
+      ]
+    },
+
+    "BT-002": {
+      "TieuDe": "Trắc nghiệm tính cách MBTI",
+      "LoaiTest": "MBTI",
+      "MoTaLoai": "Phân loại tính cách dựa trên 4 cặp phạm trù tâm lý: Hướng ngoại (E) - Hướng nội (I), Cảm giác (S) - Trực giác (N), Lý trí (T) - Cảm xúc (F), Nguyên tắc (J) - Linh hoạt (P).",
+      "HinhAnh": "mbti_cover.png",
+      "ThoiGian": 35,
+      "TrangThai": "Hoạt động",
+      "SoLuongCauHoi": 50,
+      "DanhSachCauHoi": [
+        {
+          "MaCauHoi": "CH-MBTI-001",
+          "NoiDung": "Sau một tuần làm việc mệt mỏi, bạn muốn làm gì để nạp năng lượng?",
+          "ThuTu": 1,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-001-01",
+              "NoiDung": "Đi chơi, gặp gỡ bạn bè, tham gia hoạt động đông người",
+              "MaThangDo": "TD-MBTI-EI",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-001-02",
+              "NoiDung": "Ở nhà một mình, đọc sách hoặc xem phim",
+              "MaThangDo": "TD-MBTI-EI",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-002",
+          "NoiDung": "Khi tiếp nhận thông tin mới, bạn thường chú ý đến điều gì trước?",
+          "ThuTu": 2,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-002-01",
+              "NoiDung": "Các chi tiết cụ thể, số liệu, sự kiện thực tế",
+              "MaThangDo": "TD-MBTI-SN",
+              "GiaTri": -1
+            },
+            {
+              "MaDapAn": "DA-MBTI-002-02",
+              "NoiDung": "Bức tranh tổng thể, ý nghĩa, khả năng trong tương lai",
+              "MaThangDo": "TD-MBTI-SN",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-003",
+          "NoiDung": "Khi ra quyết định quan trọng, bạn dựa vào điều gì nhiều nhất?",
+          "ThuTu": 3,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-003-01",
+              "NoiDung": "Logic, nguyên tắc, phân tích đúng sai",
+              "MaThangDo": "TD-MBTI-TF",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-003-02",
+              "NoiDung": "Cảm xúc, giá trị cá nhân, tác động đến người khác",
+              "MaThangDo": "TD-MBTI-TF",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-004",
+          "NoiDung": "Bạn thích làm việc theo phong cách nào hơn?",
+          "ThuTu": 4,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-004-01",
+              "NoiDung": "Lên kế hoạch chi tiết và làm theo đúng kế hoạch",
+              "MaThangDo": "TD-MBTI-JP",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-004-02",
+              "NoiDung": "Linh hoạt, ứng biến theo tình huống",
+              "MaThangDo": "TD-MBTI-JP",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-005",
+          "NoiDung": "Trong một dự án nhóm, bạn thường đóng vai trò gì?",
+          "ThuTu": 5,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-005-01",
+              "NoiDung": "Chủ động phát biểu, đề xuất ý tưởng, kết nối mọi người",
+              "MaThangDo": "TD-MBTI-EI",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-005-02",
+              "NoiDung": "Lắng nghe, quan sát và đóng góp khi cần",
+              "MaThangDo": "TD-MBTI-EI",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-006",
+          "NoiDung": "Bạn thích đọc loại sách nào hơn?",
+          "ThuTu": 6,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-006-01",
+              "NoiDung": "Sách hướng dẫn thực tế, kỹ năng, cẩm nang",
+              "MaThangDo": "TD-MBTI-SN",
+              "GiaTri": -1
+            },
+            {
+              "MaDapAn": "DA-MBTI-006-02",
+              "NoiDung": "Sách viễn tưởng, triết học, phát triển bản thân",
+              "MaThangDo": "TD-MBTI-SN",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-007",
+          "NoiDung": "Khi ai đó gặp khó khăn và kể cho bạn nghe, bạn thường:",
+          "ThuTu": 7,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-007-01",
+              "NoiDung": "Phân tích vấn đề và đưa ra giải pháp",
+              "MaThangDo": "TD-MBTI-TF",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-007-02",
+              "NoiDung": "Đồng cảm, lắng nghe và an ủi họ",
+              "MaThangDo": "TD-MBTI-TF",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-008",
+          "NoiDung": "Bạn thích không gian làm việc như thế nào?",
+          "ThuTu": 8,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-008-01",
+              "NoiDung": "Gọn gàng, ngăn nắp, mọi thứ có vị trí riêng",
+              "MaThangDo": "TD-MBTI-JP",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-008-02",
+              "NoiDung": "Thoải mái, sáng tạo, có thể hơi bừa nhưng hiệu quả",
+              "MaThangDo": "TD-MBTI-JP",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-009",
+          "NoiDung": "Bạn cảm thấy thoải mái hơn khi:",
+          "ThuTu": 9,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-009-01",
+              "NoiDung": "Là trung tâm của sự chú ý",
+              "MaThangDo": "TD-MBTI-EI",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-009-02",
+              "NoiDung": "Ở trong vai trò hỗ trợ phía sau",
+              "MaThangDo": "TD-MBTI-EI",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-010",
+          "NoiDung": "Bạn thích giải quyết vấn đề bằng cách:",
+          "ThuTu": 10,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-010-01",
+              "NoiDung": "Dựa vào kinh nghiệm và phương pháp đã biết",
+              "MaThangDo": "TD-MBTI-SN",
+              "GiaTri": -1
+            },
+            {
+              "MaDapAn": "DA-MBTI-010-02",
+              "NoiDung": "Tìm kiếm cách tiếp cận mới, sáng tạo",
+              "MaThangDo": "TD-MBTI-SN",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-011",
+          "NoiDung": "Bạn được đánh giá là người:",
+          "ThuTu": 11,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-011-01",
+              "NoiDung": "Công bằng, khách quan, đi theo lẽ phải",
+              "MaThangDo": "TD-MBTI-TF",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-011-02",
+              "NoiDung": "Nhân ái, bao dung, biết cảm thông",
+              "MaThangDo": "TD-MBTI-TF",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-012",
+          "NoiDung": "Khi đi du lịch, bạn thích:",
+          "ThuTu": 12,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-012-01",
+              "NoiDung": "Lên lịch trình chi tiết từ trước",
+              "MaThangDo": "TD-MBTI-JP",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-012-02",
+              "NoiDung": "Đi đến đâu tính đến đó, tùy hứng",
+              "MaThangDo": "TD-MBTI-JP",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-013",
+          "NoiDung": "Bạn có nhiều bạn bè không?",
+          "ThuTu": 13,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-013-01",
+              "NoiDung": "Có, tôi thích có nhiều bạn và mở rộng mối quan hệ",
+              "MaThangDo": "TD-MBTI-EI",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-013-02",
+              "NoiDung": "Không, tôi chỉ có một vài người bạn thân thiết",
+              "MaThangDo": "TD-MBTI-EI",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-014",
+          "NoiDung": "Bạn thích làm công việc:",
+          "ThuTu": 14,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-014-01",
+              "NoiDung": "Có tính thực tế, áp dụng ngay được",
+              "MaThangDo": "TD-MBTI-SN",
+              "GiaTri": -1
+            },
+            {
+              "MaDapAn": "DA-MBTI-014-02",
+              "NoiDung": "Mang tính lý thuyết, đòi hỏi suy luận và ý tưởng",
+              "MaThangDo": "TD-MBTI-SN",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-015",
+          "NoiDung": "Trong tranh luận, bạn thường:",
+          "ThuTu": 15,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-015-01",
+              "NoiDung": "Bảo vệ quan điểm bằng lý lẽ và bằng chứng",
+              "MaThangDo": "TD-MBTI-TF",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-015-02",
+              "NoiDung": "Tìm điểm chung để tránh xung đột",
+              "MaThangDo": "TD-MBTI-TF",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-016",
+          "NoiDung": "Bạn thích kết thúc công việc:",
+          "ThuTu": 16,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-016-01",
+              "NoiDung": "Đúng hạn, có thể trước hạn",
+              "MaThangDo": "TD-MBTI-JP",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-016-02",
+              "NoiDung": "Khi cảm thấy ổn, có thể gần deadline",
+              "MaThangDo": "TD-MBTI-JP",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-017",
+          "NoiDung": "Khi ở nơi đông người, bạn cảm thấy:",
+          "ThuTu": 17,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-017-01",
+              "NoiDung": "Tràn đầy năng lượng và hứng khởi",
+              "MaThangDo": "TD-MBTI-EI",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-017-02",
+              "NoiDung": "Nhanh chóng mệt mỏi và muốn về nhà",
+              "MaThangDo": "TD-MBTI-EI",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-018",
+          "NoiDung": "Bạn tin tưởng vào điều gì hơn?",
+          "ThuTu": 18,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-018-01",
+              "NoiDung": "Những gì mắt thấy, tai nghe, trải nghiệm thực tế",
+              "MaThangDo": "TD-MBTI-SN",
+              "GiaTri": -1
+            },
+            {
+              "MaDapAn": "DA-MBTI-018-02",
+              "NoiDung": "Trực giác và linh cảm của bản thân",
+              "MaThangDo": "TD-MBTI-SN",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-019",
+          "NoiDung": "Bạn dễ bị tổn thương bởi:",
+          "ThuTu": 19,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-019-01",
+              "NoiDung": "Sự bất công, thiếu logic, sai nguyên tắc",
+              "MaThangDo": "TD-MBTI-TF",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-019-02",
+              "NoiDung": "Sự vô tâm, lạnh lùng, thiếu sự quan tâm",
+              "MaThangDo": "TD-MBTI-TF",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-020",
+          "NoiDung": "Bạn thích giáo viên như thế nào?",
+          "ThuTu": 20,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-020-01",
+              "NoiDung": "Nghiêm khắc, có kỷ luật, rõ ràng",
+              "MaThangDo": "TD-MBTI-JP",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-020-02",
+              "NoiDung": "Thoải mái, linh hoạt, khuyến khích sáng tạo",
+              "MaThangDo": "TD-MBTI-JP",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-021",
+          "NoiDung": "Bạn thường suy nghĩ bằng cách:",
+          "ThuTu": 21,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-021-01",
+              "NoiDung": "Nói ra thành tiếng, thảo luận với người khác",
+              "MaThangDo": "TD-MBTI-EI",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-021-02",
+              "NoiDung": "Suy ngẫm trong đầu trước khi nói",
+              "MaThangDo": "TD-MBTI-EI",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-022",
+          "NoiDung": "Bạn thích công việc có tính chất:",
+          "ThuTu": 22,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-022-01",
+              "NoiDung": "Lặp lại, ổn định, có quy trình rõ ràng",
+              "MaThangDo": "TD-MBTI-SN",
+              "GiaTri": -1
+            },
+            {
+              "MaDapAn": "DA-MBTI-022-02",
+              "NoiDung": "Đa dạng, thay đổi, thử thách mới",
+              "MaThangDo": "TD-MBTI-SN",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-023",
+          "NoiDung": "Khi yêu, bạn thường:",
+          "ThuTu": 23,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-023-01",
+              "NoiDung": "Thể hiện tình cảm qua hành động, lý trí vẫn đặt lên hàng đầu",
+              "MaThangDo": "TD-MBTI-TF",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-023-02",
+              "NoiDung": "Sống bằng cảm xúc, dễ bị cuốn theo tình yêu",
+              "MaThangDo": "TD-MBTI-TF",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-024",
+          "NoiDung": "Bạn thích tủ đồ của mình như thế nào?",
+          "ThuTu": 24,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-024-01",
+              "NoiDung": "Phân loại, sắp xếp gọn gàng theo từng loại",
+              "MaThangDo": "TD-MBTI-JP",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-024-02",
+              "NoiDung": "Khá tự do, miễn là tìm được đồ khi cần",
+              "MaThangDo": "TD-MBTI-JP",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-025",
+          "NoiDung": "Trong lớp học, bạn thường:",
+          "ThuTu": 25,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-025-01",
+              "NoiDung": "Giơ tay phát biểu, tham gia sôi nổi",
+              "MaThangDo": "TD-MBTI-EI",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-025-02",
+              "NoiDung": "Ngồi im lặng và chỉ nói khi được gọi",
+              "MaThangDo": "TD-MBTI-EI",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-026",
+          "NoiDung": "Bạn quan tâm nhiều hơn đến:",
+          "ThuTu": 26,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-026-01",
+              "NoiDung": "Những gì đang diễn ra ở hiện tại",
+              "MaThangDo": "TD-MBTI-SN",
+              "GiaTri": -1
+            },
+            {
+              "MaDapAn": "DA-MBTI-026-02",
+              "NoiDung": "Những khả năng có thể xảy ra trong tương lai",
+              "MaThangDo": "TD-MBTI-SN",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-027",
+          "NoiDung": "Bạn đánh giá cao điều gì hơn?",
+          "ThuTu": 27,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-027-01",
+              "NoiDung": "Sự trung thực và chính trực",
+              "MaThangDo": "TD-MBTI-TF",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-027-02",
+              "NoiDung": "Lòng tốt và sự đồng cảm",
+              "MaThangDo": "TD-MBTI-TF",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-028",
+          "NoiDung": "Bạn thích giải quyết nhiều việc cùng lúc hay từng việc một?",
+          "ThuTu": 28,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-028-01",
+              "NoiDung": "Từng việc một, làm xong mới chuyển sang việc khác",
+              "MaThangDo": "TD-MBTI-JP",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-028-02",
+              "NoiDung": "Có thể làm nhiều việc cùng lúc, thích đa nhiệm",
+              "MaThangDo": "TD-MBTI-JP",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-029",
+          "NoiDung": "Khi có thời gian rảnh, bạn thích:",
+          "ThuTu": 29,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-029-01",
+              "NoiDung": "Đi ra ngoài, gặp gỡ mọi người",
+              "MaThangDo": "TD-MBTI-EI",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-029-02",
+              "NoiDung": "Ở nhà làm những việc mình thích",
+              "MaThangDo": "TD-MBTI-EI",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-030",
+          "NoiDung": "Bạn thích được làm việc trong môi trường:",
+          "ThuTu": 30,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-030-01",
+              "NoiDung": "Có cấu trúc rõ ràng, quy định cụ thể",
+              "MaThangDo": "TD-MBTI-JP",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-030-02",
+              "NoiDung": "Tự do, không gò bó, khuyến khích sáng tạo",
+              "MaThangDo": "TD-MBTI-JP",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-031",
+          "NoiDung": "Bạn thường bắt đầu một câu chuyện như thế nào?",
+          "ThuTu": 31,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-031-01",
+              "NoiDung": "Đi thẳng vào vấn đề chính",
+              "MaThangDo": "TD-MBTI-EI",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-031-02",
+              "NoiDung": "Dẫn dắt từ từ, kể bối cảnh trước",
+              "MaThangDo": "TD-MBTI-EI",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-032",
+          "NoiDung": "Bạn thích học bằng cách nào hơn?",
+          "ThuTu": 32,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-032-01",
+              "NoiDung": "Thực hành, làm mẫu, trải nghiệm thực tế",
+              "MaThangDo": "TD-MBTI-SN",
+              "GiaTri": -1
+            },
+            {
+              "MaDapAn": "DA-MBTI-032-02",
+              "NoiDung": "Đọc lý thuyết, suy luận, liên tưởng",
+              "MaThangDo": "TD-MBTI-SN",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-033",
+          "NoiDung": "Khi lãnh đạo, bạn thường:",
+          "ThuTu": 33,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-033-01",
+              "NoiDung": "Đưa ra chỉ thị rõ ràng, yêu cầu tuân thủ",
+              "MaThangDo": "TD-MBTI-TF",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-033-02",
+              "NoiDung": "Lắng nghe ý kiến, tạo sự đồng thuận",
+              "MaThangDo": "TD-MBTI-TF",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-034",
+          "NoiDung": "Bạn thích tổ chức sự kiện theo kiểu:",
+          "ThuTu": 34,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-034-01",
+              "NoiDung": "Kịch bản chi tiết, chạy chương trình chính xác",
+              "MaThangDo": "TD-MBTI-JP",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-034-02",
+              "NoiDung": "Khung sườn linh hoạt, tùy tình huống điều chỉnh",
+              "MaThangDo": "TD-MBTI-JP",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-035",
+          "NoiDung": "Bạn có dễ dàng kết bạn mới không?",
+          "ThuTu": 35,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-035-01",
+              "NoiDung": "Rất dễ dàng, tôi thích làm quen người lạ",
+              "MaThangDo": "TD-MBTI-EI",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-035-02",
+              "NoiDung": "Hơi khó khăn, tôi cần thời gian để thân thiết",
+              "MaThangDo": "TD-MBTI-EI",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-036",
+          "NoiDung": "Bạn thích xem loại phim nào hơn?",
+          "ThuTu": 36,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-036-01",
+              "NoiDung": "Phim tài liệu, dựa trên câu chuyện có thật",
+              "MaThangDo": "TD-MBTI-SN",
+              "GiaTri": -1
+            },
+            {
+              "MaDapAn": "DA-MBTI-036-02",
+              "NoiDung": "Phim viễn tưởng, khoa học, giả tưởng",
+              "MaThangDo": "TD-MBTI-SN",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-037",
+          "NoiDung": "Khi phê bình ai đó, bạn thường:",
+          "ThuTu": 37,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-037-01",
+              "NoiDung": "Nói thẳng lỗi sai để họ sửa",
+              "MaThangDo": "TD-MBTI-TF",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-037-02",
+              "NoiDung": "Nói nhẹ nhàng, tránh làm họ tổn thương",
+              "MaThangDo": "TD-MBTI-TF",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-038",
+          "NoiDung": "Bạn thích cuối tuần như thế nào?",
+          "ThuTu": 38,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-038-01",
+              "NoiDung": "Có lịch trình cụ thể cho từng ngày",
+              "MaThangDo": "TD-MBTI-JP",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-038-02",
+              "NoiDung": "Không lên kế hoạch, thích gì làm nấy",
+              "MaThangDo": "TD-MBTI-JP",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-039",
+          "NoiDung": "Khi thuyết trình trước đám đông, bạn:",
+          "ThuTu": 39,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-039-01",
+              "NoiDung": "Rất tự tin, thích được mọi người chú ý",
+              "MaThangDo": "TD-MBTI-EI",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-039-02",
+              "NoiDung": "Hồi hộp, thích tránh nếu có thể",
+              "MaThangDo": "TD-MBTI-EI",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-040",
+          "NoiDung": "Bạn tin tưởng vào quyết định của mình dựa trên:",
+          "ThuTu": 40,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-040-01",
+              "NoiDung": "Kinh nghiệm thực tế đã từng trải qua",
+              "MaThangDo": "TD-MBTI-SN",
+              "GiaTri": -1
+            },
+            {
+              "MaDapAn": "DA-MBTI-040-02",
+              "NoiDung": "Cảm giác, linh tính mách bảo",
+              "MaThangDo": "TD-MBTI-SN",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-041",
+          "NoiDung": "Bạn cảm thấy thoải mái khi:",
+          "ThuTu": 41,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-041-01",
+              "NoiDung": "Mọi thứ diễn ra theo đúng kế hoạch",
+              "MaThangDo": "TD-MBTI-JP",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-041-02",
+              "NoiDung": "Có không gian để thay đổi và điều chỉnh",
+              "MaThangDo": "TD-MBTI-JP",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-042",
+          "NoiDung": "Bạn có thích làm việc độc lập hơn làm việc nhóm không?",
+          "ThuTu": 42,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-042-01",
+              "NoiDung": "Không, tôi thích làm việc nhóm hơn",
+              "MaThangDo": "TD-MBTI-EI",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-042-02",
+              "NoiDung": "Có, tôi làm việc tốt hơn khi một mình",
+              "MaThangDo": "TD-MBTI-EI",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-043",
+          "NoiDung": "Bạn thích tin tức về:",
+          "ThuTu": 43,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-043-01",
+              "NoiDung": "Sự kiện, số liệu, kết quả cụ thể",
+              "MaThangDo": "TD-MBTI-SN",
+              "GiaTri": -1
+            },
+            {
+              "MaDapAn": "DA-MBTI-043-02",
+              "NoiDung": "Xu hướng, dự báo, phân tích chuyên sâu",
+              "MaThangDo": "TD-MBTI-SN",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-044",
+          "NoiDung": "Bạn có thể tha thứ dễ dàng không?",
+          "ThuTu": 44,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-044-01",
+              "NoiDung": "Có, nhưng phải có lý do logic và xin lỗi đàng hoàng",
+              "MaThangDo": "TD-MBTI-TF",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-044-02",
+              "NoiDung": "Có, vì tôi không muốn giữ sự thù hận",
+              "MaThangDo": "TD-MBTI-TF",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-045",
+          "NoiDung": "Bạn thích mua sắm theo cách:",
+          "ThuTu": 45,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-045-01",
+              "NoiDung": "Có danh sách cụ thể, mua đúng những thứ cần",
+              "MaThangDo": "TD-MBTI-JP",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-045-02",
+              "NoiDung": "Dạo quanh, mua những thứ bất ngờ hấp dẫn",
+              "MaThangDo": "TD-MBTI-JP",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-046",
+          "NoiDung": "Trong giờ giải lao, bạn thường:",
+          "ThuTu": 46,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-046-01",
+              "NoiDung": "Trò chuyện, tán gẫu với mọi người",
+              "MaThangDo": "TD-MBTI-EI",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-046-02",
+              "NoiDung": "Ngồi một mình, lướt điện thoại hoặc đọc sách",
+              "MaThangDo": "TD-MBTI-EI",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-047",
+          "NoiDung": "Bạn thích những câu đố, câu đố về:",
+          "ThuTu": 47,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-047-01",
+              "NoiDung": "Thực tế, logic, có một đáp án đúng",
+              "MaThangDo": "TD-MBTI-SN",
+              "GiaTri": -1
+            },
+            {
+              "MaDapAn": "DA-MBTI-047-02",
+              "NoiDung": "Mở, sáng tạo, có nhiều cách giải",
+              "MaThangDo": "TD-MBTI-SN",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-048",
+          "NoiDung": "Khi được khen, bạn thường:",
+          "ThuTu": 48,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-048-01",
+              "NoiDung": "Vui nhưng nghĩ xem họ có thực sự đúng không",
+              "MaThangDo": "TD-MBTI-TF",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-048-02",
+              "NoiDung": "Rất vui và cảm thấy được trân trọng",
+              "MaThangDo": "TD-MBTI-TF",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-049",
+          "NoiDung": "Bạn có hay dậy đúng giờ không?",
+          "ThuTu": 49,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-049-01",
+              "NoiDung": "Luôn luôn đúng giờ hoặc sớm hơn",
+              "MaThangDo": "TD-MBTI-JP",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-049-02",
+              "NoiDung": "Thường xuyên bị trễ một chút",
+              "MaThangDo": "TD-MBTI-JP",
+              "GiaTri": -1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-MBTI-050",
+          "NoiDung": "Sau một ngày dài giao tiếp, bạn cảm thấy:",
+          "ThuTu": 50,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-MBTI-050-01",
+              "NoiDung": "Vẫn tràn đầy năng lượng",
+              "MaThangDo": "TD-MBTI-EI",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-MBTI-050-02",
+              "NoiDung": "Kiệt sức và cần thời gian ở một mình",
+              "MaThangDo": "TD-MBTI-EI",
+              "GiaTri": -1
+            }
+          ]
+        }
+      ]
+    },
+
+    "BT-003": {
+      "TieuDe": "Trắc nghiệm 5 đặc điểm tính cách (Big Five)",
+      "LoaiTest": "Big Five",
+      "MoTaLoai": "Mô hình OCEAN đo lường 5 khía cạnh: Sẵn sàng trải nghiệm (O), Tận tâm (C), Hướng ngoại (E), Dễ chịu (A) và Tâm lý nhạy cảm (N).",
+      "HinhAnh": "big_five_cover.png",
+      "ThoiGian": 25,
+      "TrangThai": "Hoạt động",
+      "SoLuongCauHoi": 50,
+      "DanhSachCauHoi": [
+        {
+          "MaCauHoi": "CH-BIG5-001",
+          "NoiDung": "Tôi thường xuyên tìm tòi, khám phá những điều mới mẻ.",
+          "ThuTu": 1,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-001-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-001-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-001-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-001-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-001-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-002",
+          "NoiDung": "Tôi thường hoàn thành công việc đúng thời hạn.",
+          "ThuTu": 2,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-002-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-002-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-002-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-002-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-002-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-003",
+          "NoiDung": "Tôi là người hoạt bát, năng động trong các buổi tụ họp.",
+          "ThuTu": 3,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-003-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-003-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-003-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-003-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-003-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-004",
+          "NoiDung": "Tôi luôn sẵn lòng giúp đỡ người khác khi họ gặp khó khăn.",
+          "ThuTu": 4,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-004-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-004-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-004-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-004-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-004-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-005",
+          "NoiDung": "Tôi thường xuyên cảm thấy lo lắng, căng thẳng.",
+          "ThuTu": 5,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-005-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-005-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-005-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-005-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-005-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-006",
+          "NoiDung": "Tôi thích suy nghĩ về những ý tưởng trừu tượng và phức tạp.",
+          "ThuTu": 6,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-006-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-006-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-006-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-006-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-006-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-007",
+          "NoiDung": "Tôi thường để đồ đạc của mình lộn xộn, không ngăn nắp.",
+          "ThuTu": 7,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-007-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-007-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-007-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-007-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-007-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-008",
+          "NoiDung": "Tôi thích là trung tâm của sự chú ý.",
+          "ThuTu": 8,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-008-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-008-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-008-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-008-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-008-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-009",
+          "NoiDung": "Tôi tin rằng hầu hết mọi người đều có ý tốt.",
+          "ThuTu": 9,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-009-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-009-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-009-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-009-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-009-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-010",
+          "NoiDung": "Tôi dễ dàng bị căng thẳng khi đối mặt với áp lực.",
+          "ThuTu": 10,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-010-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-010-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-010-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-010-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-010-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-011",
+          "NoiDung": "Tôi thích trải nghiệm những nền văn hóa khác nhau.",
+          "ThuTu": 11,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-011-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-011-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-011-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-011-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-011-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-012",
+          "NoiDung": "Tôi thường lập danh sách công việc cần làm.",
+          "ThuTu": 12,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-012-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-012-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-012-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-012-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-012-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-013",
+          "NoiDung": "Tôi dễ dàng kết bạn mới.",
+          "ThuTu": 13,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-013-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-013-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-013-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-013-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-013-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-014",
+          "NoiDung": "Tôi thường đặt lợi ích của người khác lên trên lợi ích của mình.",
+          "ThuTu": 14,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-014-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-014-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-014-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-014-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-014-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-015",
+          "NoiDung": "Tôi thường cảm thấy buồn bã hoặc chán nản.",
+          "ThuTu": 15,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-015-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-015-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-015-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-015-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-015-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-016",
+          "NoiDung": "Tôi thích học hỏi những kỹ năng mới.",
+          "ThuTu": 16,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-016-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-016-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-016-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-016-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-016-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-017",
+          "NoiDung": "Tôi thường bỏ qua các chi tiết nhỏ trong công việc.",
+          "ThuTu": 17,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-017-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-017-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-017-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-017-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-017-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-018",
+          "NoiDung": "Tôi thích tham gia các hoạt động xã hội đông người.",
+          "ThuTu": 18,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-018-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-018-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-018-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-018-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-018-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-019",
+          "NoiDung": "Tôi hay tranh luận và bảo vệ quan điểm của mình.",
+          "ThuTu": 19,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-019-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-019-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-019-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-019-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-019-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-020",
+          "NoiDung": "Tôi dễ dàng thích nghi với những thay đổi bất ngờ.",
+          "ThuTu": 20,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-020-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-020-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-020-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-020-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-020-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-021",
+          "NoiDung": "Tôi thích những buổi trò chuyện mang tính triết học.",
+          "ThuTu": 21,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-021-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-021-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-021-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-021-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-021-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-022",
+          "NoiDung": "Tôi thường trì hoãn công việc đến phút cuối.",
+          "ThuTu": 22,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-022-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-022-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-022-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-022-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-022-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-023",
+          "NoiDung": "Tôi có một cuộc sống xã hội sôi nổi.",
+          "ThuTu": 23,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-023-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-023-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-023-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-023-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-023-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-024",
+          "NoiDung": "Tôi cảm thấy đồng cảm sâu sắc với những người kém may mắn.",
+          "ThuTu": 24,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-024-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-024-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-024-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-024-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-024-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-025",
+          "NoiDung": "Tôi thường xuyên thay đổi tâm trạng thất thường.",
+          "ThuTu": 25,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-025-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-025-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-025-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-025-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-025-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-026",
+          "NoiDung": "Tôi thích khám phá những địa điểm du lịch mới.",
+          "ThuTu": 26,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-026-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-026-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-026-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-026-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-026-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-027",
+          "NoiDung": "Tôi là người có tổ chức và kỷ luật.",
+          "ThuTu": 27,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-027-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-027-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-027-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-027-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-027-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-028",
+          "NoiDung": "Tôi thích làm việc nhóm hơn làm việc một mình.",
+          "ThuTu": 28,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-028-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-028-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-028-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-028-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-028-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-029",
+          "NoiDung": "Tôi hay hợp tác và nhường nhịn người khác.",
+          "ThuTu": 29,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-029-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-029-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-029-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-029-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-029-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-030",
+          "NoiDung": "Tôi thường xuyên cảm thấy tự ti về bản thân.",
+          "ThuTu": 30,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-030-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-030-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-030-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-030-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-030-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-031",
+          "NoiDung": "Tôi thích sáng tạo ra những sản phẩm mới.",
+          "ThuTu": 31,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-031-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-031-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-031-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-031-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-031-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-032",
+          "NoiDung": "Tôi thường hoàn thành mọi việc đúng như kế hoạch.",
+          "ThuTu": 32,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-032-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-032-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-032-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-032-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-032-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-033",
+          "NoiDung": "Tôi thích nói chuyện với nhiều người khác nhau.",
+          "ThuTu": 33,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-033-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-033-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-033-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-033-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-033-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-034",
+          "NoiDung": "Tôi thích làm việc hợp tác hơn là cạnh tranh.",
+          "ThuTu": 34,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-034-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-034-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-034-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-034-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-034-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-035",
+          "NoiDung": "Tôi hay cảm thấy lo lắng về những điều không chắc chắn.",
+          "ThuTu": 35,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-035-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-035-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-035-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-035-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-035-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-036",
+          "NoiDung": "Tôi thích những trải nghiệm mới lạ và khác biệt.",
+          "ThuTu": 36,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-036-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-036-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-036-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-036-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-036-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-037",
+          "NoiDung": "Tôi rất coi trọng việc đúng hẹn.",
+          "ThuTu": 37,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-037-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-037-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-037-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-037-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-037-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-038",
+          "NoiDung": "Tôi thích những nơi náo nhiệt, đông vui.",
+          "ThuTu": 38,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-038-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-038-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-038-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-038-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-038-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-039",
+          "NoiDung": "Tôi hay quan tâm và chăm sóc người khác.",
+          "ThuTu": 39,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-039-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-039-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-039-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-039-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-039-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-040",
+          "NoiDung": "Tôi dễ bị ảnh hưởng bởi cảm xúc tiêu cực.",
+          "ThuTu": 40,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-040-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-040-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-040-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-040-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-040-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-041",
+          "NoiDung": "Tôi thích đọc sách và tìm hiểu kiến thức mới.",
+          "ThuTu": 41,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-041-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-041-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-041-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-041-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-041-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-042",
+          "NoiDung": "Tôi thường kiểm tra lại công việc trước khi nộp.",
+          "ThuTu": 42,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-042-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-042-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-042-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-042-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-042-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-043",
+          "NoiDung": "Tôi thích thử thách bản thân với những điều mới.",
+          "ThuTu": 43,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-043-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-043-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-043-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-043-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-043-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-044",
+          "NoiDung": "Tôi tôn trọng cảm xúc của người khác.",
+          "ThuTu": 44,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-044-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-044-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-044-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-044-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-044-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-045",
+          "NoiDung": "Tôi thường mất ngủ vì lo lắng.",
+          "ThuTu": 45,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-045-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-045-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-045-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-045-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-045-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-046",
+          "NoiDung": "Tôi thích những tác phẩm nghệ thuật trừu tượng.",
+          "ThuTu": 46,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-046-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-046-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-046-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-046-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-046-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-O",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-047",
+          "NoiDung": "Tôi luôn cố gắng làm việc tốt nhất có thể.",
+          "ThuTu": 47,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-047-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-047-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-047-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-047-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-047-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-C",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-048",
+          "NoiDung": "Tôi thích gặp gỡ những người mới.",
+          "ThuTu": 48,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-048-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-048-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-048-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-048-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-048-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-E",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-049",
+          "NoiDung": "Tôi hay giúp đỡ người khác mà không mong đền đáp.",
+          "ThuTu": 49,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-049-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-049-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-049-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-049-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-049-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-A",
+              "GiaTri": 5
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-BIG5-050",
+          "NoiDung": "Tôi thường cảm thấy cô đơn ngay cả khi ở bên cạnh mọi người.",
+          "ThuTu": 50,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-BIG5-050-01",
+              "NoiDung": "Rất không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-BIG5-050-02",
+              "NoiDung": "Không đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 2
+            },
+            {
+              "MaDapAn": "DA-BIG5-050-03",
+              "NoiDung": "Bình thường",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 3
+            },
+            {
+              "MaDapAn": "DA-BIG5-050-04",
+              "NoiDung": "Đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 4
+            },
+            {
+              "MaDapAn": "DA-BIG5-050-05",
+              "NoiDung": "Rất đồng ý",
+              "MaThangDo": "TD-BIGFIVE-N",
+              "GiaTri": 5
+            }
+          ]
+        }
+      ]
+    },
+
+    "BT-004": {
+      "TieuDe": "Trắc nghiệm hành vi DISC",
+      "LoaiTest": "DISC",
+      "MoTaLoai": "Phân tích 4 nhóm hành vi chính: Thống trị (D), Ảnh hưởng (I), Kiên định (S) và Tuân thủ (C) trong công việc và cuộc sống.",
+      "HinhAnh": "disc_cover.png",
+      "ThoiGian": 15,
+      "TrangThai": "Hoạt động",
+      "SoLuongCauHoi": 20,
+      "DanhSachCauHoi": [
+        {
+          "MaCauHoi": "CH-DISC-001",
+          "NoiDung": "Bạn phản ứng như thế nào với sự không chắc chắn?",
+          "ThuTu": 1,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-DISC-001-01",
+              "NoiDung": "Cố gắng duy trì sự bình tĩnh và không để tình hình ảnh hưởng",
+              "MaThangDo": "TD-DISC-S",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-001-02",
+              "NoiDung": "Phân tích cẩn thận để tìm ra cách tốt nhất",
+              "MaThangDo": "TD-DISC-C",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-001-03",
+              "NoiDung": "Quyết định nhanh và tìm cách kiểm soát tình hình",
+              "MaThangDo": "TD-DISC-D",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-001-04",
+              "NoiDung": "Tìm kiếm ý tưởng mới và đổi mới cách tiếp cận",
+              "MaThangDo": "TD-DISC-i",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-DISC-002",
+          "NoiDung": "Bạn thích tiếp cận vấn đề mới bằng cách:",
+          "ThuTu": 2,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-DISC-002-01",
+              "NoiDung": "Lên kế hoạch cẩn thận trước khi bắt đầu hành động",
+              "MaThangDo": "TD-DISC-C",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-002-02",
+              "NoiDung": "Lên kế hoạch cẩn thận trước khi bắt đầu hành động",
+              "MaThangDo": "TD-DISC-C",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-002-03",
+              "NoiDung": "Nhanh chóng bắt tay vào hành động và thử nghiệm các giải pháp",
+              "MaThangDo": "TD-DISC-D",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-002-04",
+              "NoiDung": "Phân tích tất cả các yếu tố liên quan trước khi quyết định",
+              "MaThangDo": "TD-DISC-C",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-DISC-003",
+          "NoiDung": "Bạn cảm thấy tự tin nhất khi:",
+          "ThuTu": 3,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-DISC-003-01",
+              "NoiDung": "Làm việc trong môi trường quen thuộc và ổn định",
+              "MaThangDo": "TD-DISC-S",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-003-02",
+              "NoiDung": "Kiểm soát được tình huống và đưa ra quyết định nhanh chóng",
+              "MaThangDo": "TD-DISC-D",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-003-03",
+              "NoiDung": "Có thời gian để đảm bảo rằng mọi thứ được hoàn thành chính xác",
+              "MaThangDo": "TD-DISC-C",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-003-04",
+              "NoiDung": "Có sự ủng hộ và động viên từ đồng nghiệp",
+              "MaThangDo": "TD-DISC-i",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-DISC-004",
+          "NoiDung": "Điều gì khiến bạn không thoải mái trong môi trường làm việc?",
+          "ThuTu": 4,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-DISC-004-01",
+              "NoiDung": "Quá nhiều sự thay đổi và rối loạn",
+              "MaThangDo": "TD-DISC-S",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-004-02",
+              "NoiDung": "Thiếu cơ hội để giao tiếp và hợp tác với người khác",
+              "MaThangDo": "TD-DISC-i",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-004-03",
+              "NoiDung": "Thiếu sự chủ động và sáng tạo",
+              "MaThangDo": "TD-DISC-D",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-004-04",
+              "NoiDung": "Công việc bị bỏ qua các chi tiết quan trọng hoặc thiếu chính xác",
+              "MaThangDo": "TD-DISC-C",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-DISC-005",
+          "NoiDung": "Điều gì làm bạn cảm thấy căng thẳng?",
+          "ThuTu": 5,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-DISC-005-01",
+              "NoiDung": "Không có cơ hội giao tiếp và chia sẻ ý tưởng",
+              "MaThangDo": "TD-DISC-i",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-005-02",
+              "NoiDung": "Không có quyền kiểm soát tình huống",
+              "MaThangDo": "TD-DISC-D",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-005-03",
+              "NoiDung": "Mọi thứ không được tổ chức rõ ràng và chi tiết",
+              "MaThangDo": "TD-DISC-C",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-005-04",
+              "NoiDung": "Có quá nhiều thay đổi đột ngột",
+              "MaThangDo": "TD-DISC-S",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-DISC-006",
+          "NoiDung": "Khi bị đặt trong một tình huống căng thẳng, bạn thường:",
+          "ThuTu": 6,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-DISC-006-01",
+              "NoiDung": "Đối mặt trực tiếp và nhanh chóng tìm ra giải pháp",
+              "MaThangDo": "TD-DISC-D",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-006-02",
+              "NoiDung": "Giữ bình tĩnh và tránh làm tình hình trở nên tệ hơn",
+              "MaThangDo": "TD-DISC-S",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-006-03",
+              "NoiDung": "Nói chuyện với người khác để giảm bớt căng thẳng",
+              "MaThangDo": "TD-DISC-i",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-006-04",
+              "NoiDung": "Phân tích tình huống để tìm ra giải pháp hợp lý nhất",
+              "MaThangDo": "TD-DISC-C",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-DISC-007",
+          "NoiDung": "Trong tình huống giao tiếp với người khác, bạn thường:",
+          "ThuTu": 7,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-DISC-007-01",
+              "NoiDung": "Nói thẳng và đi vào vấn đề chính",
+              "MaThangDo": "TD-DISC-D",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-007-02",
+              "NoiDung": "Thảo luận kỹ lưỡng về các chi tiết và logic",
+              "MaThangDo": "TD-DISC-C",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-007-03",
+              "NoiDung": "Lắng nghe và hỗ trợ người khác",
+              "MaThangDo": "TD-DISC-S",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-007-04",
+              "NoiDung": "Tạo ra không khí vui vẻ và thoải mái",
+              "MaThangDo": "TD-DISC-i",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-DISC-008",
+          "NoiDung": "Khi phải ra quyết định khó khăn, bạn thường:",
+          "ThuTu": 8,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-DISC-008-01",
+              "NoiDung": "Ra quyết định nhanh chóng mà không do dự",
+              "MaThangDo": "TD-DISC-D",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-008-02",
+              "NoiDung": "Phân tích dữ liệu và đảm bảo quyết định là hợp lý",
+              "MaThangDo": "TD-DISC-C",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-008-03",
+              "NoiDung": "Suy nghĩ cẩn thận và cân nhắc mọi lựa chọn",
+              "MaThangDo": "TD-DISC-S",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-008-04",
+              "NoiDung": "Hỏi ý kiến người khác trước khi quyết định",
+              "MaThangDo": "TD-DISC-i",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-DISC-009",
+          "NoiDung": "Điều gì quan trọng nhất khi giao tiếp với người khác?",
+          "ThuTu": 9,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-DISC-009-01",
+              "NoiDung": "Trực tiếp và tập trung vào mục tiêu chính",
+              "MaThangDo": "TD-DISC-D",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-009-02",
+              "NoiDung": "Tạo ra không khí tích cực và vui vẻ",
+              "MaThangDo": "TD-DISC-i",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-009-03",
+              "NoiDung": "Truyền đạt thông tin một cách chi tiết và rõ ràng",
+              "MaThangDo": "TD-DISC-C",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-009-04",
+              "NoiDung": "Giữ sự hòa hợp và đồng thuận",
+              "MaThangDo": "TD-DISC-S",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-DISC-010",
+          "NoiDung": "Bạn đánh giá cao điều gì nhất ở đồng nghiệp của mình?",
+          "ThuTu": 10,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-DISC-010-01",
+              "NoiDung": "Sự hỗ trợ và hợp tác",
+              "MaThangDo": "TD-DISC-S",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-010-02",
+              "NoiDung": "Khả năng đạt được kết quả nhanh chóng",
+              "MaThangDo": "TD-DISC-D",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-010-03",
+              "NoiDung": "Sự thân thiện và cởi mở",
+              "MaThangDo": "TD-DISC-i",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-010-04",
+              "NoiDung": "Sự chính xác và chú ý đến chi tiết",
+              "MaThangDo": "TD-DISC-C",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-DISC-011",
+          "NoiDung": "Khi làm việc trong một dự án, điều gì là quan trọng nhất đối với bạn?",
+          "ThuTu": 11,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-DISC-011-01",
+              "NoiDung": "Hoàn thành dự án nhanh chóng và đạt được kết quả",
+              "MaThangDo": "TD-DISC-D",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-011-02",
+              "NoiDung": "Đảm bảo chất lượng và tính chính xác của từng bước",
+              "MaThangDo": "TD-DISC-C",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-011-03",
+              "NoiDung": "Tạo mối quan hệ tốt với các thành viên trong nhóm",
+              "MaThangDo": "TD-DISC-i",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-011-04",
+              "NoiDung": "Đảm bảo dự án diễn ra theo đúng kế hoạch",
+              "MaThangDo": "TD-DISC-S",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-DISC-012",
+          "NoiDung": "Khi người khác không tuân thủ đúng kế hoạch, bạn sẽ:",
+          "ThuTu": 12,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-DISC-012-01",
+              "NoiDung": "Đảm bảo rằng họ hiểu tầm quan trọng của kế hoạch",
+              "MaThangDo": "TD-DISC-C",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-012-02",
+              "NoiDung": "Thảo luận với họ để tìm giải pháp phù hợp hơn",
+              "MaThangDo": "TD-DISC-i",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-012-03",
+              "NoiDung": "Cố gắng điều chỉnh kế hoạch để mọi người thoải mái",
+              "MaThangDo": "TD-DISC-S",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-012-04",
+              "NoiDung": "Đưa ra yêu cầu rõ ràng để họ làm việc đúng cách",
+              "MaThangDo": "TD-DISC-D",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-DISC-013",
+          "NoiDung": "Bạn thích làm việc trong môi trường:",
+          "ThuTu": 13,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-DISC-013-01",
+              "NoiDung": "Đầy cạnh tranh và thử thách",
+              "MaThangDo": "TD-DISC-D",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-013-02",
+              "NoiDung": "Năng động và sáng tạo, có nhiều người tham gia",
+              "MaThangDo": "TD-DISC-i",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-013-03",
+              "NoiDung": "Ổn định và có ít sự thay đổi",
+              "MaThangDo": "TD-DISC-S",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-013-04",
+              "NoiDung": "Có tổ chức và tuân theo quy trình cụ thể",
+              "MaThangDo": "TD-DISC-C",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-DISC-014",
+          "NoiDung": "Khi đối mặt với một nhiệm vụ mới, bạn sẽ:",
+          "ThuTu": 14,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-DISC-014-01",
+              "NoiDung": "Tìm kiếm sự hợp tác và hỗ trợ từ người khác",
+              "MaThangDo": "TD-DISC-i",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-014-02",
+              "NoiDung": "Nhanh chóng bắt tay vào hành động và tìm ra cách để hoàn thành",
+              "MaThangDo": "TD-DISC-D",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-014-03",
+              "NoiDung": "Nghiên cứu kỹ lưỡng trước khi bắt đầu",
+              "MaThangDo": "TD-DISC-C",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-014-04",
+              "NoiDung": "Lên kế hoạch cụ thể và từ từ tiến hành",
+              "MaThangDo": "TD-DISC-S",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-DISC-015",
+          "NoiDung": "Khi làm việc theo nhóm, bạn thường:",
+          "ThuTu": 15,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-DISC-015-01",
+              "NoiDung": "Tạo không khí vui vẻ và làm việc dễ chịu với mọi người",
+              "MaThangDo": "TD-DISC-i",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-015-02",
+              "NoiDung": "Hỗ trợ và giữ cho nhóm hoạt động êm ả",
+              "MaThangDo": "TD-DISC-S",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-015-03",
+              "NoiDung": "Đảm nhận vai trò lãnh đạo và thúc đẩy nhóm tiến lên",
+              "MaThangDo": "TD-DISC-D",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-015-04",
+              "NoiDung": "Đảm bảo mọi chi tiết đều đúng và hoàn thành tốt",
+              "MaThangDo": "TD-DISC-C",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-DISC-016",
+          "NoiDung": "Điều gì làm bạn mất hứng thú trong công việc?",
+          "ThuTu": 16,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-DISC-016-01",
+              "NoiDung": "Môi trường làm việc cô lập, ít sự giao tiếp",
+              "MaThangDo": "TD-DISC-i",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-016-02",
+              "NoiDung": "Thiếu cơ hội để cạnh tranh và tiến bộ",
+              "MaThangDo": "TD-DISC-D",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-016-03",
+              "NoiDung": "Công việc không có quy trình rõ ràng và chính xác",
+              "MaThangDo": "TD-DISC-C",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-016-04",
+              "NoiDung": "Quá nhiều thay đổi và thiếu sự ổn định",
+              "MaThangDo": "TD-DISC-S",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-DISC-017",
+          "NoiDung": "Khi gặp phải một trở ngại lớn, bạn sẽ:",
+          "ThuTu": 17,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-DISC-017-01",
+              "NoiDung": "Quyết tâm vượt qua nó ngay lập tức",
+              "MaThangDo": "TD-DISC-D",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-017-02",
+              "NoiDung": "Bình tĩnh đối mặt và từ từ xử lý nó",
+              "MaThangDo": "TD-DISC-S",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-017-03",
+              "NoiDung": "Tìm kiếm sự giúp đỡ từ người khác để giải quyết",
+              "MaThangDo": "TD-DISC-i",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-017-04",
+              "NoiDung": "Phân tích và tìm giải pháp tối ưu nhất",
+              "MaThangDo": "TD-DISC-C",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-DISC-018",
+          "NoiDung": "Điều gì quan trọng nhất đối với bạn khi làm việc?",
+          "ThuTu": 18,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-DISC-018-01",
+              "NoiDung": "Giao tiếp và tương tác với đồng nghiệp",
+              "MaThangDo": "TD-DISC-i",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-018-02",
+              "NoiDung": "Hoàn thành công việc một cách nhanh chóng và hiệu quả",
+              "MaThangDo": "TD-DISC-D",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-018-03",
+              "NoiDung": "Duy trì sự ổn định và cân bằng",
+              "MaThangDo": "TD-DISC-S",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-018-04",
+              "NoiDung": "Đảm bảo công việc được thực hiện một cách hoàn hảo và chi tiết",
+              "MaThangDo": "TD-DISC-C",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-DISC-019",
+          "NoiDung": "Bạn thích đạt được thành công bằng cách:",
+          "ThuTu": 19,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-DISC-019-01",
+              "NoiDung": "Làm việc nhóm và kết nối với người khác",
+              "MaThangDo": "TD-DISC-i",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-019-02",
+              "NoiDung": "Đảm bảo mọi chi tiết đều hoàn hảo",
+              "MaThangDo": "TD-DISC-C",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-019-03",
+              "NoiDung": "Chiếm lấy cơ hội và thể hiện năng lực cá nhân",
+              "MaThangDo": "TD-DISC-D",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-019-04",
+              "NoiDung": "Tuân theo quy trình và duy trì sự ổn định",
+              "MaThangDo": "TD-DISC-S",
+              "GiaTri": 1
+            }
+          ]
+        },
+        {
+          "MaCauHoi": "CH-DISC-020",
+          "NoiDung": "Bạn thích làm việc trong một nhóm như thế nào?",
+          "ThuTu": 20,
+          "DapAn": [
+            {
+              "MaDapAn": "DA-DISC-020-01",
+              "NoiDung": "Mục tiêu rõ ràng và quyết đoán",
+              "MaThangDo": "TD-DISC-D",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-020-02",
+              "NoiDung": "Hỗ trợ và đoàn kết",
+              "MaThangDo": "TD-DISC-S",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-020-03",
+              "NoiDung": "Tích cực và giao tiếp thường xuyên",
+              "MaThangDo": "TD-DISC-i",
+              "GiaTri": 1
+            },
+            {
+              "MaDapAn": "DA-DISC-020-04",
+              "NoiDung": "Có quy trình chặt chẽ và chi tiết",
+              "MaThangDo": "TD-DISC-C",
+              "GiaTri": 1
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "Nganh": {
+    "Nganh-001": {
+      "TenNganh": "Công nghệ thông tin",
+      "MoTa": "Lĩnh vực nghiên cứu về hệ thống máy tính, phát triển phần mềm và trí tuệ nhân tạo. Phù hợp với người có tư duy logic, khả năng giải quyết vấn đề và đam mê cập nhật công nghệ mới."
+    },
+
+    "Nganh-002": {
+      "TenNganh": "Kỹ thuật & Công nghệ",
+      "MoTa": "Tập trung vào thiết kế, vận hành máy móc, hạ tầng và quy trình sản xuất. Đòi hỏi sự tỉ mỉ, hiểu biết về vật lý, toán học và kỹ năng thực hành kỹ thuật chính xác."
+    },
+
+    "Nganh-003": {
+      "TenNganh": "Kinh tế & Tài chính & Luật",
+      "MoTa": "Nghiên cứu về quản lý nguồn lực, thị trường, dòng tiền và các quy tắc pháp lý. Phù hợp với người có khả năng phân tích số liệu, tư duy phản biện và kỹ năng đàm phán."
+    },
+
+    "Nganh-004": {
+      "TenNganh": "Sáng tạo & Nghệ thuật",
+      "MoTa": "Không gian dành cho biểu đạt ý tưởng qua thị giác, âm thanh và ngôn ngữ. Đòi hỏi tâm hồn nhạy cảm, khả năng thẩm mỹ cao và tư duy đổi mới không giới hạn."
+    },
+
+    "Nganh-005": {
+      "TenNganh": "Y tế & Giáo dục",
+      "MoTa": "Nhóm ngành tập trung vào chăm sóc sức khỏe con người và truyền thụ tri thức. Yêu cầu sự kiên nhẫn, lòng trắc ẩn, kỹ năng giao tiếp và tinh thần trách nhiệm cộng đồng cao."
+    },
+
+    "Nganh-006": {
+      "TenNganh": "Khoa học xã hội & Truyền thông",
+      "MoTa": "Nghiên cứu hành vi con người, tâm lý và cách thức lan tỏa thông tin. Phù hợp với người yêu thích giao tiếp, có khả năng viết lách và nhạy bén với các vấn đề xã hội."
+    },
+
+    "Nganh-007": {
+      "TenNganh": "Dịch vụ & Du lịch",
+      "MoTa": "Lĩnh vực quản trị trải nghiệm khách hàng, lữ hành và khách sạn. Đòi hỏi sự linh hoạt, kỹ năng tổ chức, ngoại ngữ và khả năng xử lý tình huống khéo léo."
+    }
+  },
+
+  "KyNang": {
+    "KN-001": {
+      "TenKyNang": "Tư duy logic",
+      "MoTa": "Khả năng phân tích, suy luận và giải quyết vấn đề có hệ thống. Cốt lõi cho lập trình và kỹ thuật.",
+      "Loai": "Cứng"
+    },
+
+    "KN-002": {
+      "TenKyNang": "Ngoại ngữ (Tiếng Anh)",
+      "MoTa": "Khả năng đọc hiểu tài liệu và giao tiếp quốc tế. Mở rộng cơ hội làm việc toàn cầu.",
+      "Loai": "Cứng"
+    },
+
+    "KN-003": {
+      "TenKyNang": "Giao tiếp & Thuyết trình",
+      "MoTa": "Truyền đạt ý tưởng rõ ràng, thuyết phục. Quan trọng cho Sales, Marketing và Giáo dục.",
+      "Loai": "Mềm"
+    },
+
+    "KN-004": {
+      "TenKyNang": "Quản lý thời gian",
+      "MoTa": "Sắp xếp công việc khoa học để đạt hiệu suất cao nhất dưới áp lực.",
+      "Loai": "Mềm"
+    },
+
+    "KN-005": {
+      "TenKyNang": "Lập trình & Phát triển phần mềm",
+      "MoTa": "Sử dụng ngôn ngữ máy tính xây dựng ứng dụng. Kỹ năng trọng tâm ngành IT.",
+      "Loai": "Cứng"
+    },
+
+    "KN-006": {
+      "TenKyNang": "Trí tuệ cảm xúc (EQ)",
+      "MoTa": "Thấu hiểu và điều tiết cảm xúc bản thân/người khác. Cần cho Quản lý và Y tế.",
+      "Loai": "Mềm"
+    },
+
+    "KN-007": {
+      "TenKyNang": "Tư duy thẩm mỹ",
+      "MoTa": "Cảm thụ cái đẹp, phối hợp màu sắc/không gian. Cần cho Thiết kế & Nghệ thuật.",
+      "Loai": "Cứng"
+    },
+
+    "KN-008": {
+      "TenKyNang": "Phân tích dữ liệu",
+      "MoTa": "Khai phá thông tin từ con số để đưa ra quyết định. Xu hướng ngành Kinh tế/Tài chính.",
+      "Loai": "Cứng"
+    },
+
+    "KN-009": {
+      "TenKyNang": "Tư duy thuật toán",
+      "MoTa": "Thiết kế các bước giải quyết vấn đề tối ưu. Quan trọng cho Backend và AI.",
+      "Loai": "Cứng"
+    },
+
+    "KN-010": {
+      "TenKyNang": "An toàn thông tin",
+      "MoTa": "Bảo mật dữ liệu, phòng chống tấn công mạng. Kỹ năng thiết yếu kỷ nguyên số.",
+      "Loai": "Cứng"
+    },
+
+    "KN-011": {
+      "TenKyNang": "Sử dụng công cụ AI",
+      "MoTa": "Kỹ năng điều khiển AI (Prompt Engineering) để tối ưu hóa năng suất.",
+      "Loai": "Bổ trợ"
+    },
+
+    "KN-012": {
+      "TenKyNang": "Nghiên cứu thị trường",
+      "MoTa": "Thu thập và phân tích dữ liệu người tiêu dùng và đối thủ cạnh tranh.",
+      "Loai": "Cứng"
+    },
+
+    "KN-013": {
+      "TenKyNang": "Tư duy phản biện",
+      "MoTa": "Đánh giá thông tin đa chiều. Rất cần cho Luật sư, Kiểm toán và Nghiên cứu.",
+      "Loai": "Mềm"
+    },
+
+    "KN-014": {
+      "TenKyNang": "Quản trị rủi ro",
+      "MoTa": "Nhận diện và đánh giá các tình huống tiêu cực trong kinh doanh/kỹ thuật.",
+      "Loai": "Cứng"
+    },
+
+    "KN-015": {
+      "TenKyNang": "Kể chuyện (Storytelling)",
+      "MoTa": "Truyền tải thông điệp qua cốt truyện hấp dẫn. Cần cho Truyền thông và Sáng tạo.",
+      "Loai": "Mềm"
+    },
+
+    "KN-016": {
+      "TenKyNang": "Sử dụng phần mềm đồ họa",
+      "MoTa": "Thành thạo Adobe, Figma... hiện thực hóa ý tưởng hình ảnh.",
+      "Loai": "Cứng"
+    },
+
+    "KN-017": {
+      "TenKyNang": "Làm việc nhóm (Collaboration)",
+      "MoTa": "Phối hợp nhịp nhàng với thành viên khác để đạt mục tiêu chung.",
+      "Loai": "Mềm"
+    },
+
+    "KN-018": {
+      "TenKyNang": "Sơ cấp cứu & Chăm sóc",
+      "MoTa": "Kiến thức bảo vệ tính mạng và xử lý thương tổn cơ bản.",
+      "Loai": "Cứng"
+    },
+
+    "KN-019": {
+      "TenKyNang": "Xử lý tình huống",
+      "MoTa": "Giữ bình tĩnh và đưa ra giải pháp tức thời khi có sự cố.",
+      "Loai": "Mềm"
+    },
+
+    "KN-020": {
+      "TenKyNang": "Năng lực đa văn hóa",
+      "MoTa": "Thấu hiểu và tôn trọng sự khác biệt văn hóa. Cần cho Du lịch và Ngoại giao.",
+      "Loai": "Mềm"
+    },
+
+    "KN-021": {
+      "TenKyNang": "Thiết kế kỹ thuật (AutoCAD/BIM)",
+      "Loai": "Chuyên môn"
+    },
+
+    "KN-022": {
+      "TenKyNang": "Phân tích tài chính & Rủi ro",
+      "Loai": "Chuyên môn"
+    },
+
+    "KN-023": {
+      "TenKyNang": "Nghiệp vụ hàng không & An toàn",
+      "Loai": "Chuyên môn"
+    },
+
+    "KN-024": { "TenKyNang": "Ẩm thực & Chế biến", "Loai": "Chuyên môn" },
+
+    "KN-025": { "TenKyNang": "Kiểm soát cảm xúc & Chịu áp lực", "Loai": "Mềm" },
+
+    "KN-026": { "TenKyNang": "Quản lý dự án xây dựng", "Loai": "Chuyên môn" },
+
+    "KN-027": {
+      "TenKyNang": "Am hiểu pháp luật chuyên ngành",
+      "Loai": "Chuyên môn"
+    },
+    "KN-028": {
+      "TenKyNang": "Kỹ thuật điều dưỡng & Chăm sóc",
+      "Loai": "Chuyên môn"
+    },
+
+    "KN-029": { "TenKyNang": "Dược lý & Kiểm tra thuốc", "Loai": "Chuyên môn" },
+
+    "KN-030": {
+      "TenKyNang": "Kỹ thuật quay phim & Dàn dựng",
+      "Loai": "Chuyên môn"
+    },
+
+    "KN-031": {
+      "TenKyNang": "Nghiệp vụ khách sạn & Nhà hàng",
+      "Loai": "Chuyên môn"
+    },
+
+    "KN-032": {
+      "TenKyNang": "Kỹ năng sư phạm & Truyền đạt",
+      "Loai": "Chuyên môn"
+    },
+
+    "KN-033": { "TenKyNang": "Tư duy hệ thống & Quy trình", "Loai": "Mềm" }
+  },
+
+  "XuHuong": {
+    "XH-001": {
+      "MaNganh": "Nganh-001",
+      "Nam": "2026",
+      "Quy": "Q2",
+      "SlgTuyen": "5000",
+      "TyLe": "20%"
+    },
+
+    "XH-002": {
+      "MaNganh": "Nganh-001",
+      "Nam": "2026",
+      "Quy": "Q1",
+      "SlgTuyen": "4200",
+      "TyLe": "15%"
+    },
+
+    "XH-003": {
+      "MaNganh": "Nganh-003",
+      "Nam": "2026",
+      "Quy": "Q2",
+      "SlgTuyen": "3500",
+      "TyLe": "10%"
+    },
+
+    "XH-004": {
+      "MaNganh": "Nganh-002",
+      "Nam": "2026",
+      "Quy": "Q2",
+      "SlgTuyen": "2800",
+      "TyLe": "25%"
+    },
+
+    "XH-005": {
+      "MaNganh": "Nganh-005",
+      "Nam": "2026",
+      "Quy": "Q2",
+      "SlgTuyen": "1500",
+      "TyLe": "5%"
+    },
+
+    "XH-006": {
+      "MaNganh": "Nganh-004",
+      "Nam": "2026",
+      "Quy": "Q2",
+      "SlgTuyen": "1200",
+      "TyLe": "12%"
+    },
+    "XH-007": {
+      "MaNganh": "Nganh-007",
+      "Nam": "2026",
+      "Quy": "Q2",
+      "SlgTuyen": "4000",
+      "TyLe": "18%"
+    }
+  },
+
+  "ThangDo": {
+    "TD-HOLLAND-R": {
+      "TenThangDo": "R",
+      "MoTa": "Kỹ thuật: Thích làm việc với máy móc, công cụ, vật dụng thực tế.",
+      "MaTest": "BT-001"
+    },
+
+    "TD-HOLLAND-I": {
+      "TenThangDo": "I",
+      "MoTa": "Nghiên cứu: Thích quan sát, phân tích và giải quyết vấn đề khoa học.",
+      "MaTest": "BT-001"
+    },
+
+    "TD-HOLLAND-A": {
+      "TenThangDo": "A",
+      "MoTa": "Nghệ thuật: Có khả năng sáng tạo, trực giác và yêu thích tự do.",
+      "MaTest": "BT-001"
+    },
+
+    "TD-HOLLAND-S": {
+      "TenThangDo": "S",
+      "MoTa": "Xã hội: Thích giúp đỡ, đào tạo, chữa trị hoặc chăm sóc người khác.",
+      "MaTest": "BT-001"
+    },
+
+    "TD-HOLLAND-E": {
+      "TenThangDo": "E",
+      "MoTa": "Quản lý: Có khả năng thuyết phục, dẫn dắt và hướng tới mục tiêu.",
+      "MaTest": "BT-001"
+    },
+
+    "TD-HOLLAND-C": {
+      "TenThangDo": "C",
+      "MoTa": "Nghiệp vụ: Tỉ mỉ, thích làm việc với dữ liệu và các quy tắc.",
+      "MaTest": "BT-001"
+    },
+
+    "TD-MBTI-EI": {
+      "TenThangDo": "E-I",
+      "MoTa": "Extraversion (Hướng ngoại) vs Introversion (Hướng nội).",
+      "MaTest": "BT-002"
+    },
+
+    "TD-MBTI-SN": {
+      "TenThangDo": "S-N",
+      "MoTa": "Sensing (Cảm giác) vs Intuition (Trực giác).",
+      "MaTest": "BT-002"
+    },
+
+    "TD-MBTI-TF": {
+      "TenThangDo": "T-F",
+      "MoTa": "Thinking (Lý trí) vs Feeling (Cảm xúc).",
+      "MaTest": "BT-002"
+    },
+
+    "TD-MBTI-JP": {
+      "TenThangDo": "J-P",
+      "MoTa": "Judging (Nguyên tắc) vs Perceiving (Linh hoạt).",
+      "MaTest": "BT-002"
+    },
+
+    "TD-BIGFIVE-O": {
+      "TenThangDo": "O",
+      "MoTa": "Openness (Sẵn sàng trải nghiệm)",
+      "MaTest": "BT-003"
+    },
+
+    "TD-BIGFIVE-C": {
+      "TenThangDo": "C",
+      "MoTa": "Conscientiousness (Tận tâm/Kỷ luật)",
+      "MaTest": "BT-003"
+    },
+
+    "TD-BIGFIVE-E": {
+      "TenThangDo": "E",
+      "MoTa": "Extraversion (Hướng ngoại)",
+      "MaTest": "BT-003"
+    },
+
+    "TD-BIGFIVE-A": {
+      "TenThangDo": "A",
+      "MoTa": "Agreeableness (Dễ chịu/Hòa đồng)",
+      "MaTest": "BT-003"
+    },
+
+    "TD-BIGFIVE-N": {
+      "TenThangDo": "N",
+      "MoTa": "Neuroticism (Tâm lý nhạy cảm)",
+      "MaTest": "BT-003"
+    },
+
+    "TD-DISC-D": {
+      "TenThangDo": "D",
+      "MoTa": "Dominance (Sự thống trị/Quyết đoán)",
+      "MaTest": "BT-004"
+    },
+
+    "TD-DISC-i": {
+      "TenThangDo": "i",
+      "MoTa": "Influence (Sự ảnh hưởng/Nhiệt tình)",
+      "MaTest": "BT-004"
+    },
+
+    "TD-DISC-S": {
+      "TenThangDo": "S",
+      "MoTa": "Steadiness (Sự kiên định/Tin cậy)",
+      "MaTest": "BT-004"
+    },
+
+    "TD-DISC-C": {
+      "TenThangDo": "C",
+      "MoTa": "Conscientiousness (Sự tuân thủ/Chính xác)",
+      "MaTest": "BT-004"
+    }
+  },
+
+  "CongViec": {
+    "CV-001": {
+      "MaNganh": "Nganh-001",
+      "TenCongViec": "Lập trình viên",
+      "MoTa": "Thiết kế, xây dựng và bảo trì các hệ thống phần mềm/ứng dụng.",
+      "DoHot": "Rất Cao",
+      "LuongToiThieu": 15000000,
+      "LuongToiDa": 50000000,
+      "YeuCauDaoTao": "Cử nhân CNTT, Khoa học máy tính hoặc các chứng chỉ lập trình chuyên sâu."
+    },
+
+    "CV-002": {
+      "MaNganh": "Nganh-002",
+      "TenCongViec": "Kỹ sư ô tô",
+      "MoTa": "Nghiên cứu, thiết kế và sản xuất các loại xe cơ giới và hệ thống truyền động.",
+      "DoHot": "Cao",
+      "LuongToiThieu": 12000000,
+      "LuongToiDa": 35000000,
+      "YeuCauDaoTao": "Cử nhân Kỹ thuật ô tô hoặc Cơ khí động lực."
+    },
+
+    "CV-003": {
+      "MaNganh": "Nganh-002",
+      "TenCongViec": "Kiến trúc sư",
+      "MoTa": "Thiết kế không gian, hình thức và cấu trúc của các công trình xây dựng.",
+      "DoHot": "Trung bình",
+      "LuongToiThieu": 10000000,
+      "LuongToiDa": 40000000,
+      "YeuCauDaoTao": "Cử nhân Kiến trúc, sử dụng thành thạo các phần mềm vẽ kỹ thuật."
+    },
+
+    "CV-004": {
+      "MaNganh": "Nganh-003",
+      "TenCongViec": "Chuyên gia tài chính",
+      "MoTa": "Phân tích số liệu, lập kế hoạch ngân sách và tư vấn đầu tư.",
+      "DoHot": "Cao",
+      "LuongToiThieu": 15000000,
+      "LuongToiDa": 60000000,
+      "YeuCauDaoTao": "Cử nhân Tài chính - Ngân hàng, chứng chỉ CFA là lợi thế."
+    },
+
+    "CV-005": {
+      "MaNganh": "Nganh-003",
+      "TenCongViec": "Luật sư",
+      "MoTa": "Tư vấn pháp lý và đại diện bảo vệ quyền lợi cho khách hàng trước pháp luật.",
+      "DoHot": "Trung bình",
+      "LuongToiThieu": 12000000,
+      "LuongToiDa": 80000000,
+      "YeuCauDaoTao": "Cử nhân Luật, có thẻ hành nghề Luật sư."
+    },
+
+    "CV-006": {
+      "MaNganh": "Nganh-004",
+      "TenCongViec": "Nhà thiết kế đồ họa",
+      "MoTa": "Sáng tạo hình ảnh, bộ nhận diện thương hiệu và các sản phẩm truyền thông thị giác.",
+      "DoHot": "Cao",
+      "LuongToiThieu": 10000000,
+      "LuongToiDa": 30000000,
+      "YeuCauDaoTao": "Cử nhân Thiết kế đồ họa hoặc Mỹ thuật công nghiệp."
+    },
+
+    "CV-007": {
+      "MaNganh": "Nganh-004",
+      "TenCongViec": "Đạo diễn / Biên tập viên",
+      "MoTa": "Chịu trách nhiệm về nội dung và hình ảnh cho các sản phẩm phim ảnh, truyền hình.",
+      "DoHot": "Trung bình",
+      "LuongToiThieu": 15000000,
+      "LuongToiDa": 45000000,
+      "YeuCauDaoTao": "Tốt nghiệp chuyên ngành Sân khấu điện ảnh hoặc Truyền thông."
+    },
+
+    "CV-008": {
+      "MaNganh": "Nganh-005",
+      "TenCongViec": "Bác sĩ",
+      "MoTa": "Khám, chẩn đoán và điều trị bệnh lý cho bệnh nhân.",
+      "DoHot": "Rất Cao",
+      "LuongToiThieu": 20000000,
+      "LuongToiDa": 100000000,
+      "YeuCauDaoTao": "Bác sĩ đa khoa/chuyên khoa, có chứng chỉ hành nghề y tế."
+    },
+
+    "CV-009": {
+      "MaNganh": "Nganh-005",
+      "TenCongViec": "Giáo viên",
+      "MoTa": "Giảng dạy và giáo dục học sinh theo chương trình đào tạo.",
+      "DoHot": "Trung bình",
+      "LuongToiThieu": 80000000,
+      "LuongToiDa": 25000000,
+      "YeuCauDaoTao": "Tốt nghiệp đại học Sư phạm hoặc có chứng chỉ nghiệp vụ sư phạm."
+    },
+
+    "CV-010": {
+      "MaNganh": "Nganh-007",
+      "TenCongViec": "Phi công",
+      "MoTa": "Điều khiển máy bay vận chuyển hành khách hoặc hàng hóa.",
+      "DoHot": "Cao",
+      "LuongToiThieu": 50000000,
+      "LuongToiDa": 200000000,
+      "YeuCauDaoTao": "Bằng lái máy bay thương mại, chứng chỉ sức khỏe loại 1."
+    },
+
+    "CV-011": {
+      "MaNganh": "Nganh-007",
+      "TenCongViec": "Đầu bếp",
+      "MoTa": "Lên thực đơn và chế biến các món ăn tại nhà hàng, khách sạn.",
+      "DoHot": "Trung bình",
+      "LuongToiThieu": 10000000,
+      "LuongToiDa": 40000000,
+      "YeuCauDaoTao": "Chứng chỉ nghề bếp hoặc bằng Quản trị nhà hàng khách sạn."
+    },
+
+    "CV-012": {
+      "MaNganh": "Nganh-002",
+      "TenCongViec": "Kỹ sư cơ khí",
+      "MoTa": "Thiết kế và sản xuất các loại máy móc, thiết bị và hệ thống cơ khí.",
+      "DoHot": "Trung bình",
+      "LuongToiThieu": 10000000,
+      "LuongToiDa": 30000000,
+      "YeuCauDaoTao": "Cử nhân Công nghệ Kỹ thuật Cơ khí."
+    },
+
+    "CV-013": {
+      "MaNganh": "Nganh-002",
+      "TenCongViec": "Kỹ sư điện - điện tử",
+      "MoTa": "Thiết kế, thử nghiệm và giám sát sản xuất các thiết bị điện và hệ thống điện tử.",
+      "DoHot": "Cao",
+      "LuongToiThieu": 12000000,
+      "LuongToiDa": 40000000,
+      "YeuCauDaoTao": "Cử nhân Kỹ thuật Điện, Điện tử hoặc Viễn thông."
+    },
+
+    "CV-014": {
+      "MaNganh": "Nganh-002",
+      "TenCongViec": "Kỹ sư xây dựng",
+      "MoTa": "Lập kế hoạch, thiết kế và quản lý các dự án xây dựng hạ tầng và dân dụng.",
+      "DoHot": "Trung bình",
+      "LuongToiThieu": 10000000,
+      "LuongToiDa": 35000000,
+      "YeuCauDaoTao": "Cử nhân Kỹ thuật Xây dựng."
+    },
+
+    "CV-015": {
+      "MaNganh": "Nganh-002",
+      "TenCongViec": "Kỹ sư môi trường",
+      "MoTa": "Phát triển các giải pháp bảo vệ môi trường, xử lý chất thải và ô nhiễm.",
+      "DoHot": "Trung bình",
+      "LuongToiThieu": 9000000,
+      "LuongToiDa": 25000000,
+      "YeuCauDaoTao": "Cử nhân Kỹ thuật/Công nghệ Môi trường."
+    },
+
+    "CV-016": {
+      "MaNganh": "Nganh-003",
+      "TenCongViec": "Chuyên viên ngân hàng",
+      "MoTa": "Thực hiện các nghiệp vụ tín dụng, huy động vốn và dịch vụ khách hàng tại ngân hàng.",
+      "DoHot": "Trung bình",
+      "LuongToiThieu": 10000000,
+      "LuongToiDa": 30000000,
+      "YeuCauDaoTao": "Cử nhân Tài chính - Ngân hàng hoặc Kinh tế."
+    },
+
+    "CV-017": {
+      "MaNganh": "Nganh-003",
+      "TenCongViec": "Chuyên viên pháp lý",
+      "MoTa": "Hỗ trợ các vấn đề thủ tục pháp lý, soạn thảo hợp đồng cho doanh nghiệp.",
+      "DoHot": "Trung bình",
+      "LuongToiThieu": 9000000,
+      "LuongToiDa": 25000000,
+      "YeuCauDaoTao": "Cử nhân Luật."
+    },
+
+    "CV-018": {
+      "MaNganh": "Nganh-006",
+      "TenCongViec": "Chuyên gia Marketing",
+      "MoTa": "Xây dựng chiến lược quảng bá thương hiệu và tiếp cận khách hàng.",
+      "DoHot": "Rất Cao",
+      "LuongToiThieu": 12000000,
+      "LuongToiDa": 45000000,
+      "YeuCauDaoTao": "Cử nhân Marketing, Quản trị kinh doanh hoặc Truyền thông."
+    },
+
+    "CV-019": {
+      "MaNganh": "Nganh-006",
+      "TenCongViec": "Chuyên viên truyền thông (PR)",
+      "MoTa": "Quản lý hình ảnh công chúng và mối quan hệ với báo chí, cộng đồng.",
+      "DoHot": "Cao",
+      "LuongToiThieu": 10000000,
+      "LuongToiDa": 35000000,
+      "YeuCauDaoTao": "Cử nhân Quan hệ công chúng hoặc Báo chí."
+    },
+
+    "CV-020": {
+      "MaNganh": "Nganh-003",
+      "TenCongViec": "Quản lý nhân sự",
+      "MoTa": "Tuyển dụng, đào tạo và quản lý chế độ chính sách cho nhân viên.",
+      "DoHot": "Trung bình",
+      "LuongToiThieu": 12000000,
+      "LuongToiDa": 40000000,
+      "YeuCauDaoTao": "Cử nhân Quản trị nhân lực hoặc Luật."
+    },
+
+    "CV-021": {
+      "MaNganh": "Nganh-004",
+      "TenCongViec": "Nhiếp ảnh gia",
+      "MoTa": "Sáng tạo nội dung hình ảnh chuyên nghiệp cho báo chí, quảng cáo hoặc nghệ thuật.",
+      "DoHot": "Trung bình",
+      "LuongToiThieu": 8000000,
+      "LuongToiDa": 35000000,
+      "YeuCauDaoTao": "Chứng chỉ nhiếp ảnh chuyên nghiệp hoặc tốt nghiệp khối Mỹ thuật."
+    },
+
+    "CV-022": {
+      "MaNganh": "Nganh-005",
+      "TenCongViec": "Dược sĩ",
+      "MoTa": "Quản lý, cung ứng và tư vấn sử dụng dược phẩm an toàn.",
+      "DoHot": "Cao",
+      "LuongToiThieu": 12000000,
+      "LuongToiDa": 40000000,
+      "YeuCauDaoTao": "Cử nhân Dược học."
+    },
+
+    "CV-023": {
+      "MaNganh": "Nganh-005",
+      "TenCongViec": "Điều dưỡng viên",
+      "MoTa": "Chăm sóc và hỗ trợ bệnh nhân trong quá trình điều trị tại cơ sở y tế.",
+      "DoHot": "Cao",
+      "LuongToiThieu": 8000000,
+      "LuongToiDa": 20000000,
+      "YeuCauDaoTao": "Cử nhân/Cao đẳng Điều dưỡng."
+    },
+
+    "CV-024": {
+      "MaNganh": "Nganh-007",
+      "TenCongViec": "Tiếp viên hàng không",
+      "MoTa": "Đảm bảo an toàn và phục vụ hành khách trên các chuyến bay.",
+      "DoHot": "Cao",
+      "LuongToiThieu": 15000000,
+      "LuongToiDa": 35000000,
+      "YeuCauDaoTao": "Chứng chỉ đào tạo tiếp viên hàng không, yêu cầu cao về ngoại ngữ và ngoại hình."
+    },
+
+    "CV-025": {
+      "MaNganh": "Nganh-007",
+      "TenCongViec": "Hướng dẫn viên du lịch",
+      "MoTa": "Dẫn đoàn, thuyết minh và hỗ trợ du khách trong các chuyến hành trình.",
+      "DoHot": "Trung bình",
+      "LuongToiThieu": 10000000,
+      "LuongToiDa": 30000000,
+      "YeuCauDaoTao": "Cử nhân Du lịch hoặc chứng chỉ nghiệp vụ hướng dẫn viên."
+    }
+  },
+
+  "KyNang_CongViec": {
+    "KNCV-001": {
+      "MaCongViec": "CV-001",
+      "MaKyNang": "KN-005",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-002": {
+      "MaCongViec": "CV-001",
+      "MaKyNang": "KN-009",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-003": {
+      "MaCongViec": "CV-001",
+      "MaKyNang": "KN-001",
+      "MucDoQuanTrong": 4
+    },
+    "KNCV-004": {
+      "MaCongViec": "CV-001",
+      "MaKyNang": "KN-011",
+      "MucDoQuanTrong": 3
+    },
+
+    "KNCV-005": {
+      "MaCongViec": "CV-008",
+      "MaKyNang": "KN-018",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-006": {
+      "MaCongViec": "CV-008",
+      "MaKyNang": "KN-006",
+      "MucDoQuanTrong": 4
+    },
+    "KNCV-007": {
+      "MaCongViec": "CV-008",
+      "MaKyNang": "KN-013",
+      "MucDoQuanTrong": 4
+    },
+
+    "KNCV-008": {
+      "MaCongViec": "CV-006",
+      "MaKyNang": "KN-016",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-009": {
+      "MaCongViec": "CV-006",
+      "MaKyNang": "KN-007",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-010": {
+      "MaCongViec": "CV-006",
+      "MaKyNang": "KN-015",
+      "MucDoQuanTrong": 3
+    },
+
+    "KNCV-011": {
+      "MaCongViec": "CV-018",
+      "MaKyNang": "KN-012",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-012": {
+      "MaCongViec": "CV-018",
+      "MaKyNang": "KN-003",
+      "MucDoQuanTrong": 4
+    },
+    "KNCV-013": {
+      "MaCongViec": "CV-018",
+      "MaKyNang": "KN-015",
+      "MucDoQuanTrong": 4
+    },
+
+    "KNCV-014": {
+      "MaCongViec": "CV-002",
+      "MaKyNang": "KN-001",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-015": {
+      "MaCongViec": "CV-002",
+      "MaKyNang": "KN-014",
+      "MucDoQuanTrong": 4
+    },
+    "KNCV-016": {
+      "MaCongViec": "CV-002",
+      "MaKyNang": "KN-012",
+      "MucDoQuanTrong": 3
+    },
+
+    "KNCV-017": {
+      "MaCongViec": "CV-005",
+      "MaKyNang": "KN-013",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-018": {
+      "MaCongViec": "CV-005",
+      "MaKyNang": "KN-003",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-019": {
+      "MaCongViec": "CV-005",
+      "MaKyNang": "KN-002",
+      "MucDoQuanTrong": 4
+    },
+
+    "KNCV-020": {
+      "MaCongViec": "CV-010",
+      "MaKyNang": "KN-019",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-021": {
+      "MaCongViec": "CV-010",
+      "MaKyNang": "KN-002",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-022": {
+      "MaCongViec": "CV-010",
+      "MaKyNang": "KN-014",
+      "MucDoQuanTrong": 4
+    },
+
+    "KNCV-023": {
+      "MaCongViec": "CV-025",
+      "MaKyNang": "KN-003",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-024": {
+      "MaCongViec": "CV-025",
+      "MaKyNang": "KN-020",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-025": {
+      "MaCongViec": "CV-025",
+      "MaKyNang": "KN-002",
+      "MucDoQuanTrong": 4
+    },
+
+    "KNCV-026": {
+      "MaCongViec": "CV-009",
+      "MaKyNang": "KN-003",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-027": {
+      "MaCongViec": "CV-009",
+      "MaKyNang": "KN-006",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-028": {
+      "MaCongViec": "CV-009",
+      "MaKyNang": "KN-017",
+      "MucDoQuanTrong": 4
+    },
+
+    "KNCV-029": {
+      "MaCongViec": "CV-013",
+      "MaKyNang": "KN-001",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-030": {
+      "MaCongViec": "CV-013",
+      "MaKyNang": "KN-014",
+      "MucDoQuanTrong": 4
+    },
+    "KNCV-031": {
+      "MaCongViec": "CV-013",
+      "MaKyNang": "KN-004",
+      "MucDoQuanTrong": 3
+    },
+
+    "KNCV-032": {
+      "MaCongViec": "CV-014",
+      "MaKyNang": "KN-021",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-033": {
+      "MaCongViec": "CV-014",
+      "MaKyNang": "KN-026",
+      "MucDoQuanTrong": 4
+    },
+    "KNCV-034": {
+      "MaCongViec": "CV-014",
+      "MaKyNang": "KN-001",
+      "MucDoQuanTrong": 4
+    },
+
+    "KNCV-035": {
+      "MaCongViec": "CV-016",
+      "MaKyNang": "KN-022",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-036": {
+      "MaCongViec": "CV-016",
+      "MaKyNang": "KN-003",
+      "MucDoQuanTrong": 4
+    },
+    "KNCV-037": {
+      "MaCongViec": "CV-016",
+      "MaKyNang": "KN-004",
+      "MucDoQuanTrong": 3
+    },
+
+    "KNCV-038": {
+      "MaCongViec": "CV-024",
+      "MaKyNang": "KN-023",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-039": {
+      "MaCongViec": "CV-024",
+      "MaKyNang": "KN-002",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-040": {
+      "MaCongViec": "CV-024",
+      "MaKyNang": "KN-025",
+      "MucDoQuanTrong": 4
+    },
+
+    "KNCV-041": {
+      "MaCongViec": "CV-011",
+      "MaKyNang": "KN-024",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-042": {
+      "MaCongViec": "CV-011",
+      "MaKyNang": "KN-007",
+      "MucDoQuanTrong": 4
+    },
+    "KNCV-043": {
+      "MaCongViec": "CV-011",
+      "MaKyNang": "KN-017",
+      "MucDoQuanTrong": 3
+    },
+
+    "KNCV-044": {
+      "MaCongViec": "CV-017",
+      "MaKyNang": "KN-027",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-045": {
+      "MaCongViec": "CV-017",
+      "MaKyNang": "KN-013",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-046": {
+      "MaCongViec": "CV-017",
+      "MaKyNang": "KN-015",
+      "MucDoQuanTrong": 3
+    },
+
+    "KNCV-047": {
+      "MaCongViec": "CV-003",
+      "MaKyNang": "KN-007",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-048": {
+      "MaCongViec": "CV-003",
+      "MaKyNang": "KN-021",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-049": {
+      "MaCongViec": "CV-003",
+      "MaKyNang": "KN-015",
+      "MucDoQuanTrong": 4
+    },
+
+    "KNCV-050": {
+      "MaCongViec": "CV-022",
+      "MaKyNang": "KN-029",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-051": {
+      "MaCongViec": "CV-022",
+      "MaKyNang": "KN-001",
+      "MucDoQuanTrong": 4
+    },
+    "KNCV-052": {
+      "MaCongViec": "CV-022",
+      "MaKyNang": "KN-004",
+      "MucDoQuanTrong": 3
+    },
+
+    "KNCV-053": {
+      "MaCongViec": "CV-023",
+      "MaKyNang": "KN-028",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-054": {
+      "MaCongViec": "CV-023",
+      "MaKyNang": "KN-006",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-055": {
+      "MaCongViec": "CV-023",
+      "MaKyNang": "KN-018",
+      "MucDoQuanTrong": 4
+    },
+
+    "KNCV-056": {
+      "MaCongViec": "CV-007",
+      "MaKyNang": "KN-030",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-057": {
+      "MaCongViec": "CV-007",
+      "MaKyNang": "KN-015",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-058": {
+      "MaCongViec": "CV-007",
+      "MaKyNang": "KN-017",
+      "MucDoQuanTrong": 4
+    },
+
+    "KNCV-059": {
+      "MaCongViec": "CV-021",
+      "MaKyNang": "KN-007",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-060": {
+      "MaCongViec": "CV-021",
+      "MaKyNang": "KN-016",
+      "MucDoQuanTrong": 4
+    },
+    "KNCV-061": {
+      "MaCongViec": "CV-021",
+      "MaKyNang": "KN-015",
+      "MucDoQuanTrong": 3
+    },
+
+    "KNCV-062": {
+      "MaCongViec": "CV-015",
+      "MaKyNang": "KN-033",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-063": {
+      "MaCongViec": "CV-015",
+      "MaKyNang": "KN-012",
+      "MucDoQuanTrong": 4
+    },
+    "KNCV-064": {
+      "MaCongViec": "CV-015",
+      "MaKyNang": "KN-001",
+      "MucDoQuanTrong": 4
+    },
+
+    "KNCV-065": {
+      "MaCongViec": "CV-020",
+      "MaKyNang": "KN-006",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-066": {
+      "MaCongViec": "CV-020",
+      "MaKyNang": "KN-027",
+      "MucDoQuanTrong": 4
+    },
+    "KNCV-067": {
+      "MaCongViec": "CV-020",
+      "MaKyNang": "KN-003",
+      "MucDoQuanTrong": 4
+    },
+
+    "KNCV-068": {
+      "MaCongViec": "CV-019",
+      "MaKyNang": "KN-015",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-069": {
+      "MaCongViec": "CV-019",
+      "MaKyNang": "KN-003",
+      "MucDoQuanTrong": 5
+    },
+    "KNCV-070": {
+      "MaCongViec": "CV-019",
+      "MaKyNang": "KN-002",
+      "MucDoQuanTrong": 3
+    }
+  },
+
+  "CongViec_ThangDo": {
+    "CVTD-001": { "MaCongViec": "CV-001", "MaThangDo": "TD-HOLLAND-I" },
+    "CVTD-002": { "MaCongViec": "CV-001", "MaThangDo": "TD-HOLLAND-R" },
+    "CVTD-003": { "MaCongViec": "CV-001", "MaThangDo": "TD-HOLLAND-C" },
+    "CVTD-004": { "MaCongViec": "CV-001", "MaThangDo": "TD-MBTI-TF" },
+    "CVTD-005": { "MaCongViec": "CV-001", "MaThangDo": "TD-BIGFIVE-C" },
+
+    "CVTD-006": { "MaCongViec": "CV-003", "MaThangDo": "TD-HOLLAND-A" },
+    "CVTD-007": { "MaCongViec": "CV-003", "MaThangDo": "TD-HOLLAND-R" },
+    "CVTD-008": { "MaCongViec": "CV-003", "MaThangDo": "TD-HOLLAND-I" },
+    "CVTD-009": { "MaCongViec": "CV-003", "MaThangDo": "TD-MBTI-SN" },
+    "CVTD-010": { "MaCongViec": "CV-003", "MaThangDo": "TD-BIGFIVE-O" },
+
+    "CVTD-011": { "MaCongViec": "CV-008", "MaThangDo": "TD-HOLLAND-I" },
+    "CVTD-012": { "MaCongViec": "CV-008", "MaThangDo": "TD-HOLLAND-S" },
+    "CVTD-013": { "MaCongViec": "CV-008", "MaThangDo": "TD-HOLLAND-R" },
+    "CVTD-014": { "MaCongViec": "CV-008", "MaThangDo": "TD-MBTI-TF" },
+    "CVTD-015": { "MaCongViec": "CV-008", "MaThangDo": "TD-DISC-S" },
+
+    "CVTD-016": { "MaCongViec": "CV-018", "MaThangDo": "TD-HOLLAND-E" },
+    "CVTD-017": { "MaCongViec": "CV-018", "MaThangDo": "TD-HOLLAND-A" },
+    "CVTD-018": { "MaCongViec": "CV-018", "MaThangDo": "TD-HOLLAND-S" },
+    "CVTD-019": { "MaCongViec": "CV-018", "MaThangDo": "TD-DISC-i" },
+    "CVTD-020": { "MaCongViec": "CV-018", "MaThangDo": "TD-BIGFIVE-E" },
+
+    "CVTD-021": { "MaCongViec": "CV-024", "MaThangDo": "TD-HOLLAND-S" },
+    "CVTD-022": { "MaCongViec": "CV-024", "MaThangDo": "TD-HOLLAND-E" },
+    "CVTD-023": { "MaCongViec": "CV-024", "MaThangDo": "TD-HOLLAND-R" },
+    "CVTD-024": { "MaCongViec": "CV-024", "MaThangDo": "TD-BIGFIVE-A" },
+    "CVTD-025": { "MaCongViec": "CV-024", "MaThangDo": "TD-MBTI-EI" }
+  }
+}
