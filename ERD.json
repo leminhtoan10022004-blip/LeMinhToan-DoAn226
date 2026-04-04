@@ -4984,6 +4984,917 @@
     }
   },
 
+  "LoTrinh": {
+    "CV-001": [
+      {
+        "BuocSo": 1,
+        "TenBuoc": "Tìm hiểu ngành CNTT",
+        "MoTa": "Nghiên cứu các lĩnh vực: web, mobile, AI, database. Xác định hướng đi phù hợp."
+      },
+      {
+        "BuocSo": 2,
+        "TenBuoc": "Học ngôn ngữ lập trình cơ bản",
+        "MoTa": "Bắt đầu với Python hoặc JavaScript, nắm vững cú pháp, cấu trúc dữ liệu, giải thuật."
+      },
+      {
+        "BuocSo": 3,
+        "TenBuoc": "Thực hành dự án nhỏ",
+        "MoTa": "Xây dựng ứng dụng đơn giản (calculator, todo-list, web tĩnh) để rèn kỹ năng."
+      },
+      {
+        "BuocSo": 4,
+        "TenBuoc": "Học framework & công cụ",
+        "MoTa": "React, Node.js, Git, Docker. Làm quen với quy trình CI/CD."
+      },
+      {
+        "BuocSo": 5,
+        "TenBuoc": "Thực tập / Freelance",
+        "MoTa": "Tham gia dự án thực tế, cộng tác nhóm, review code. Tích lũy kinh nghiệm."
+      },
+      {
+        "BuocSo": 6,
+        "TenBuoc": "Chuẩn bị phỏng vấn",
+        "MoTa": "Ôn tập kiến thức, luyện LeetCode, hoàn thiện CV và portfolio."
+      }
+    ],
+    "CV-002": [
+      {
+        "BuocSo": 1,
+        "TenBuoc": "Nắm vẽ kỹ thuật cơ khí",
+        "MoTa": "Học AutoCAD, SolidWorks, đọc hiểu bản vẽ chi tiết động cơ, khung gầm."
+      },
+      {
+        "BuocSo": 2,
+        "TenBuoc": "Tìm hiểu hệ thống động lực",
+        "MoTa": "Nghiên cứu động cơ đốt trong, hệ thống truyền động, nhiên liệu."
+      },
+      {
+        "BuocSo": 3,
+        "TenBuoc": "Thực hành trên xe thật",
+        "MoTa": "Tháo lắp, bảo dưỡng, sửa chữa các hư hỏng cơ bản."
+      },
+      {
+        "BuocSo": 4,
+        "TenBuoc": "Cập nhật công nghệ mới",
+        "MoTa": "Xe điện, hệ thống hỗ trợ lái ADAS, phần mềm chẩn đoán."
+      },
+      {
+        "BuocSo": 5,
+        "TenBuoc": "Thực tập tại gara hoặc nhà máy",
+        "MoTa": "Áp dụng kỹ năng vào sản xuất/sửa chữa thực tế."
+      }
+    ],
+    "CV-003": [
+      {
+        "BuocSo": 1,
+        "TenBuoc": "Rèn luyện mỹ thuật",
+        "MoTa": "Học vẽ tay, phối cảnh, bố cục, màu sắc."
+      },
+      {
+        "BuocSo": 2,
+        "TenBuoc": "Thành thạo phần mềm chuyên ngành",
+        "MoTa": "SketchUp, Revit, AutoCAD, 3ds Max."
+      },
+      {
+        "BuocSo": 3,
+        "TenBuoc": "Nghiên cứu vật liệu & kết cấu",
+        "MoTa": "Tìm hiểu bê tông, thép, gỗ, kính, và nguyên lý chịu lực."
+      },
+      {
+        "BuocSo": 4,
+        "TenBuoc": "Làm đồ án không gian sống",
+        "MoTa": "Thiết kế nhà phố, biệt thự, văn phòng. Chú trọng công năng và thẩm mỹ."
+      },
+      {
+        "BuocSo": 5,
+        "TenBuoc": "Kiến tập tại công ty kiến trúc",
+        "MoTa": "Tham gia đo đạc, dựng hồ sơ, phối hợp với kỹ sư xây dựng."
+      }
+    ],
+    "CV-004": [
+      {
+        "BuocSo": 1,
+        "TenBuoc": "Học nguyên lý kế toán & tài chính",
+        "MoTa": "Nắm báo cáo tài chính, dòng tiền, giá trị thời gian của tiền."
+      },
+      {
+        "BuocSo": 2,
+        "TenBuoc": "Phân tích đầu tư",
+        "MoTa": "Định giá cổ phiếu, trái phiếu, phân tích cơ bản & kỹ thuật."
+      },
+      {
+        "BuocSo": 3,
+        "TenBuoc": "Sử dụng Excel nâng cao",
+        "MoTa": "PivotTable, Power Query, mô hình tài chính DCF, M&A."
+      },
+      {
+        "BuocSo": 4,
+        "TenBuoc": "Luyện chứng chỉ CFA Level 1",
+        "MoTa": "Ôn 10 chủ đề, làm đề thi thử."
+      },
+      {
+        "BuocSo": 5,
+        "TenBuoc": "Thực tập tại ngân hàng/quỹ đầu tư",
+        "MoTa": "Hỗ trợ định giá, lập báo cáo phân tích ngành."
+      }
+    ],
+    "CV-005": [
+      {
+        "BuocSo": 1,
+        "TenBuoc": "Học luật dân sự, hình sự, thương mại",
+        "MoTa": "Nắm bộ luật, nghị định, thông tư liên quan."
+      },
+      {
+        "BuocSo": 2,
+        "TenBuoc": "Rèn kỹ năng soạn thảo văn bản",
+        "MoTa": "Hợp đồng, đơn khởi kiện, hồ sơ tố tụng."
+      },
+      {
+        "BuocSo": 3,
+        "TenBuoc": "Thực tập tại văn phòng luật",
+        "MoTa": "Hỗ trợ tra cứu án lệ, chuẩn bị tài liệu cho luật sư."
+      },
+      {
+        "BuocSo": 4,
+        "TenBuoc": "Thi chứng chỉ hành nghề luật sư",
+        "MoTa": "Hoàn thành khóa đào tạo, vượt qua kỳ thi quốc gia."
+      },
+      {
+        "BuocSo": 5,
+        "TenBuoc": "Làm trợ lý luật sư",
+        "MoTa": "Tham gia phiên tòa, gặp khách hàng, tích lũy kinh nghiệm thực tiễn."
+      }
+    ],
+    "CV-006": [
+      {
+        "BuocSo": 1,
+        "TenBuoc": "Học nguyên lý thị giác",
+        "MoTa": "Bố cục, màu sắc, typography, nhịp điệu."
+      },
+      {
+        "BuocSo": 2,
+        "TenBuoc": "Thành thạo Photoshop & Illustrator",
+        "MoTa": "Vẽ vector, chỉnh ảnh, dựng layout."
+      },
+      {
+        "BuocSo": 3,
+        "TenBuoc": "Làm bài tập thực tế",
+        "MoTa": "Thiết kế logo, poster, banner, bộ nhận diện thương hiệu."
+      },
+      {
+        "BuocSo": 4,
+        "TenBuoc": "Tìm hiểu UX/UI cơ bản",
+        "MoTa": "Figma, wireframe, prototype cho web/app."
+      },
+      {
+        "BuocSo": 5,
+        "TenBuoc": "Xây dựng portfolio & nhận việc freelance",
+        "MoTa": "Đăng tải lên Behance, tham gia cộng đồng thiết kế."
+      }
+    ],
+    "CV-007": [
+      {
+        "BuocSo": 1,
+        "TenBuoc": "Nghiên cứu ngôn ngữ điện ảnh",
+        "MoTa": "Các loại góc máy, chuyển cảnh, nhịp phim."
+      },
+      {
+        "BuocSo": 2,
+        "TenBuoc": "Học biên tập cơ bản",
+        "MoTa": "Premiere Pro, DaVinci Resolve, cắt ghép, ghép nhạc."
+      },
+      {
+        "BuocSo": 3,
+        "TenBuoc": "Làm video ngắn",
+        "MoTa": "Quay và dựng clip 1-2 phút, đăng lên YouTube/TikTok."
+      },
+      {
+        "BuocSo": 4,
+        "TenBuoc": "Thực tập tại đài truyền hình/studio",
+        "MoTa": "Phụ việc hậu kỳ, ghi chú, sắp xếp thước phim."
+      },
+      {
+        "BuocSo": 5,
+        "TenBuoc": "Làm trợ lý đạo diễn",
+        "MoTa": "Hỗ trợ casting, quản lý lịch trình, kịch bản phân cảnh."
+      }
+    ],
+    "CV-008": [
+      {
+        "BuocSo": 1,
+        "TenBuoc": "Học chương trình Y khoa cơ sở",
+        "MoTa": "Giải phẫu, sinh lý, hóa sinh, mô phôi."
+      },
+      {
+        "BuocSo": 2,
+        "TenBuoc": "Thực hành kỹ năng lâm sàng",
+        "MoTa": "Khám bệnh, hỏi bệnh sử, thủ thuật cơ bản."
+      },
+      {
+        "BuocSo": 3,
+        "TenBuoc": "Trực tại bệnh viện",
+        "MoTa": "Tham gia buồng bệnh, viết hồ sơ bệnh án dưới sự hướng dẫn."
+      },
+      {
+        "BuocSo": 4,
+        "TenBuoc": "Thi nội trú hoặc chọn chuyên khoa",
+        "MoTa": "Định hướng nội, ngoại, nhi, sản, hồi sức..."
+      },
+      {
+        "BuocSo": 5,
+        "TenBuoc": "Hành nghề chính thức",
+        "MoTa": "Làm bác sĩ đa khoa hoặc học chuyên khoa định hướng."
+      }
+    ],
+    "CV-009": [
+      {
+        "BuocSo": 1,
+        "TenBuoc": "Học nghiệp vụ sư phạm",
+        "MoTa": "Phương pháp giảng dạy, tâm lý học sinh, soạn giáo án."
+      },
+      {
+        "BuocSo": 2,
+        "TenBuoc": "Thực tập sư phạm",
+        "MoTa": "Đứng lớp dưới sự giám sát, tổ chức hoạt động ngoại khóa."
+      },
+      {
+        "BuocSo": 3,
+        "TenBuoc": "Thi chứng chỉ nghiệp vụ (nếu cần)",
+        "MoTa": "Hoàn thành khóa bồi dưỡng theo quy định."
+      },
+      {
+        "BuocSo": 4,
+        "TenBuoc": "Xin việc tại trường học",
+        "MoTa": "Dạy thử, phỏng vấn, ký hợp đồng."
+      },
+      {
+        "BuocSo": 5,
+        "TenBuoc": "Tham gia bồi dưỡng thường xuyên",
+        "MoTa": "Nâng cao chuyên môn, học thêm kỹ năng quản lý lớp."
+      }
+    ],
+    "CV-010": [
+      {
+        "BuocSo": 1,
+        "TenBuoc": "Đạt sức khỏe loại 1",
+        "MoTa": "Khám sức khỏe hàng không toàn diện."
+      },
+      {
+        "BuocSo": 2,
+        "TenBuoc": "Học lý thuyết bay",
+        "MoTa": "Khí động học, dẫn đường, khí tượng, luật hàng không."
+      },
+      {
+        "BuocSo": 3,
+        "TenBuoc": "Đào tạo trên máy bay mô phỏng",
+        "MoTa": "Thực hành các tình huống khẩn nguy, bay đêm, IFR."
+      },
+      {
+        "BuocSo": 4,
+        "TenBuoc": "Tích lũy giờ bay",
+        "MoTa": "Bay với huấn luyện viên, đạt tối thiểu 200 giờ."
+      },
+      {
+        "BuocSo": 5,
+        "TenBuoc": "Thi bằng lái thương mại CPL",
+        "MoTa": "Hoàn thành kỳ thi lý thuyết và bay kiểm tra."
+      }
+    ],
+    "CV-011": [
+      {
+        "BuocSo": 1,
+        "TenBuoc": "Học an toàn thực phẩm & kỹ thuật bếp",
+        "MoTa": "Các phương pháp chế biến: hấp, luộc, chiên, nướng, sous-vide."
+      },
+      {
+        "BuocSo": 2,
+        "TenBuoc": "Thực hành dao thớt",
+        "MoTa": "Thái, tỉa, băm, lọc thịt cá."
+      },
+      {
+        "BuocSo": 3,
+        "TenBuoc": "Làm món ăn theo thực đơn",
+        "MoTa": "Tập nấu 10 món cơ bản, kiểm soát gia vị."
+      },
+      {
+        "BuocSo": 4,
+        "TenBuoc": "Thực tập tại nhà hàng",
+        "MoTa": "Làm phụ bếp, chuẩn bị nguyên liệu, vệ sinh."
+      },
+      {
+        "BuocSo": 5,
+        "TenBuoc": "Thi chứng chỉ nghề bếp",
+        "MoTa": "Đạt chuẩn kỹ năng và kiến thức vệ sinh."
+      }
+    ],
+    "CV-012": [
+      {
+        "BuocSo": 1,
+        "TenBuoc": "Học sức bền vật liệu, cơ học máy",
+        "MoTa": "Tính toán ứng suất, biến dạng, cơ cấu tay quay."
+      },
+      {
+        "BuocSo": 2,
+        "TenBuoc": "Thành thạo CAD/CAM",
+        "MoTa": "Thiết kế chi tiết 3D, gia công trên CNC."
+      },
+      {
+        "BuocSo": 3,
+        "TenBuoc": "Thực hành gia công cơ khí",
+        "MoTa": "Tiện, phay, hàn, đúc."
+      },
+      {
+        "BuocSo": 4,
+        "TenBuoc": "Làm đồ án thiết kế hệ thống",
+        "MoTa": "Truyền động đai, xích, bánh răng."
+      },
+      {
+        "BuocSo": 5,
+        "TenBuoc": "Thực tập tại nhà máy sản xuất",
+        "MoTa": "Vận hành bảo trì, cải tiến quy trình."
+      }
+    ],
+    "CV-013": [
+      {
+        "BuocSo": 1,
+        "TenBuoc": "Nắm mạch điện cơ bản",
+        "MoTa": "Định luật Ohm, Kirchhoff, phân tích DC/AC."
+      },
+      {
+        "BuocSo": 2,
+        "TenBuoc": "Học vi điều khiển",
+        "MoTa": "Arduino, STM32, lập trình C cho nhúng."
+      },
+      {
+        "BuocSo": 3,
+        "TenBuoc": "Thiết kế mạch in PCB",
+        "MoTa": "Sử dụng Altium/Eagle, vẽ sơ đồ nguyên lý."
+      },
+      {
+        "BuocSo": 4,
+        "TenBuoc": "Làm dự án điều khiển thiết bị",
+        "MoTa": "Ví dụ: robot dò line, hệ thống đèn thông minh."
+      },
+      {
+        "BuocSo": 5,
+        "TenBuoc": "Thực tập tại công ty điện tử",
+        "MoTa": "Sửa chữa, kiểm thử, hỗ trợ sản xuất."
+      }
+    ],
+    "CV-014": [
+      {
+        "BuocSo": 1,
+        "TenBuoc": "Học cơ học kết cấu, sức bền",
+        "MoTa": "Tính toán dầm, cột, móng."
+      },
+      {
+        "BuocSo": 2,
+        "TenBuoc": "Thành thạo phần mềm kết cấu",
+        "MoTa": "ETABS, SAP2000, Revit Structure."
+      },
+      {
+        "BuocSo": 3,
+        "TenBuoc": "Nghiên cứu định mức, dự toán",
+        "MoTa": "Lập bảng khối lượng, dự trù vật tư."
+      },
+      {
+        "BuocSo": 4,
+        "TenBuoc": "Thực tập giám sát công trình",
+        "MoTa": "Kiểm tra cốt thép, bê tông, an toàn lao động."
+      },
+      {
+        "BuocSo": 5,
+        "TenBuoc": "Thi chứng chỉ giám sát/định giá",
+        "MoTa": "Nâng cao năng lực hành nghề xây dựng."
+      }
+    ],
+    "CV-015": [
+      {
+        "BuocSo": 1,
+        "TenBuoc": "Học hóa học môi trường, vi sinh",
+        "MoTa": "Các quá trình ô nhiễm nước, không khí, đất."
+      },
+      {
+        "BuocSo": 2,
+        "TenBuoc": "Nắm công nghệ xử lý",
+        "MoTa": "Bể lắng, lọc sinh học, hấp phụ than hoạt tính."
+      },
+      {
+        "BuocSo": 3,
+        "TenBuoc": "Làm thí nghiệm phân tích mẫu",
+        "MoTa": "Đo BOD, COD, pH, bụi mịn."
+      },
+      {
+        "BuocSo": 4,
+        "TenBuoc": "Thiết kế hệ thống XLNT quy mô nhỏ",
+        "MoTa": "Đồ án cho khu dân cư hoặc nhà máy."
+      },
+      {
+        "BuocSo": 5,
+        "TenBuoc": "Thực tập tại công ty môi trường",
+        "MoTa": "Vận hành trạm xử lý, lấy mẫu hiện trường."
+      }
+    ],
+    "CV-016": [
+      {
+        "BuocSo": 1,
+        "TenBuoc": "Học tín dụng, thanh toán quốc tế",
+        "MoTa": "Hiểu L/C, nhờ thu, bảo lãnh."
+      },
+      {
+        "BuocSo": 2,
+        "TenBuoc": "Rèn kỹ năng bán hàng & dịch vụ",
+        "MoTa": "Giao tiếp khách hàng, giới thiệu sản phẩm tiền vay."
+      },
+      {
+        "BuocSo": 3,
+        "TenBuoc": "Thực tập tại chi nhánh ngân hàng",
+        "MoTa": "Hỗ trợ giao dịch, nhập liệu, thẩm định hồ sơ vay."
+      },
+      {
+        "BuocSo": 4,
+        "TenBuoc": "Học phân tích báo cáo tài chính doanh nghiệp",
+        "MoTa": "Đánh giá khả năng trả nợ."
+      },
+      {
+        "BuocSo": 5,
+        "TenBuoc": "Thi chứng chỉ nghiệp vụ ngân hàng",
+        "MoTa": "Chứng chỉ của NHNN hoặc nội bộ."
+      }
+    ],
+    "CV-017": [
+      {
+        "BuocSo": 1,
+        "TenBuoc": "Nắm Luật doanh nghiệp, Luật lao động",
+        "MoTa": "Các quy định về thành lập công ty, hợp đồng lao động."
+      },
+      {
+        "BuocSo": 2,
+        "TenBuoc": "Rèn soạn thảo văn bản nội bộ",
+        "MoTa": "Nội quy, thỏa ước lao động, quy chế."
+      },
+      {
+        "BuocSo": 3,
+        "TenBuoc": "Thực tập tại phòng pháp chế",
+        "MoTa": "Rà soát hợp đồng mua bán, tra cứu văn bản."
+      },
+      {
+        "BuocSo": 4,
+        "TenBuoc": "Học kỹ năng đàm phán & giải quyết tranh chấp",
+        "MoTa": "Xử lý khiếu nại khách hàng, vi phạm nội bộ."
+      },
+      {
+        "BuocSo": 5,
+        "TenBuoc": "Thi chứng chỉ hành nghề pháp lý (tùy)",
+        "MoTa": "Có thể học thêm để lên luật sư."
+      }
+    ],
+    "CV-018": [
+      {
+        "BuocSo": 1,
+        "TenBuoc": "Học hành vi khách hàng, nghiên cứu thị trường",
+        "MoTa": "Xác định chân dung, phân khúc, khảo sát."
+      },
+      {
+        "BuocSo": 2,
+        "TenBuoc": "Thành thạo digital marketing",
+        "MoTa": "SEO, Google Ads, Facebook Ads, Email Marketing."
+      },
+      {
+        "BuocSo": 3,
+        "TenBuoc": "Phân tích dữ liệu",
+        "MoTa": "Google Analytics, Power BI, đo lường ROI."
+      },
+      {
+        "BuocSo": 4,
+        "TenBuoc": "Xây dựng chiến lược nội dung",
+        "MoTa": "Kế hoạch blog, video, social media."
+      },
+      {
+        "BuocSo": 5,
+        "TenBuoc": "Thực tập tại agency",
+        "MoTa": "Chạy chiến dịch thật, tối ưu chuyển đổi."
+      }
+    ],
+    "CV-019": [
+      {
+        "BuocSo": 1,
+        "TenBuoc": "Học quan hệ báo chí, viết thông cáo",
+        "MoTa": "Cấu trúc 5W1H, ngôn từ phù hợp."
+      },
+      {
+        "BuocSo": 2,
+        "TenBuoc": "Rèn kỹ năng tổ chức sự kiện",
+        "MoTa": "Kịch bản, hậu cần, ký gửi báo chí."
+      },
+      {
+        "BuocSo": 3,
+        "TenBuoc": "Quản lý khủng hoảng truyền thông",
+        "MoTa": "Xử lý tin đồn, phát ngôn, họp báo."
+      },
+      {
+        "BuocSo": 4,
+        "TenBuoc": "Thực tập tại phòng PR doanh nghiệp",
+        "MoTa": "Soạn báo cáo dư luận, hỗ trợ sự kiện."
+      },
+      {
+        "BuocSo": 5,
+        "TenBuoc": "Xây dựng mạng lưới quan hệ",
+        "MoTa": "Kết nối với nhà báo, KOL, đối tác."
+      }
+    ],
+    "CV-020": [
+      {
+        "BuocSo": 1,
+        "TenBuoc": "Học luật lao động, bảo hiểm, thuế TNCN",
+        "MoTa": "Nắm quyền lợi và nghĩa vụ của người lao động."
+      },
+      {
+        "BuocSo": 2,
+        "TenBuoc": "Rèn kỹ năng tuyển dụng",
+        "MoTa": "Viết JD, sàng lọc CV, phỏng vấn, đánh giá."
+      },
+      {
+        "BuocSo": 3,
+        "TenBuoc": "Làm quen với phần mềm HRM",
+        "MoTa": "Quản lý hồ sơ, chấm công, tính lương."
+      },
+      {
+        "BuocSo": 4,
+        "TenBuoc": "Thực tập phòng Nhân sự",
+        "MoTa": "Tham gia onboarding, ghi chép kỷ luật, hỗ trợ C&B."
+      },
+      {
+        "BuocSo": 5,
+        "TenBuoc": "Học phát triển tổ chức (OD)",
+        "MoTa": "Xây dựng văn hóa, đào tạo nội bộ."
+      }
+    ],
+    "CV-021": [
+      {
+        "BuocSo": 1,
+        "TenBuoc": "Nắm tam giác phơi sáng, bố cục ảnh",
+        "MoTa": "Khẩu độ, tốc độ, ISO, quy tắc 1/3, đường dẫn."
+      },
+      {
+        "BuocSo": 2,
+        "TenBuoc": "Thực hành với máy ảnh",
+        "MoTa": "Chụp chân dung, phong cảnh, sản phẩm."
+      },
+      {
+        "BuocSo": 3,
+        "TenBuoc": "Học chỉnh hậu kỳ",
+        "MoTa": "Lightroom, Photoshop, cân bằng màu, chỉnh sửa chi tiết."
+      },
+      {
+        "BuocSo": 4,
+        "TenBuoc": "Xây dựng portfolio",
+        "MoTa": "Chọn lọc ảnh đẹp, tạo website hoặc Instagram chuyên nghiệp."
+      },
+      {
+        "BuocSo": 5,
+        "TenBuoc": "Thực tập hoặc nhận hợp đồng nhiếp ảnh",
+        "MoTa": "Chụp sự kiện, chân dung, sản phẩm thực tế."
+      }
+    ],
+    "CV-022": [
+      {
+        "BuocSo": 1,
+        "TenBuoc": "Học dược lý, bào chế, hóa dược",
+        "MoTa": "Tác dụng, liều dùng, tương tác thuốc."
+      },
+      {
+        "BuocSo": 2,
+        "TenBuoc": "Thực hành tại nhà thuốc bệnh viện",
+        "MoTa": "Cấp phát thuốc, tư vấn bệnh nhân."
+      },
+      {
+        "BuocSo": 3,
+        "TenBuoc": "Học quản lý tồn trữ & cung ứng",
+        "MoTa": "Quy trình nhập-xuất, bảo quản thuốc theo GSP."
+      },
+      {
+        "BuocSo": 4,
+        "TenBuoc": "Thi chứng chỉ hành nghề dược",
+        "MoTa": "Đủ điều kiện đứng quầy thuốc hoặc mở nhà thuốc."
+      },
+      {
+        "BuocSo": 5,
+        "TenBuoc": "Làm việc tại bệnh viện, chuỗi nhà thuốc hoặc công ty dược",
+        "MoTa": "Tích lũy kinh nghiệm lâm sàng hoặc kinh doanh dược."
+      }
+    ],
+    "CV-023": [
+      {
+        "BuocSo": 1,
+        "TenBuoc": "Học giải phẫu, sinh lý bệnh, chăm sóc cơ bản",
+        "MoTa": "Kỹ thuật tiêm, truyền, thay băng, theo dõi dấu hiệu sinh tồn."
+      },
+      {
+        "BuocSo": 2,
+        "TenBuoc": "Thực hành lâm sàng tại bệnh viện",
+        "MoTa": "Hỗ trợ điều dưỡng chính, chăm sóc bệnh nhân nội trú."
+      },
+      {
+        "BuocSo": 3,
+        "TenBuoc": "Học chuyên sâu cấp cứu & hồi sức",
+        "MoTa": "CPR, xử trí sốc, quản lý đường thở."
+      },
+      {
+        "BuocSo": 4,
+        "TenBuoc": "Thi chứng chỉ hành nghề điều dưỡng",
+        "MoTa": "Hoàn thành kỳ thi quốc gia."
+      },
+      {
+        "BuocSo": 5,
+        "TenBuoc": "Làm việc tại khoa/phòng theo phân công",
+        "MoTa": "Cấp cứu, nội, ngoại, nhi, hồi sức tích cực."
+      }
+    ],
+    "CV-024": [
+      {
+        "BuocSo": 1,
+        "TenBuoc": "Đáp ứng yêu cầu ngoại hình, ngoại ngữ (TOEIC/IELTS)",
+        "MoTa": "Tiêu chuẩn chiều cao, cân nặng, ngoại ngữ giao tiếp."
+      },
+      {
+        "BuocSo": 2,
+        "TenBuoc": "Học nghiệp vụ tiếp viên hàng không",
+        "MoTa": "Quy trình an toàn bay, sơ cứu, dịch vụ khách hàng."
+      },
+      {
+        "BuocSo": 3,
+        "TenBuoc": "Thực hành trên máy bay mô phỏng",
+        "MoTa": "Xử lý khẩn nguy, thoát hiểm, diễn tập sự cố."
+      },
+      {
+        "BuocSo": 4,
+        "TenBuoc": "Thi chứng chỉ tiếp viên hàng không",
+        "MoTa": "Do Cục Hàng không cấp."
+      },
+      {
+        "BuocSo": 5,
+        "TenBuoc": "Thực tập chuyến bay và chính thức bay",
+        "MoTa": "Bay cùng tiếp viên kỳ cựu, tích lũy kinh nghiệm."
+      }
+    ],
+    "CV-025": [
+      {
+        "BuocSo": 1,
+        "TenBuoc": "Học lịch sử, địa lý, văn hóa du lịch",
+        "MoTa": "Kiến thức về các điểm đến, phong tục, ẩm thực."
+      },
+      {
+        "BuocSo": 2,
+        "TenBuoc": "Rèn kỹ năng thuyết minh & dẫn đoàn",
+        "MoTa": "Giọng nói, xử lý tình huống, quản lý thời gian."
+      },
+      {
+        "BuocSo": 3,
+        "TenBuoc": "Thực tập hướng dẫn viên tại địa phương",
+        "MoTa": "Dẫn tour nội tỉnh, viết bài giới thiệu."
+      },
+      {
+        "BuocSo": 4,
+        "TenBuoc": "Thi chứng chỉ nghiệp vụ hướng dẫn viên",
+        "MoTa": "Đạt chuẩn Tổng cục Du lịch."
+      },
+      {
+        "BuocSo": 5,
+        "TenBuoc": "Làm việc tại công ty lữ hành hoặc tự do",
+        "MoTa": "Dẫn tour trong nước và quốc tế, tích lũy kinh nghiệm."
+      }
+    ]
+  },
+
+  "BanTin": {
+    "BT-001": {
+      "MaCongViec": "CV-001",
+      "TieuDe": "Lập trình viên: Kiến trúc sư của thế giới số",
+      "TomTat": "Khám phá cách những dòng code thay đổi thế giới và lộ trình trở thành Fullstack Developer từ con số 0.",
+      "NoiDung": "Nghề lập trình không chỉ là gõ phím. Đó là tư duy giải quyết vấn đề. Bản tin này sẽ đưa bạn qua các bước từ học ngôn ngữ cơ bản đến khi làm chủ các Framework hiện đại...",
+      "HinhAnh": "anh.png",
+      "LoaiTin": "Hướng nghiệp",
+      "NgayDang": "2026-04-05 08:00:00"
+    },
+    "BT-002": {
+      "MaCongViec": "CV-002",
+      "TieuDe": "Kỹ sư ô tô: Tương lai của xe điện và tự hành",
+      "TomTat": "Ngành công nghiệp ô tô đang chuyển mình mạnh mẽ. Bạn đã sẵn sàng để thiết kế những cỗ máy tương lai?",
+      "NoiDung": "Từ động cơ đốt trong đến công nghệ Pin Lithium. Lộ trình đào tạo kỹ sư ô tô hiện nay đòi hỏi sự kết hợp giữa cơ khí và điện tử viễn thông...",
+      "HinhAnh": "anh.png",
+      "LoaiTin": "Xu hướng",
+      "NgayDang": "2026-04-05 08:30:00"
+    },
+    "BT-003": {
+      "MaCongViec": "CV-003",
+      "TieuDe": "Kiến trúc sư: Khi nghệ thuật gặp gỡ kỹ thuật",
+      "TomTat": "Không chỉ là vẽ nhà, đó là tạo ra không gian sống. Xem ngay lộ trình từ vẽ tay đến thành thạo BIM/Revit.",
+      "NoiDung": "Kiến trúc sư cần sự nhạy bén về thẩm mỹ và kiến thức vững chắc về kết cấu. Khám phá các giai đoạn thực tập tại văn phòng thiết kế...",
+      "HinhAnh": "anh.png",
+      "LoaiTin": "Hướng nghiệp",
+      "NgayDang": "2026-04-05 09:00:00"
+    },
+    "BT-004": {
+      "MaCongViec": "CV-004",
+      "TieuDe": "Chuyên gia tài chính: Làm chủ dòng tiền",
+      "TomTat": "Tại sao chứng chỉ CFA lại là 'tấm vé vàng'? Tìm hiểu lộ trình thăng tiến trong ngành tài chính đầu tư.",
+      "NoiDung": "Thị trường tài chính luôn biến động. Một chuyên gia cần kỹ năng phân tích định lượng và cái đầu lạnh...",
+      "HinhAnh": "anh.png",
+      "LoaiTin": "Phát triển kỹ năng",
+      "NgayDang": "2026-04-05 09:30:00"
+    },
+    "BT-005": {
+      "MaCongViec": "CV-005",
+      "TieuDe": "Nghề Luật sư: Công lý và Tư duy sắc bén",
+      "TomTat": "Hành trình từ sinh viên luật đến khi cầm thẻ hành nghề và những thử thách tại tòa án.",
+      "NoiDung": "Nghiên cứu hồ sơ, tranh tụng và đạo đức nghề nghiệp. Đây là lộ trình rèn luyện để trở thành luật sư danh tiếng...",
+      "HinhAnh": "anh.png",
+      "LoaiTin": "Hướng nghiệp",
+      "NgayDang": "2026-04-05 10:00:00"
+    },
+    "BT-006": {
+      "MaCongViec": "CV-006",
+      "TieuDe": "Graphic Designer: Sáng tạo không giới hạn",
+      "TomTat": "Biến ý tưởng thành hình ảnh. Lộ trình từ tư duy bố cục đến làm chủ AI trong thiết kế đồ họa.",
+      "NoiDung": "Thiết kế không chỉ là đẹp mà phải truyền tải được thông điệp. Khám phá lộ trình xây dựng Portfolio ấn tượng...",
+      "HinhAnh": "anh.png",
+      "LoaiTin": "Xu hướng",
+      "NgayDang": "2026-04-05 10:30:00"
+    },
+    "BT-007": {
+      "MaCongViec": "CV-007",
+      "TieuDe": "Đạo diễn & Biên tập: Người kể chuyện qua khung hình",
+      "TomTat": "Phía sau một bộ phim triệu view là gì? Tìm hiểu quy trình từ kịch bản đến hậu kỳ.",
+      "NoiDung": "Ngành điện ảnh đòi hỏi sự kiên trì và tầm nhìn nghệ thuật độc đáo...",
+      "HinhAnh": "anh.png",
+      "LoaiTin": "Hướng nghiệp",
+      "NgayDang": "2026-04-05 11:00:00"
+    },
+    "BT-008": {
+      "MaCongViec": "CV-008",
+      "TieuDe": "Nghề Y: Sứ mệnh cứu người và áp lực vô hình",
+      "TomTat": "Hành trình 6 năm đại học và những đêm trực trắng đêm. Bạn có đủ bản lĩnh?",
+      "NoiDung": "Y học là học suốt đời. Xem lộ trình từ sinh viên nội trú đến bác sĩ chuyên khoa...",
+      "HinhAnh": "anh.png",
+      "LoaiTin": "Hướng nghiệp",
+      "NgayDang": "2026-04-05 11:30:00"
+    },
+    "BT-009": {
+      "MaCongViec": "CV-009",
+      "TieuDe": "Giáo viên hiện đại: Hơn cả việc giảng dạy",
+      "TomTat": "Ứng dụng công nghệ vào giáo dục (EdTech) và lộ trình trở thành người truyền cảm hứng.",
+      "NoiDung": "Nghề giáo đang thay đổi. Không chỉ là bảng đen phấn trắng, mà là kỹ năng điều phối và tâm lý học...",
+      "HinhAnh": "anh.png",
+      "LoaiTin": "Phát triển kỹ năng",
+      "NgayDang": "2026-04-05 12:00:00"
+    },
+    "BT-010": {
+      "MaCongViec": "CV-010",
+      "TieuDe": "Phi công: Chinh phục bầu trời",
+      "TomTat": "Lộ trình đào tạo khắt khe và cuộc sống 'trên mây' của các phi công thương mại.",
+      "NoiDung": "Từ lý thuyết bay đến hàng nghìn giờ bay tích lũy. Đây là nghề nghiệp có thu nhập đáng mơ ước nhưng yêu cầu kỷ luật thép...",
+      "HinhAnh": "anh.png",
+      "LoaiTin": "Hướng nghiệp",
+      "NgayDang": "2026-04-05 12:30:00"
+    },
+    "BT-011": {
+      "MaCongViec": "CV-011",
+      "TieuDe": "Nghề Bếp: Nghệ thuật ẩm thực và sự kiên trì",
+      "TomTat": "Lộ trình từ phụ bếp đến Bếp trưởng điều hành (Executive Chef) tại nhà hàng 5 sao.",
+      "NoiDung": "Kỹ năng dao kéo, khẩu vị và khả năng quản trị bếp là những gì bạn cần rèn luyện...",
+      "HinhAnh": "anh.png",
+      "LoaiTin": "Hướng nghiệp",
+      "NgayDang": "2026-04-05 13:00:00"
+    },
+    "BT-012": {
+      "MaCongViec": "CV-012",
+      "TieuDe": "Kỹ sư cơ khí: Xương sống của mọi ngành sản xuất",
+      "TomTat": "Vận hành máy móc và thiết kế hệ thống tự động hóa. Xem lộ trình nghề nghiệp bền vững.",
+      "NoiDung": "Cơ khí không chỉ là dầu mỡ, đó là sự chính xác tuyệt đối trong thiết kế CAD/CAM...",
+      "HinhAnh": "anh.png",
+      "LoaiTin": "Xu hướng",
+      "NgayDang": "2026-04-05 13:30:00"
+    },
+    "BT-013": {
+      "MaCongViec": "CV-013",
+      "TieuDe": "Kỹ sư Điện - Điện tử: Kết nối thế giới hiện đại",
+      "TomTat": "Từ vi mạch điện thoại đến hệ thống lưới điện quốc gia. Tìm hiểu lộ trình học tập hiệu quả.",
+      "NoiDung": "Kỹ sư điện tử đang là nòng cốt trong cuộc cách mạng công nghệ 4.0...",
+      "HinhAnh": "anh.png",
+      "LoaiTin": "Hướng nghiệp",
+      "NgayDang": "2026-04-05 14:00:00"
+    },
+    "BT-014": {
+      "MaCongViec": "CV-014",
+      "TieuDe": "Kỹ sư xây dựng: Những người kiến tạo hạ tầng",
+      "TomTat": "Hành trình từ bản vẽ đến những công trình chọc trời. Kỹ năng quản lý dự án là chìa khóa.",
+      "NoiDung": "Quản lý công trường, an toàn lao động và tối ưu hóa vật liệu...",
+      "HinhAnh": "anh.png",
+      "LoaiTin": "Hướng nghiệp",
+      "NgayDang": "2026-04-05 14:30:00"
+    },
+    "BT-015": {
+      "MaCongViec": "CV-015",
+      "TieuDe": "Kỹ sư môi trường: Bảo vệ hành tinh xanh",
+      "TomTat": "Giải quyết vấn đề biến đổi khí hậu và xử lý rác thải. Nghề nghiệp của tương lai bền vững.",
+      "NoiDung": "Cần sự kết hợp giữa kiến thức sinh - hóa và tâm huyết với cộng đồng...",
+      "HinhAnh": "anh.png",
+      "LoaiTin": "Xu hướng",
+      "NgayDang": "2026-04-05 15:00:00"
+    },
+    "BT-016": {
+      "MaCongViec": "CV-016",
+      "TieuDe": "Chuyên viên Ngân hàng: Dịch vụ và Niềm tin",
+      "TomTat": "Tìm hiểu các nghiệp vụ ngân hàng hiện đại và kỹ năng chăm sóc khách hàng VIP.",
+      "NoiDung": "Thị trường tài chính số (Digital Banking) đang mở ra nhiều cơ hội mới...",
+      "HinhAnh": "anh.png",
+      "LoaiTin": "Hướng nghiệp",
+      "NgayDang": "2026-04-05 15:30:00"
+    },
+    "BT-017": {
+      "MaCongViec": "CV-017",
+      "TieuDe": "Chuyên viên Pháp lý: Lá chắn cho doanh nghiệp",
+      "TomTat": "Vai trò thầm lặng nhưng cực kỳ quan trọng trong mọi giao dịch kinh doanh.",
+      "NoiDung": "Soạn thảo hợp đồng, rà soát rủi ro và am hiểu luật doanh nghiệp...",
+      "HinhAnh": "anh.png",
+      "LoaiTin": "Phát triển kỹ năng",
+      "NgayDang": "2026-04-05 16:00:00"
+    },
+    "BT-018": {
+      "MaCongViec": "CV-018",
+      "TieuDe": "Marketing: Chinh phục tâm trí khách hàng",
+      "TomTat": "Tại sao Marketing luôn là ngành 'hot'? Lộ trình từ Content Creator đến CMO.",
+      "NoiDung": "Data-driven Marketing và sáng tạo nội dung là hai trụ cột chính...",
+      "HinhAnh": "anh.png",
+      "LoaiTin": "Xu hướng",
+      "NgayDang": "2026-04-05 16:30:00"
+    },
+    "BT-019": {
+      "MaCongViec": "CV-019",
+      "TieuDe": "Quan hệ công chúng (PR): Xây dựng thương hiệu",
+      "TomTat": "Xử lý khủng hoảng và quản trị hình ảnh. Nghề dành cho những người hướng ngoại.",
+      "NoiDung": "Kết nối báo chí và tạo dựng niềm tin với cộng đồng...",
+      "HinhAnh": "anh.png",
+      "LoaiTin": "Hướng nghiệp",
+      "NgayDang": "2026-04-05 17:00:00"
+    },
+    "BT-020": {
+      "MaCongViec": "CV-020",
+      "TieuDe": "Quản lý nhân sự: Nghệ thuật quản trị con người",
+      "TomTat": "Tuyển đúng người, đặt đúng chỗ. Lộ trình phát triển trong ngành HR.",
+      "NoiDung": "Từ tuyển dụng đến xây dựng văn hóa doanh nghiệp và đào tạo nhân tài...",
+      "HinhAnh": "anh.png",
+      "LoaiTin": "Hướng nghiệp",
+      "NgayDang": "2026-04-05 17:30:00"
+    },
+    "BT-021": {
+      "MaCongViec": "CV-021",
+      "TieuDe": "Nhiếp ảnh gia: Lưu giữ khoảnh khắc",
+      "TomTat": "Kỹ thuật ánh sáng và tư duy thẩm mỹ. Làm sao để sống tốt với nghề ảnh?",
+      "NoiDung": "Xây dựng phong cách cá nhân là yếu tố sống còn...",
+      "HinhAnh": "anh.png",
+      "LoaiTin": "Phát triển kỹ năng",
+      "NgayDang": "2026-04-05 18:00:00"
+    },
+    "BT-022": {
+      "MaCongViec": "CV-022",
+      "TieuDe": "Dược sĩ: Chăm sóc sức khỏe cộng đồng",
+      "TomTat": "Không chỉ là bán thuốc. Khám phá lộ trình làm việc tại các tập đoàn dược phẩm lớn.",
+      "NoiDung": "Nghiên cứu thuốc và tư vấn sử dụng dược phẩm an toàn...",
+      "HinhAnh": "anh.png",
+      "LoaiTin": "Hướng nghiệp",
+      "NgayDang": "2026-04-05 18:30:00"
+    },
+    "BT-023": {
+      "MaCongViec": "CV-023",
+      "TieuDe": "Điều dưỡng viên: Thiên thần áo trắng",
+      "TomTat": "Sự tận tâm và kỹ năng y tế chuyên nghiệp. Cơ hội làm việc tại nước ngoài.",
+      "NoiDung": "Chăm sóc bệnh nhân cần sự kiên nhẫn và thấu hiểu sâu sắc...",
+      "HinhAnh": "anh.png",
+      "LoaiTin": "Hướng nghiệp",
+      "NgayDang": "2026-04-05 19:00:00"
+    },
+    "BT-024": {
+      "MaCongViec": "CV-024",
+      "TieuDe": "Tiếp viên hàng không: Đại sứ bầu trời",
+      "TomTat": "Tiêu chuẩn tuyển dụng và những kỹ năng sinh tồn cần thiết.",
+      "NoiDung": "Ngoại ngữ, sơ cứu và phong thái chuyên nghiệp là bắt buộc...",
+      "HinhAnh": "anh.png",
+      "LoaiTin": "Hướng nghiệp",
+      "NgayDang": "2026-04-05 19:30:00"
+    },
+    "BT-025": {
+      "MaCongViec": "CV-025",
+      "TieuDe": "Hướng dẫn viên du lịch: Người kết nối văn hóa",
+      "TomTat": "Đi nhiều hơn, biết nhiều hơn. Lộ trình trở thành hướng dẫn viên quốc tế.",
+      "NoiDung": "Am hiểu lịch sử, văn hóa và kỹ năng xử lý tình huống linh hoạt...",
+      "HinhAnh": "anh.png",
+      "LoaiTin": "Xu hướng",
+      "NgayDang": "2026-04-05 20:00:00"
+    }
+  },
+
   "KyNang_CongViec": {
     "KNCV-001": {
       "MaCongViec": "CV-001",
@@ -5357,37 +6268,5 @@
       "MaKyNang": "KN-002",
       "MucDoQuanTrong": 3
     }
-  },
-
-  "CongViec_ThangDo": {
-    "CVTD-001": { "MaCongViec": "CV-001", "MaThangDo": "TD-HOLLAND-I" },
-    "CVTD-002": { "MaCongViec": "CV-001", "MaThangDo": "TD-HOLLAND-R" },
-    "CVTD-003": { "MaCongViec": "CV-001", "MaThangDo": "TD-HOLLAND-C" },
-    "CVTD-004": { "MaCongViec": "CV-001", "MaThangDo": "TD-MBTI-TF" },
-    "CVTD-005": { "MaCongViec": "CV-001", "MaThangDo": "TD-BIGFIVE-C" },
-
-    "CVTD-006": { "MaCongViec": "CV-003", "MaThangDo": "TD-HOLLAND-A" },
-    "CVTD-007": { "MaCongViec": "CV-003", "MaThangDo": "TD-HOLLAND-R" },
-    "CVTD-008": { "MaCongViec": "CV-003", "MaThangDo": "TD-HOLLAND-I" },
-    "CVTD-009": { "MaCongViec": "CV-003", "MaThangDo": "TD-MBTI-SN" },
-    "CVTD-010": { "MaCongViec": "CV-003", "MaThangDo": "TD-BIGFIVE-O" },
-
-    "CVTD-011": { "MaCongViec": "CV-008", "MaThangDo": "TD-HOLLAND-I" },
-    "CVTD-012": { "MaCongViec": "CV-008", "MaThangDo": "TD-HOLLAND-S" },
-    "CVTD-013": { "MaCongViec": "CV-008", "MaThangDo": "TD-HOLLAND-R" },
-    "CVTD-014": { "MaCongViec": "CV-008", "MaThangDo": "TD-MBTI-TF" },
-    "CVTD-015": { "MaCongViec": "CV-008", "MaThangDo": "TD-DISC-S" },
-
-    "CVTD-016": { "MaCongViec": "CV-018", "MaThangDo": "TD-HOLLAND-E" },
-    "CVTD-017": { "MaCongViec": "CV-018", "MaThangDo": "TD-HOLLAND-A" },
-    "CVTD-018": { "MaCongViec": "CV-018", "MaThangDo": "TD-HOLLAND-S" },
-    "CVTD-019": { "MaCongViec": "CV-018", "MaThangDo": "TD-DISC-i" },
-    "CVTD-020": { "MaCongViec": "CV-018", "MaThangDo": "TD-BIGFIVE-E" },
-
-    "CVTD-021": { "MaCongViec": "CV-024", "MaThangDo": "TD-HOLLAND-S" },
-    "CVTD-022": { "MaCongViec": "CV-024", "MaThangDo": "TD-HOLLAND-E" },
-    "CVTD-023": { "MaCongViec": "CV-024", "MaThangDo": "TD-HOLLAND-R" },
-    "CVTD-024": { "MaCongViec": "CV-024", "MaThangDo": "TD-BIGFIVE-A" },
-    "CVTD-025": { "MaCongViec": "CV-024", "MaThangDo": "TD-MBTI-EI" }
   }
 }
