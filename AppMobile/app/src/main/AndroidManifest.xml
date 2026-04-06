@@ -9,13 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
+
+        <activity
+            android:name=".Home"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".Trend" android:exported="false" />
+        <activity android:name=".TestResuilts" android:exported="false" />
+        <activity android:name=".QuestionBank" android:exported="false" />
+        <activity android:name=".DetailQuestion" android:exported="false" />
+        <activity android:name=".Account" android:exported="false" />
+        <activity android:name=".Notification" android:exported="false" />
+        <activity android:name=".MainActivity" android:exported="false" />
+
     </application>
 
 </manifest>

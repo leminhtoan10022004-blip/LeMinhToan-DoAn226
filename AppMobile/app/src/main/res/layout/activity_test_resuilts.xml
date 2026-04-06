@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true"
+    tools:context=".TestResuilts">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:paddingBottom="100dp"> <!-- Thêm padding bottom để tránh bị BottomNav che -->
+
+        <!-- Hình minh họa chúc mừng -->
+        <ImageView
+            android:id="@+id/imgCongratulation"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:src="@drawable/icon_medal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvCongratsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Chúc mừng"
+            android:textColor="@color/black"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgCongratulation" />
+
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="#EEEEEE"
+            app:layout_constraintTop_toBottomOf="@+id/tvCongratsTitle" />
+
+        <!-- Mô tả kết quả -->
+        <TextView
+            android:id="@+id/tvResultDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:lineSpacingExtra="4dp"
+            android:text="Dựa trên phân tích tính cách và sở thích của bạn, AI chúng tôi xác nhận rằng lập trình viên là nghề nghiệp lý tưởng nhất dành cho bạn\n\nTại sao? bạn sở hữu tư duy sắt bén, tính kiên nhẫn và tư duy giải quyết vấn đề - những yếu tố đó là then chốt của lập trình viên xuất sắc."
+            android:textColor="#333333"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="#EEEEEE"
+            app:layout_constraintTop_toBottomOf="@+id/tvResultDescription" />
+
+        <!-- Phần Điểm nhóm ngành -->
+        <TextView
+            android:id="@+id/tvScoreTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Điểm của bạn theo nhóm ngành"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+        <LinearLayout
+            android:id="@+id/scoresLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/tvScoreTitle">
+
+            <!-- Kỹ thuật: 90% -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp">
+                <TextView
+                    android:id="@+id/labelTech"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="Kỹ thuật"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+                <ProgressBar
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_toEndOf="@id/labelTech"
+                    android:layout_toStartOf="@+id/valTech"
+                    android:progress="90"
+                    android:progressTint="#000000" />
+                <TextView
+                    android:id="@+id/valTech"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="90%"
+                    android:textColor="#000000" />
+            </RelativeLayout>
+
+            <!-- Sáng tạo: 60% -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp">
+                <TextView
+                    android:id="@+id/labelCreative"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="Sáng tạo"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+                <ProgressBar
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_toEndOf="@id/labelCreative"
+                    android:layout_toStartOf="@+id/valCreative"
+                    android:progress="60"
+                    android:progressTint="#000000" />
+                <TextView
+                    android:id="@+id/valCreative"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="60%"
+                    android:textColor="#000000" />
+            </RelativeLayout>
+
+            <!-- Kinh doanh: 45% -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/labelBiz"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="Kinh doanh"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+                <ProgressBar
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_toEndOf="@id/labelBiz"
+                    android:layout_toStartOf="@+id/valBiz"
+                    android:progress="45"
+                    android:progressTint="#000000" />
+                <TextView
+                    android:id="@+id/valBiz"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="45%"
+                    android:textColor="#000000" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="24dp"
+            android:background="#EEEEEE"
+            app:layout_constraintTop_toBottomOf="@+id/scoresLayout" />
+
+        <!-- Công việc phù hợp -->
+        <TextView
+            android:id="@+id/tvJobsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Công việc phù hợp với bạn"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvResultJobs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:nestedScrollingEnabled="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/tvJobsTitle"
+            tools:itemCount="2"
+            tools:listitem="@layout/item_job_card" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

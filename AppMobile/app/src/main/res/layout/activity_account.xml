@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Account">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#F8F9FA"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="100dp">
+
+            <!-- Header Image Background -->
+            <ImageView
+                android:id="@+id/header_bg"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/background_green"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Profile Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/profile_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="-40dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:layout_constraintTop_toBottomOf="@id/header_bg"
+                app:strokeWidth="0dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/avatar_container"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        app:cardCornerRadius="30dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/avatar" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="Nguyễn Thị An"
+                        android:textColor="#333333"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/avatar_container"
+                        app:layout_constraintTop_toTopOf="@id/avatar_container" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gmail : thiannguyen@gmail.com"
+                        android:textColor="#888888"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="@id/tv_name"
+                        app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chỉnh sửa"
+                        android:textColor="#E65100"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- I. THỐNG KÊ HOẠT ĐỘNG -->
+            <TextView
+                android:id="@+id/label_activity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="I. THỐNG KÊ HOẠT ĐỘNG"
+                android:textColor="#333333"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/profile_card" />
+
+            <LinearLayout
+                android:id="@+id/stats_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/label_activity">
+
+                <!-- Card Bài test -->
+                <include
+                    layout="@layout/item_stat_card"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <!-- Card Ngành lưu -->
+                <include
+                    layout="@layout/item_stat_card"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <!-- Card Đã xem -->
+                <include
+                    layout="@layout/item_stat_card"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <!-- II. LỊCH SỬ BÀI TEST -->
+            <TextView
+                android:id="@+id/label_history"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="II. LỊCH SỬ BÀI TEST"
+                android:textColor="#333333"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/stats_layout" />
+
+            <LinearLayout
+                android:id="@+id/history_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/label_history">
+
+                <include layout="@layout/item_test_history" />
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#DDDDDD" android:layout_marginVertical="8dp"/>
+                <include layout="@layout/item_test_history" />
+
+            </LinearLayout>
+
+            <!-- III. GỢI Ý CHO BẠN -->
+            <TextView
+                android:id="@+id/label_suggestions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="III. GỢI Ý CHO BẠN"
+                android:textColor="#333333"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/history_container" />
+
+            <TextView
+                android:id="@+id/tv_suggestions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="8dp"
+                android:text="Dựa trên bài test của bạn, bạn có thể phù hợp với ngành:\nKỹ sư phần mềm - 94% phù hợp\n[Xem ngay >]"
+                android:textColor="#333333"
+                android:lineSpacingExtra="4dp"
+                app:layout_constraintTop_toBottomOf="@id/label_suggestions" />
+
+            <!-- Đăng xuất -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_logout"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="Đăng xuất"
+                android:textAllCaps="false"
+                app:backgroundTint="#D85532"
+                app:cornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_suggestions" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_tabs" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

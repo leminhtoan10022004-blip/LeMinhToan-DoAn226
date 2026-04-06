@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="4dp"
+    app:strokeWidth="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Tiêu đề ngành nghề -->
+        <TextView
+            android:id="@+id/tvCategoryTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Công nghệ thông tin"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Dòng thông tin tuyển dụng -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ĐANG TUYỂN: "
+                android:textColor="#555555"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvCategoryPositions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12400"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="VỊ TRÍ"
+                android:textColor="#555555"
+                android:textSize="12sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <!-- Chỉ số tăng trưởng (Badge màu xanh) -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bottom_nav_background"
+                android:backgroundTint="#E8F5E9"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp">
+
+                <TextView
+                    android:id="@+id/tvCategoryGrowth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="▲ +85%"
+                    android:textColor="#4CAF50"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Dòng lương trung bình -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LƯƠNG TRUNG BÌNH: "
+                android:textColor="#555555"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvCategorySalary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12- 30"
+                android:textColor="#FF9800"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="TR/THÁNG"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Các Tags (#Fresher, #Junior) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bottom_nav_background"
+                android:backgroundTint="#E3F2FD"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="6dp"
+                android:text="#Fresher"
+                android:textColor="#1976D2"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/bottom_nav_background"
+                android:backgroundTint="#E3F2FD"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="6dp"
+                android:text="#Junior"
+                android:textColor="#1976D2"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
