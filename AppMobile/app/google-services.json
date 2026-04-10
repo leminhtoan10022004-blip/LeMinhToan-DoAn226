@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1064745511507",
+    "firebase_url": "https://appdinhhuong-default-rtdb.firebaseio.com",
+    "project_id": "appdinhhuong",
+    "storage_bucket": "appdinhhuong.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1064745511507:android:19a288521f8b9bfe94f4a6",
+        "android_client_info": {
+          "package_name": "com.chaquo.python.console"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAD8nDmsT50Dx4dsUre6bFRVTYhRBpy_zM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

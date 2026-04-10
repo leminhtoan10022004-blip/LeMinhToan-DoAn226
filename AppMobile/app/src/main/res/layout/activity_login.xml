@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
@@ -67,8 +68,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         app:hintEnabled="false"
+
         app:passwordToggleEnabled="true"
         app:passwordToggleTint="#94A3B8"
+
         app:layout_constraintTop_toBottomOf="@id/emailLayout">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -82,7 +85,6 @@
             android:drawablePadding="16dp"
             android:paddingHorizontal="20dp"
             android:textColor="#1E293B"
-            android:drawableTint="#94A3B8"
             android:textSize="15sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
