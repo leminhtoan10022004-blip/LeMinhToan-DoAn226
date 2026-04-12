@@ -1,0 +1,119 @@
+package com.chaquo.python.console;
+
+import android.content.Context;
+import android.util.Log;
+
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.WriteBatch;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+public class FirestoreImporter {
+    private static final String TAG = "FirestoreImporter";
+
+    public static void importData(Context context) {
+        String json = loadJSONFromAsset(context, "ERD.json");
+        if (json == null) return;
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        try {
+            JSONObject root = new JSONObject(json);
+            Iterator<String> collections = root.keys();
+
+            while (collections.hasNext()) {
+                String collectionName = collections.next();
+                JSONObject documents = root.getJSONObject(collectionName);
+                Iterator<String> docIds = documents.keys();
+
+                WriteBatch batch = db.batch();
+                int count = 0;
+
+                while (docIds.hasNext()) {
+                    String docId = docIds.next();
+                    Object docData = documents.get(docId);
+
+                    if (docData instanceof JSONObject) {
+                        Map<String, Object> map = jsonToMap((JSONObject) docData);
+                        batch.set(db.collection(collectionName).document(docId), map);
+                        count++;
+                    } else if (docData instanceof JSONArray) {
+                        // Trường hợp đặc biệt nếu cấp 2 là Array (ít xảy ra với cấu trúc của bạn)
+                        Log.w(TAG, "Bỏ qua mảng tại cấp document: " + docId);
+                    }
+
+                    // Firestore giới hạn 500 operations mỗi batch
+                    if (count >= 400) {
+                        batch.commit();
+                        batch = db.batch();
+                        count = 0;
+                    }
+                }
+                
+                batch.commit().addOnSuccessListener(aVoid -> 
+                    Log.d(TAG, "Import thành công collection: " + collectionName)
+                ).addOnFailureListener(e -> 
+                    Log.e(TAG, "Lỗi khi import " + collectionName, e)
+                );
+            }
+        } catch (JSONException e) {
+            Log.e(TAG, "Lỗi parse JSON", e);
+        }
+    }
+
+    private static String loadJSONFromAsset(Context context, String fileName) {
+        String json;
+        try {
+            InputStream is = context.getAssets().open(fileName);
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, StandardCharsets.UTF_8);
+        } catch (IOException ex) {
+            Log.e(TAG, "Không tìm thấy file " + fileName, ex);
+            return null;
+        }
+        return json;
+    }
+
+    private static Map<String, Object> jsonToMap(JSONObject jsonObject) throws JSONException {
+        Map<String, Object> map = new HashMap<>();
+        Iterator<String> keys = jsonObject.keys();
+        while (keys.hasNext()) {
+            String key = keys.next();
+            Object value = jsonObject.get(key);
+            if (value instanceof JSONObject) {
+                value = jsonToMap((JSONObject) value);
+            } else if (value instanceof JSONArray) {
+                value = jsonToList((JSONArray) value);
+            }
+            map.put(key, value);
+        }
+        return map;
+    }
+
+    private static List<Object> jsonToList(JSONArray array) throws JSONException {
+        List<Object> list = new ArrayList<>();
+        for (int i = 0; i < array.length(); i++) {
+            Object value = array.get(i);
+            if (value instanceof JSONObject) {
+                value = jsonToMap((JSONObject) value);
+            } else if (value instanceof JSONArray) {
+                value = jsonToList((JSONArray) value);
+            }
+            list.add(value);
+        }
+        return list;
+    }
+}

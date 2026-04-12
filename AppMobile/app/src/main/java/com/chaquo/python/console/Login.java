@@ -29,6 +29,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.firestore.DocumentSnapshot;
 
 public class Login extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
@@ -110,9 +111,21 @@ public class Login extends AppCompatActivity {
                 .addOnCompleteListener(this, nhiemVu -> {
                     if (nhiemVu.isSuccessful()) {
                         FirebaseUser nguoiDungFirebase = mAuth.getCurrentUser();
-                        Toast.makeText(this, "Đăng nhập Google thành công", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(Login.this, Home.class));
-                        finish();
+                        if (nguoiDungFirebase != null) {
+                            String email = nguoiDungFirebase.getEmail();
+                            db.collection("NguoiDung")
+                                    .whereEqualTo("Email", email)
+                                    .get()
+                                    .addOnSuccessListener(queryDocumentSnapshots -> {
+                                        if (!queryDocumentSnapshots.isEmpty()) {
+                                            DocumentSnapshot document = queryDocumentSnapshots.getDocuments().get(0);
+                                            String userId = document.getId();
+                                            vàoTrangHome(userId);
+                                        } else {
+                                            Toast.makeText(this, "Tài khoản chưa được đăng ký trong hệ thống!", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+                        }
                     } else {
                         Toast.makeText(this, "Xác thực Firebase thất bại", Toast.LENGTH_SHORT).show();
                     }
@@ -140,14 +153,9 @@ public class Login extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         QuerySnapshot querySnapshot = task.getResult();
                         if (querySnapshot != null && !querySnapshot.isEmpty()) {
-                            NguoiDung user = querySnapshot.getDocuments().get(0).toObject(NguoiDung.class);
-                            if (user != null) {
-                                Toast.makeText(Login.this, "Chào mừng " + user.getTen(), Toast.LENGTH_SHORT).show();
-                            }
-
-                            Intent intent = new Intent(Login.this, Home.class);
-                            startActivity(intent);
-                            finish();
+                            DocumentSnapshot document = querySnapshot.getDocuments().get(0);
+                            String userId = document.getId();
+                            vàoTrangHome(userId);
                         } else {
                             Toast.makeText(Login.this, "Email hoặc mật khẩu không đúng!", Toast.LENGTH_LONG).show();
                         }
@@ -156,5 +164,12 @@ public class Login extends AppCompatActivity {
                         Toast.makeText(Login.this, "Lỗi kết nối: " + errorMsg, Toast.LENGTH_SHORT).show();
                     }
                 });
+    }
+
+    private void vàoTrangHome(String userId) {
+        Intent intent = new Intent(Login.this, Home.class);
+        intent.putExtra("USER_ID", userId);
+        startActivity(intent);
+        finish();
     }
 }

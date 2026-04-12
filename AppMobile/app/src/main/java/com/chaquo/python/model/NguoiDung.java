@@ -9,8 +9,8 @@ public class NguoiDung {
     private String Ten;
     private String Email;
     private String MatKhau;
-    private Timestamp NgaySinh;
-    private Timestamp NgayTao;
+    private Object NgaySinh;
+    private Object NgayTao;
     private String SDT;
     private String AnhDaiDien;
     private String VaiTro;
@@ -45,14 +45,14 @@ public class NguoiDung {
     public void setMatKhau(String MatKhau) { this.MatKhau = MatKhau; }
 
     @PropertyName("NgaySinh")
-    public Timestamp getNgaySinh() { return NgaySinh; }
+    public Object getNgaySinh() { return NgaySinh; }
     @PropertyName("NgaySinh")
-    public void setNgaySinh(Timestamp NgaySinh) { this.NgaySinh = NgaySinh; }
+    public void setNgaySinh(Object NgaySinh) { this.NgaySinh = NgaySinh; }
 
     @PropertyName("NgayTao")
-    public Timestamp getNgayTao() { return NgayTao; }
+    public Object getNgayTao() { return NgayTao; }
     @PropertyName("NgayTao")
-    public void setNgayTao(Timestamp NgayTao) { this.NgayTao = NgayTao; }
+    public void setNgayTao(Object NgayTao) { this.NgayTao = NgayTao; }
 
     @PropertyName("SDT")
     public String getSDT() { return SDT; }
@@ -73,7 +73,21 @@ public class NguoiDung {
     public String getTrangThai() { return TrangThai; }
     @PropertyName("TrangThai")
     public void setTrangThai(String TrangThai) { this.TrangThai = TrangThai; }
+
     public String getHoTen() {
         return (Ho != null ? Ho : "") + " " + (Ten != null ? Ten : "");
+    }
+
+    // Helper methods to handle potential String or Timestamp values
+    public String getNgayTaoAsString() {
+        if (NgayTao instanceof String) return (String) NgayTao;
+        if (NgayTao instanceof Timestamp) return ((Timestamp) NgayTao).toDate().toString();
+        return "";
+    }
+
+    public String getNgaySinhAsString() {
+        if (NgaySinh instanceof String) return (String) NgaySinh;
+        if (NgaySinh instanceof Timestamp) return ((Timestamp) NgaySinh).toDate().toString();
+        return "";
     }
 }
