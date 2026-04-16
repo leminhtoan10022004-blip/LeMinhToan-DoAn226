@@ -1,5 +1,6 @@
 package com.chaquo.python.console;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,6 +50,16 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.JobViewHolder> {
         } else {
             holder.chipHot.setChipBackgroundColorResource(android.R.color.holo_blue_light);
         }
+
+        // Sự kiện click để xem chi tiết
+        View.OnClickListener listener = v -> {
+            Intent intent = new Intent(v.getContext(), JobDetail.class);
+            intent.putExtra("jobCode", job.getMaCongViec());
+            v.getContext().startActivity(intent);
+        };
+
+        holder.itemView.setOnClickListener(listener);
+        holder.tvSeeDetails.setOnClickListener(listener);
     }
 
     private String formatSalary(long salary) {
@@ -64,7 +75,7 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.JobViewHolder> {
     }
 
     public static class JobViewHolder extends RecyclerView.ViewHolder {
-        TextView tvJobTitle, tvSalary, tvEducation;
+        TextView tvJobTitle, tvSalary, tvEducation, tvSeeDetails;
         Chip chipHot;
 
         public JobViewHolder(@NonNull View itemView) {
@@ -72,6 +83,7 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.JobViewHolder> {
             tvJobTitle = itemView.findViewById(R.id.tvJobTitle);
             tvSalary = itemView.findViewById(R.id.tvSalary);
             tvEducation = itemView.findViewById(R.id.tvEducation);
+            tvSeeDetails = itemView.findViewById(R.id.tvSeeDetails);
             chipHot = itemView.findViewById(R.id.chipHot);
         }
     }

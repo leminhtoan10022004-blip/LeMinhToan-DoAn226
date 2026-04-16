@@ -2,6 +2,7 @@ package com.chaquo.python.console;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +31,7 @@ public class Home extends AppCompatActivity {
     private RecyclerView recyclerTrendingJobs;
     private JobAdapter jobAdapter;
     private List<CongViec> jobList;
+    private TextView tvStartAction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +42,19 @@ public class Home extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
         tvWelcome = findViewById(R.id.tvWelcome);
         recyclerTrendingJobs = findViewById(R.id.recyclerTrendingJobs);
+        tvStartAction = findViewById(R.id.tvStartAction);
 
-        // Nhận ID người dùng từ Intent gửi từ màn hình Login
         userId = getIntent().getStringExtra("USER_ID");
+
+        tvStartAction.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, QuestionBank.class);
+                intent.putExtra("USER_ID", userId);
+                startActivity(intent);
+            }
+        });
+
 
         if (userId != null) {
             taiDuLieuNguoiDung(userId);
@@ -50,6 +62,8 @@ public class Home extends AppCompatActivity {
 
         setupRecyclerView();
         taiDanhSachCongViec();
+
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
