@@ -18,7 +18,6 @@ import com.chaquo.python.model.CongViec;
 import com.chaquo.python.model.NguoiDung;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.ArrayList;
@@ -55,15 +54,12 @@ public class Home extends AppCompatActivity {
             }
         });
 
-
         if (userId != null) {
             taiDuLieuNguoiDung(userId);
         }
 
         setupRecyclerView();
         taiDanhSachCongViec();
-
-
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -83,12 +79,13 @@ public class Home extends AppCompatActivity {
 
     private void taiDanhSachCongViec() {
         db.collection("CongViec")
-                .limit(10) // Lấy 10 công việc tiêu biểu
+                .limit(10)
                 .get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
                     jobList.clear();
                     for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
                         CongViec job = document.toObject(CongViec.class);
+                        job.setMaCongViec(document.getId());
                         jobList.add(job);
                     }
                     jobAdapter.notifyDataSetChanged();

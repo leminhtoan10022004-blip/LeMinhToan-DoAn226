@@ -48,11 +48,13 @@ public class FirestoreImporter {
                         batch.set(db.collection(collectionName).document(docId), map);
                         count++;
                     } else if (docData instanceof JSONArray) {
-                        // Trường hợp đặc biệt nếu cấp 2 là Array (ít xảy ra với cấu trúc của bạn)
-                        Log.w(TAG, "Bỏ qua mảng tại cấp document: " + docId);
+                        // Xử lý trường hợp document là một mảng (như LoTrinh)
+                        Map<String, Object> wrapper = new HashMap<>();
+                        wrapper.put("steps", jsonToList((JSONArray) docData));
+                        batch.set(db.collection(collectionName).document(docId), wrapper);
+                        count++;
                     }
 
-                    // Firestore giới hạn 500 operations mỗi batch
                     if (count >= 400) {
                         batch.commit();
                         batch = db.batch();

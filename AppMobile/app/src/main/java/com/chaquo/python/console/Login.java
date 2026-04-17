@@ -1,6 +1,7 @@
 package com.chaquo.python.console;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -46,6 +47,15 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Duy trì trạng thái đăng nhập
+        SharedPreferences pref = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+        String savedUserId = pref.getString("USER_ID", null);
+        if (savedUserId != null) {
+            vàoTrangHome(savedUserId);
+            return;
+        }
+
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
 
@@ -167,6 +177,12 @@ public class Login extends AppCompatActivity {
     }
 
     private void vàoTrangHome(String userId) {
+        // Lưu ID người dùng vào SharedPreferences để duy trì đăng nhập
+        SharedPreferences pref = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString("USER_ID", userId);
+        editor.apply();
+
         Intent intent = new Intent(Login.this, Home.class);
         intent.putExtra("USER_ID", userId);
         startActivity(intent);

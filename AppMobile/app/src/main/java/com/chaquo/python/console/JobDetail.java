@@ -33,7 +33,10 @@ public class JobDetail extends AppCompatActivity {
         setContentView(R.layout.activity_job_detail);
 
         jobCode = getIntent().getStringExtra("jobCode");
-        if (jobCode == null) jobCode = "CV-001"; 
+        
+        if (jobCode == null) {
+            jobCode = "CV-001";
+        }
 
         db = FirebaseFirestore.getInstance();
         
@@ -69,22 +72,27 @@ public class JobDetail extends AppCompatActivity {
         db.collection("CongViec").document(jobCode).get()
                 .addOnSuccessListener(documentSnapshot -> {
                     if (documentSnapshot.exists()) {
-                        CongViec job = documentSnapshot.toObject(CongViec.class);
-                        if (job != null) {
-                            tvJobTitleDetail.setText(job.getTenCongViec());
-                            tvSalaryDetail.setText(formatSalary(job.getLuongToiThieu()) + " - " + formatSalary(job.getLuongToiDa()));
-                            tvHotnessDetail.setText(job.getDoHot());
-                            tvEducationDetail.setText(job.getYeuCauDaoTao());
-                            tvJobDescriptionDetail.setText(job.getMoTa());
-                            fetchIndustryName(job.getMaNganh());
-                        }
+                        String title = documentSnapshot.getString("TenCongViec");
+                        Long minSalary = documentSnapshot.getLong("LuongToiThieu");
+                        Long maxSalary = documentSnapshot.getLong("LuongToiDa");
+                        String hot = documentSnapshot.getString("DoHot");
+                        String education = documentSnapshot.getString("YeuCauDaoTao");
+                        String description = documentSnapshot.getString("MoTa");
+                        String industryId = documentSnapshot.getString("MaNganh");
+
+                        tvJobTitleDetail.setText(title != null ? title : "");
+                        tvSalaryDetail.setText(formatSalary(minSalary != null ? minSalary : 0) + " - " + formatSalary(maxSalary != null ? maxSalary : 0));
+                        tvHotnessDetail.setText(hot != null ? hot : "");
+                        tvEducationDetail.setText(education != null ? education : "");
+                        tvJobDescriptionDetail.setText(description != null ? description : "");
+                        
+                        if (industryId != null) fetchIndustryName(industryId);
                     }
                 })
-                .addOnFailureListener(e -> Log.e("JobDetail", "Firestore Error", e));
+                .addOnFailureListener(e -> Log.e("JobDetail", "Error loading job details", e));
     }
 
     private void fetchIndustryName(String maNganh) {
-        if (maNganh == null) return;
         db.collection("Nganh").document(maNganh).get()
                 .addOnSuccessListener(doc -> {
                     if (doc.exists()) {
@@ -101,8 +109,18 @@ public class JobDetail extends AppCompatActivity {
                         Map<String, Object> data = documentSnapshot.getData();
                         if (data == null) return;
 
-                        // Trường hợp 1: Dữ liệu được lưu dưới dạng Map các số "0", "1", "2"... (Do tool import)
-                        if (data.containsKey("0")) {
+                        List<Map<String, Object>> steps = null;
+                        if (data.containsKey("steps") && data.get("steps") instanceof List) {
+                            steps = (List<Map<String, Object>>) data.get("steps");
+                        } else if (data.containsKey("data") && data.get("data") instanceof List) {
+                            steps = (List<Map<String, Object>>) data.get("data");
+                        }
+
+                        if (steps != null) {
+                            for (Map<String, Object> stepMap : steps) {
+                                addStepFromMap(stepMap);
+                            }
+                        } else if (data.containsKey("0")) {
                             for (int i = 0; ; i++) {
                                 Object stepData = data.get(String.valueOf(i));
                                 if (stepData instanceof Map) {
@@ -111,31 +129,18 @@ public class JobDetail extends AppCompatActivity {
                                     break;
                                 }
                             }
-                        } 
-                        // Trường hợp 2: Dữ liệu là một mảng thực sự nằm trong một field (ví dụ field tên là "steps")
-                        else {
-                            for (Map.Entry<String, Object> entry : data.entrySet()) {
-                                if (entry.getValue() instanceof List) {
-                                    List<Map<String, Object>> steps = (List<Map<String, Object>>) entry.getValue();
-                                    for (Map<String, Object> stepMap : steps) {
-                                        addStepFromMap(stepMap);
-                                    }
-                                    break;
-                                }
-                            }
                         }
-                        
                         roadmapAdapter.notifyDataSetChanged();
                     }
                 })
-                .addOnFailureListener(e -> Log.e("JobDetail", "Lỗi tải lộ trình", e));
+                .addOnFailureListener(e -> Log.e("JobDetail", "Error loading roadmap", e));
     }
 
     private void addStepFromMap(Map<String, Object> stepMap) {
         RoadmapStep step = new RoadmapStep();
         if (stepMap.containsKey("BuocSo")) {
             Object val = stepMap.get("BuocSo");
-            step.setBuocSo(val instanceof Long ? ((Long) val).intValue() : (Integer) val);
+            step.setBuocSo(val instanceof Long ? ((Long) val).intValue() : (val instanceof Integer ? (Integer) val : 0));
         }
         if (stepMap.containsKey("TenBuoc")) step.setTenBuoc((String) stepMap.get("TenBuoc"));
         if (stepMap.containsKey("MoTa")) step.setMoTa((String) stepMap.get("MoTa"));
