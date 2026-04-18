@@ -31,6 +31,7 @@ public class Home extends AppCompatActivity {
     private JobAdapter jobAdapter;
     private List<CongViec> jobList;
     private TextView tvStartAction;
+    private View btnOrientation, btnTrend;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,8 @@ public class Home extends AppCompatActivity {
         tvWelcome = findViewById(R.id.tvWelcome);
         recyclerTrendingJobs = findViewById(R.id.recyclerTrendingJobs);
         tvStartAction = findViewById(R.id.tvStartAction);
+        btnOrientation = findViewById(R.id.btnOrientation);
+        btnTrend = findViewById(R.id.btnTrend);
 
         userId = getIntent().getStringExtra("USER_ID");
 
@@ -53,6 +56,20 @@ public class Home extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        // Chuyển sang trang Trend khi nhấn vào icon Định hướng hoặc Xu hướng
+        View.OnClickListener toTrendListener = v -> {
+            Intent intent = new Intent(Home.this, Trend.class);
+            intent.putExtra("USER_ID", userId);
+            startActivity(intent);
+        };
+
+        if (btnOrientation != null) {
+            btnOrientation.setOnClickListener(toTrendListener);
+        }
+        if (btnTrend != null) {
+            btnTrend.setOnClickListener(toTrendListener);
+        }
 
         if (userId != null) {
             taiDuLieuNguoiDung(userId);

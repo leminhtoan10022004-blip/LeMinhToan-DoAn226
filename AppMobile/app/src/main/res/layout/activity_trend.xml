@@ -25,9 +25,20 @@
                 android:orientation="vertical"
                 android:padding="20dp">
 
+                <ImageButton
+                    android:id="@+id/btnBackTrend"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="-12dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_back_foreground"
+                    app:tint="#FFFFFF"
+                    android:contentDescription="Quay lại" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:text="Xu hướng thị trường\nlao động 2026"
                     android:textColor="#FFFFFF"
                     android:textSize="22sp"
@@ -46,7 +57,7 @@
                         android:backgroundTint="#3D4E66"
                         android:paddingHorizontal="12dp"
                         android:paddingVertical="4dp"
-                        android:text="Bộ LĐTBXH"
+                        android:text="Dữ liệu thật"
                         android:textColor="#FFFFFF"
                         android:textSize="12sp" />
 
@@ -58,19 +69,7 @@
                         android:backgroundTint="#3D4E66"
                         android:paddingHorizontal="12dp"
                         android:paddingVertical="4dp"
-                        android:text="Bộ LĐTBXH"
-                        android:textColor="#FFFFFF"
-                        android:textSize="12sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:background="@drawable/bottom_nav_background"
-                        android:backgroundTint="#3D4E66"
-                        android:paddingHorizontal="12dp"
-                        android:paddingVertical="4dp"
-                        android:text="Bộ LĐTBXH"
+                        android:text="Thị trường"
                         android:textColor="#FFFFFF"
                         android:textSize="12sp" />
                 </LinearLayout>
@@ -79,67 +78,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="Cập nhật 07/03/2026"
+                    android:text="Cập nhật mới nhất từ Firestore"
                     android:textColor="#AAAAAA"
                     android:textSize="12sp" />
             </LinearLayout>
-
-            <!-- Filters Section -->
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:padding="12dp"
-                android:scrollbars="none">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <com.google.android.material.button.MaterialButton
-                        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Tất cả"
-                        android:textAllCaps="false"
-                        app:backgroundTint="#546E7A"
-                        app:cornerRadius="20dp" />
-
-                    <com.google.android.material.button.MaterialButton
-                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:text="Kinh doanh"
-                        android:textAllCaps="false"
-                        android:textColor="#757575"
-                        app:cornerRadius="20dp"
-                        app:strokeColor="#E0E0E0" />
-
-                    <com.google.android.material.button.MaterialButton
-                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:text="Dịch vụ"
-                        android:textAllCaps="false"
-                        android:textColor="#757575"
-                        app:cornerRadius="20dp"
-                        app:strokeColor="#E0E0E0" />
-
-                    <com.google.android.material.button.MaterialButton
-                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:text="Sản xuất"
-                        android:textAllCaps="false"
-                        android:textColor="#757575"
-                        app:cornerRadius="20dp"
-                        app:strokeColor="#E0E0E0" />
-                </LinearLayout>
-            </HorizontalScrollView>
 
             <!-- Ngành tuyển nhiều nhất Section -->
             <RelativeLayout
@@ -155,37 +97,20 @@
                     android:textColor="#000000"
                     android:textSize="18sp"
                     android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:text="Xem tất cả →"
-                    android:textColor="#FF9800"
-                    android:textSize="12sp" />
             </RelativeLayout>
 
-            <HorizontalScrollView
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTrendingCategories"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:paddingStart="20dp"
-                android:paddingEnd="0dp"
-                android:scrollbars="none">
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingHorizontal="12dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_jod_category_card" />
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingBottom="10dp">
-
-                    <include layout="@layout/item_jod_category_card" />
-                    <include layout="@layout/item_jod_category_card" />
-
-                </LinearLayout>
-            </HorizontalScrollView>
-
-            <!-- Dự báo Q2/2026 -->
+            <!-- Dự báo Q2/2026 (Code tĩnh) -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -219,103 +144,12 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Kỹ năng được săn đón Section -->
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Kỹ năng được săn đón"
-                    android:textColor="#000000"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:text="Xem tất cả →"
-                    android:textColor="#FF9800"
-                    android:textSize="12sp" />
-            </RelativeLayout>
-
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:columnCount="2"
-                android:paddingHorizontal="12dp">
-
-                <include layout="@layout/item_skill_card" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" />
-                <include layout="@layout/item_skill_card" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" />
-                <include layout="@layout/item_skill_card" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" />
-                <include layout="@layout/item_skill_card" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" />
-
-            </GridLayout>
-
-            <!-- Nhu cầu tuyển dụng Section -->
+            <!-- Thống kê chung (Dữ liệu tĩnh) -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="24dp"
-                android:text="Nhu cầu tuyển dụng"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                app:cardBackgroundColor="#FFFFFF"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="2dp"
-                app:strokeWidth="0dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-                        <TextView android:text="Công nghệ" android:textSize="12sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                        <TextView android:text="45%" android:textSize="12sp" android:layout_alignParentEnd="true" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                    </RelativeLayout>
-                    <ProgressBar style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="8dp" android:layout_marginTop="4dp" android:progress="45" android:progressDrawable="@drawable/custom_progress_orange" />
-
-                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp">
-                        <TextView android:text="Kinh doanh" android:textSize="12sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                        <TextView android:text="25%" android:textSize="12sp" android:layout_alignParentEnd="true" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                    </RelativeLayout>
-                    <ProgressBar style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="8dp" android:layout_marginTop="4dp" android:progress="25" android:progressDrawable="@drawable/custom_progress_orange" />
-
-                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp">
-                        <TextView android:text="Dịch vụ" android:textSize="12sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                        <TextView android:text="18%" android:textSize="12sp" android:layout_alignParentEnd="true" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                    </RelativeLayout>
-                    <ProgressBar style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="8dp" android:layout_marginTop="4dp" android:progress="18" android:progressDrawable="@drawable/custom_progress_orange" />
-
-                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp">
-                        <TextView android:text="Sản xuất" android:textSize="12sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                        <TextView android:text="12%" android:textSize="12sp" android:layout_alignParentEnd="true" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                    </RelativeLayout>
-                    <ProgressBar style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="8dp" android:layout_marginTop="4dp" android:progress="12" android:progressDrawable="@drawable/custom_progress_orange" />
-
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- Tăng trưởng theo vùng Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="8dp"
-                android:text="Tăng trưởng theo vùng"
+                android:text="Thống kê chung"
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -325,15 +159,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:columnCount="2"
-                android:paddingHorizontal="12dp"
-                android:paddingBottom="40dp">
+                android:paddingHorizontal="10dp">
 
-                <include layout="@layout/item_region_growth_card" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" />
-                <include layout="@layout/item_region_growth_card" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" />
-                <include layout="@layout/item_region_growth_card" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" />
-                <include layout="@layout/item_region_growth_card" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" />
+                <include layout="@layout/item_stat_card" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" />
+                <include layout="@layout/item_stat_card" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" />
 
             </GridLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
