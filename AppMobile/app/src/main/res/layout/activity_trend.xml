@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8F9FA"
+    android:background="#F4F7F9"
     tools:context=".Trend">
 
     <androidx.core.widget.NestedScrollView
@@ -17,87 +17,53 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Header Section -->
+            <!-- Dynamic Header Section -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#1A314D"
+                android:background="@drawable/gradient_blue_bg"
                 android:orientation="vertical"
-                android:padding="20dp">
+                android:padding="24dp">
 
                 <ImageButton
                     android:id="@+id/btnBackTrend"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_marginStart="-12dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="-8dp"
                     android:background="?attr/selectableItemBackgroundBorderless"
-                    android:src="@drawable/ic_back_foreground"
-                    app:tint="#FFFFFF"
-                    android:contentDescription="Quay lại" />
+                    android:contentDescription="Quay lại"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_back"
+                    app:tint="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Xu hướng thị trường\nlao động 2026"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Xu hướng thị trường\nlao động 2026"
-                    android:textColor="#FFFFFF"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom_nav_background"
-                        android:backgroundTint="#3D4E66"
-                        android:paddingHorizontal="12dp"
-                        android:paddingVertical="4dp"
-                        android:text="Dữ liệu thật"
-                        android:textColor="#FFFFFF"
-                        android:textSize="12sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:background="@drawable/bottom_nav_background"
-                        android:backgroundTint="#3D4E66"
-                        android:paddingHorizontal="12dp"
-                        android:paddingVertical="4dp"
-                        android:text="Thị trường"
-                        android:textColor="#FFFFFF"
-                        android:textSize="12sp" />
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="Cập nhật mới nhất từ Firestore"
-                    android:textColor="#AAAAAA"
-                    android:textSize="12sp" />
+                    android:text="Dựa trên phân tích từ dữ liệu Firestore"
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="14sp" />
             </LinearLayout>
 
-            <!-- Ngành tuyển nhiều nhất Section -->
-            <RelativeLayout
-                android:layout_width="match_parent"
+            <!-- Trending Categories Section -->
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:paddingHorizontal="20dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Ngành tuyển nhiều nhất"
-                    android:textColor="#000000"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-            </RelativeLayout>
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="24dp"
+                android:text="Ngành nghề bùng nổ"
+                android:textColor="#1A237E"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvTrendingCategories"
@@ -110,61 +76,83 @@
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/item_jod_category_card" />
 
-            <!-- Dự báo Q2/2026 (Code tĩnh) -->
+            <!-- Latest News Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="24dp"
+                android:text="Bản tin thị trường"
+                android:textColor="#1A237E"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvLatestNews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingHorizontal="12dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_news_card" />
+
+            <!-- Forecast Card (Static) -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                app:cardBackgroundColor="#FFF9E6"
-                app:cardCornerRadius="16dp"
+                app:cardBackgroundColor="#E3F2FD"
+                app:cardCornerRadius="20dp"
                 app:cardElevation="0dp"
-                app:strokeWidth="0dp">
+                app:strokeWidth="1dp"
+                app:strokeColor="#BBDEFB">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="20dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="📈 Dự báo Q2/2026"
-                        android:textColor="#000000"
+                        android:text="💡 Dự báo chuyên gia Q2/2026"
+                        android:textColor="#0D47A1"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:lineSpacingExtra="4dp"
-                        android:text="• AI, An ninh mạng tiếp tục tăng trưởng 15-20%.\n• Kỹ năng GenAI tăng đột biến, nhu cầu nhân sự có chứng chỉ chuyên sâu.\n• Khu vực Đà Nẵng thu hút đầu tư công nghệ, dự kiến tăng thêm 30% việc làm IT."
-                        android:textColor="#333333"
+                        android:layout_marginTop="12dp"
+                        android:lineSpacingExtra="6dp"
+                        android:text="• Các ngành liên quan đến Chip &amp; Bán dẫn tăng trưởng 25%.\n• Nhân sự thực hành AI được săn đón với mức lương cao hơn 30%.\n• Nhu cầu dịch vụ số hóa tại các thành phố lớn đạt đỉnh mới."
+                        android:textColor="#1565C0"
                         android:textSize="13sp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Thống kê chung (Dữ liệu tĩnh) -->
+            <!-- Top Skills Section -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
-                android:text="Thống kê chung"
-                android:textColor="#000000"
+                android:text="Kỹ năng được săn đón"
+                android:textColor="#1A237E"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <GridLayout
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTrendingSkills"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:columnCount="2"
-                android:paddingHorizontal="10dp">
-
-                <include layout="@layout/item_stat_card" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" />
-                <include layout="@layout/item_stat_card" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" />
-
-            </GridLayout>
+                android:paddingHorizontal="12dp"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                tools:listitem="@layout/item_skill_card" />
 
             <View
                 android:layout_width="match_parent"
