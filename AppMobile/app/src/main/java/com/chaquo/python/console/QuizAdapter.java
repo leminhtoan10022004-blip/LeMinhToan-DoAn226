@@ -1,6 +1,7 @@
 package com.chaquo.python.console;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,19 +40,25 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.QuizViewHolder
         holder.tvTime.setText("⏱ " + quiz.getThoiGian() + " phút");
         holder.tvQuestionCount.setText("📋 " + quiz.getSoLuongCauHoi() + " câu hỏi");
 
-        // Xử lý hình ảnh tĩnh theo tên từ dữ liệu (Firestore)
-        String imageName = quiz.getHinhAnh(); // Ví dụ: "mbti_icon"
+        String imageName = quiz.getHinhAnh();
         if (imageName != null && !imageName.isEmpty()) {
-            int resId = context.getResources().getIdentifier(imageName, "drawable", context.getPackageName());
+            int resId = context.getResources().getIdentifier(imageName.replace(".png", ""), "drawable", context.getPackageName());
             if (resId != 0) {
                 holder.imgQuiz.setImageResource(resId);
             } else {
-                // Mặc định nếu không tìm thấy
                 holder.imgQuiz.setImageResource(R.drawable.mbti_icon);
             }
         } else {
             holder.imgQuiz.setImageResource(R.drawable.mbti_icon);
         }
+
+        // Sự kiện click để chuyển sang trang câu hỏi chi tiết
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, DetailQuestion.class);
+            // Truyền Document ID (MaTest) để DetailQuestion tải đúng dữ liệu từ Firestore
+            intent.putExtra("TEST_ID", quiz.getMaTest());
+            context.startActivity(intent);
+        });
     }
 
     @Override

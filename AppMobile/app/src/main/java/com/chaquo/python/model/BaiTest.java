@@ -1,8 +1,11 @@
 package com.chaquo.python.model;
 
+import com.google.firebase.firestore.Exclude;
 import com.google.firebase.firestore.PropertyName;
+import java.util.List;
 
 public class BaiTest {
+    private String MaTest; // Trường lưu Document ID
     private String TieuDe;
     private String LoaiTest;
     private String MoTaLoai;
@@ -10,8 +13,14 @@ public class BaiTest {
     private int ThoiGian;
     private String TrangThai;
     private int SoLuongCauHoi;
+    private List<CauHoi> DanhSachCauHoi;
 
     public BaiTest() {}
+
+    @Exclude
+    public String getMaTest() { return MaTest; }
+    @Exclude
+    public void setMaTest(String MaTest) { this.MaTest = MaTest; }
 
     @PropertyName("TieuDe")
     public String getTieuDe() { return TieuDe; }
@@ -47,4 +56,9 @@ public class BaiTest {
     public int getSoLuongCauHoi() { return SoLuongCauHoi; }
     @PropertyName("SoLuongCauHoi")
     public void setSoLuongCauHoi(int SoLuongCauHoi) { this.SoLuongCauHoi = SoLuongCauHoi; }
+
+    @PropertyName("DanhSachCauHoi")
+    public List<CauHoi> getDanhSachCauHoi() { return DanhSachCauHoi; }
+    @PropertyName("DanhSachCauHoi")
+    public void setDanhSachCauHoi(List<CauHoi> DanhSachCauHoi) { this.DanhSachCauHoi = DanhSachCauHoi; }
 }

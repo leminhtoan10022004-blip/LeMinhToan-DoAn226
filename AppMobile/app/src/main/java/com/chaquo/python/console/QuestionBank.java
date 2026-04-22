@@ -61,6 +61,8 @@ public class QuestionBank extends AppCompatActivity {
                         quizList.clear();
                         for (QueryDocumentSnapshot document : task.getResult()) {
                             BaiTest quiz = document.toObject(BaiTest.class);
+                            // QUAN TRỌNG: Gán Document ID vào MaTest để QuizAdapter có thể truyền đi
+                            quiz.setMaTest(document.getId());
                             quizList.add(quiz);
                         }
                         quizAdapter.notifyDataSetChanged();
