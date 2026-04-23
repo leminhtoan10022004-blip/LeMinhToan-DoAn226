@@ -54,6 +54,9 @@
         <activity
             android:name=".JobDetail"
             android:exported="false" />
+        <activity
+            android:name=".MLPSampleActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

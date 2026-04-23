@@ -1,0 +1,333 @@
+nganh_nghe,nghe_nghiep,MBTI,MBTI_code,Holland_code,Big5_O,Big5_C,Big5_E,Big5_A,Big5_N,DISC_type,DISC_code,Toan,Ly,Hoa,Sinh,Van,Anh,Tin,Dia,Su
+Công nghệ thông tin,Lập trình viên,ISTJ/INTJ/INTP,ISTJ,IRC,80,82,30,39,19,Conscientiousness,C,8.5,7.0,6.5,5.0,5.5,7.0,9.5,6.0,5.0
+Công nghệ thông tin,Lập trình viên,ISTJ/INTJ/INTP,ISTJ,IRC,81,85,24,45,13,Conscientiousness,C,8.0,6.5,6.0,5.5,5.0,7.5,9.0,5.5,4.5
+Công nghệ thông tin,Lập trình viên,ISTJ/INTJ/INTP,ISTJ,IRC,77,84,28,39,28,Conscientiousness,C,7.5,7.2,6.8,5.2,6.0,6.8,9.2,5.8,5.2
+Công nghệ thông tin,Lập trình viên,ISTJ/INTJ/INTP,INTJ,IRC,82,83,30,34,31,Conscientiousness,C,8.2,7.5,7.0,5.8,4.8,8.0,9.8,5.0,4.5
+Công nghệ thông tin,Lập trình viên,ISTJ/INTJ/INTP,INTJ,IRC,90,77,22,40,27,Conscientiousness,C,9.0,7.8,6.5,5.5,4.0,8.5,9.5,5.2,4.8
+Công nghệ thông tin,Lập trình viên,ISTJ/INTJ/INTP,INTJ,IRC,90,81,23,37,20,Conscientiousness,C,8.8,7.4,7.2,5.0,5.2,8.2,9.7,5.4,4.6
+Công nghệ thông tin,Lập trình viên,ISTJ/INTJ/INTP,INTP,IRC,89,84,15,33,33,Conscientiousness,C,8.7,7.6,6.9,5.3,5.8,7.9,9.6,5.6,4.9
+Công nghệ thông tin,Lập trình viên,ISTJ/INTJ/INTP,INTP,IRC,95,73,26,25,34,Conscientiousness,C,9.2,7.0,6.2,4.8,4.5,8.7,9.9,4.5,4.2
+Công nghệ thông tin,Lập trình viên,ISTJ/INTJ/INTP,INTP,IRC,89,81,23,28,24,Conscientiousness,C,8.6,7.3,6.7,5.1,5.4,7.8,9.4,5.5,4.7
+Công nghệ thông tin,Lập trình viên,ISTJ,ISTJ,IRC,82,86,28,42,18,Conscientiousness,C,8.9,7.9,7.1,5.6,5.0,8.3,9.8,5.3,4.9
+Công nghệ thông tin,Lập trình viên,INTJ,INTJ,IRC,88,79,25,36,26,Conscientiousness,C,8.4,7.7,6.8,5.4,4.9,8.1,9.5,5.1,4.4
+Công nghệ thông tin,Lập trình viên,INTP,INTP,IRC,92,75,20,30,30,Conscientiousness,C,9.1,7.2,6.4,5.0,4.6,8.4,9.9,4.8,4.3
+Kỹ thuật & Công nghệ,Kỹ sư ô tô,ISTJ/ESTJ,ISTJ,RIC,53,89,46,44,24,Conscientiousness,C,7.5,8.5,7.0,6.0,5.0,6.0,7.0,6.5,6.0
+Kỹ thuật & Công nghệ,Kỹ sư ô tô,ISTJ/ESTJ,ISTJ,RIC,55,94,45,56,28,Conscientiousness,C,7.8,8.8,7.2,6.2,4.8,6.5,7.2,6.8,6.2
+Kỹ thuật & Công nghệ,Kỹ sư ô tô,ISTJ/ESTJ,ISTJ,RIC,57,93,48,48,25,Conscientiousness,C,8.0,9.0,7.5,6.5,5.2,6.8,7.5,6.9,6.5
+Kỹ thuật & Công nghệ,Kỹ sư ô tô,ESTJ,ESTJ,RIC,49,92,64,57,26,Dominance,D,7.2,8.7,7.1,6.3,4.5,6.2,6.8,6.4,5.8
+Kỹ thuật & Công nghệ,Kỹ sư ô tô,ESTJ,ESTJ,RIC,59,95,64,62,13,Dominance,D,8.2,9.2,7.8,6.8,4.9,7.0,7.8,7.0,6.6
+Kỹ thuật & Công nghệ,Kỹ sư ô tô,ESTJ,ESTJ,RIC,54,88,67,64,20,Dominance,D,7.6,8.6,7.3,6.4,5.1,6.6,7.3,6.6,6.1
+Kỹ thuật & Công nghệ,Kỹ sư ô tô,ISTJ,ISTJ,RIC,56,92,44,50,22,Conscientiousness,C,7.9,8.9,7.6,6.6,5.3,6.7,7.6,6.7,6.3
+Kỹ thuật & Công nghệ,Kỹ sư ô tô,ESTJ,ESTJ,RIC,52,90,60,60,18,Dominance,D,7.4,8.5,7.0,6.1,4.7,6.3,7.1,6.2,5.9
+Kỹ thuật & Công nghệ,Kỹ sư cơ khí,ISTJ/ESTJ,ISTJ,RIC,44,88,42,53,32,Conscientiousness,C,7.0,8.2,6.5,5.5,5.0,5.5,6.5,6.0,5.5
+Kỹ thuật & Công nghệ,Kỹ sư cơ khí,ISTJ/ESTJ,ISTJ,RIC,54,95,36,55,21,Conscientiousness,C,7.5,8.8,6.8,5.8,4.8,5.8,7.0,6.3,5.8
+Kỹ thuật & Công nghệ,Kỹ sư cơ khí,ISTJ/ESTJ,ISTJ,RIC,49,90,45,59,28,Conscientiousness,C,7.2,8.5,6.6,5.6,5.2,5.6,6.8,6.1,5.6
+Kỹ thuật & Công nghệ,Kỹ sư cơ khí,ESTJ,ESTJ,RIC,44,91,68,72,14,Dominance,D,6.8,8.9,7.0,6.0,4.5,6.0,6.9,6.4,5.9
+Kỹ thuật & Công nghệ,Kỹ sư cơ khí,ESTJ,ESTJ,RIC,38,90,56,62,25,Dominance,D,6.5,8.4,6.4,5.4,4.9,5.4,6.2,5.8,5.4
+Kỹ thuật & Công nghệ,Kỹ sư cơ khí,ESTJ,ESTJ,RIC,39,95,64,71,28,Dominance,D,6.9,9.0,6.9,5.9,4.6,5.9,6.7,6.2,5.7
+Kỹ thuật & Công nghệ,Kỹ sư cơ khí,ISTJ,ISTJ,RIC,48,92,40,56,24,Conscientiousness,C,7.3,8.6,6.7,5.7,5.1,5.7,6.9,6.2,5.6
+Kỹ thuật & Công nghệ,Kỹ sư cơ khí,ESTJ,ESTJ,RIC,42,89,62,65,20,Dominance,D,7.0,8.7,6.8,5.8,4.7,5.8,6.6,6.0,5.5
+Kỹ thuật & Công nghệ,Kỹ sư điện - điện tử,INTJ/ISTJ,INTJ,RIC,70,77,30,45,22,Conscientiousness,C,8.0,8.5,7.5,6.0,5.0,6.5,8.0,6.0,5.5
+Kỹ thuật & Công nghệ,Kỹ sư điện - điện tử,INTJ/ISTJ,INTJ,RIC,65,86,40,42,26,Conscientiousness,C,7.8,8.7,7.2,5.8,5.2,6.8,8.2,6.2,5.8
+Kỹ thuật & Công nghệ,Kỹ sư điện - điện tử,INTJ/ISTJ,INTJ,RIC,62,85,43,42,28,Conscientiousness,C,7.5,8.3,7.0,5.6,5.4,6.4,7.8,5.9,5.4
+Kỹ thuật & Công nghệ,Kỹ sư điện - điện tử,ISTJ,ISTJ,RIC,60,91,38,48,16,Conscientiousness,C,7.9,8.9,7.6,6.1,4.9,6.9,8.4,6.4,5.9
+Kỹ thuật & Công nghệ,Kỹ sư điện - điện tử,ISTJ,ISTJ,RIC,68,87,38,42,22,Conscientiousness,C,8.1,8.6,7.4,5.9,5.1,6.6,8.3,6.1,5.6
+Kỹ thuật & Công nghệ,Kỹ sư điện - điện tử,ISTJ,ISTJ,RIC,72,82,25,53,21,Conscientiousness,C,8.3,8.4,7.3,6.0,5.3,6.7,8.5,6.3,5.7
+Kỹ thuật & Công nghệ,Kỹ sư điện - điện tử,INTJ,INTJ,RIC,67,83,35,44,24,Conscientiousness,C,7.7,8.8,7.5,5.9,5.0,6.5,8.1,6.0,5.5
+Kỹ thuật & Công nghệ,Kỹ sư xây dựng,ESTJ/ISTJ,ESTJ,REC,54,83,69,59,19,Dominance,D,7.2,7.8,6.5,5.5,5.5,5.5,6.8,7.0,6.5
+Kỹ thuật & Công nghệ,Kỹ sư xây dựng,ESTJ/ISTJ,ESTJ,REC,62,84,66,61,32,Dominance,D,7.5,8.0,6.8,5.8,5.2,5.8,7.0,7.2,6.8
+Kỹ thuật & Công nghệ,Kỹ sư xây dựng,ESTJ/ISTJ,ESTJ,REC,52,90,78,70,23,Dominance,D,7.0,8.2,6.6,5.6,5.4,5.6,6.6,7.4,6.9
+Kỹ thuật & Công nghệ,Kỹ sư xây dựng,ISTJ,ISTJ,REC,48,95,39,63,26,Conscientiousness,C,6.8,8.4,6.4,5.4,5.0,5.4,6.5,7.1,6.6
+Kỹ thuật & Công nghệ,Kỹ sư xây dựng,ISTJ,ISTJ,REC,58,95,30,59,19,Conscientiousness,C,7.3,8.6,6.9,5.9,4.8,5.9,6.9,7.3,6.7
+Kỹ thuật & Công nghệ,Kỹ sư xây dựng,ISTJ,ISTJ,REC,44,95,27,59,19,Conscientiousness,C,6.5,8.3,6.3,5.3,5.1,5.3,6.3,7.0,6.4
+Kỹ thuật & Công nghệ,Kỹ sư xây dựng,ESTJ,ESTJ,REC,56,88,72,64,25,Dominance,D,7.4,8.1,6.7,5.7,5.3,5.7,6.7,7.2,6.8
+Kỹ thuật & Công nghệ,Kỹ sư môi trường,INFJ/ENFJ,INFJ,ISE,72,69,58,84,24,Steadiness,S,7.0,6.5,7.5,8.0,6.5,6.0,6.5,7.5,7.0
+Kỹ thuật & Công nghệ,Kỹ sư môi trường,INFJ/ENFJ,INFJ,ISE,73,77,59,93,29,Steadiness,S,7.2,6.8,7.8,8.2,6.8,6.2,6.8,7.8,7.2
+Kỹ thuật & Công nghệ,Kỹ sư môi trường,INFJ/ENFJ,INFJ,ISE,80,82,63,81,37,Steadiness,S,7.5,7.0,8.0,8.5,7.0,6.5,7.0,8.0,7.5
+Kỹ thuật & Công nghệ,Kỹ sư môi trường,ENFJ,ENFJ,ISE,74,77,90,88,20,Influence,I,7.3,6.9,7.9,8.3,6.9,6.3,6.9,7.9,7.3
+Kỹ thuật & Công nghệ,Kỹ sư môi trường,ENFJ,ENFJ,ISE,70,75,88,95,30,Influence,I,7.0,6.6,7.6,8.1,6.6,6.0,6.6,7.6,7.0
+Kỹ thuật & Công nghệ,Kỹ sư môi trường,ENFJ,ENFJ,ISE,81,63,80,83,29,Influence,I,7.8,7.2,8.2,8.6,7.2,6.8,7.2,8.2,7.8
+Kỹ thuật & Công nghệ,Kỹ sư môi trường,INFJ,INFJ,ISE,75,73,60,86,26,Steadiness,S,7.1,6.7,7.7,8.2,6.7,6.1,6.7,7.7,7.1
+Kỹ thuật & Công nghệ,Kiến trúc sư,INFP/ENFP,INFP,AEI,95,65,64,73,28,Influence,I,6.5,5.5,5.0,5.0,8.0,7.0,8.5,8.5,7.5
+Kỹ thuật & Công nghệ,Kiến trúc sư,INFP/ENFP,INFP,AEI,95,66,70,72,30,Influence,I,6.8,5.8,5.2,5.2,8.2,7.2,8.7,8.7,7.8
+Kỹ thuật & Công nghệ,Kiến trúc sư,INFP/ENFP,INFP,AEI,95,69,59,81,25,Influence,I,7.0,6.0,5.5,5.5,8.5,7.5,9.0,9.0,8.0
+Kỹ thuật & Công nghệ,Kiến trúc sư,ENFP,ENFP,AEI,83,57,79,79,22,Influence,I,6.2,5.2,4.8,4.8,7.8,6.8,8.2,8.2,7.2
+Kỹ thuật & Công nghệ,Kiến trúc sư,ENFP,ENFP,AEI,95,72,92,78,29,Influence,I,7.2,6.2,5.8,5.8,8.8,7.8,9.2,9.2,8.2
+Kỹ thuật & Công nghệ,Kiến trúc sư,ENFP,ENFP,AEI,83,62,89,72,29,Influence,I,6.6,5.6,5.1,5.1,8.1,7.1,8.6,8.6,7.6
+Kỹ thuật & Công nghệ,Kiến trúc sư,INFP,INFP,AEI,92,64,62,76,26,Influence,I,6.9,5.9,5.4,5.4,8.4,7.4,8.9,8.9,7.9
+Kinh tế - Tài chính - Luật,Chuyên gia tài chính,INTJ/ENTJ,INTJ,ECI,75,95,61,55,27,Dominance,D,8.5,7.0,6.0,5.5,6.5,8.0,7.5,6.0,5.5
+Kinh tế - Tài chính - Luật,Chuyên gia tài chính,INTJ/ENTJ,INTJ,ECI,71,93,61,48,13,Dominance,D,8.2,6.8,5.8,5.2,6.2,7.8,7.2,5.8,5.2
+Kinh tế - Tài chính - Luật,Chuyên gia tài chính,INTJ/ENTJ,INTJ,ECI,68,95,53,43,27,Dominance,D,8.0,6.5,5.5,5.0,6.0,7.5,7.0,5.5,5.0
+Kinh tế - Tài chính - Luật,Chuyên gia tài chính,ENTJ,ENTJ,ECI,78,95,82,48,23,Dominance,D,8.8,7.5,6.5,6.0,7.0,8.5,8.0,6.5,6.0
+Kinh tế - Tài chính - Luật,Chuyên gia tài chính,ENTJ,ENTJ,ECI,64,92,79,49,14,Dominance,D,7.8,6.2,5.2,4.8,5.8,7.2,6.8,5.2,4.8
+Kinh tế - Tài chính - Luật,Chuyên gia tài chính,ENTJ,ENTJ,ECI,74,90,84,48,10,Dominance,D,8.4,7.2,6.2,5.7,6.7,8.2,7.7,6.2,5.7
+Kinh tế - Tài chính - Luật,Chuyên gia tài chính,INTJ,INTJ,ECI,73,94,58,50,20,Dominance,D,8.3,7.1,6.1,5.6,6.6,8.1,7.6,6.1,5.6
+Kinh tế - Tài chính - Luật,Chuyên viên ngân hàng,ISTJ/ESTJ,ISTJ,CSE,55,95,57,70,23,Conscientiousness,C,7.5,6.0,5.5,5.0,7.0,6.5,7.0,6.5,6.0
+Kinh tế - Tài chính - Luật,Chuyên viên ngân hàng,ISTJ/ESTJ,ISTJ,CSE,52,89,55,74,21,Conscientiousness,C,7.2,5.8,5.2,4.8,6.8,6.2,6.8,6.2,5.8
+Kinh tế - Tài chính - Luật,Chuyên viên ngân hàng,ISTJ/ESTJ,ISTJ,CSE,51,95,57,64,17,Conscientiousness,C,7.0,5.5,5.0,4.5,6.5,6.0,6.5,6.0,5.5
+Kinh tế - Tài chính - Luật,Chuyên viên ngân hàng,ESTJ,ESTJ,CSE,51,85,69,73,28,Steadiness,S,7.4,6.2,5.6,5.1,7.1,6.6,7.1,6.6,6.1
+Kinh tế - Tài chính - Luật,Chuyên viên ngân hàng,ESTJ,ESTJ,CSE,45,86,78,69,19,Steadiness,S,6.8,5.2,4.8,4.2,6.2,5.8,6.2,5.8,5.2
+Kinh tế - Tài chính - Luật,Chuyên viên ngân hàng,ESTJ,ESTJ,CSE,48,91,72,81,21,Steadiness,S,7.1,5.9,5.3,4.9,6.9,6.3,6.9,6.3,5.9
+Kinh tế - Tài chính - Luật,Chuyên viên ngân hàng,ISTJ,ISTJ,CSE,53,92,56,68,20,Conscientiousness,C,7.3,6.1,5.5,5.0,7.0,6.5,7.0,6.5,6.0
+Kinh tế - Tài chính - Luật,Luật sư,ENTJ/ESTJ,ENTJ,EIC,78,77,86,55,16,Dominance,D,7.0,6.0,5.5,5.5,8.5,7.5,6.5,7.0,8.0
+Kinh tế - Tài chính - Luật,Luật sư,ENTJ/ESTJ,ENTJ,EIC,70,80,80,56,20,Dominance,D,6.5,5.5,5.0,5.0,8.0,7.0,6.0,6.5,7.5
+Kinh tế - Tài chính - Luật,Luật sư,ENTJ/ESTJ,ENTJ,EIC,71,83,87,58,20,Dominance,D,6.8,5.8,5.2,5.2,8.2,7.2,6.2,6.8,7.8
+Kinh tế - Tài chính - Luật,Luật sư,ESTJ,ESTJ,EIC,73,95,80,58,10,Dominance,D,7.2,6.2,5.7,5.7,8.7,7.7,6.7,7.2,8.2
+Kinh tế - Tài chính - Luật,Luật sư,ESTJ,ESTJ,EIC,70,90,73,57,17,Dominance,D,6.9,5.9,5.4,5.4,8.4,7.4,6.4,6.9,7.9
+Kinh tế - Tài chính - Luật,Luật sư,ESTJ,ESTJ,EIC,61,90,77,71,20,Dominance,D,6.4,5.4,4.9,4.9,7.9,6.9,5.9,6.4,7.4
+Kinh tế - Tài chính - Luật,Luật sư,ENTJ,ENTJ,EIC,75,82,84,57,18,Dominance,D,7.1,6.1,5.6,5.6,8.6,7.6,6.6,7.1,8.1
+Kinh tế - Tài chính - Luật,Chuyên viên pháp lý,ISTJ/INTJ,ISTJ,CIE,52,90,34,56,13,Conscientiousness,C,7.0,6.0,5.5,5.5,8.0,6.5,6.5,7.0,7.5
+Kinh tế - Tài chính - Luật,Chuyên viên pháp lý,ISTJ/INTJ,ISTJ,CIE,63,91,45,56,13,Conscientiousness,C,7.5,6.5,6.0,6.0,8.5,7.0,7.0,7.5,8.0
+Kinh tế - Tài chính - Luật,Chuyên viên pháp lý,ISTJ/INTJ,ISTJ,CIE,61,95,33,63,18,Conscientiousness,C,7.2,6.2,5.7,5.7,8.2,6.7,6.7,7.2,7.7
+Kinh tế - Tài chính - Luật,Chuyên viên pháp lý,INTJ,INTJ,CIE,69,90,38,60,16,Conscientiousness,C,7.8,6.8,6.2,6.2,8.8,7.2,7.2,7.8,8.2
+Kinh tế - Tài chính - Luật,Chuyên viên pháp lý,INTJ,INTJ,CIE,69,92,32,60,12,Conscientiousness,C,7.6,6.6,6.1,6.1,8.6,7.1,7.1,7.6,8.1
+Kinh tế - Tài chính - Luật,Chuyên viên pháp lý,INTJ,INTJ,CIE,67,95,40,54,20,Conscientiousness,C,7.4,6.4,5.9,5.9,8.4,6.9,6.9,7.4,7.9
+Kinh tế - Tài chính - Luật,Chuyên viên pháp lý,ISTJ,ISTJ,CIE,57,92,38,58,14,Conscientiousness,C,7.3,6.3,5.8,5.8,8.3,6.8,6.8,7.3,7.8
+Kinh doanh - Dịch vụ,Chuyên gia Marketing,ENFP/ENTP,ENFP,ASE,87,65,89,68,32,Influence,I,6.5,5.0,5.0,4.5,8.0,8.5,7.5,7.0,6.5
+Kinh doanh - Dịch vụ,Chuyên gia Marketing,ENFP/ENTP,ENFP,ASE,89,68,91,78,26,Influence,I,6.8,5.2,5.2,4.8,8.2,8.7,7.8,7.2,6.8
+Kinh doanh - Dịch vụ,Chuyên gia Marketing,ENFP/ENTP,ENFP,ASE,89,69,77,73,29,Influence,I,7.0,5.5,5.5,5.0,8.5,9.0,8.0,7.5,7.0
+Kinh doanh - Dịch vụ,Chuyên gia Marketing,ENTP,ENTP,ASE,95,65,84,70,23,Influence,I,7.2,5.7,5.7,5.2,8.7,9.2,8.2,7.7,7.2
+Kinh doanh - Dịch vụ,Chuyên gia Marketing,ENTP,ENTP,ASE,95,69,92,62,15,Influence,I,7.5,6.0,6.0,5.5,9.0,9.5,8.5,8.0,7.5
+Kinh doanh - Dịch vụ,Chuyên gia Marketing,ENTP,ENTP,ASE,95,62,90,63,15,Influence,I,6.9,5.4,5.4,4.9,8.4,8.9,7.9,7.4,6.9
+Kinh doanh - Dịch vụ,Chuyên gia Marketing,ENFP,ENFP,ASE,88,66,88,70,28,Influence,I,6.7,5.2,5.2,4.7,8.3,8.8,7.8,7.3,6.8
+Kinh doanh - Dịch vụ,Chuyên viên truyền thông (PR),ENFJ/ESFJ,ENFJ,ASE,90,73,92,90,28,Influence,I,7.0,5.5,5.0,5.0,8.5,8.0,7.0,7.5,7.0
+Kinh doanh - Dịch vụ,Chuyên viên truyền thông (PR),ENFJ/ESFJ,ENFJ,ASE,80,74,88,85,13,Influence,I,6.5,5.0,4.5,4.5,8.0,7.5,6.5,7.0,6.5
+Kinh doanh - Dịch vụ,Chuyên viên truyền thông (PR),ENFJ/ESFJ,ENFJ,ASE,90,62,95,83,23,Influence,I,7.2,5.7,5.2,5.2,8.7,8.2,7.2,7.7,7.2
+Kinh doanh - Dịch vụ,Chuyên viên truyền thông (PR),ESFJ,ESFJ,ASE,80,69,87,92,10,Steadiness,S,6.8,5.3,4.8,4.8,8.3,7.8,6.8,7.3,6.8
+Kinh doanh - Dịch vụ,Chuyên viên truyền thông (PR),ESFJ,ESFJ,ASE,76,83,86,95,17,Steadiness,S,6.9,5.4,4.9,4.9,8.4,7.9,6.9,7.4,6.9
+Kinh doanh - Dịch vụ,Chuyên viên truyền thông (PR),ESFJ,ESFJ,ASE,79,76,81,88,20,Steadiness,S,7.1,5.6,5.1,5.1,8.6,8.1,7.1,7.6,7.1
+Kinh doanh - Dịch vụ,Chuyên viên truyền thông (PR),ENFJ,ENFJ,ASE,85,70,90,87,24,Influence,I,7.0,5.5,5.0,5.0,8.5,8.0,7.0,7.5,7.0
+Kinh doanh - Dịch vụ,Quản lý nhân sự,ENFJ/ESFJ,ENFJ,SEC,74,77,86,94,10,Steadiness,S,6.5,5.0,5.0,5.5,8.0,7.0,6.5,7.0,7.0
+Kinh doanh - Dịch vụ,Quản lý nhân sự,ENFJ/ESFJ,ENFJ,SEC,71,81,83,95,17,Steadiness,S,6.8,5.2,5.2,5.7,8.2,7.2,6.8,7.2,7.2
+Kinh doanh - Dịch vụ,Quản lý nhân sự,ENFJ/ESFJ,ENFJ,SEC,76,86,91,88,23,Steadiness,S,7.0,5.5,5.5,6.0,8.5,7.5,7.0,7.5,7.5
+Kinh doanh - Dịch vụ,Quản lý nhân sự,ESFJ,ESFJ,SEC,72,82,69,95,18,Steadiness,S,6.6,5.1,5.1,5.6,8.1,7.1,6.6,7.1,7.1
+Kinh doanh - Dịch vụ,Quản lý nhân sự,ESFJ,ESFJ,SEC,67,79,74,95,10,Steadiness,S,6.4,4.9,4.9,5.4,7.9,6.9,6.4,6.9,6.9
+Kinh doanh - Dịch vụ,Quản lý nhân sự,ESFJ,ESFJ,SEC,63,81,67,88,10,Steadiness,S,6.2,4.7,4.7,5.2,7.7,6.7,6.2,6.7,6.7
+Kinh doanh - Dịch vụ,Quản lý nhân sự,ENFJ,ENFJ,SEC,75,80,88,92,15,Steadiness,S,6.9,5.4,5.4,5.9,8.4,7.4,6.9,7.4,7.4
+Sáng tạo - Nghệ thuật,Nhà thiết kế đồ họa,INFP/ISFP,INFP,AES,95,64,51,80,23,Influence,I,6.0,5.0,5.5,4.5,7.5,7.0,9.0,8.0,6.0
+Sáng tạo - Nghệ thuật,Nhà thiết kế đồ họa,INFP/ISFP,INFP,AES,95,77,49,74,21,Influence,I,6.5,5.5,6.0,5.0,8.0,7.5,9.5,8.5,6.5
+Sáng tạo - Nghệ thuật,Nhà thiết kế đồ họa,INFP/ISFP,INFP,AES,87,65,50,74,22,Influence,I,5.8,4.8,5.2,4.2,7.2,6.8,8.8,7.8,5.8
+Sáng tạo - Nghệ thuật,Nhà thiết kế đồ họa,ISFP,ISFP,AES,95,71,33,79,15,Influence,I,6.2,5.2,5.7,4.7,7.7,7.2,9.2,8.2,6.2
+Sáng tạo - Nghệ thuật,Nhà thiết kế đồ họa,ISFP,ISFP,AES,95,61,46,88,22,Influence,I,6.3,5.3,5.8,4.8,7.8,7.3,9.3,8.3,6.3
+Sáng tạo - Nghệ thuật,Nhà thiết kế đồ họa,ISFP,ISFP,AES,95,73,45,86,17,Influence,I,6.4,5.4,5.9,4.9,7.9,7.4,9.4,8.4,6.4
+Sáng tạo - Nghệ thuật,Nhà thiết kế đồ họa,INFP,INFP,AES,92,68,52,78,25,Influence,I,6.1,5.1,5.6,4.6,7.6,7.1,9.1,8.1,6.1
+Sáng tạo - Nghệ thuật,Nhiếp ảnh gia,ISFP/INFP,ISFP,AES,92,66,50,74,20,Influence,I,5.5,4.5,5.0,4.0,7.0,6.5,8.5,8.5,6.5
+Sáng tạo - Nghệ thuật,Nhiếp ảnh gia,ISFP/INFP,ISFP,AES,93,67,49,75,26,Influence,I,5.8,4.8,5.3,4.3,7.3,6.8,8.8,8.8,6.8
+Sáng tạo - Nghệ thuật,Nhiếp ảnh gia,ISFP/INFP,ISFP,AES,79,61,49,75,22,Influence,I,5.2,4.2,4.7,3.7,6.7,6.2,8.2,8.2,6.2
+Sáng tạo - Nghệ thuật,Nhiếp ảnh gia,INFP,INFP,AES,92,49,41,76,14,Influence,I,5.6,4.6,5.1,4.1,7.1,6.6,8.6,8.6,6.6
+Sáng tạo - Nghệ thuật,Nhiếp ảnh gia,INFP,INFP,AES,94,51,43,74,20,Influence,I,5.9,4.9,5.4,4.4,7.4,6.9,8.9,8.9,6.9
+Sáng tạo - Nghệ thuật,Nhiếp ảnh gia,INFP,INFP,AES,95,57,51,85,10,Influence,I,6.0,5.0,5.5,4.5,7.5,7.0,9.0,9.0,7.0
+Sáng tạo - Nghệ thuật,Nhiếp ảnh gia,ISFP,ISFP,AES,90,64,48,76,18,Influence,I,5.4,4.4,4.9,3.9,6.9,6.4,8.4,8.4,6.4
+Sáng tạo - Nghệ thuật,Đạo diễn / Biên tập viên,ENFP/ENTP,ENFP,AES,88,80,89,62,29,Influence,I,6.5,5.0,5.0,4.5,8.5,7.5,8.0,7.0,7.0
+Sáng tạo - Nghệ thuật,Đạo diễn / Biên tập viên,ENFP/ENTP,ENFP,AES,95,67,88,71,29,Influence,I,7.0,5.5,5.5,5.0,9.0,8.0,8.5,7.5,7.5
+Sáng tạo - Nghệ thuật,Đạo diễn / Biên tập viên,ENFP/ENTP,ENFP,AES,95,74,92,69,25,Influence,I,7.2,5.7,5.7,5.2,9.2,8.2,8.7,7.7,7.7
+Sáng tạo - Nghệ thuật,Đạo diễn / Biên tập viên,ENTP,ENTP,AES,95,77,82,69,22,Dominance,D,7.5,6.0,6.0,5.5,9.5,8.5,9.0,8.0,8.0
+Sáng tạo - Nghệ thuật,Đạo diễn / Biên tập viên,ENTP,ENTP,AES,95,67,95,61,12,Dominance,D,6.8,5.3,5.3,4.8,8.8,7.8,8.3,7.3,7.3
+Sáng tạo - Nghệ thuật,Đạo diễn / Biên tập viên,ENTP,ENTP,AES,95,62,84,70,16,Dominance,D,6.9,5.4,5.4,4.9,8.9,7.9,8.4,7.4,7.4
+Sáng tạo - Nghệ thuật,Đạo diễn / Biên tập viên,ENFP,ENFP,AES,90,72,86,66,27,Influence,I,6.6,5.1,5.1,4.6,8.6,7.6,8.1,7.1,7.1
+Y tế - Giáo dục,Giáo viên,ENFJ/ESFJ,ENFJ,SEI,81,77,78,90,19,Steadiness,S,7.0,6.0,6.0,6.5,8.5,7.0,6.5,7.5,7.5
+Y tế - Giáo dục,Giáo viên,ENFJ/ESFJ,ENFJ,SEI,77,78,91,92,17,Steadiness,S,7.2,6.2,6.2,6.7,8.7,7.2,6.7,7.7,7.7
+Y tế - Giáo dục,Giáo viên,ENFJ/ESFJ,ENFJ,SEI,79,80,90,90,10,Steadiness,S,7.5,6.5,6.5,7.0,9.0,7.5,7.0,8.0,8.0
+Y tế - Giáo dục,Giáo viên,ESFJ,ESFJ,SEI,77,77,68,95,10,Steadiness,S,6.8,5.8,5.8,6.3,8.3,6.8,6.3,7.3,7.3
+Y tế - Giáo dục,Giáo viên,ESFJ,ESFJ,SEI,64,78,67,94,10,Steadiness,S,6.5,5.5,5.5,6.0,8.0,6.5,6.0,7.0,7.0
+Y tế - Giáo dục,Giáo viên,ESFJ,ESFJ,SEI,62,81,74,91,17,Steadiness,S,6.7,5.7,5.7,6.2,8.2,6.7,6.2,7.2,7.2
+Y tế - Giáo dục,Giáo viên,ENFJ,ENFJ,SEI,78,79,85,92,14,Steadiness,S,7.3,6.3,6.3,6.8,8.8,7.3,6.8,7.8,7.8
+Y tế - Giáo dục,Bác sĩ,ISTJ/INFJ,ISTJ,ISC,55,93,61,80,23,Conscientiousness,C,7.5,8.0,9.0,9.0,6.5,6.5,6.0,7.0,6.5
+Y tế - Giáo dục,Bác sĩ,ISTJ/INFJ,ISTJ,ISC,57,90,52,81,15,Conscientiousness,C,7.2,7.8,8.8,8.8,6.2,6.2,5.8,6.8,6.2
+Y tế - Giáo dục,Bác sĩ,ISTJ/INFJ,ISTJ,ISC,52,95,59,84,18,Conscientiousness,C,7.0,7.5,8.5,8.5,6.0,6.0,5.5,6.5,6.0
+Y tế - Giáo dục,Bác sĩ,INFJ,INFJ,ISC,69,89,45,86,10,Steadiness,S,8.0,8.5,9.5,9.5,7.0,7.0,6.5,7.5,7.0
+Y tế - Giáo dục,Bác sĩ,INFJ,INFJ,ISC,68,93,55,88,10,Steadiness,S,7.8,8.3,9.3,9.3,6.8,6.8,6.3,7.3,6.8
+Y tế - Giáo dục,Bác sĩ,INFJ,INFJ,ISC,83,92,42,90,22,Steadiness,S,8.2,8.7,9.7,9.7,7.2,7.2,6.7,7.7,7.2
+Y tế - Giáo dục,Bác sĩ,ISTJ,ISTJ,ISC,54,94,58,82,20,Conscientiousness,C,7.4,7.9,8.9,8.9,6.4,6.4,5.9,6.9,6.4
+Y tế - Giáo dục,Dược sĩ,ISTJ/INTJ,ISTJ,RCI,60,95,43,76,11,Conscientiousness,C,7.5,7.0,8.5,8.0,6.0,6.0,7.0,6.5,6.0
+Y tế - Giáo dục,Dược sĩ,ISTJ/INTJ,ISTJ,RCI,70,92,48,70,22,Conscientiousness,C,8.0,7.5,9.0,8.5,6.5,6.5,7.5,7.0,6.5
+Y tế - Giáo dục,Dược sĩ,ISTJ/INTJ,ISTJ,RCI,71,95,40,72,14,Conscientiousness,C,7.8,7.3,8.8,8.3,6.3,6.3,7.3,6.8,6.3
+Y tế - Giáo dục,Dược sĩ,INTJ,INTJ,RCI,69,95,41,64,21,Conscientiousness,C,7.6,7.1,8.6,8.1,6.1,6.1,7.1,6.6,6.1
+Y tế - Giáo dục,Dược sĩ,INTJ,INTJ,RCI,79,95,27,72,17,Conscientiousness,C,8.2,7.7,9.2,8.7,6.7,6.7,7.7,7.2,6.7
+Y tế - Giáo dục,Dược sĩ,INTJ,INTJ,RCI,72,95,33,68,15,Conscientiousness,C,7.9,7.4,8.9,8.4,6.4,6.4,7.4,6.9,6.4
+Y tế - Giáo dục,Dược sĩ,ISTJ,ISTJ,RCI,65,94,44,74,18,Conscientiousness,C,7.7,7.2,8.7,8.2,6.2,6.2,7.2,6.7,6.2
+Y tế - Giáo dục,Điều dưỡng viên,ISFJ/ESFJ,ISFJ,SIC,62,85,50,82,28,Steadiness,S,6.5,6.0,7.0,7.5,6.5,5.5,5.5,6.5,6.0
+Y tế - Giáo dục,Điều dưỡng viên,ISFJ/ESFJ,ISFJ,SIC,58,79,49,95,27,Steadiness,S,6.2,5.8,6.8,7.3,6.2,5.2,5.2,6.2,5.8
+Y tế - Giáo dục,Điều dưỡng viên,ISFJ/ESFJ,ISFJ,SIC,59,92,57,95,12,Steadiness,S,6.0,5.5,6.5,7.0,6.0,5.0,5.0,6.0,5.5
+Y tế - Giáo dục,Điều dưỡng viên,ESFJ,ESFJ,SIC,49,81,69,95,14,Steadiness,S,6.8,6.3,7.3,7.8,6.8,5.8,5.8,6.8,6.3
+Y tế - Giáo dục,Điều dưỡng viên,ESFJ,ESFJ,SIC,56,83,77,95,18,Steadiness,S,6.4,5.9,6.9,7.4,6.4,5.4,5.4,6.4,5.9
+Y tế - Giáo dục,Điều dưỡng viên,ESFJ,ESFJ,SIC,60,82,73,95,15,Steadiness,S,6.6,6.1,7.1,7.6,6.6,5.6,5.6,6.6,6.1
+Y tế - Giáo dục,Điều dưỡng viên,ISFJ,ISFJ,SIC,60,84,52,86,25,Steadiness,S,6.3,5.8,6.8,7.3,6.3,5.3,5.3,6.3,5.8
+Dịch vụ - Vận tải - Du lịch,Phi công,ISTJ/ESTJ,ISTJ,RIC,56,95,59,60,13,Conscientiousness,C,8.5,8.0,6.5,6.0,5.5,9.0,7.5,6.0,5.0
+Dịch vụ - Vận tải - Du lịch,Phi công,ISTJ/ESTJ,ISTJ,RIC,57,90,57,63,13,Conscientiousness,C,8.2,7.8,6.2,5.8,5.2,8.8,7.2,5.8,4.8
+Dịch vụ - Vận tải - Du lịch,Phi công,ISTJ/ESTJ,ISTJ,RIC,62,95,68,66,10,Conscientiousness,C,8.8,8.5,6.8,6.3,5.8,9.2,7.8,6.3,5.3
+Dịch vụ - Vận tải - Du lịch,Phi công,ESTJ,ESTJ,RIC,48,95,74,73,10,Dominance,D,8.0,7.5,6.0,5.5,5.0,8.5,7.0,5.5,4.5
+Dịch vụ - Vận tải - Du lịch,Phi công,ESTJ,ESTJ,RIC,51,87,71,70,10,Dominance,D,8.3,7.9,6.3,5.9,5.3,8.9,7.3,5.9,4.9
+Dịch vụ - Vận tải - Du lịch,Phi công,ESTJ,ESTJ,RIC,43,95,71,77,10,Dominance,D,7.9,7.4,5.9,5.4,4.9,8.4,6.9,5.4,4.4
+Dịch vụ - Vận tải - Du lịch,Phi công,ISTJ,ISTJ,RIC,54,92,62,62,12,Conscientiousness,C,8.6,8.1,6.6,6.1,5.6,9.1,7.6,6.1,5.1
+Dịch vụ - Vận tải - Du lịch,Tiếp viên hàng không,ESFJ/ENFJ,ESFJ,SEA,62,76,92,95,21,Influence,I,6.5,5.0,5.0,5.0,7.5,8.5,6.5,7.0,6.5
+Dịch vụ - Vận tải - Du lịch,Tiếp viên hàng không,ESFJ/ENFJ,ESFJ,SEA,72,72,78,90,22,Influence,I,6.8,5.2,5.2,5.2,7.8,8.8,6.8,7.2,6.8
+Dịch vụ - Vận tải - Du lịch,Tiếp viên hàng không,ESFJ/ENFJ,ESFJ,SEA,65,69,89,95,10,Influence,I,6.2,4.8,4.8,4.8,7.2,8.2,6.2,6.8,6.2
+Dịch vụ - Vận tải - Du lịch,Tiếp viên hàng không,ENFJ,ENFJ,SEA,68,66,86,86,10,Influence,I,7.0,5.5,5.5,5.5,8.0,9.0,7.0,7.5,7.0
+Dịch vụ - Vận tải - Du lịch,Tiếp viên hàng không,ENFJ,ENFJ,SEA,74,65,95,84,18,Influence,I,7.2,5.7,5.7,5.7,8.2,9.2,7.2,7.7,7.2
+Dịch vụ - Vận tải - Du lịch,Tiếp viên hàng không,ENFJ,ENFJ,SEA,79,76,95,86,15,Influence,I,7.5,6.0,6.0,6.0,8.5,9.5,7.5,8.0,7.5
+Dịch vụ - Vận tải - Du lịch,Tiếp viên hàng không,ESFJ,ESFJ,SEA,66,74,90,93,18,Influence,I,6.6,5.1,5.1,5.1,7.6,8.6,6.6,7.1,6.6
+Dịch vụ - Vận tải - Du lịch,Hướng dẫn viên du lịch,ESFP/ENFP,ESFP,SEA,81,58,85,83,13,Influence,I,6.0,5.0,5.0,5.0,7.0,7.5,6.0,8.0,7.0
+Dịch vụ - Vận tải - Du lịch,Hướng dẫn viên du lịch,ESFP/ENFP,ESFP,SEA,80,59,87,84,12,Influence,I,6.3,5.3,5.3,5.3,7.3,7.8,6.3,8.3,7.3
+Dịch vụ - Vận tải - Du lịch,Hướng dẫn viên du lịch,ESFP/ENFP,ESFP,SEA,74,62,82,90,21,Influence,I,5.8,4.8,4.8,4.8,6.8,7.3,5.8,7.8,6.8
+Dịch vụ - Vận tải - Du lịch,Hướng dẫn viên du lịch,ENFP,ENFP,SEA,92,61,88,79,11,Influence,I,6.5,5.5,5.5,5.5,7.5,8.0,6.5,8.5,7.5
+Dịch vụ - Vận tải - Du lịch,Hướng dẫn viên du lịch,ENFP,ENFP,SEA,86,66,89,79,10,Influence,I,6.8,5.8,5.8,5.8,7.8,8.3,6.8,8.8,7.8
+Dịch vụ - Vận tải - Du lịch,Hướng dẫn viên du lịch,ENFP,ENFP,SEA,83,65,90,79,10,Influence,I,6.2,5.2,5.2,5.2,7.2,7.7,6.2,8.2,7.2
+Dịch vụ - Vận tải - Du lịch,Hướng dẫn viên du lịch,ESFP,ESFP,SEA,78,60,86,85,15,Influence,I,6.4,5.4,5.4,5.4,7.4,7.9,6.4,8.4,7.4
+Dịch vụ - Vận tải - Du lịch,Đầu bếp,ISFP/ESTP,ISFP,ARE,80,71,49,63,17,Conscientiousness,C,6.0,5.5,6.5,5.5,6.0,5.5,5.5,5.0,5.0
+Dịch vụ - Vận tải - Du lịch,Đầu bếp,ISFP/ESTP,ISFP,ARE,81,76,61,65,26,Conscientiousness,C,6.3,5.8,6.8,5.8,6.3,5.8,5.8,5.3,5.3
+Dịch vụ - Vận tải - Du lịch,Đầu bếp,ISFP/ESTP,ISFP,ARE,81,79,55,78,27,Conscientiousness,C,6.5,6.0,7.0,6.0,6.5,6.0,6.0,5.5,5.5
+Dịch vụ - Vận tải - Du lịch,Đầu bếp,ESTP,ESTP,ARE,81,64,73,70,17,Dominance,D,6.8,6.3,7.3,6.3,6.8,6.3,6.3,5.8,5.8
+Dịch vụ - Vận tải - Du lịch,Đầu bếp,ESTP,ESTP,ARE,75,62,74,64,10,Dominance,D,6.2,5.7,6.7,5.7,6.2,5.7,5.7,5.2,5.2
+Dịch vụ - Vận tải - Du lịch,Đầu bếp,ESTP,ESTP,ARE,75,63,77,72,23,Dominance,D,6.4,5.9,6.9,5.9,6.4,5.9,5.9,5.4,5.4
+Dịch vụ - Vận tải - Du lịch,Đầu bếp,ISFP,ISFP,ARE,78,73,53,68,22,Conscientiousness,C,6.1,5.6,6.6,5.6,6.1,5.6,5.6,5.1,5.1
+
+Kỹ thuật & Công nghệ,Kỹ sư điện - điện tử,ISTJ,ISTJ,RIC,72,82,25,53,21,Conscientiousness,C,8.3,8.4,7.3,6.0,5.3,6.7,8.5,6.3,5.7
+Kỹ thuật & Công nghệ,Kỹ sư điện - điện tử,INTJ,INTJ,RIC,67,83,35,44,24,Conscientiousness,C,7.7,8.8,7.5,5.9,5.0,6.5,8.1,6.0,5.5
+Kỹ thuật & Công nghệ,Kỹ sư xây dựng,ESTJ/ISTJ,ESTJ,REC,54,83,69,59,19,Dominance,D,7.2,7.8,6.5,5.5,5.5,5.5,6.8,7.0,6.5
+Kỹ thuật & Công nghệ,Kỹ sư xây dựng,ESTJ/ISTJ,ESTJ,REC,62,84,66,61,32,Dominance,D,7.5,8.0,6.8,5.8,5.2,5.8,7.0,7.2,6.8
+Kỹ thuật & Công nghệ,Kỹ sư xây dựng,ESTJ/ISTJ,ESTJ,REC,52,90,78,70,23,Dominance,D,7.0,8.2,6.6,5.6,5.4,5.6,6.6,7.4,6.9
+Kỹ thuật & Công nghệ,Kỹ sư xây dựng,ISTJ,ISTJ,REC,48,95,39,63,26,Conscientiousness,C,6.8,8.4,6.4,5.4,5.0,5.4,6.5,7.1,6.6
+Kỹ thuật & Công nghệ,Kỹ sư xây dựng,ISTJ,ISTJ,REC,58,95,30,59,19,Conscientiousness,C,7.3,8.6,6.9,5.9,4.8,5.9,6.9,7.3,6.7
+Kỹ thuật & Công nghệ,Kỹ sư xây dựng,ISTJ,ISTJ,REC,44,95,27,59,19,Conscientiousness,C,6.5,8.3,6.3,5.3,5.1,5.3,6.3,7.0,6.4
+Kỹ thuật & Công nghệ,Kỹ sư xây dựng,ESTJ,ESTJ,REC,56,88,72,64,25,Dominance,D,7.4,8.1,6.7,5.7,5.3,5.7,6.7,7.2,6.8
+Kỹ thuật & Công nghệ,Kỹ sư môi trường,INFJ/ENFJ,INFJ,ISE,72,69,58,84,24,Steadiness,S,7.0,6.5,7.5,8.0,6.5,6.0,6.5,7.5,7.0
+Kỹ thuật & Công nghệ,Kỹ sư môi trường,INFJ/ENFJ,INFJ,ISE,73,77,59,93,29,Steadiness,S,7.2,6.8,7.8,8.2,6.8,6.2,6.8,7.8,7.2
+Kỹ thuật & Công nghệ,Kỹ sư môi trường,INFJ/ENFJ,INFJ,ISE,80,82,63,81,37,Steadiness,S,7.5,7.0,8.0,8.5,7.0,6.5,7.0,8.0,7.5
+Kỹ thuật & Công nghệ,Kỹ sư môi trường,ENFJ,ENFJ,ISE,74,77,90,88,20,Influence,I,7.3,6.9,7.9,8.3,6.9,6.3,6.9,7.9,7.3
+Kỹ thuật & Công nghệ,Kỹ sư môi trường,ENFJ,ENFJ,ISE,70,75,88,95,30,Influence,I,7.0,6.6,7.6,8.1,6.6,6.0,6.6,7.6,7.0
+Kỹ thuật & Công nghệ,Kỹ sư môi trường,ENFJ,ENFJ,ISE,81,63,80,83,29,Influence,I,7.8,7.2,8.2,8.6,7.2,6.8,7.2,8.2,7.8
+Kỹ thuật & Công nghệ,Kỹ sư môi trường,INFJ,INFJ,ISE,75,73,60,86,26,Steadiness,S,7.1,6.7,7.7,8.2,6.7,6.1,6.7,7.7,7.1
+Kỹ thuật & Công nghệ,Kiến trúc sư,INFP/ENFP,INFP,AEI,95,65,64,73,28,Influence,I,6.5,5.5,5.0,5.0,8.0,7.0,8.5,8.5,7.5
+Kỹ thuật & Công nghệ,Kiến trúc sư,INFP/ENFP,INFP,AEI,95,66,70,72,30,Influence,I,6.8,5.8,5.2,5.2,8.2,7.2,8.7,8.7,7.8
+Kỹ thuật & Công nghệ,Kiến trúc sư,INFP/ENFP,INFP,AEI,95,69,59,81,25,Influence,I,7.0,6.0,5.5,5.5,8.5,7.5,9.0,9.0,8.0
+Kỹ thuật & Công nghệ,Kiến trúc sư,ENFP,ENFP,AEI,83,57,79,79,22,Influence,I,6.2,5.2,4.8,4.8,7.8,6.8,8.2,8.2,7.2
+Kỹ thuật & Công nghệ,Kiến trúc sư,ENFP,ENFP,AEI,95,72,92,78,29,Influence,I,7.2,6.2,5.8,5.8,8.8,7.8,9.2,9.2,8.2
+Kỹ thuật & Công nghệ,Kiến trúc sư,ENFP,ENFP,AEI,83,62,89,72,29,Influence,I,6.6,5.6,5.1,5.1,8.1,7.1,8.6,8.6,7.6
+Kỹ thuật & Công nghệ,Kiến trúc sư,INFP,INFP,AEI,92,64,62,76,26,Influence,I,6.9,5.9,5.4,5.4,8.4,7.4,8.9,8.9,7.9
+Kinh tế - Tài chính - Luật,Chuyên gia tài chính,INTJ/ENTJ,INTJ,ECI,75,95,61,55,27,Dominance,D,8.5,7.0,6.0,5.5,6.5,8.0,7.5,6.0,5.5
+Kinh tế - Tài chính - Luật,Chuyên gia tài chính,INTJ/ENTJ,INTJ,ECI,71,93,61,48,13,Dominance,D,8.2,6.8,5.8,5.2,6.2,7.8,7.2,5.8,5.2
+Kinh tế - Tài chính - Luật,Chuyên gia tài chính,INTJ/ENTJ,INTJ,ECI,68,95,53,43,27,Dominance,D,8.0,6.5,5.5,5.0,6.0,7.5,7.0,5.5,5.0
+Kinh tế - Tài chính - Luật,Chuyên gia tài chính,ENTJ,ENTJ,ECI,78,95,82,48,23,Dominance,D,8.8,7.5,6.5,6.0,7.0,8.5,8.0,6.5,6.0
+Kinh tế - Tài chính - Luật,Chuyên gia tài chính,ENTJ,ENTJ,ECI,64,92,79,49,14,Dominance,D,7.8,6.2,5.2,4.8,5.8,7.2,6.8,5.2,4.8
+Kinh tế - Tài chính - Luật,Chuyên gia tài chính,ENTJ,ENTJ,ECI,74,90,84,48,10,Dominance,D,8.4,7.2,6.2,5.7,6.7,8.2,7.7,6.2,5.7
+Kinh tế - Tài chính - Luật,Chuyên gia tài chính,INTJ,INTJ,ECI,73,94,58,50,20,Dominance,D,8.3,7.1,6.1,5.6,6.6,8.1,7.6,6.1,5.6
+Kinh tế - Tài chính - Luật,Chuyên viên ngân hàng,ISTJ/ESTJ,ISTJ,CSE,55,95,57,70,23,Conscientiousness,C,7.5,6.0,5.5,5.0,7.0,6.5,7.0,6.5,6.0
+Kinh tế - Tài chính - Luật,Chuyên viên ngân hàng,ISTJ/ESTJ,ISTJ,CSE,52,89,55,74,21,Conscientiousness,C,7.2,5.8,5.2,4.8,6.8,6.2,6.8,6.2,5.8
+Kinh tế - Tài chính - Luật,Chuyên viên ngân hàng,ISTJ/ESTJ,ISTJ,CSE,51,95,57,64,17,Conscientiousness,C,7.0,5.5,5.0,4.5,6.5,6.0,6.5,6.0,5.5
+Kinh tế - Tài chính - Luật,Chuyên viên ngân hàng,ESTJ,ESTJ,CSE,51,85,69,73,28,Steadiness,S,7.4,6.2,5.6,5.1,7.1,6.6,7.1,6.6,6.1
+Kinh tế - Tài chính - Luật,Chuyên viên ngân hàng,ESTJ,ESTJ,CSE,45,86,78,69,19,Steadiness,S,6.8,5.2,4.8,4.2,6.2,5.8,6.2,5.8,5.2
+Kinh tế - Tài chính - Luật,Chuyên viên ngân hàng,ESTJ,ESTJ,CSE,48,91,72,81,21,Steadiness,S,7.1,5.9,5.3,4.9,6.9,6.3,6.9,6.3,5.9
+Kinh tế - Tài chính - Luật,Chuyên viên ngân hàng,ISTJ,ISTJ,CSE,53,92,56,68,20,Conscientiousness,C,7.3,6.1,5.5,5.0,7.0,6.5,7.0,6.5,6.0
+Kinh tế - Tài chính - Luật,Luật sư,ENTJ/ESTJ,ENTJ,EIC,78,77,86,55,16,Dominance,D,7.0,6.0,5.5,5.5,8.5,7.5,6.5,7.0,8.0
+Kinh tế - Tài chính - Luật,Luật sư,ENTJ/ESTJ,ENTJ,EIC,70,80,80,56,20,Dominance,D,6.5,5.5,5.0,5.0,8.0,7.0,6.0,6.5,7.5
+Kinh tế - Tài chính - Luật,Luật sư,ENTJ/ESTJ,ENTJ,EIC,71,83,87,58,20,Dominance,D,6.8,5.8,5.2,5.2,8.2,7.2,6.2,6.8,7.8
+Kinh tế - Tài chính - Luật,Luật sư,ESTJ,ESTJ,EIC,73,95,80,58,10,Dominance,D,7.2,6.2,5.7,5.7,8.7,7.7,6.7,7.2,8.2
+Kinh tế - Tài chính - Luật,Luật sư,ESTJ,ESTJ,EIC,70,90,73,57,17,Dominance,D,6.9,5.9,5.4,5.4,8.4,7.4,6.4,6.9,7.9
+Kinh tế - Tài chính - Luật,Luật sư,ESTJ,ESTJ,EIC,61,90,77,71,20,Dominance,D,6.4,5.4,4.9,4.9,7.9,6.9,5.9,6.4,7.4
+Kinh tế - Tài chính - Luật,Luật sư,ENTJ,ENTJ,EIC,75,82,84,57,18,Dominance,D,7.1,6.1,5.6,5.6,8.6,7.6,6.6,7.1,8.1
+Kinh tế - Tài chính - Luật,Chuyên viên pháp lý,ISTJ/INTJ,ISTJ,CIE,52,90,34,56,13,Conscientiousness,C,7.0,6.0,5.5,5.5,8.0,6.5,6.5,7.0,7.5
+Kinh tế - Tài chính - Luật,Chuyên viên pháp lý,ISTJ/INTJ,ISTJ,CIE,63,91,45,56,13,Conscientiousness,C,7.5,6.5,6.0,6.0,8.5,7.0,7.0,7.5,8.0
+Kinh tế - Tài chính - Luật,Chuyên viên pháp lý,ISTJ/INTJ,ISTJ,CIE,61,95,33,63,18,Conscientiousness,C,7.2,6.2,5.7,5.7,8.2,6.7,6.7,7.2,7.7
+Kinh tế - Tài chính - Luật,Chuyên viên pháp lý,INTJ,INTJ,CIE,69,90,38,60,16,Conscientiousness,C,7.8,6.8,6.2,6.2,8.8,7.2,7.2,7.8,8.2
+Kinh tế - Tài chính - Luật,Chuyên viên pháp lý,INTJ,INTJ,CIE,69,92,32,60,12,Conscientiousness,C,7.6,6.6,6.1,6.1,8.6,7.1,7.1,7.6,8.1
+Kinh tế - Tài chính - Luật,Chuyên viên pháp lý,INTJ,INTJ,CIE,67,95,40,54,20,Conscientiousness,C,7.4,6.4,5.9,5.9,8.4,6.9,6.9,7.4,7.9
+Kinh tế - Tài chính - Luật,Chuyên viên pháp lý,ISTJ,ISTJ,CIE,57,92,38,58,14,Conscientiousness,C,7.3,6.3,5.8,5.8,8.3,6.8,6.8,7.3,7.8
+Kinh doanh - Dịch vụ,Chuyên gia Marketing,ENFP/ENTP,ENFP,ASE,87,65,89,68,32,Influence,I,6.5,5.0,5.0,4.5,8.0,8.5,7.5,7.0,6.5
+Kinh doanh - Dịch vụ,Chuyên gia Marketing,ENFP/ENTP,ENFP,ASE,89,68,91,78,26,Influence,I,6.8,5.2,5.2,4.8,8.2,8.7,7.8,7.2,6.8
+Kinh doanh - Dịch vụ,Chuyên gia Marketing,ENFP/ENTP,ENFP,ASE,89,69,77,73,29,Influence,I,7.0,5.5,5.5,5.0,8.5,9.0,8.0,7.5,7.0
+Kinh doanh - Dịch vụ,Chuyên gia Marketing,ENTP,ENTP,ASE,95,65,84,70,23,Influence,I,7.2,5.7,5.7,5.2,8.7,9.2,8.2,7.7,7.2
+Kinh doanh - Dịch vụ,Chuyên gia Marketing,ENTP,ENTP,ASE,95,69,92,62,15,Influence,I,7.5,6.0,6.0,5.5,9.0,9.5,8.5,8.0,7.5
+Kinh doanh - Dịch vụ,Chuyên gia Marketing,ENTP,ENTP,ASE,95,62,90,63,15,Influence,I,6.9,5.4,5.4,4.9,8.4,8.9,7.9,7.4,6.9
+Kinh doanh - Dịch vụ,Chuyên gia Marketing,ENFP,ENFP,ASE,88,66,88,70,28,Influence,I,6.7,5.2,5.2,4.7,8.3,8.8,7.8,7.3,6.8
+Kinh doanh - Dịch vụ,Chuyên viên truyền thông (PR),ENFJ/ESFJ,ENFJ,ASE,90,73,92,90,28,Influence,I,7.0,5.5,5.0,5.0,8.5,8.0,7.0,7.5,7.0
+Kinh doanh - Dịch vụ,Chuyên viên truyền thông (PR),ENFJ/ESFJ,ENFJ,ASE,80,74,88,85,13,Influence,I,6.5,5.0,4.5,4.5,8.0,7.5,6.5,7.0,6.5
+Kinh doanh - Dịch vụ,Chuyên viên truyền thông (PR),ENFJ/ESFJ,ENFJ,ASE,90,62,95,83,23,Influence,I,7.2,5.7,5.2,5.2,8.7,8.2,7.2,7.7,7.2
+Kinh doanh - Dịch vụ,Chuyên viên truyền thông (PR),ESFJ,ESFJ,ASE,80,69,87,92,10,Steadiness,S,6.8,5.3,4.8,4.8,8.3,7.8,6.8,7.3,6.8
+Kinh doanh - Dịch vụ,Chuyên viên truyền thông (PR),ESFJ,ESFJ,ASE,76,83,86,95,17,Steadiness,S,6.9,5.4,4.9,4.9,8.4,7.9,6.9,7.4,6.9
+Kinh doanh - Dịch vụ,Chuyên viên truyền thông (PR),ESFJ,ESFJ,ASE,79,76,81,88,20,Steadiness,S,7.1,5.6,5.1,5.1,8.6,8.1,7.1,7.6,7.1
+Kinh doanh - Dịch vụ,Chuyên viên truyền thông (PR),ENFJ,ENFJ,ASE,85,70,90,87,24,Influence,I,7.0,5.5,5.0,5.0,8.5,8.0,7.0,7.5,7.0
+Kinh doanh - Dịch vụ,Quản lý nhân sự,ENFJ/ESFJ,ENFJ,SEC,74,77,86,94,10,Steadiness,S,6.5,5.0,5.0,5.5,8.0,7.0,6.5,7.0,7.0
+Kinh doanh - Dịch vụ,Quản lý nhân sự,ENFJ/ESFJ,ENFJ,SEC,71,81,83,95,17,Steadiness,S,6.8,5.2,5.2,5.7,8.2,7.2,6.8,7.2,7.2
+Kinh doanh - Dịch vụ,Quản lý nhân sự,ENFJ/ESFJ,ENFJ,SEC,76,86,91,88,23,Steadiness,S,7.0,5.5,5.5,6.0,8.5,7.5,7.0,7.5,7.5
+Kinh doanh - Dịch vụ,Quản lý nhân sự,ESFJ,ESFJ,SEC,72,82,69,95,18,Steadiness,S,6.6,5.1,5.1,5.6,8.1,7.1,6.6,7.1,7.1
+Kinh doanh - Dịch vụ,Quản lý nhân sự,ESFJ,ESFJ,SEC,67,79,74,95,10,Steadiness,S,6.4,4.9,4.9,5.4,7.9,6.9,6.4,6.9,6.9
+Kinh doanh - Dịch vụ,Quản lý nhân sự,ESFJ,ESFJ,SEC,63,81,67,88,10,Steadiness,S,6.2,4.7,4.7,5.2,7.7,6.7,6.2,6.7,6.7
+Kinh doanh - Dịch vụ,Quản lý nhân sự,ENFJ,ENFJ,SEC,75,80,88,92,15,Steadiness,S,6.9,5.4,5.4,5.9,8.4,7.4,6.9,7.4,7.4
+Sáng tạo - Nghệ thuật,Nhà thiết kế đồ họa,INFP/ISFP,INFP,AES,95,64,51,80,23,Influence,I,6.0,5.0,5.5,4.5,7.5,7.0,9.0,8.0,6.0
+Sáng tạo - Nghệ thuật,Nhà thiết kế đồ họa,INFP/ISFP,INFP,AES,95,77,49,74,21,Influence,I,6.5,5.5,6.0,5.0,8.0,7.5,9.5,8.5,6.5
+Sáng tạo - Nghệ thuật,Nhà thiết kế đồ họa,INFP/ISFP,INFP,AES,87,65,50,74,22,Influence,I,5.8,4.8,5.2,4.2,7.2,6.8,8.8,7.8,5.8
+Sáng tạo - Nghệ thuật,Nhà thiết kế đồ họa,ISFP,ISFP,AES,95,71,33,79,15,Influence,I,6.2,5.2,5.7,4.7,7.7,7.2,9.2,8.2,6.2
+Sáng tạo - Nghệ thuật,Nhà thiết kế đồ họa,ISFP,ISFP,AES,95,61,46,88,22,Influence,I,6.3,5.3,5.8,4.8,7.8,7.3,9.3,8.3,6.3
+Sáng tạo - Nghệ thuật,Nhà thiết kế đồ họa,ISFP,ISFP,AES,95,73,45,86,17,Influence,I,6.4,5.4,5.9,4.9,7.9,7.4,9.4,8.4,6.4
+Sáng tạo - Nghệ thuật,Nhà thiết kế đồ họa,INFP,INFP,AES,92,68,52,78,25,Influence,I,6.1,5.1,5.6,4.6,7.6,7.1,9.1,8.1,6.1
+Sáng tạo - Nghệ thuật,Nhiếp ảnh gia,ISFP/INFP,ISFP,AES,92,66,50,74,20,Influence,I,5.5,4.5,5.0,4.0,7.0,6.5,8.5,8.5,6.5
+Sáng tạo - Nghệ thuật,Nhiếp ảnh gia,ISFP/INFP,ISFP,AES,93,67,49,75,26,Influence,I,5.8,4.8,5.3,4.3,7.3,6.8,8.8,8.8,6.8
+Sáng tạo - Nghệ thuật,Nhiếp ảnh gia,ISFP/INFP,ISFP,AES,79,61,49,75,22,Influence,I,5.2,4.2,4.7,3.7,6.7,6.2,8.2,8.2,6.2
+Sáng tạo - Nghệ thuật,Nhiếp ảnh gia,INFP,INFP,AES,92,49,41,76,14,Influence,I,5.6,4.6,5.1,4.1,7.1,6.6,8.6,8.6,6.6
+Sáng tạo - Nghệ thuật,Nhiếp ảnh gia,INFP,INFP,AES,94,51,43,74,20,Influence,I,5.9,4.9,5.4,4.4,7.4,6.9,8.9,8.9,6.9
+Sáng tạo - Nghệ thuật,Nhiếp ảnh gia,INFP,INFP,AES,95,57,51,85,10,Influence,I,6.0,5.0,5.5,4.5,7.5,7.0,9.0,9.0,7.0
+Sáng tạo - Nghệ thuật,Nhiếp ảnh gia,ISFP,ISFP,AES,90,64,48,76,18,Influence,I,5.4,4.4,4.9,3.9,6.9,6.4,8.4,8.4,6.4
+Sáng tạo - Nghệ thuật,Đạo diễn / Biên tập viên,ENFP/ENTP,ENFP,AES,88,80,89,62,29,Influence,I,6.5,5.0,5.0,4.5,8.5,7.5,8.0,7.0,7.0
+Sáng tạo - Nghệ thuật,Đạo diễn / Biên tập viên,ENFP/ENTP,ENFP,AES,95,67,88,71,29,Influence,I,7.0,5.5,5.5,5.0,9.0,8.0,8.5,7.5,7.5
+Sáng tạo - Nghệ thuật,Đạo diễn / Biên tập viên,ENFP/ENTP,ENFP,AES,95,74,92,69,25,Influence,I,7.2,5.7,5.7,5.2,9.2,8.2,8.7,7.7,7.7
+Sáng tạo - Nghệ thuật,Đạo diễn / Biên tập viên,ENTP,ENTP,AES,95,77,82,69,22,Dominance,D,7.5,6.0,6.0,5.5,9.5,8.5,9.0,8.0,8.0
+Sáng tạo - Nghệ thuật,Đạo diễn / Biên tập viên,ENTP,ENTP,AES,95,67,95,61,12,Dominance,D,6.8,5.3,5.3,4.8,8.8,7.8,8.3,7.3,7.3
+Sáng tạo - Nghệ thuật,Đạo diễn / Biên tập viên,ENTP,ENTP,AES,95,62,84,70,16,Dominance,D,6.9,5.4,5.4,4.9,8.9,7.9,8.4,7.4,7.4
+Sáng tạo - Nghệ thuật,Đạo diễn / Biên tập viên,ENFP,ENFP,AES,90,72,86,66,27,Influence,I,6.6,5.1,5.1,4.6,8.6,7.6,8.1,7.1,7.1
+Y tế - Giáo dục,Giáo viên,ENFJ/ESFJ,ENFJ,SEI,81,77,78,90,19,Steadiness,S,7.0,6.0,6.0,6.5,8.5,7.0,6.5,7.5,7.5
+Y tế - Giáo dục,Giáo viên,ENFJ/ESFJ,ENFJ,SEI,77,78,91,92,17,Steadiness,S,7.2,6.2,6.2,6.7,8.7,7.2,6.7,7.7,7.7
+Y tế - Giáo dục,Giáo viên,ENFJ/ESFJ,ENFJ,SEI,79,80,90,90,10,Steadiness,S,7.5,6.5,6.5,7.0,9.0,7.5,7.0,8.0,8.0
+Y tế - Giáo dục,Giáo viên,ESFJ,ESFJ,SEI,77,77,68,95,10,Steadiness,S,6.8,5.8,5.8,6.3,8.3,6.8,6.3,7.3,7.3
+Y tế - Giáo dục,Giáo viên,ESFJ,ESFJ,SEI,64,78,67,94,10,Steadiness,S,6.5,5.5,5.5,6.0,8.0,6.5,6.0,7.0,7.0
+Y tế - Giáo dục,Giáo viên,ESFJ,ESFJ,SEI,62,81,74,91,17,Steadiness,S,6.7,5.7,5.7,6.2,8.2,6.7,6.2,7.2,7.2
+Y tế - Giáo dục,Giáo viên,ENFJ,ENFJ,SEI,78,79,85,92,14,Steadiness,S,7.3,6.3,6.3,6.8,8.8,7.3,6.8,7.8,7.8
+Y tế - Giáo dục,Bác sĩ,ISTJ/INFJ,ISTJ,ISC,55,93,61,80,23,Conscientiousness,C,7.5,8.0,9.0,9.0,6.5,6.5,6.0,7.0,6.5
+Y tế - Giáo dục,Bác sĩ,ISTJ/INFJ,ISTJ,ISC,57,90,52,81,15,Conscientiousness,C,7.2,7.8,8.8,8.8,6.2,6.2,5.8,6.8,6.2
+Y tế - Giáo dục,Bác sĩ,ISTJ/INFJ,ISTJ,ISC,52,95,59,84,18,Conscientiousness,C,7.0,7.5,8.5,8.5,6.0,6.0,5.5,6.5,6.0
+Y tế - Giáo dục,Bác sĩ,INFJ,INFJ,ISC,69,89,45,86,10,Steadiness,S,8.0,8.5,9.5,9.5,7.0,7.0,6.5,7.5,7.0
+Y tế - Giáo dục,Bác sĩ,INFJ,INFJ,ISC,68,93,55,88,10,Steadiness,S,7.8,8.3,9.3,9.3,6.8,6.8,6.3,7.3,6.8
+Y tế - Giáo dục,Bác sĩ,INFJ,INFJ,ISC,83,92,42,90,22,Steadiness,S,8.2,8.7,9.7,9.7,7.2,7.2,6.7,7.7,7.2
+Y tế - Giáo dục,Bác sĩ,ISTJ,ISTJ,ISC,54,94,58,82,20,Conscientiousness,C,7.4,7.9,8.9,8.9,6.4,6.4,5.9,6.9,6.4
+Y tế - Giáo dục,Dược sĩ,ISTJ/INTJ,ISTJ,RCI,60,95,43,76,11,Conscientiousness,C,7.5,7.0,8.5,8.0,6.0,6.0,7.0,6.5,6.0
+Y tế - Giáo dục,Dược sĩ,ISTJ/INTJ,ISTJ,RCI,70,92,48,70,22,Conscientiousness,C,8.0,7.5,9.0,8.5,6.5,6.5,7.5,7.0,6.5
+Y tế - Giáo dục,Dược sĩ,ISTJ/INTJ,ISTJ,RCI,71,95,40,72,14,Conscientiousness,C,7.8,7.3,8.8,8.3,6.3,6.3,7.3,6.8,6.3
+Y tế - Giáo dục,Dược sĩ,INTJ,INTJ,RCI,69,95,41,64,21,Conscientiousness,C,7.6,7.1,8.6,8.1,6.1,6.1,7.1,6.6,6.1
+Y tế - Giáo dục,Dược sĩ,INTJ,INTJ,RCI,79,95,27,72,17,Conscientiousness,C,8.2,7.7,9.2,8.7,6.7,6.7,7.7,7.2,6.7
+Y tế - Giáo dục,Dược sĩ,INTJ,INTJ,RCI,72,95,33,68,15,Conscientiousness,C,7.9,7.4,8.9,8.4,6.4,6.4,7.4,6.9,6.4
+Y tế - Giáo dục,Dược sĩ,ISTJ,ISTJ,RCI,65,94,44,74,18,Conscientiousness,C,7.7,7.2,8.7,8.2,6.2,6.2,7.2,6.7,6.2
+Y tế - Giáo dục,Điều dưỡng viên,ISFJ/ESFJ,ISFJ,SIC,62,85,50,82,28,Steadiness,S,6.5,6.0,7.0,7.5,6.5,5.5,5.5,6.5,6.0
+Y tế - Giáo dục,Điều dưỡng viên,ISFJ/ESFJ,ISFJ,SIC,58,79,49,95,27,Steadiness,S,6.2,5.8,6.8,7.3,6.2,5.2,5.2,6.2,5.8
+Y tế - Giáo dục,Điều dưỡng viên,ISFJ/ESFJ,ISFJ,SIC,59,92,57,95,12,Steadiness,S,6.0,5.5,6.5,7.0,6.0,5.0,5.0,6.0,5.5
+Y tế - Giáo dục,Điều dưỡng viên,ESFJ,ESFJ,SIC,49,81,69,95,14,Steadiness,S,6.8,6.3,7.3,7.8,6.8,5.8,5.8,6.8,6.3
+Y tế - Giáo dục,Điều dưỡng viên,ESFJ,ESFJ,SIC,56,83,77,95,18,Steadiness,S,6.4,5.9,6.9,7.4,6.4,5.4,5.4,6.4,5.9
+Y tế - Giáo dục,Điều dưỡng viên,ESFJ,ESFJ,SIC,60,82,73,95,15,Steadiness,S,6.6,6.1,7.1,7.6,6.6,5.6,5.6,6.6,6.1
+Y tế - Giáo dục,Điều dưỡng viên,ISFJ,ISFJ,SIC,60,84,52,86,25,Steadiness,S,6.3,5.8,6.8,7.3,6.3,5.3,5.3,6.3,5.8
+Dịch vụ - Vận tải - Du lịch,Phi công,ISTJ/ESTJ,ISTJ,RIC,56,95,59,60,13,Conscientiousness,C,8.5,8.0,6.5,6.0,5.5,9.0,7.5,6.0,5.0
+Dịch vụ - Vận tải - Du lịch,Phi công,ISTJ/ESTJ,ISTJ,RIC,57,90,57,63,13,Conscientiousness,C,8.2,7.8,6.2,5.8,5.2,8.8,7.2,5.8,4.8
+Dịch vụ - Vận tải - Du lịch,Phi công,ISTJ/ESTJ,ISTJ,RIC,62,95,68,66,10,Conscientiousness,C,8.8,8.5,6.8,6.3,5.8,9.2,7.8,6.3,5.3
+Dịch vụ - Vận tải - Du lịch,Phi công,ESTJ,ESTJ,RIC,48,95,74,73,10,Dominance,D,8.0,7.5,6.0,5.5,5.0,8.5,7.0,5.5,4.5
+Dịch vụ - Vận tải - Du lịch,Phi công,ESTJ,ESTJ,RIC,51,87,71,70,10,Dominance,D,8.3,7.9,6.3,5.9,5.3,8.9,7.3,5.9,4.9
+Dịch vụ - Vận tải - Du lịch,Phi công,ESTJ,ESTJ,RIC,43,95,71,77,10,Dominance,D,7.9,7.4,5.9,5.4,4.9,8.4,6.9,5.4,4.4
+Dịch vụ - Vận tải - Du lịch,Phi công,ISTJ,ISTJ,RIC,54,92,62,62,12,Conscientiousness,C,8.6,8.1,6.6,6.1,5.6,9.1,7.6,6.1,5.1
+Dịch vụ - Vận tải - Du lịch,Tiếp viên hàng không,ESFJ/ENFJ,ESFJ,SEA,62,76,92,95,21,Influence,I,6.5,5.0,5.0,5.0,7.5,8.5,6.5,7.0,6.5
+Dịch vụ - Vận tải - Du lịch,Tiếp viên hàng không,ESFJ/ENFJ,ESFJ,SEA,72,72,78,90,22,Influence,I,6.8,5.2,5.2,5.2,7.8,8.8,6.8,7.2,6.8
+Dịch vụ - Vận tải - Du lịch,Tiếp viên hàng không,ESFJ/ENFJ,ESFJ,SEA,65,69,89,95,10,Influence,I,6.2,4.8,4.8,4.8,7.2,8.2,6.2,6.8,6.2
+Dịch vụ - Vận tải - Du lịch,Tiếp viên hàng không,ENFJ,ENFJ,SEA,68,66,86,86,10,Influence,I,7.0,5.5,5.5,5.5,8.0,9.0,7.0,7.5,7.0
+Dịch vụ - Vận tải - Du lịch,Tiếp viên hàng không,ENFJ,ENFJ,SEA,74,65,95,84,18,Influence,I,7.2,5.7,5.7,5.7,8.2,9.2,7.2,7.7,7.2
+Dịch vụ - Vận tải - Du lịch,Tiếp viên hàng không,ENFJ,ENFJ,SEA,79,76,95,86,15,Influence,I,7.5,6.0,6.0,6.0,8.5,9.5,7.5,8.0,7.5
+Dịch vụ - Vận tải - Du lịch,Tiếp viên hàng không,ESFJ,ESFJ,SEA,66,74,90,93,18,Influence,I,6.6,5.1,5.1,5.1,7.6,8.6,6.6,7.1,6.6
+Dịch vụ - Vận tải - Du lịch,Hướng dẫn viên du lịch,ESFP/ENFP,ESFP,SEA,81,58,85,83,13,Influence,I,6.0,5.0,5.0,5.0,7.0,7.5,6.0,8.0,7.0
+Dịch vụ - Vận tải - Du lịch,Hướng dẫn viên du lịch,ESFP/ENFP,ESFP,SEA,80,59,87,84,12,Influence,I,6.3,5.3,5.3,5.3,7.3,7.8,6.3,8.3,7.3
+Dịch vụ - Vận tải - Du lịch,Hướng dẫn viên du lịch,ESFP/ENFP,ESFP,SEA,74,62,82,90,21,Influence,I,5.8,4.8,4.8,4.8,6.8,7.3,5.8,7.8,6.8
+Dịch vụ - Vận tải - Du lịch,Hướng dẫn viên du lịch,ENFP,ENFP,SEA,92,61,88,79,11,Influence,I,6.5,5.5,5.5,5.5,7.5,8.0,6.5,8.5,7.5
+Dịch vụ - Vận tải - Du lịch,Hướng dẫn viên du lịch,ENFP,ENFP,SEA,86,66,89,79,10,Influence,I,6.8,5.8,5.8,5.8,7.8,8.3,6.8,8.8,7.8
+Dịch vụ - Vận tải - Du lịch,Hướng dẫn viên du lịch,ENFP,ENFP,SEA,83,65,90,79,10,Influence,I,6.2,5.2,5.2,5.2,7.2,7.7,6.2,8.2,7.2
+Dịch vụ - Vận tải - Du lịch,Hướng dẫn viên du lịch,ESFP,ESFP,SEA,78,60,86,85,15,Influence,I,6.4,5.4,5.4,5.4,7.4,7.9,6.4,8.4,7.4
+Dịch vụ - Vận tải - Du lịch,Đầu bếp,ISFP/ESTP,ISFP,ARE,80,71,49,63,17,Conscientiousness,C,6.0,5.5,6.5,5.5,6.0,5.5,5.5,5.0,5.0
+Dịch vụ - Vận tải - Du lịch,Đầu bếp,ISFP/ESTP,ISFP,ARE,81,76,61,65,26,Conscientiousness,C,6.3,5.8,6.8,5.8,6.3,5.8,5.8,5.3,5.3
+Dịch vụ - Vận tải - Du lịch,Đầu bếp,ISFP/ESTP,ISFP,ARE,81,79,55,78,27,Conscientiousness,C,6.5,6.0,7.0,6.0,6.5,6.0,6.0,5.5,5.5
+Dịch vụ - Vận tải - Du lịch,Đầu bếp,ESTP,ESTP,ARE,81,64,73,70,17,Dominance,D,6.8,6.3,7.3,6.3,6.8,6.3,6.3,5.8,5.8
+Dịch vụ - Vận tải - Du lịch,Đầu bếp,ESTP,ESTP,ARE,75,62,74,64,10,Dominance,D,6.2,5.7,6.7,5.7,6.2,5.7,5.7,5.2,5.2
+Dịch vụ - Vận tải - Du lịch,Đầu bếp,ESTP,ESTP,ARE,75,63,77,72,23,Dominance,D,6.4,5.9,6.9,5.9,6.4,5.9,5.9,5.4,5.4
+Dịch vụ - Vận tải - Du lịch,Đầu bếp,ISFP,ISFP,ARE,78,73,53,68,22,Conscientiousness,C,6.1,5.6,6.6,5.6,6.1,5.6,5.6,5.1,5.1
