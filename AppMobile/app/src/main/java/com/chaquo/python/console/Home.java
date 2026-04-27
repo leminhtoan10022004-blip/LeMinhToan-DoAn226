@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.chaquo.python.model.CongViec;
 import com.chaquo.python.model.NguoiDung;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
@@ -32,6 +33,7 @@ public class Home extends AppCompatActivity {
     private List<CongViec> jobList;
     private TextView tvStartAction;
     private View btnOrientation, btnTrend;
+    private FloatingActionButton fabChat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,30 +47,31 @@ public class Home extends AppCompatActivity {
         tvStartAction = findViewById(R.id.tvStartAction);
         btnOrientation = findViewById(R.id.btnOrientation);
         btnTrend = findViewById(R.id.btnTrend);
+        fabChat = findViewById(R.id.fabChat);
 
         userId = getIntent().getStringExtra("USER_ID");
 
-        tvStartAction.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Home.this, QuestionBank.class);
-                intent.putExtra("USER_ID", userId);
-                startActivity(intent);
-            }
+        tvStartAction.setOnClickListener(v -> {
+            Intent intent = new Intent(Home.this, QuestionBank.class);
+            intent.putExtra("USER_ID", userId);
+            startActivity(intent);
         });
 
-        // Chuyển sang trang Trend khi nhấn vào icon Định hướng hoặc Xu hướng
         View.OnClickListener toTrendListener = v -> {
             Intent intent = new Intent(Home.this, Trend.class);
             intent.putExtra("USER_ID", userId);
             startActivity(intent);
         };
 
-        if (btnOrientation != null) {
-            btnOrientation.setOnClickListener(toTrendListener);
-        }
-        if (btnTrend != null) {
-            btnTrend.setOnClickListener(toTrendListener);
+        if (btnOrientation != null) btnOrientation.setOnClickListener(toTrendListener);
+        if (btnTrend != null) btnTrend.setOnClickListener(toTrendListener);
+
+        if (fabChat != null) {
+            fabChat.setOnClickListener(v -> {
+                Intent intent = new Intent(Home.this, ChatBotActivity.class);
+                intent.putExtra("USER_ID", userId);
+                startActivity(intent);
+            });
         }
 
         if (userId != null) {

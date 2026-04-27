@@ -57,6 +57,12 @@
         <activity
             android:name=".MLPSampleActivity"
             android:exported="false" />
+        <activity
+            android:name=".EditProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChatBotActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

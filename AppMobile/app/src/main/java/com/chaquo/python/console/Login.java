@@ -48,11 +48,10 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Duy trì trạng thái đăng nhập
         SharedPreferences pref = getSharedPreferences("UserPrefs", MODE_PRIVATE);
         String savedUserId = pref.getString("USER_ID", null);
         if (savedUserId != null) {
-            vàoTrangHome(savedUserId);
+            vaoTrangHome(savedUserId);
             return;
         }
 
@@ -130,7 +129,7 @@ public class Login extends AppCompatActivity {
                                         if (!queryDocumentSnapshots.isEmpty()) {
                                             DocumentSnapshot document = queryDocumentSnapshots.getDocuments().get(0);
                                             String userId = document.getId();
-                                            vàoTrangHome(userId);
+                                            vaoTrangHome(userId);
                                         } else {
                                             Toast.makeText(this, "Tài khoản chưa được đăng ký trong hệ thống!", Toast.LENGTH_SHORT).show();
                                         }
@@ -165,7 +164,7 @@ public class Login extends AppCompatActivity {
                         if (querySnapshot != null && !querySnapshot.isEmpty()) {
                             DocumentSnapshot document = querySnapshot.getDocuments().get(0);
                             String userId = document.getId();
-                            vàoTrangHome(userId);
+                            vaoTrangHome(userId);
                         } else {
                             Toast.makeText(Login.this, "Email hoặc mật khẩu không đúng!", Toast.LENGTH_LONG).show();
                         }
@@ -176,8 +175,7 @@ public class Login extends AppCompatActivity {
                 });
     }
 
-    private void vàoTrangHome(String userId) {
-        // Lưu ID người dùng vào SharedPreferences để duy trì đăng nhập
+    private void vaoTrangHome(String userId) {
         SharedPreferences pref = getSharedPreferences("UserPrefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
         editor.putString("USER_ID", userId);

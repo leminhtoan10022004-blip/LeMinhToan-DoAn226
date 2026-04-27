@@ -46,7 +46,6 @@ public class Account extends AppCompatActivity {
         loadUserDataFromFirestore();
 
         btnLogout.setOnClickListener(v -> {
-            // Xóa dữ liệu đăng nhập để yêu cầu đăng nhập lại
             SharedPreferences pref = getSharedPreferences("UserPrefs", MODE_PRIVATE);
             pref.edit().clear().apply();
 
@@ -58,6 +57,18 @@ public class Account extends AppCompatActivity {
         });
 
         btnBack.setOnClickListener(v -> onBackPressed());
+
+        btnEditProfile.setOnClickListener(v -> {
+            Intent intent = new Intent(this, EditProfileActivity.class);
+            intent.putExtra("USER_ID", userId);
+            startActivity(intent);
+        });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        loadUserDataFromFirestore();
     }
 
     private void initViews() {

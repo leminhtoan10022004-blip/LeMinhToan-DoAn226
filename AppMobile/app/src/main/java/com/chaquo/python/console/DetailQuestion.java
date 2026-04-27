@@ -38,8 +38,6 @@ public class DetailQuestion extends AppCompatActivity {
     private String testId;
     private List<CauHoi> questionList = new ArrayList<>();
     private int currentQuestionIndex = 0;
-    
-    // BỘ NHỚ ĐỆM: Lưu trữ lựa chọn của người dùng (Thứ tự câu hỏi -> Đáp án đã chọn)
     private Map<Integer, DapAn> userChoices = new HashMap<>();
     
     private CountDownTimer countDownTimer;
@@ -114,7 +112,6 @@ public class DetailQuestion extends AppCompatActivity {
         btnNext.setText(currentQuestionIndex == questionList.size() - 1 ? "Nộp bài" : "Tiếp");
         btnBack.setVisibility(currentQuestionIndex == 0 ? View.INVISIBLE : View.VISIBLE);
 
-        // Sử dụng OptionAdapter với cơ chế bộ nhớ đệm
         OptionAdapter adapter = new OptionAdapter(currentQuestion.getDapAn(), 
                 userChoices.get(currentQuestionIndex), 
                 selectedOption -> userChoices.put(currentQuestionIndex, selectedOption));
