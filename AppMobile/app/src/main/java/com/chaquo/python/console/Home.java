@@ -32,7 +32,7 @@ public class Home extends AppCompatActivity {
     private JobAdapter jobAdapter;
     private List<CongViec> jobList;
     private TextView tvStartAction;
-    private View btnOrientation, btnTrend;
+    private View btnOrientation, btnTrend, btnJobs;
     private FloatingActionButton fabChat;
 
     @Override
@@ -42,11 +42,16 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         
         db = FirebaseFirestore.getInstance();
+        
+        // Tự động import dữ liệu từ ERD.json vào Firestore nếu database đang trống
+        kiemTraVaImportDuLieu();
+
         tvWelcome = findViewById(R.id.tvWelcome);
         recyclerTrendingJobs = findViewById(R.id.recyclerTrendingJobs);
         tvStartAction = findViewById(R.id.tvStartAction);
         btnOrientation = findViewById(R.id.btnOrientation);
         btnTrend = findViewById(R.id.btnTrend);
+        btnJobs = findViewById(R.id.btnJobs);
         fabChat = findViewById(R.id.fabChat);
 
         userId = getIntent().getStringExtra("USER_ID");
@@ -65,6 +70,14 @@ public class Home extends AppCompatActivity {
 
         if (btnOrientation != null) btnOrientation.setOnClickListener(toTrendListener);
         if (btnTrend != null) btnTrend.setOnClickListener(toTrendListener);
+
+        if (btnJobs != null) {
+            btnJobs.setOnClickListener(v -> {
+                Intent intent = new Intent(Home.this, JobCategoriesActivity.class);
+                intent.putExtra("USER_ID", userId);
+                startActivity(intent);
+            });
+        }
 
         if (fabChat != null) {
             fabChat.setOnClickListener(v -> {
@@ -88,6 +101,16 @@ public class Home extends AppCompatActivity {
         });
 
         setupNavigation();
+    }
+
+    private void kiemTraVaImportDuLieu() {
+        db.collection("Nganh").limit(1).get().addOnCompleteListener(task -> {
+            if (task.isSuccessful() && task.getResult().isEmpty()) {
+                // Nếu chưa có ngành nào, thực hiện import toàn bộ dữ liệu mẫu
+                FirestoreImporter.importData(this);
+                Toast.makeText(this, "Đang khởi tạo dữ liệu mẫu...", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     private void setupRecyclerView() {

@@ -59,10 +59,10 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.13.1'
     
     // Google & Firebase
-    implementation platform('com.google.firebase:firebase-bom:33.1.0')
+    implementation platform('com.google.firebase:firebase-bom:34.12.0')
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.firebase:firebase-firestore'
-    implementation 'com.google.android.gms:play-services-auth:21.2.0'
+    implementation 'com.google.android.gms:play-services-auth:21.3.0'
 
     testImplementation 'androidx.arch.core:core-testing:2.0.0'
     testImplementation 'junit:junit:4.12'

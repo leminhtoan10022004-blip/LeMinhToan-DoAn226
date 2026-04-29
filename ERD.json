@@ -5,7 +5,7 @@
       "Ten": "Van A",
       "Email": "NguyenVanA@gmail.com",
       "MatKhau": "password123",
-      "VaiTro": "User",
+      "VaiTro": ["User", "Admin"],
       "AnhDaiDien": "avatar1.png",
       "TrangThai": "Hoạt động",
       "NgayTao": "2024-06-01",
@@ -39,37 +39,30 @@
 
   "ThongBao": {
     "TB-001": {
-      "MaNguoiDung": "ND-001",
       "TieuDe": "Bạn chỉ còn một bước nữa thôi ...",
       "NoiDung": "Hoàn thành 5 câu hỏi cuối để bạn tìm được nghề phù hợp",
       "NgayTao": "2026-06-10",
       "BieuTuong": "icon_task.png",
-      "TrangThai": "Chưa đọc",
       "LoaiThongBao": "Hệ thống"
     },
 
     "TB-002": {
-      "MaNguoiDung": "ND-002",
       "TieuDe": "Phát hiện tiềm năng mới!",
       "NoiDung": "AI nhận thấy bạn có tư duy logic rất tốt. Ngành 'Kỹ sư AI' có thể là lựa chọn hoàn hảo cho bạn.",
       "NgayTao": "2026-04-02",
       "BieuTuong": "icon_ai.png",
-      "TrangThai": "Chưa đọc",
       "LoaiThongBao": "Gợi ý AI"
     },
 
     "TB-003": {
-      "MaNguoiDung": "ND-002",
       "TieuDe": "Xu hướng nghề nghiệp tháng 4",
       "NoiDung": "Ngành Thiết kế vi mạch đang tăng trưởng 20% nhu cầu nhân lực. Xem lộ trình học tập ngay!",
       "NgayTao": "2026-04-02",
       "BieuTuong": "icon_trend.png",
-      "TrangThai": "Đã đọc",
       "LoaiThongBao": "Thị trường"
     },
 
     "TB-004": {
-      "MaNguoiDung": "ND-002",
       "TieuDe": "Chúc mừng bạn!",
       "NoiDung": "Bạn đã hoàn thành bài trắc nghiệm tính cách Holland. Nhấn để xem kết quả phân tích chi tiết.",
       "NgayTao": "2026-04-02",
@@ -89,18 +82,75 @@
     }
   },
 
-  "BangDiem": {
-    "BD-001": {
-      "MaNguoiDung": "ND-002",
-      "Toan": "7.8",
-      "Ly": "6.5",
-      "Hoa": "8.0",
-      "Sinh": "8.0",
-      "Van": "5.5",
-      "Anh": "4.5",
-      "TinHoc": "9.5",
-      "DiaLy": "8.0",
-      "LichSu": "6.5"
+  "NguoiDung_ThongBao": {
+    "NDTB-001": {
+      "MaNguoiDung": 2,
+      "MaThongBao": 1,
+      "TrangThai": "Chưa đọc"
+    },
+    "NDTB-002": {
+      "MaNguoiDung": 2,
+      "MaThongBao": 2,
+      "TrangThai": "Đã đọc"
+    },
+    "NDTB-003": {
+      "MaNguoiDung": 2,
+      "MaThongBao": 4,
+      "TrangThai": "Chưa đọc"
+    },
+    "NDTB-004": {
+      "MaNguoiDung": 1,
+      "MaThongBao": 3,
+      "TrangThai": "Chưa đọc"
+    },
+    "NDTB-005": {
+      "MaNguoiDung": 1,
+      "MaThongBao": 5,
+      "TrangThai": "Đã đọc"
+    },
+    "NDTB-006": {
+      "MaNguoiDung": 3,
+      "MaThongBao": 1,
+      "TrangThai": "Chưa đọc"
+    }
+  },
+
+ "MonHoc": {
+    "MH-001": {
+      "MaMonHoc": 1,
+      "TenMonHoc": "Toán học"
+    },
+    "MH-002": {
+      "MaMonHoc": 2,
+      "TenMonHoc": "Vật lý"
+    },
+    "MH-003": {
+      "MaMonHoc": 3,
+      "TenMonHoc": "Hóa học"
+    },
+    "MH-004": {
+      "MaMonHoc": 4,
+      "TenMonHoc": "Sinh học"
+    },
+    "MH-005": {
+      "MaMonHoc": 5,
+      "TenMonHoc": "Ngữ văn"
+    },
+    "MH-006": {
+      "MaMonHoc": 6,
+      "TenMonHoc": "Tiếng Anh"
+    },
+    "MH-007": {
+      "MaMonHoc": 7,
+      "TenMonHoc": "Tin học"
+    },
+    "MH-008": {
+      "MaMonHoc": 8,
+      "TenMonHoc": "Địa lý"
+    },
+    "MH-009": {
+      "MaMonHoc": 9,
+      "TenMonHoc": "Lịch sử"
     }
   },
 
@@ -5892,6 +5942,58 @@
     }
   },
 
+  "NguoiDung_BanTin": {
+    "ND-001_BT-001": {
+      "MaNguoiDung": "ND-001",
+      "MaBanTin": "BT-001",
+      "TrangThai": "Đã đọc",
+      "NgayDocLanCuoi": "2026-04-20 14:30:00",
+      "YeuThich": true
+    },
+    "ND-001_BT-002": {
+      "MaNguoiDung": "ND-001",
+      "MaBanTin": "BT-002",
+      "TrangThai": "Chưa đọc",
+      "NgayDocLanCuoi": null,
+      "YeuThich": true
+    },
+    "ND-002_BT-001": {
+      "MaNguoiDung": "ND-002",
+      "MaBanTin": "BT-001",
+      "TrangThai": "Đã đọc",
+      "NgayDocLanCuoi": "2026-04-27 10:00:00",
+      "YeuThich": true
+    },
+    "ND-002_BT-006": {
+      "MaNguoiDung": "ND-002",
+      "MaBanTin": "BT-006",
+      "TrangThai": "Đã đọc",
+      "NgayDocLanCuoi": "2026-04-28 01:15:00",
+      "YeuThich": false
+    },
+    "ND-002_BT-018": {
+      "MaNguoiDung": "ND-002",
+      "MaBanTin": "BT-018",
+      "TrangThai": "Chưa đọc",
+      "NgayDocLanCuoi": null,
+      "YeuThich": true
+    },
+    "ND-003_BT-010": {
+      "MaNguoiDung": "ND-003",
+      "MaBanTin": "BT-010",
+      "TrangThai": "Đã đọc",
+      "NgayDocLanCuoi": "2026-04-15 08:00:00",
+      "YeuThich": false
+    },
+    "ND-003_BT-025": {
+      "MaNguoiDung": "ND-003",
+      "MaBanTin": "BT-025",
+      "TrangThai": "Đã đọc",
+      "NgayDocLanCuoi": "2026-04-25 16:20:00",
+      "YeuThich": true
+    }
+  },
+
   "KyNang_CongViec": {
     "KNCV-001": {
       "MaCongViec": "CV-001",
@@ -6267,7 +6369,7 @@
     }
   },
 
-    "CongViec_ThangDo": {
+  "CongViec_ThangDo": {
       "CVTD-001": { "MaCongViec": "CV-001", "MaThangDo": "TD-HOLLAND-I", "TrongSo": 1.0 },
       "CVTD-002": { "MaCongViec": "CV-001", "MaThangDo": "TD-HOLLAND-R", "TrongSo": 0.9 },
       "CVTD-003": { "MaCongViec": "CV-001", "MaThangDo": "TD-DISC-C", "TrongSo": 0.9 },
@@ -6441,5 +6543,68 @@
       "CVTD-147": { "MaCongViec": "CV-025", "MaThangDo": "TD-MBTI-TF", "TrongSo": 0.7 },
       "CVTD-148": { "MaCongViec": "CV-025", "MaThangDo": "TD-BIGFIVE-O", "TrongSo": 0.7 },
       "CVTD-149": { "MaCongViec": "CV-025", "MaThangDo": "TD-MBTI-JP", "TrongSo": 0.6 }
+  },
+
+"KyNang_NguoiDung": {
+    "KNND-001": {
+      "MaNguoiDung": "ND-001",
+      "MaKyNang": "KN-001",
+      "MucDo": 3,
+      "GhiChu": "Nguyen Van A - Tư duy logic"
+    },
+    "KNND-002": {
+      "MaNguoiDung": "ND-001",
+      "MaKyNang": "KN-003",
+      "MucDo": 4,
+      "GhiChu": "Nguyen Van A - Giao tiếp & Thuyết trình"
+    },
+    "KNND-003": {
+      "MaNguoiDung": "ND-002",
+      "MaKyNang": "KN-005",
+      "MucDo": 5,
+      "GhiChu": "Le Minh Toan - Lập trình & Phát triển phần mềm"
+    },
+    "KNND-004": {
+      "MaNguoiDung": "ND-002",
+      "MaKyNang": "KN-009",
+      "MucDo": 4,
+      "GhiChu": "Le Minh Toan - Tư duy thuật toán"
+    },
+    "KNND-005": {
+      "MaNguoiDung": "ND-002",
+      "MaKyNang": "KN-011",
+      "MucDo": 4,
+      "GhiChu": "Le Minh Toan - Sử dụng công cụ AI"
+    },
+    "KNND-006": {
+      "MaNguoiDung": "ND-002",
+      "MaKyNang": "KN-033",
+      "MucDo": 3,
+      "GhiChu": "Le Minh Toan - Tư duy hệ thống & Quy trình"
+    },
+    "KNND-007": {
+      "MaNguoiDung": "ND-003",
+      "MaKyNang": "KN-004",
+      "MucDo": 5,
+      "GhiChu": "Dang Van B - Quản lý thời gian"
+    },
+    "KNND-008": {
+      "MaNguoiDung": "ND-003",
+      "MaKyNang": "KN-014",
+      "MucDo": 4,
+      "GhiChu": "Dang Van B - Quản trị rủi ro"
+    },
+    "KNND-009": {
+      "MaNguoiDung": "ND-003",
+      "MaKyNang": "KN-027",
+      "MucDo": 5,
+      "GhiChu": "Dang Van B - Am hiểu pháp luật chuyên ngành"
+    },
+    "KNND-010": {
+      "MaNguoiDung": "ND-003",
+      "MaKyNang": "KN-013",
+      "MucDo": 4,
+      "GhiChu": "Dang Van B - Tư duy phản biện"
     }
+  }
 }

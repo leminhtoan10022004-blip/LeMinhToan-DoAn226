@@ -1,7 +1,14 @@
 package com.chaquo.python.console;
 
+import android.content.Intent;
+import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +33,7 @@ public class JobDetail extends AppCompatActivity {
     private List<RoadmapStep> roadmapList;
     private FirebaseFirestore db;
     private String jobCode;
+    private LinearLayout layoutBooks, layoutGames;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +51,9 @@ public class JobDetail extends AppCompatActivity {
         initViews();
         loadJobDetailsFromFirestore();
         loadRoadmapFromFirestore();
+        
+        // Cài đặt icon cho Sách và Game mẫu với liên kết
+        setupSampleResources();
     }
 
     private void initViews() {
@@ -60,12 +71,60 @@ public class JobDetail extends AppCompatActivity {
         tvHotnessDetail = findViewById(R.id.tvHotnessDetail);
         tvEducationDetail = findViewById(R.id.tvEducationDetail);
         tvJobDescriptionDetail = findViewById(R.id.tvJobDescriptionDetail);
+        
+        layoutBooks = findViewById(R.id.layoutBooks);
+        layoutGames = findViewById(R.id.layoutGames);
 
         rvRoadmap = findViewById(R.id.rvRoadmap);
         roadmapList = new ArrayList<>();
         roadmapAdapter = new RoadmapAdapter(roadmapList);
         rvRoadmap.setLayoutManager(new LinearLayoutManager(this));
         rvRoadmap.setAdapter(roadmapAdapter);
+    }
+
+    private void setupSampleResources() {
+        layoutBooks.removeAllViews();
+        layoutGames.removeAllViews();
+
+        addResourceIcon(layoutBooks, "Code dạo", "https://tiki.vn/search?q=code+dao+ky+su", android.R.drawable.ic_menu_info_details);
+        addResourceIcon(layoutBooks, "Clean Code", "https://tiki.vn/search?q=clean+code", android.R.drawable.ic_menu_info_details);
+        addResourceIcon(layoutBooks, "Soft Skills", "https://tiki.vn/search?q=soft+skills", android.R.drawable.ic_menu_info_details);
+
+        addResourceIcon(layoutGames, "Grasshopper", "https://play.google.com/store/apps/details?id=com.area120.grasshopper", android.R.drawable.ic_menu_view);
+        addResourceIcon(layoutGames, "CodeCombat", "https://codecombat.com/", android.R.drawable.ic_menu_view);
+        addResourceIcon(layoutGames, "Elevate", "https://play.google.com/store/apps/details?id=com.wonder", android.R.drawable.ic_menu_view);
+    }
+
+    private void addResourceIcon(LinearLayout parent, String label, String url, int iconRes) {
+        LinearLayout container = new LinearLayout(this);
+        container.setOrientation(LinearLayout.VERTICAL);
+        container.setGravity(Gravity.CENTER);
+        container.setPadding(0, 0, 40, 0);
+
+        ImageView icon = new ImageView(this);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(140, 140);
+        icon.setLayoutParams(params);
+        icon.setImageResource(iconRes);
+        icon.setBackgroundResource(android.R.drawable.btn_default_small);
+        icon.setPadding(25, 25, 25, 25);
+        icon.setElevation(4f);
+
+        TextView text = new TextView(this);
+        text.setText(label);
+        text.setTextSize(10);
+        text.setGravity(Gravity.CENTER);
+        text.setTextColor(Color.DKGRAY);
+        text.setPadding(0, 8, 0, 0);
+
+        container.addView(icon);
+        container.addView(text);
+
+        container.setOnClickListener(v -> {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            startActivity(intent);
+        });
+
+        parent.addView(container);
     }
 
     private void loadJobDetailsFromFirestore() {

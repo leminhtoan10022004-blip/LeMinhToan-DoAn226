@@ -5,6 +5,9 @@
     <queries>
         <package android:name="com.google.android.gms" />
         <package android:name="com.android.vending" />
+        <intent>
+            <action android:name="com.google.android.gms.auth.api.signin.SERVICE" />
+        </intent>
     </queries>
 
     <application
@@ -62,6 +65,12 @@
             android:exported="false" />
         <activity
             android:name=".ChatBotActivity"
+            android:exported="false" />
+        <activity
+            android:name=".JobCategoriesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".JobListByCategoryActivity"
             android:exported="false" />
     </application>
 

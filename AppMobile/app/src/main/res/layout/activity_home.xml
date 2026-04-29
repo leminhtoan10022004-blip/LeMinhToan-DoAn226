@@ -163,10 +163,13 @@
                 android:orientation="horizontal"
                 app:layout_constraintTop_toBottomOf="@+id/bannerCard">
                 <LinearLayout
+                    android:id="@+id/btnJobs"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:orientation="vertical">
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="64dp"
