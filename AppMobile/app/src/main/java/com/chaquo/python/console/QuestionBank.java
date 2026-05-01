@@ -1,6 +1,11 @@
 package com.chaquo.python.console;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -9,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -16,12 +23,16 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.chaquo.python.PyObject;
+import com.chaquo.python.Python;
+import com.chaquo.python.android.AndroidPlatform;
 import com.chaquo.python.model.BaiTest;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -41,11 +52,17 @@ public class QuestionBank extends AppCompatActivity {
     private MaterialButton btnUploadTranscript, btnStartAIAnalysis;
     private TextView tvOcrStatus;
 
+    private String selectedImagePath = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_question_bank);
+
+        if (!Python.isStarted()) {
+            Python.start(new AndroidPlatform(this));
+        }
         
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -78,17 +95,78 @@ public class QuestionBank extends AppCompatActivity {
         tvOcrStatus = findViewById(R.id.tvOcrStatus);
 
         // Back button logic
-        btnBack.setOnClickListener(v -> {
-            finish(); // Đóng activity hiện tại để quay lại màn hình trước đó
-        });
+        btnBack.setOnClickListener(v -> finish());
 
-        btnUploadTranscript.setOnClickListener(v -> {
-            Toast.makeText(this, "Chức năng tải bảng điểm đang phát triển", Toast.LENGTH_SHORT).show();
-        });
+        btnUploadTranscript.setOnClickListener(v -> openGallery());
 
         btnStartAIAnalysis.setOnClickListener(v -> {
-            Toast.makeText(this, "Chức năng phân tích AI đang phát triển", Toast.LENGTH_SHORT).show();
+            if (selectedImagePath != null) {
+                runTranscriptAnalysis(selectedImagePath);
+            } else {
+                Toast.makeText(this, "Vui lòng chọn ảnh bảng điểm trước", Toast.LENGTH_SHORT).show();
+            }
         });
+    }
+
+    private final ActivityResultLauncher<Intent> galleryLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == Activity.RESULT_OK && result.getData() != null) {
+                    Uri selectedImageUri = result.getData().getData();
+                    selectedImagePath = getPathFromURI(selectedImageUri);
+                    if (selectedImagePath != null) {
+                        tvOcrStatus.setText("Đã chọn: " + new File(selectedImagePath).getName());
+                        tvOcrStatus.setVisibility(View.VISIBLE);
+                        btnStartAIAnalysis.setVisibility(View.VISIBLE);
+                    }
+                }
+            }
+    );
+
+    private void openGallery() {
+        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        galleryLauncher.launch(intent);
+    }
+
+    private String getPathFromURI(Uri contentUri) {
+        String res = null;
+        String[] proj = {MediaStore.Images.Media.DATA};
+        Cursor cursor = getContentResolver().query(contentUri, proj, null, null, null);
+        if (cursor != null && cursor.moveToFirst()) {
+            int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+            res = cursor.getString(column_index);
+            cursor.close();
+        }
+        return res;
+    }
+
+    private void runTranscriptAnalysis(String imagePath) {
+        tvOcrStatus.setText("Đang phân tích bảng điểm bằng AI...");
+        btnStartAIAnalysis.setEnabled(false);
+
+        new Thread(() -> {
+            try {
+                Python py = Python.getInstance();
+                PyObject transcriptOcrModule = py.getModule("transcript_ocr");
+                PyObject result = transcriptOcrModule.callAttr("process_transcript_image", imagePath);
+                
+                String jsonResult = result.toString();
+                
+                runOnUiThread(() -> {
+                    tvOcrStatus.setText("Phân tích hoàn tất!");
+                    btnStartAIAnalysis.setEnabled(true);
+                    // Ở đây bạn có thể hiển thị kết quả JSON hoặc chuyển sang màn hình tiếp theo
+                    Log.d("AI_Analysis", jsonResult);
+                    Toast.makeText(this, "Phân tích thành công!", Toast.LENGTH_LONG).show();
+                });
+            } catch (Exception e) {
+                Log.e("AI_Analysis", "Error running Python OCR", e);
+                runOnUiThread(() -> {
+                    tvOcrStatus.setText("Lỗi phân tích: " + e.getMessage());
+                    btnStartAIAnalysis.setEnabled(true);
+                });
+            }
+        }).start();
     }
 
     private void checkTestCompletion() {
