@@ -24,6 +24,7 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
+        error_reporting(E_ALL & ~E_DEPRECATED);
 
         //
     }

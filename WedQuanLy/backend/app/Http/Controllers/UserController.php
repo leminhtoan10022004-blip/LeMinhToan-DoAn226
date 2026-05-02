@@ -62,7 +62,6 @@ class UserController extends Controller
 
     public function toggleStatus(Request $request, $id)
 {
-    // 1. Lấy trạng thái hiện tại của User từ Firestore
     $urlGet = "https://firestore.googleapis.com/v1/projects/{$this->projectId}/databases/(default)/documents/NguoiDung/{$id}";
     $userResponse = Http::get($urlGet);
 
@@ -73,10 +72,8 @@ class UserController extends Controller
     $userData = $userResponse->json();
     $currentStatus = $userData['fields']['TrangThai']['stringValue'] ?? 'active';
 
-    // 2. Logic đảo ngược: Nếu đang active thì khóa (locked), và ngược lại
     $newStatus = ($currentStatus === 'active') ? 'locked' : 'active';
 
-    // 3. Cập nhật lại lên Firestore
     $urlPatch = "{$urlGet}?updateMask.fieldPaths=TrangThai";
     $patchResponse = Http::patch($urlPatch, [
         'fields' => [

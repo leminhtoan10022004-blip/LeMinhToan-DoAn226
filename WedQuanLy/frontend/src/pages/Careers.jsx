@@ -1,89 +1,116 @@
-import React, { useState } from 'react';
-import { 
-  MagnifyingGlassIcon, 
-  PlusIcon,
-  PencilSquareIcon,
-  TrashIcon,
-  EyeIcon
-} from '@heroicons/react/24/outline';
+import React, { useState, useEffect } from 'react';
+import api from '../api/axios'; 
+import { PlusIcon, PencilSquareIcon, TrashIcon, XMarkIcon, BriefcaseIcon } from '@heroicons/react/24/outline';
 
 const Careers = () => {
-  const [careers, setCareers] = useState([
-    { id: 1, name: "Công nghệ thông tin", code: "IT01", description: "Lập trình, quản trị hệ thống...", scale: "Holland" },
-    { id: 2, name: "Quản trị kinh doanh", code: "BA02", description: "Quản lý doanh nghiệp, startup...", scale: "Holland" },
-    { id: 3, name: "Thiết kế đồ họa", code: "GD03", description: "Thiết kế UI/UX, Banner, Video...", scale: "Big Five" },
-  ]);
+  const [jobs, setJobs] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [isSaving, setIsSaving] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [editingJob, setEditingJob] = useState(null);
+
+  const [formData, setFormData] = useState({ title: '', description: '', salary: '', category_id: '' });
+
+  const fetchData = async () => {
+    try {
+      setLoading(true);
+      const [jobRes, catRes] = await Promise.all([api.get('/careers'), api.get('/categories')]);
+      if (jobRes.data.status === 'success') setJobs(jobRes.data.data);
+      if (catRes.data.status === 'success') setCategories(catRes.data.data);
+    } catch (error) { console.error("Lỗi:", error); } 
+    finally { setLoading(false); }
+  };
+
+  useEffect(() => { fetchData(); }, []);
+
+  const handleSave = async (e) => {
+    e.preventDefault();
+    setIsSaving(true);
+    try {
+      if (editingJob) await api.put(`/careers/${editingJob.id}`, formData);
+      else await api.post('/careers', formData);
+      setIsModalOpen(false);
+      fetchData();
+    } catch (error) { alert("Lỗi lưu dữ liệu!"); }
+    finally { setIsSaving(false); }
+  };
 
   return (
-    <div className="flex-1 p-6 lg:p-10 bg-gray-50 min-h-screen">
-      <div className="flex justify-between items-center mb-8">
-        <div>
-          <h1 className="text-2xl font-bold text-gray-800 tracking-tight">Quản lý Ngành nghề</h1>
-          <p className="text-gray-500 text-sm mt-1">Danh mục các ngành nghề phục vụ định hướng.</p>
-        </div>
-        <button className="flex items-center gap-2 px-6 py-3 bg-orange-500 text-white rounded-2xl text-sm font-bold hover:bg-orange-600 transition-all shadow-md shadow-orange-200">
-          <PlusIcon className="w-5 h-5" />
-          Thêm ngành mới
+    <div className="flex-1 p-8 bg-[#F8FAFC] min-h-screen">
+      {/* Header */}
+      <div className="flex justify-between items-center mb-10">
+        <h1 className="text-3xl font-black text-slate-900 flex items-center gap-3">
+          <BriefcaseIcon className="w-10 h-10 text-orange-500" /> Quản lý Công việc
+        </h1>
+        <button onClick={() => { setEditingJob(null); setFormData({title:'', description:'', salary:'', category_id:''}); setIsModalOpen(true); }}
+          className="px-8 py-4 bg-orange-500 text-white rounded-2xl font-bold shadow-lg shadow-orange-200 hover:bg-orange-600 transition-all">
+          + Tạo công việc
         </button>
       </div>
 
-      <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm mb-8 flex flex-wrap gap-4 items-center">
-        <div className="relative flex-1 min-w-[300px]">
-          <MagnifyingGlassIcon className="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
-          <input 
-            type="text" 
-            placeholder="Tìm tên ngành hoặc mã ngành..." 
-            className="w-full pl-12 pr-4 py-3 bg-gray-50 border-none rounded-2xl text-sm focus:ring-2 focus:ring-orange-500 transition-all"
-          />
-        </div>
-      </div>
-
-      {/* Bảng danh sách - Tách không gian (Spaced Table) */}
-      <div className="overflow-x-auto">
-        <table className="w-full text-left border-separate border-spacing-y-3">
-          <thead>
-            <tr className="text-gray-400 text-[11px] uppercase tracking-widest font-bold px-8">
-              <th className="px-8 py-2">Mã ngành</th>
-              <th className="px-4 py-2">Tên ngành nghề</th>
-              <th className="px-4 py-2">Thang đo phù hợp</th>
-              <th className="px-8 py-2 text-right">Thao tác</th>
+      {/* Table với Loading State */}
+      <div className="bg-white rounded-[32px] shadow-sm border border-slate-100 overflow-hidden">
+        <table className="w-full text-left">
+          <thead className="bg-slate-50/50">
+            <tr className="text-slate-400 text-[11px] uppercase tracking-widest font-black">
+              <th className="pl-10 py-6">Mã ID</th>
+              <th className="px-6 py-6">Thông tin</th>
+              <th className="px-6 py-6 text-center">Mức lương</th>
+              <th className="pr-10 py-6 text-right">Thao tác</th>
             </tr>
           </thead>
-          <tbody className="text-sm">
-            {careers.map((career) => (
-              <tr key={career.id} className="bg-white hover:bg-orange-50/30 transition-all shadow-sm">
-                <td className="px-8 py-6 rounded-l-2xl font-bold text-orange-600">
-                  {career.code}
+          <tbody>
+            {loading ? (
+              <tr><td colSpan="4" className="py-20 text-center font-bold text-slate-400 animate-pulse">Đang tải dữ liệu...</td></tr>
+            ) : jobs.map((job) => (
+              <tr key={job.id} className="border-t border-slate-50 group hover:bg-slate-50">
+                <td className="pl-10 py-6 font-mono text-xs text-slate-400">#{job.id.substring(0,8)}</td>
+                <td className="px-6 py-6">
+                  <p className="font-bold text-slate-800">{job.title}</p>
+                  <p className="text-slate-400 text-xs line-clamp-1">{job.description}</p>
                 </td>
-                <td className="px-4 py-6">
-                  <div>
-                    <p className="font-bold text-gray-800 text-base">{career.name}</p>
-                    <p className="text-gray-400 text-xs mt-1 line-clamp-1 italic">{career.description}</p>
-                  </div>
+                <td className="px-6 py-6 text-center">
+                  <span className="px-3 py-1 bg-green-50 text-green-600 rounded-lg font-bold text-xs">{job.salary}</span>
                 </td>
-                <td className="px-4 py-6">
-                  <span className="px-3 py-1 bg-blue-50 text-blue-600 rounded-lg text-xs font-bold uppercase">
-                    {career.scale}
-                  </span>
-                </td>
-                <td className="px-8 py-6 text-right rounded-r-2xl">
-                  <div className="flex justify-end gap-3">
-                    <button className="p-2.5 text-blue-500 hover:bg-blue-50 rounded-xl transition-all" title="Xem chi tiết">
-                      <EyeIcon className="w-5 h-5" />
-                    </button>
-                    <button className="p-2.5 text-green-500 hover:bg-green-50 rounded-xl transition-all" title="Chỉnh sửa">
-                      <PencilSquareIcon className="w-5 h-5" />
-                    </button>
-                    <button className="p-2.5 text-red-500 hover:bg-red-50 rounded-xl transition-all" title="Xóa ngành">
-                      <TrashIcon className="w-5 h-5" />
-                    </button>
-                  </div>
+                <td className="pr-10 py-6 text-right">
+                  <button onClick={() => { setEditingJob(job); setFormData(job); setIsModalOpen(true); }} className="p-2 text-slate-400 hover:text-orange-500"><PencilSquareIcon className="w-5 h-5"/></button>
+                  <button onClick={async () => { if(window.confirm("Xóa?")) { await api.delete(`/careers/${job.id}`); fetchData(); } }} className="p-2 text-slate-400 hover:text-red-500"><TrashIcon className="w-5 h-5"/></button>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-md flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-[40px] p-10 w-full max-w-xl shadow-2xl relative">
+            <h2 className="text-2xl font-black mb-8">{editingJob ? 'Sửa công việc' : 'Thêm công việc'}</h2>
+            <form onSubmit={handleSave} className="space-y-5">
+              <input required value={formData.title} onChange={e => setFormData({...formData, title: e.target.value})} placeholder="Tên công việc" className="w-full p-4 bg-slate-50 rounded-2xl outline-none focus:ring-2 focus:ring-orange-500/20" />
+              
+              <select required value={formData.category_id} onChange={e => setFormData({...formData, category_id: e.target.value})} className="w-full p-4 bg-slate-50 rounded-2xl outline-none">
+                <option value="">-- Chọn ngành nghề --</option>
+                {categories.map(cat => <option key={cat.id} value={cat.id}>{cat.title}</option>)}
+              </select>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-4 bg-slate-100 rounded-2xl text-slate-400 text-xs font-mono">{editingJob ? editingJob.id : 'ID TỰ ĐỘNG'}</div>
+                <input value={formData.salary} onChange={e => setFormData({...formData, salary: e.target.value})} placeholder="Mức lương" className="p-4 bg-slate-50 rounded-2xl outline-none" />
+              </div>
+
+              <textarea value={formData.description} onChange={e => setFormData({...formData, description: e.target.value})} placeholder="Mô tả ngắn" className="w-full p-4 bg-slate-50 rounded-2xl h-32 outline-none" />
+
+              <button disabled={isSaving} className={`w-full py-5 rounded-3xl font-black text-white transition-all ${isSaving ? 'bg-orange-300' : 'bg-orange-500 hover:bg-orange-600'}`}>
+                {isSaving ? 'ĐANG LƯU...' : (editingJob ? 'CẬP NHẬT' : 'TẠO CÔNG VIỆC')}
+              </button>
+            </form>
+            <button onClick={() => setIsModalOpen(false)} className="absolute top-8 right-8 text-slate-300"><XMarkIcon className="w-8 h-8" /></button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
