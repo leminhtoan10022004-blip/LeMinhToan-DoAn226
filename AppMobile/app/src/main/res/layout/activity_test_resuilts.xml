@@ -41,7 +41,6 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Card Chúc mừng & Mô tả -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -108,11 +107,9 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="16dp">
-                    <!-- Dynamic traits inserted here -->
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Section: Công việc gợi ý -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

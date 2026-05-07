@@ -9,7 +9,6 @@
     android:padding="20dp"
     tools:context=".DetailQuestion">
 
-    <!-- Thông tin tiến độ và thời gian -->
     <TextView
         android:id="@+id/tvQuestionProgress"
         android:layout_width="wrap_content"
@@ -32,7 +31,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tvQuestionProgress" />
 
-    <!-- Câu hỏi chính -->
     <TextView
         android:id="@+id/tvQuestionText"
         android:layout_width="0dp"
@@ -47,7 +45,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvQuestionProgress" />
 
-    <!-- Danh sách câu trả lời sử dụng RecyclerView để linh hoạt số lượng -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvOptions"
         android:layout_width="match_parent"

@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.chaquo.python.model.BanTin;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -30,7 +31,7 @@ public class Trend extends AppCompatActivity {
     private NewsAdapter newsAdapter;
     private List<Map<String, Object>> trendList;
     private List<Map<String, Object>> skillList;
-    private List<Map<String, Object>> newsList;
+    private List<BanTin> newsList;
     private FirebaseFirestore db;
     private ImageButton btnBackTrend;
 
@@ -60,14 +61,12 @@ public class Trend extends AppCompatActivity {
             btnBackTrend.setOnClickListener(v -> finish());
         }
 
-        // Setup Trending Categories
         rvTrendingCategories = findViewById(R.id.rvTrendingCategories);
         trendList = new ArrayList<>();
         trendAdapter = new TrendAdapter(trendList);
         rvTrendingCategories.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         rvTrendingCategories.setAdapter(trendAdapter);
 
-        // Setup Latest News
         rvLatestNews = findViewById(R.id.rvLatestNews);
         newsList = new ArrayList<>();
         newsAdapter = new NewsAdapter(newsList);
@@ -132,7 +131,8 @@ public class Trend extends AppCompatActivity {
                 .addOnSuccessListener(queryDocumentSnapshots -> {
                     newsList.clear();
                     for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
-                        newsList.add(document.getData());
+                        BanTin news = document.toObject(BanTin.class);
+                        newsList.add(news);
                     }
                     newsAdapter.notifyDataSetChanged();
                 })

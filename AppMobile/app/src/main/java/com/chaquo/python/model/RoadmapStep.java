@@ -10,6 +10,7 @@ public class RoadmapStep {
     private String ThoiGian; // Thêm thời gian dự kiến
     private List<String> KyNang; // Thêm danh sách kỹ năng cần đạt
     private boolean isCompleted; // Trạng thái hoàn thành (để người dùng tương tác)
+    private String HinhAnh; // Thêm hình ảnh cho bước
 
     public RoadmapStep() {}
 
@@ -37,6 +38,11 @@ public class RoadmapStep {
     public List<String> getKyNang() { return KyNang; }
     @PropertyName("KyNang")
     public void setKyNang(List<String> KyNang) { this.KyNang = KyNang; }
+
+    @PropertyName("HinhAnh")
+    public String getHinhAnh() { return HinhAnh; }
+    @PropertyName("HinhAnh")
+    public void setHinhAnh(String HinhAnh) { this.HinhAnh = HinhAnh; }
 
     public boolean isCompleted() { return isCompleted; }
     public void setCompleted(boolean completed) { isCompleted = completed; }

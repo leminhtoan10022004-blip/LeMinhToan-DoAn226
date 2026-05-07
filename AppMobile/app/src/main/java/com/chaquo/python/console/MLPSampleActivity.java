@@ -99,7 +99,6 @@ public class MLPSampleActivity extends AppCompatActivity {
         float dia = Float.parseFloat(etDia.getText().toString());
         float su = Float.parseFloat(etSu.getText().toString());
 
-        // Call Python function
         PyObject result = pyModule.callAttr("predict_career", 
                 mbti, holland, o, c, e, a, n, disc,
                 toan, ly, hoa, sinh, van, anh, tin, dia, su);

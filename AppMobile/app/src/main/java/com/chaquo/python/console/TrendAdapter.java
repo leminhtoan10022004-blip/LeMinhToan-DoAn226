@@ -29,8 +29,6 @@ public class TrendAdapter extends RecyclerView.Adapter<TrendAdapter.TrendViewHol
     @Override
     public void onBindViewHolder(@NonNull TrendViewHolder holder, int position) {
         Map<String, Object> trend = trendList.get(position);
-        
-        // Lấy dữ liệu từ Map (đã map từ Firestore XuHuong + Nganh)
         String tenNganh = (String) trend.get("TenNganh");
         String slgTuyen = (String) trend.get("SlgTuyen");
         String tyLe = (String) trend.get("TyLe");
@@ -38,8 +36,6 @@ public class TrendAdapter extends RecyclerView.Adapter<TrendAdapter.TrendViewHol
         holder.tvCategoryTitle.setText(tenNganh != null ? tenNganh : "N/A");
         holder.tvCategoryPositions.setText(slgTuyen != null ? slgTuyen : "0");
         holder.tvCategoryGrowth.setText("▲ " + (tyLe != null ? tyLe : "0%"));
-        
-        // Lương trung bình để tạm hoặc lấy từ ngành nếu có
         holder.tvCategorySalary.setText("15 - 35"); 
     }
 

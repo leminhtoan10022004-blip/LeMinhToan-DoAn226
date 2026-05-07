@@ -4,17 +4,17 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.chaquo.python.model.CongViec;
 import com.google.android.material.chip.Chip;
 
-import java.text.NumberFormat;
 import java.util.List;
-import java.util.Locale;
 
 public class JobAdapter extends RecyclerView.Adapter<JobAdapter.JobViewHolder> {
 
@@ -36,22 +36,18 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.JobViewHolder> {
         CongViec job = jobList.get(position);
         holder.tvJobTitle.setText(job.getTenCongViec());
         holder.tvEducation.setText(job.getYeuCauDaoTao());
-        
-        // Định dạng lương: 15.000.000 -> 15 Triệu
         String salaryRange = formatSalary(job.getLuongToiThieu()) + " - " + formatSalary(job.getLuongToiDa());
         holder.tvSalary.setText(salaryRange);
-
-        // Hiển thị Độ Hot
         holder.chipHot.setText(job.getDoHot());
-        if ("Rất Cao".equals(job.getDoHot())) {
-            holder.chipHot.setChipBackgroundColorResource(android.R.color.holo_red_light);
-        } else if ("Cao".equals(job.getDoHot())) {
-            holder.chipHot.setChipBackgroundColorResource(android.R.color.holo_orange_light);
-        } else {
-            holder.chipHot.setChipBackgroundColorResource(android.R.color.holo_blue_light);
+
+        if (job.getHinhAnh() != null && !job.getHinhAnh().isEmpty()) {
+            Glide.with(holder.itemView.getContext())
+                    .load(job.getHinhAnh())
+                    .placeholder(R.drawable.background)
+                    .error(R.drawable.background)
+                    .into(holder.ivJobIcon);
         }
 
-        // Sự kiện click để xem chi tiết
         View.OnClickListener listener = v -> {
             Intent intent = new Intent(v.getContext(), JobDetail.class);
             intent.putExtra("jobCode", job.getMaCongViec());
@@ -63,9 +59,7 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.JobViewHolder> {
     }
 
     private String formatSalary(long salary) {
-        if (salary >= 1000000) {
-            return (salary / 1000000) + " Triệu";
-        }
+        if (salary >= 1000000) return (salary / 1000000) + " Tr";
         return String.valueOf(salary);
     }
 
@@ -76,6 +70,7 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.JobViewHolder> {
 
     public static class JobViewHolder extends RecyclerView.ViewHolder {
         TextView tvJobTitle, tvSalary, tvEducation, tvSeeDetails;
+        ImageView ivJobIcon;
         Chip chipHot;
 
         public JobViewHolder(@NonNull View itemView) {
@@ -84,6 +79,7 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.JobViewHolder> {
             tvSalary = itemView.findViewById(R.id.tvSalary);
             tvEducation = itemView.findViewById(R.id.tvEducation);
             tvSeeDetails = itemView.findViewById(R.id.tvSeeDetails);
+            ivJobIcon = itemView.findViewById(R.id.ivJobIcon);
             chipHot = itemView.findViewById(R.id.chipHot);
         }
     }

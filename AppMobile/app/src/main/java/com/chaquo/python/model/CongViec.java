@@ -11,6 +11,7 @@ public class CongViec {
     private long LuongToiThieu;
     private long LuongToiDa;
     private String YeuCauDaoTao;
+    private String HinhAnh;
 
     public CongViec() {}
 
@@ -53,4 +54,9 @@ public class CongViec {
     public String getYeuCauDaoTao() { return YeuCauDaoTao; }
     @PropertyName("YeuCauDaoTao")
     public void setYeuCauDaoTao(String YeuCauDaoTao) { this.YeuCauDaoTao = YeuCauDaoTao; }
+
+    @PropertyName("HinhAnh")
+    public String getHinhAnh() { return HinhAnh; }
+    @PropertyName("HinhAnh")
+    public void setHinhAnh(String HinhAnh) { this.HinhAnh = HinhAnh; }
 }

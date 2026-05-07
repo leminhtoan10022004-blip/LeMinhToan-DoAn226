@@ -11,19 +11,24 @@
         android:layout_width="2dp"
         android:layout_height="24dp"
         android:background="#E0E0E0"
-        app:layout_constraintEnd_toEndOf="@+id/dotIndicator"
-        app:layout_constraintStart_toStartOf="@+id/dotIndicator"
+        app:layout_constraintEnd_toEndOf="@+id/tvStepCircleNumber"
+        app:layout_constraintStart_toStartOf="@+id/tvStepCircleNumber"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <View
-        android:id="@+id/dotIndicator"
-        android:layout_width="14dp"
-        android:layout_height="14dp"
-        android:layout_marginStart="24dp"
+    <TextView
+        android:id="@+id/tvStepCircleNumber"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="18dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/custom_progress_orange"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="1" />
 
     <View
         android:id="@+id/lineBottom"
@@ -31,9 +36,9 @@
         android:layout_height="0dp"
         android:background="#E0E0E0"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/dotIndicator"
-        app:layout_constraintStart_toStartOf="@+id/dotIndicator"
-        app:layout_constraintTop_toBottomOf="@+id/dotIndicator" />
+        app:layout_constraintEnd_toEndOf="@+id/tvStepCircleNumber"
+        app:layout_constraintStart_toStartOf="@+id/tvStepCircleNumber"
+        app:layout_constraintTop_toBottomOf="@+id/tvStepCircleNumber" />
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="0dp"
@@ -43,7 +48,7 @@
         app:cardCornerRadius="16dp"
         app:cardElevation="2dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/dotIndicator"
+        app:layout_constraintStart_toEndOf="@+id/tvStepCircleNumber"
         app:layout_constraintTop_toTopOf="parent"
         app:strokeColor="#F0F0F0"
         app:strokeWidth="1dp">
@@ -59,7 +64,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/tvStepNumber"
+                    android:id="@+id/tvStepNumberLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="#E3F2FD"
@@ -75,7 +80,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:text="⏱ 2-3 tháng"
+                    android:text="⏱ Đang cập nhật"
                     android:textColor="#757575"
                     android:textSize="11sp" />
             </RelativeLayout>
@@ -85,7 +90,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Tìm hiểu ngành CNTT"
+                android:text="Tên bước"
                 android:textColor="#2C2E43"
                 android:textSize="17sp"
                 android:textStyle="bold" />
@@ -95,33 +100,48 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:text="Nghiên cứu các lĩnh vực: web, mobile, AI. Xác định hướng đi phù hợp."
+                android:text="Mô tả chi tiết bước..."
                 android:textColor="#555555"
                 android:textSize="13sp"
                 android:lineSpacingExtra="2dp" />
 
-            <View
+            <ImageView
+                android:id="@+id/ivStepImage"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginVertical="12dp"
-                android:background="#EEEEEE" />
+                android:layout_height="180dp"
+                android:layout_marginTop="8dp"
+                android:scaleType="centerCrop"
+                android:visibility="gone"
+                android:contentDescription="Step Image" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Kỹ năng cần đạt:"
-                android:textColor="#2C2E43"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tvSkills"
+            <LinearLayout
+                android:id="@+id/layoutSkillsContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="• HTML/CSS cơ bản\n• Logic lập trình\n• Tiếng Anh chuyên ngành"
-                android:textColor="#666666"
-                android:textSize="12sp" />
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="12dp"
+                    android:background="#EEEEEE" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kỹ năng cần đạt:"
+                    android:textColor="#2C2E43"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvSkills"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="#666666"
+                    android:textSize="12sp" />
+            </LinearLayout>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnCompleteStep"

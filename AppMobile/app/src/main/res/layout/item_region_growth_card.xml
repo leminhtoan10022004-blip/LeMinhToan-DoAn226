@@ -15,7 +15,6 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Header: Icon + Tên thành phố -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -39,7 +38,6 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <!-- Ngành 1 -->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -72,7 +70,6 @@
             android:progress="45"
             android:progressDrawable="@drawable/custom_progress_orange" />
 
-        <!-- Ngành 2 -->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

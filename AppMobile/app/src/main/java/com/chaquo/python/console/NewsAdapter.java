@@ -3,19 +3,24 @@ package com.chaquo.python.console;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.chaquo.python.model.BanTin;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
 import java.util.List;
-import java.util.Map;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> {
 
-    private List<Map<String, Object>> newsList;
+    private List<BanTin> newsList;
 
-    public NewsAdapter(List<Map<String, Object>> newsList) {
+    public NewsAdapter(List<BanTin> newsList) {
         this.newsList = newsList;
     }
 
@@ -28,11 +33,34 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull NewsViewHolder holder, int position) {
-        Map<String, Object> news = newsList.get(position);
+        BanTin news = newsList.get(position);
         
-        holder.tvNewsTitle.setText((String) news.get("TieuDe"));
-        holder.tvNewsSummary.setText((String) news.get("TomTat"));
-        holder.tvNewsTag.setText((String) news.get("LoaiTin"));
+        holder.tvNewsTitle.setText(news.getTieuDe());
+        holder.tvNewsSummary.setText(news.getTomTat());
+        holder.tvNewsTag.setText(news.getLoaiTin());
+        String imagePath = news.getHinhAnh();
+        if (imagePath != null && !imagePath.isEmpty()) {
+            if (imagePath.startsWith("http")) {
+                Glide.with(holder.itemView.getContext())
+                        .load(imagePath)
+                        .placeholder(R.drawable.background)
+                        .error(R.drawable.background)
+                        .into(holder.ivNewsImage);
+            } else {
+                StorageReference storageRef = FirebaseStorage.getInstance().getReference().child("news/" + imagePath);
+                storageRef.getDownloadUrl().addOnSuccessListener(uri -> {
+                    Glide.with(holder.itemView.getContext())
+                            .load(uri)
+                            .placeholder(R.drawable.background)
+                            .error(R.drawable.background)
+                            .into(holder.ivNewsImage);
+                }).addOnFailureListener(e -> {
+                    holder.ivNewsImage.setImageResource(R.drawable.background);
+                });
+            }
+        } else {
+            holder.ivNewsImage.setImageResource(R.drawable.background);
+        }
     }
 
     @Override
@@ -42,12 +70,14 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
 
     public static class NewsViewHolder extends RecyclerView.ViewHolder {
         TextView tvNewsTitle, tvNewsSummary, tvNewsTag;
+        ImageView ivNewsImage;
 
         public NewsViewHolder(@NonNull View itemView) {
             super(itemView);
             tvNewsTitle = itemView.findViewById(R.id.tvNewsTitle);
             tvNewsSummary = itemView.findViewById(R.id.tvNewsSummary);
             tvNewsTag = itemView.findViewById(R.id.tvNewsTag);
+            ivNewsImage = itemView.findViewById(R.id.ivNewsImage);
         }
     }
 }

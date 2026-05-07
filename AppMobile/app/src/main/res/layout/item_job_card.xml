@@ -15,7 +15,6 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
-        <!-- Icon công việc (Dùng placeholder hoặc icon theo ngành) -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardJobIcon"
             android:layout_width="48dp"
@@ -62,7 +61,6 @@
             app:layout_constraintStart_toStartOf="@+id/tvJobTitle"
             app:layout_constraintTop_toBottomOf="@id/tvJobTitle" />
 
-        <!-- Badge Độ Hot -->
         <com.google.android.material.chip.Chip
             android:id="@+id/chipHot"
             style="@style/Widget.MaterialComponents.Chip.Action"
