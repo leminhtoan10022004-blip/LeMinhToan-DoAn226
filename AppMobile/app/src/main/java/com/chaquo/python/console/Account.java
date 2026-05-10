@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,6 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.chaquo.python.model.NguoiDungBanTin;
 import com.chaquo.python.model.LichSuLamBai;
 import com.chaquo.python.model.NguoiDung;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -29,15 +31,17 @@ import java.util.List;
 
 public class Account extends AppCompatActivity {
 
-    private TextView tvFullName, tvEmail, tvPhone, tvRole;
+    private TextView tvFullName, tvEmail, tvPhone, tvRole, tvNoInterests;
     private MaterialButton btnLogout, btnEditProfile;
     private ImageButton btnBack;
     private FirebaseFirestore db;
     private String userId;
 
-    private RecyclerView rvHistory;
+    private RecyclerView rvHistory, rvInterests;
     private TestHistoryAdapter historyAdapter;
+    private InterestAdapter interestAdapter;
     private List<LichSuLamBai> historyList = new ArrayList<>();
+    private List<NguoiDungBanTin> interestList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,12 +51,9 @@ public class Account extends AppCompatActivity {
         
         db = FirebaseFirestore.getInstance();
         
-        // Lấy userId từ Intent hoặc SharedPreferences
-        userId = getIntent().getStringExtra("USER_ID");
-        if (userId == null) {
-            SharedPreferences pref = getSharedPreferences("UserPrefs", MODE_PRIVATE);
-            userId = pref.getString("USER_ID", null);
-        }
+        // Lấy userId từ SharedPreferences
+        SharedPreferences pref = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+        userId = pref.getString("USER_ID", null);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -66,11 +67,12 @@ public class Account extends AppCompatActivity {
         if (userId != null) {
             loadUserDataFromFirestore();
             loadTestHistory();
+            loadInterests();
         }
 
         btnLogout.setOnClickListener(v -> {
-            SharedPreferences pref = getSharedPreferences("UserPrefs", MODE_PRIVATE);
-            pref.edit().clear().apply();
+            SharedPreferences prefLogout = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+            prefLogout.edit().clear().apply();
             startActivity(new Intent(this, Login.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
             finish();
         });
@@ -88,13 +90,20 @@ public class Account extends AppCompatActivity {
         tvEmail = findViewById(R.id.tv_email);
         tvPhone = findViewById(R.id.tv_phone);
         tvRole = findViewById(R.id.tv_user_role);
+        tvNoInterests = findViewById(R.id.tv_no_interests);
         btnLogout = findViewById(R.id.btn_logout);
         btnEditProfile = findViewById(R.id.btn_edit_profile);
         btnBack = findViewById(R.id.btn_back);
+        
         rvHistory = findViewById(R.id.rv_test_history);
         rvHistory.setLayoutManager(new LinearLayoutManager(this));
         historyAdapter = new TestHistoryAdapter(historyList);
         rvHistory.setAdapter(historyAdapter);
+
+        rvInterests = findViewById(R.id.rv_interests);
+        rvInterests.setLayoutManager(new LinearLayoutManager(this));
+        interestAdapter = new InterestAdapter(interestList, userId);
+        rvInterests.setAdapter(interestAdapter);
     }
 
     private void loadUserDataFromFirestore() {
@@ -113,7 +122,6 @@ public class Account extends AppCompatActivity {
     }
 
     private void loadTestHistory() {
-        // Tạm thời bỏ .orderBy để không yêu cầu Index, giúp dữ liệu hiện lên ngay để bạn kiểm tra
         db.collection("LichSuLamBai")
                 .whereEqualTo("MaNguoiDung", userId)
                 .limit(10) 
@@ -125,11 +133,24 @@ public class Account extends AppCompatActivity {
                         if (item != null) historyList.add(item);
                     }
                     historyAdapter.notifyDataSetChanged();
-                })
-                .addOnFailureListener(e -> {
-                    Log.e("HISTORY_ERROR", "Lỗi: " + e.getMessage());
-                    Toast.makeText(this, "Vui lòng click link trong Logcat để tạo Index", Toast.LENGTH_LONG).show();
                 });
+    }
+
+    private void loadInterests() {
+        // Lấy từ bảng NguoiDung_BanTin theo đúng sơ đồ ERD của bạn
+        db.collection("NguoiDung_BanTin")
+                .whereEqualTo("MaNguoiDung", userId)
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    interestList.clear();
+                    for (DocumentSnapshot doc : queryDocumentSnapshots) {
+                        NguoiDungBanTin item = doc.toObject(NguoiDungBanTin.class);
+                        if (item != null) interestList.add(item);
+                    }
+                    interestAdapter.notifyDataSetChanged();
+                    tvNoInterests.setVisibility(interestList.isEmpty() ? View.VISIBLE : View.GONE);
+                })
+                .addOnFailureListener(e -> Log.e("ACCOUNT_ERROR", "Lỗi tải quan tâm: " + e.getMessage()));
     }
 
     private void setupBottomNavigation() {

@@ -1,6 +1,8 @@
 package com.chaquo.python.console;
 
+import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -20,10 +22,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.chaquo.python.model.CongViec;
 import com.chaquo.python.model.RoadmapStep;
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.DocumentSnapshot;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -38,6 +43,9 @@ public class JobDetail extends AppCompatActivity {
     private FirebaseFirestore db;
     private String jobCode;
     private LinearLayout layoutBooks, layoutGames;
+    private ExtendedFloatingActionButton fabSaveRoadmap;
+    private String userId;
+    private boolean isFollowing = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,12 +58,21 @@ public class JobDetail extends AppCompatActivity {
             jobCode = "CV-001";
         }
 
+        // Lấy userId từ SharedPreferences
+        SharedPreferences pref = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+        userId = pref.getString("USER_ID", null);
+
         db = FirebaseFirestore.getInstance();
         
         initViews();
         loadJobDetailsFromFirestore();
         loadRoadmapFromFirestore();
         setupSampleResources();
+        checkFollowStatus();
+
+        if (fabSaveRoadmap != null) {
+            fabSaveRoadmap.setOnClickListener(v -> toggleFollowStatus());
+        }
     }
 
     private void initViews() {
@@ -74,6 +91,7 @@ public class JobDetail extends AppCompatActivity {
         tvHotnessDetail = findViewById(R.id.tvHotnessDetail);
         tvEducationDetail = findViewById(R.id.tvEducationDetail);
         tvJobDescriptionDetail = findViewById(R.id.tvJobDescriptionDetail);
+        fabSaveRoadmap = findViewById(R.id.fabSaveRoadmap);
         
         layoutBooks = findViewById(R.id.layoutBooks);
         layoutGames = findViewById(R.id.layoutGames);
@@ -84,6 +102,75 @@ public class JobDetail extends AppCompatActivity {
         rvRoadmap.setLayoutManager(new LinearLayoutManager(this));
         rvRoadmap.setNestedScrollingEnabled(false);
         rvRoadmap.setAdapter(roadmapAdapter);
+    }
+
+    private void checkFollowStatus() {
+        if (userId == null || jobCode == null) return;
+
+        db.collection("NguoiDung_BanTin")
+                .document(userId + "_" + jobCode)
+                .get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    isFollowing = documentSnapshot.exists();
+                    updateFollowButtonUI();
+                });
+    }
+
+    private void updateFollowButtonUI() {
+        if (isFollowing) {
+            fabSaveRoadmap.setText("Lộ trình đã theo dõi");
+            fabSaveRoadmap.setIconResource(android.R.drawable.ic_menu_delete);
+            fabSaveRoadmap.setAlpha(0.6f);
+        } else {
+            fabSaveRoadmap.setText("Bắt đầu lộ trình");
+            fabSaveRoadmap.setIconResource(android.R.drawable.ic_input_add);
+            fabSaveRoadmap.setAlpha(1.0f);
+        }
+    }
+
+    private void toggleFollowStatus() {
+        if (userId == null) {
+            Toast.makeText(this, "Vui lòng đăng nhập để thực hiện", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (isFollowing) {
+            new AlertDialog.Builder(this)
+                    .setTitle("Hủy theo dõi")
+                    .setMessage("Bạn có chắc chắn muốn ngừng theo dõi lộ trình này không?")
+                    .setPositiveButton("Hủy theo dõi", (dialog, which) -> {
+                        db.collection("NguoiDung_BanTin")
+                                .document(userId + "_" + jobCode)
+                                .delete()
+                                .addOnSuccessListener(aVoid -> {
+                                    isFollowing = false;
+                                    updateFollowButtonUI();
+                                    Toast.makeText(JobDetail.this, "Đã hủy theo dõi lộ trình", Toast.LENGTH_SHORT).show();
+                                })
+                                .addOnFailureListener(e -> Toast.makeText(JobDetail.this, "Lỗi: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+                    })
+                    .setNegativeButton("Đóng", null)
+                    .show();
+        } else {
+            Map<String, Object> data = new HashMap<>();
+            data.put("MaNguoiDung", userId);
+            data.put("MaBanTin", jobCode); // Ở đây tạm coi mỗi lộ trình là 1 bản tin đặc biệt
+            data.put("TrangThai", "Đang theo dõi");
+            data.put("NgayDocLanCuoi", Timestamp.now());
+            data.put("YeuThich", true);
+            // Thêm trường này để hiển thị UI nhanh hơn
+            data.put("TenCongViec", tvJobTitleDetail.getText().toString());
+
+            db.collection("NguoiDung_BanTin")
+                    .document(userId + "_" + jobCode)
+                    .set(data)
+                    .addOnSuccessListener(aVoid -> {
+                        isFollowing = true;
+                        updateFollowButtonUI();
+                        Toast.makeText(JobDetail.this, "Đã bắt đầu theo dõi lộ trình!", Toast.LENGTH_SHORT).show();
+                    })
+                    .addOnFailureListener(e -> Toast.makeText(JobDetail.this, "Lỗi: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+        }
     }
 
     private void loadJobDetailsFromFirestore() {

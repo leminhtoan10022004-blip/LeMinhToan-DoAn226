@@ -220,6 +220,7 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- Card Lịch sử làm bài -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -267,6 +268,7 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- Card Lộ trình đã quan tâm (Đã cập nhật động) -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -284,7 +286,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Bài viết đã quan tâm"
+                        android:text="Lộ trình đã quan tâm"
                         android:textColor="#333333"
                         android:textStyle="bold" />
 
@@ -294,40 +296,21 @@
                         android:layout_marginVertical="12dp"
                         android:background="#EEEEEE" />
 
-                    <LinearLayout
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_interests"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:nestedScrollingEnabled="false"
+                        tools:listitem="@layout/item_interest" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:paddingVertical="4dp"
-                            android:text="Lộ trình trở thành Mobile Developer 2024"
-                            android:textColor="#333333"
-                            android:maxLines="1"
-                            android:ellipsize="end" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:paddingVertical="4dp"
-                            android:text="Top 10 kỹ năng cần có trong kỷ nguyên AI"
-                            android:textColor="#333333"
-                            android:maxLines="1"
-                            android:ellipsize="end" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:layout_gravity="center"
-                            android:text="Xem tất cả bài viết"
-                            android:textColor="#2196F3"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/tv_no_interests"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Bạn chưa bắt đầu lộ trình nào."
+                        android:textColor="#888888"
+                        android:textSize="13sp"
+                        android:visibility="gone" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 

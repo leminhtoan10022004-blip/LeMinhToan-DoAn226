@@ -271,7 +271,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="24dp"
-        android:text="Theo dõi ngay"
+        android:text="Bắt đầu lộ trình"
         android:textColor="@color/white"
         app:backgroundTint="?attr/colorPrimary"
         app:icon="@android:drawable/ic_input_add"
