@@ -45,8 +45,6 @@ public class QuestionBank extends AppCompatActivity {
     private List<BaiTest> quizList;
     private FirebaseFirestore db;
     private FirebaseAuth mAuth;
-
-    // UI Elements
     private ImageView btnBack;
     private LinearLayout layoutLockOverlay;
     private MaterialButton btnUploadTranscript, btnStartAIAnalysis;
@@ -88,13 +86,11 @@ public class QuestionBank extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
 
-        // AI Views
         layoutLockOverlay = findViewById(R.id.layoutLockOverlay);
         btnUploadTranscript = findViewById(R.id.btnUploadTranscript);
         btnStartAIAnalysis = findViewById(R.id.btnStartAIAnalysis);
         tvOcrStatus = findViewById(R.id.tvOcrStatus);
 
-        // Back button logic
         btnBack.setOnClickListener(v -> finish());
 
         btnUploadTranscript.setOnClickListener(v -> openGallery());
@@ -174,19 +170,22 @@ public class QuestionBank extends AppCompatActivity {
 
         String userId = mAuth.getCurrentUser().getUid();
         
-        db.collection("KetQuaTest")
-                .whereEqualTo("userId", userId)
+        // Sử dụng bảng LichSuLamBai để kiểm tra mở khóa AI
+        db.collection("LichSuLamBai")
+                .whereEqualTo("MaNguoiDung", userId)
+                .whereEqualTo("TrangThai", "Hoàn thành")
                 .get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
-                    Set<String> completedTestTypes = new HashSet<>();
+                    Set<String> completedTestIds = new HashSet<>();
                     for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
-                        String type = doc.getString("testType");
-                        if (type != null) {
-                            completedTestTypes.add(type.toUpperCase());
+                        String testId = doc.getString("MaTest");
+                        if (testId != null) {
+                            completedTestIds.add(testId);
                         }
                     }
 
-                    if (completedTestTypes.size() >= 3) {
+                    // Nếu làm được ít nhất 3 loại bài test khác nhau
+                    if (completedTestIds.size() >= 3) {
                         unlockAIFeature();
                     } else {
                         lockAIFeature();

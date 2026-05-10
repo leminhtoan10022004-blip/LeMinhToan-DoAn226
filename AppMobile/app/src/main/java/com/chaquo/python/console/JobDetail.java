@@ -45,7 +45,6 @@ public class JobDetail extends AppCompatActivity {
         setContentView(R.layout.activity_job_detail);
 
         jobCode = getIntent().getStringExtra("jobCode");
-        Log.d(TAG, "onCreate: jobCode = " + jobCode);
         
         if (jobCode == null) {
             jobCode = "CV-001";
@@ -130,27 +129,18 @@ public class JobDetail extends AppCompatActivity {
     }
 
     private void loadRoadmapFromFirestore() {
-        Log.d(TAG, "loadRoadmapFromFirestore: loading for " + jobCode);
         db.collection("LoTrinh").document(jobCode).get()
                 .addOnSuccessListener(documentSnapshot -> {
                     if (documentSnapshot.exists()) {
-                        Log.d(TAG, "loadRoadmapFromFirestore: Document exists");
                         roadmapList.clear();
-                        
-                        // Theo hình ảnh bạn gửi, danh sách các bước nằm trong trường "data"
                         List<Map<String, Object>> steps = (List<Map<String, Object>>) documentSnapshot.get("data");
 
                         if (steps != null) {
-                            Log.d(TAG, "loadRoadmapFromFirestore: found " + steps.size() + " steps");
                             for (Map<String, Object> stepMap : steps) {
                                 addStepFromMap(stepMap);
                             }
-                        } else {
-                            Log.d(TAG, "loadRoadmapFromFirestore: 'data' field not found or is not a list");
                         }
                         roadmapAdapter.notifyDataSetChanged();
-                    } else {
-                        Log.d(TAG, "loadRoadmapFromFirestore: Document does not exist for " + jobCode);
                     }
                 })
                 .addOnFailureListener(e -> Log.e(TAG, "Error loading roadmap", e));

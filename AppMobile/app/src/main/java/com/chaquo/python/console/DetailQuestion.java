@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +22,7 @@ import com.chaquo.python.model.CauHoi;
 import com.chaquo.python.model.DapAn;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.WriteBatch;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -41,6 +43,7 @@ public class DetailQuestion extends AppCompatActivity {
     private Map<Integer, DapAn> userChoices = new HashMap<>();
     
     private CountDownTimer countDownTimer;
+    private long startTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +99,7 @@ public class DetailQuestion extends AppCompatActivity {
                     BaiTest test = documentSnapshot.toObject(BaiTest.class);
                     if (test != null && test.getDanhSachCauHoi() != null) {
                         questionList.addAll(test.getDanhSachCauHoi());
+                        startTime = System.currentTimeMillis();
                         startTimer(test.getThoiGian() * 60 * 1000);
                         displayQuestion();
                     }
@@ -146,30 +150,62 @@ public class DetailQuestion extends AppCompatActivity {
     private void submitTest() {
         if (countDownTimer != null) countDownTimer.cancel();
         
+        // 1. Tính toán điểm số
         Map<String, Integer> traitScores = new HashMap<>();
+        String topTrait = "";
+        int maxScore = -1;
+
         for (DapAn selected : userChoices.values()) {
             String trait = selected.getMaThangDo();
             int currentScore = traitScores.getOrDefault(trait, 0);
-            traitScores.put(trait, currentScore + selected.getGiaTri());
+            int newScore = currentScore + selected.getGiaTri();
+            traitScores.put(trait, newScore);
+
+            if (newScore > maxScore) {
+                maxScore = newScore;
+                topTrait = trait;
+            }
         }
 
         SharedPreferences pref = getSharedPreferences("UserPrefs", MODE_PRIVATE);
         String userId = pref.getString("USER_ID", "anonymous");
+        long endTime = System.currentTimeMillis();
 
-        Map<String, Object> resultData = new HashMap<>();
-        resultData.put("MaNguoiDung", userId);
-        resultData.put("MaTest", testId);
-        resultData.put("KetQuaChiTiet", traitScores);
-        resultData.put("NgayLam", System.currentTimeMillis());
+        // 2. Tạo mã ID tự động cho Document
+        String ketQuaId = db.collection("KetQuaPhanTich").document().getId();
+        String lichSuId = db.collection("LichSuLamBai").document().getId();
 
-        db.collection("KetQuaTest").add(resultData)
-                .addOnSuccessListener(documentReference -> {
-                    Toast.makeText(this, "Đã nộp bài thành công!", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(this, TestResuilts.class);
-                    intent.putExtra("RESULT_ID", documentReference.getId());
-                    startActivity(intent);
-                    finish();
-                })
-                .addOnFailureListener(e -> Toast.makeText(this, "Lỗi khi nộp bài", Toast.LENGTH_SHORT).show());
+        // 3. Chuẩn bị dữ liệu KetQuaPhanTich
+        Map<String, Object> ketQuaData = new HashMap<>();
+        ketQuaData.put("MaKetQua", ketQuaId);
+        ketQuaData.put("KetQuaChiTiet", traitScores);
+        ketQuaData.put("MaNganhPhuHop", topTrait);
+        ketQuaData.put("DuLieuChiTiet", new HashMap<>());
+
+        // 4. Chuẩn bị dữ liệu LichSuLamBai
+        Map<String, Object> lichSuData = new HashMap<>();
+        lichSuData.put("MaLichSu", lichSuId);
+        lichSuData.put("MaNguoiDung", userId);
+        lichSuData.put("MaTest", testId);
+        lichSuData.put("ThoiGianBD", startTime);
+        lichSuData.put("ThoiGianKT", endTime);
+        lichSuData.put("MaKetQua", ketQuaId);
+        lichSuData.put("TrangThai", "Hoàn thành");
+
+        // 5. Lưu đồng thời (WriteBatch)
+        WriteBatch batch = db.batch();
+        batch.set(db.collection("KetQuaPhanTich").document(ketQuaId), ketQuaData);
+        batch.set(db.collection("LichSuLamBai").document(lichSuId), lichSuData);
+
+        batch.commit().addOnSuccessListener(aVoid -> {
+            Toast.makeText(this, "Nộp bài thành công!", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, TestResuilts.class);
+            intent.putExtra("RESULT_ID", ketQuaId);
+            startActivity(intent);
+            finish();
+        }).addOnFailureListener(e -> {
+            Log.e("Firestore", "Error saving data", e);
+            Toast.makeText(this, "Lỗi khi nộp bài: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        });
     }
 }
