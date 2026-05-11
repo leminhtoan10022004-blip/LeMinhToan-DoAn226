@@ -11,6 +11,7 @@ import TestManagement from './pages/TestManagement';
 import QuestionManagement from './pages/QuestionManagement';
 
 
+
 function App() {
   return (
     <BrowserRouter>
@@ -25,7 +26,7 @@ function App() {
             <Route path="/history" element={<TestHistory />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/tests" element={<TestManagement />} />
-            <Route path="tests/1/questions" element={<QuestionManagement />} />
+            <Route path="/tests/:testId/questions" element={<QuestionManagement />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

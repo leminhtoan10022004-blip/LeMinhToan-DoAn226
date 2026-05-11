@@ -15,7 +15,6 @@ const UserTable = ({ users, setUsers }) => {
       const response = await axios.post(`http://127.0.0.1:8000/api/users/toggle-status/${userId}`);
       
       if (response.data.success) {
-        // Cập nhật lại State local để giao diện thay đổi ngay lập tức mà không cần F5
         setUsers(prevUsers => 
           prevUsers.map(user => 
             user.id === userId ? { ...user, TrangThai: response.data.newStatus } : user

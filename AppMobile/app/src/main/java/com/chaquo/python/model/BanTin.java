@@ -9,6 +9,7 @@ public class BanTin {
     private String LoaiTin;
     private String HinhAnh;
     private Object NgayDang;
+    private String MaCongViec; // Liên kết tới lộ trình công việc
 
     public BanTin() {}
 
@@ -36,6 +37,11 @@ public class BanTin {
     public Object getNgayDang() { return NgayDang; }
     @PropertyName("NgayDang")
     public void setNgayDang(Object NgayDang) { this.NgayDang = NgayDang; }
+
+    @PropertyName("MaCongViec")
+    public String getMaCongViec() { return MaCongViec; }
+    @PropertyName("MaCongViec")
+    public void setMaCongViec(String MaCongViec) { this.MaCongViec = MaCongViec; }
 
     public String getNgayDangAsString() {
         if (NgayDang instanceof String) return (String) NgayDang;

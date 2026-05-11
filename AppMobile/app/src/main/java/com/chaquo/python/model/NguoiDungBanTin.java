@@ -8,7 +8,7 @@ public class NguoiDungBanTin {
     private String TrangThai;
     private Timestamp NgayDocLanCuoi;
     private boolean YeuThich;
-
+    private String MaCongViec;
     private String TenCongViec; 
 
     public NguoiDungBanTin() {}
@@ -27,6 +27,9 @@ public class NguoiDungBanTin {
 
     public boolean isYeuThich() { return YeuThich; }
     public void setYeuThich(boolean YeuThich) { this.YeuThich = YeuThich; }
+
+    public String getMaCongViec() { return MaCongViec; }
+    public void setMaCongViec(String MaCongViec) { this.MaCongViec = MaCongViec; }
 
     public String getTenCongViec() { return TenCongViec; }
     public void setTenCongViec(String TenCongViec) { this.TenCongViec = TenCongViec; }

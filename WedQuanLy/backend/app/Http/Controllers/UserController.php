@@ -13,7 +13,6 @@ class UserController extends Controller
     {
         $search = $request->query('search');
         
-        // Gọi trực tiếp đến Firestore REST API
         $url = "https://firestore.googleapis.com/v1/projects/{$this->projectId}/databases/(default)/documents/NguoiDung";
         
         $response = Http::get($url);
@@ -28,11 +27,9 @@ class UserController extends Controller
         if (isset($data['documents'])) {
             foreach ($data['documents'] as $doc) {
                 $fields = $doc['fields'];
-                // Lấy ID từ đường dẫn (name)
                 $pathParts = explode('/', $doc['name']);
                 $id = end($pathParts);
 
-                // Chuyển cấu hình Firestore phức tạp về dạng phẳng cho React dễ dùng
                 $user = [
                     'id' => $id,
                     'Ho' => $fields['Ho']['stringValue'] ?? '',
@@ -42,7 +39,6 @@ class UserController extends Controller
                     'VaiTro' => $fields['VaiTro']['stringValue'] ?? '',
                 ];
 
-                // Tìm kiếm thủ công đơn giản
                 if ($search) {
                     if (str_contains(strtolower($user['Ten']), strtolower($search)) || 
                         str_contains(strtolower($user['Email']), strtolower($search))) {

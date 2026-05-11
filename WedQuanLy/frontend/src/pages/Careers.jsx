@@ -82,8 +82,7 @@ const Careers = () => {
           </tbody>
         </table>
       </div>
-
-      {/* Modal */}
+      
       {isModalOpen && (
         <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-md flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-[40px] p-10 w-full max-w-xl shadow-2xl relative">
