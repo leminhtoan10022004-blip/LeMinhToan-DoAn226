@@ -21,10 +21,13 @@ import com.chaquo.python.model.BaiTest;
 import com.chaquo.python.model.CauHoi;
 import com.chaquo.python.model.DapAn;
 import com.google.android.material.button.MaterialButton;
+import com.google.firebase.Timestamp;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.WriteBatch;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -149,8 +152,7 @@ public class DetailQuestion extends AppCompatActivity {
 
     private void submitTest() {
         if (countDownTimer != null) countDownTimer.cancel();
-        
-        // 1. Tính toán điểm số
+
         Map<String, Integer> traitScores = new HashMap<>();
         String topTrait = "";
         int maxScore = -1;
@@ -171,28 +173,26 @@ public class DetailQuestion extends AppCompatActivity {
         String userId = pref.getString("USER_ID", "anonymous");
         long endTime = System.currentTimeMillis();
 
-        // 2. Tạo mã ID tự động cho Document
         String ketQuaId = db.collection("KetQuaPhanTich").document().getId();
         String lichSuId = db.collection("LichSuLamBai").document().getId();
 
-        // 3. Chuẩn bị dữ liệu KetQuaPhanTich
         Map<String, Object> ketQuaData = new HashMap<>();
         ketQuaData.put("MaKetQua", ketQuaId);
+        ketQuaData.put("MaNguoiDung", userId); 
+        ketQuaData.put("MaTest", testId);       
         ketQuaData.put("KetQuaChiTiet", traitScores);
         ketQuaData.put("MaNganhPhuHop", topTrait);
+        ketQuaData.put("NgayThucHien", FieldValue.serverTimestamp()); 
         ketQuaData.put("DuLieuChiTiet", new HashMap<>());
 
-        // 4. Chuẩn bị dữ liệu LichSuLamBai
         Map<String, Object> lichSuData = new HashMap<>();
         lichSuData.put("MaLichSu", lichSuId);
         lichSuData.put("MaNguoiDung", userId);
         lichSuData.put("MaTest", testId);
-        lichSuData.put("ThoiGianBD", startTime);
-        lichSuData.put("ThoiGianKT", endTime);
+        lichSuData.put("ThoiGianBD", new Timestamp(new Date(startTime)));
+        lichSuData.put("ThoiGianKT", new Timestamp(new Date(endTime)));
         lichSuData.put("MaKetQua", ketQuaId);
         lichSuData.put("TrangThai", "Hoàn thành");
-
-        // 5. Lưu đồng thời (WriteBatch)
         WriteBatch batch = db.batch();
         batch.set(db.collection("KetQuaPhanTich").document(ketQuaId), ketQuaData);
         batch.set(db.collection("LichSuLamBai").document(lichSuId), lichSuData);

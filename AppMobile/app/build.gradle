@@ -2,7 +2,6 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'com.chaquo.python'
-    id 'com.google.gms.google-services'
 }
 
 android {
@@ -16,8 +15,7 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         ndk {
-            // Focus on ARM for physical devices; add x86_64 if using an emulator.
-            abiFilters "armeabi-v7a", "arm64-v8a"
+            abiFilters "armeabi-v7a", "arm64-v8a", "x86_64"
         }
     }
 
@@ -42,9 +40,9 @@ chaquopy {
     defaultConfig {
         version "3.10"
         pip {
-            // These packages are supported and verified in Chaquopy
             install "pandas"
             install "scikit-learn"
+            install "scipy"
             install "numpy"
             install "six"
             install "opencv-python-headless"
@@ -66,9 +64,10 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.firebase:firebase-firestore'
     implementation 'com.google.firebase:firebase-storage'
-    implementation 'com.google.android.gms:play-services-auth:21.3.0'
 
-    // Glide for image loading
+    // Hạ xuống 20.7.0 để khắc phục lỗi SecurityException: Unknown calling package name
+    implementation 'com.google.android.gms:play-services-auth:20.7.0'
+    
     implementation 'com.github.bumptech.glide:glide:4.16.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
 
@@ -84,3 +83,5 @@ dependencies {
 tasks.register("testClasses") {
     dependsOn "compileDebugUnitTestSources"
 }
+
+apply plugin: 'com.google.gms.google-services'

@@ -1,174 +1,195 @@
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     android:background="#FFFFFF"
-    android:padding="28dp"
     tools:context=".Login">
 
-    <!-- Header Section -->
-    <LinearLayout
-        android:id="@+id/headerLayout"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="60dp"
-        app:layout_constraintTop_toTopOf="parent">
+        android:paddingHorizontal="28dp"
+        android:paddingBottom="28dp">
+
+        <!-- Header Section -->
+        <LinearLayout
+            android:id="@+id/headerLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/welcomeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chào mừng trở lại!"
+                android:textSize="26sp"
+                android:textColor="#0F172A"
+                android:fontFamily="sans-serif-black" />
+
+            <TextView
+                android:id="@+id/appName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AI Compass"
+                android:textSize="16sp"
+                android:textColor="#3B82F6"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <!-- Form Section -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/headerLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/bg_input_field"
+                android:hint="Email của bạn"
+                android:inputType="textEmailAddress"
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="16dp"
+                android:paddingHorizontal="20dp"
+                android:textColor="#1E293B"
+                android:drawableTint="#94A3B8"
+                android:textSize="15sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:hintEnabled="false"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="#94A3B8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emailLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/bg_input_field"
+                android:hint="Mật khẩu"
+                android:inputType="textPassword"
+                android:drawableStart="@drawable/ic_lock"
+                android:drawablePadding="16dp"
+                android:paddingHorizontal="20dp"
+                android:textColor="#1E293B"
+                android:textSize="15sp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
-            android:id="@+id/welcomeText"
+            android:id="@+id/tvForgotPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Chào mừng trở lại!"
-            android:textSize="26sp"
-            android:textColor="#0F172A"
-            android:fontFamily="sans-serif-black" />
+            android:layout_marginTop="12dp"
+            android:text="Quên mật khẩu?"
+            android:textColor="#64748B"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/passwordLayout" />
 
-        <TextView
-            android:id="@+id/appName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="AI Compass"
+        <!-- Button Section -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLogin"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="24dp"
+            android:text="Đăng nhập"
+            android:textAllCaps="false"
             android:textSize="16sp"
-            android:textColor="#3B82F6"
             android:textStyle="bold"
-            android:layout_marginTop="4dp"/>
-    </LinearLayout>
+            app:cornerRadius="30dp"
+            app:backgroundTint="#0F172A"
+            app:elevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvForgotPassword" />
 
-    <!-- Form Section -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/emailLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        app:hintEnabled="false"
-        app:layout_constraintTop_toBottomOf="@id/headerLayout">
+        <LinearLayout
+            android:id="@+id/socialDivider"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnLogin">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etEmail"
-            android:layout_width="match_parent"
+            <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" android:background="#F1F5F9" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Hoặc dùng" android:textColor="#94A3B8" android:paddingHorizontal="16dp" android:textSize="13sp" />
+            <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" android:background="#F1F5F9" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnGoogle"
+            android:layout_width="0dp"
             android:layout_height="60dp"
-            android:background="@drawable/bg_input_field"
-            android:hint="Email của bạn"
-            android:inputType="textEmailAddress"
-            android:drawableStart="@drawable/ic_email"
-            android:drawablePadding="16dp"
-            android:paddingHorizontal="20dp"
+            android:layout_marginTop="24dp"
+            android:text="Tiếp tục với Google"
             android:textColor="#1E293B"
-            android:drawableTint="#94A3B8"
-            android:textSize="15sp" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:textAllCaps="false"
+            app:icon="@drawable/ic_google"
+            app:iconTint="@null"
+            app:iconGravity="textStart"
+            app:iconPadding="12dp"
+            app:cornerRadius="30dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#E2E8F0"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/socialDivider" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/passwordLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:hintEnabled="false"
-
-        app:passwordToggleEnabled="true"
-        app:passwordToggleTint="#94A3B8"
-
-        app:layout_constraintTop_toBottomOf="@id/emailLayout">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etPassword"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@drawable/bg_input_field"
-            android:hint="Mật khẩu"
-            android:inputType="textPassword"
-            android:drawableStart="@drawable/ic_lock"
-            android:drawablePadding="16dp"
-            android:paddingHorizontal="20dp"
-            android:textColor="#1E293B"
-            android:textSize="15sp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <TextView
-        android:id="@+id/tvForgotPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Quên mật khẩu?"
-        android:textColor="#64748B"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/passwordLayout" />
-
-    <!-- Button Section -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnLogin"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="32dp"
-        android:text="Đăng nhập"
-        android:textAllCaps="false"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:cornerRadius="30dp"
-        app:backgroundTint="#0F172A"
-        app:elevation="0dp"
-        app:layout_constraintTop_toBottomOf="@id/tvForgotPassword" />
-
-    <LinearLayout
-        android:id="@+id/socialDivider"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/btnLogin">
-
-        <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" android:background="#F1F5F9" />
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Hoặc dùng" android:textColor="#94A3B8" android:paddingHorizontal="16dp" android:textSize="13sp" />
-        <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" android:background="#F1F5F9" />
-    </LinearLayout>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnGoogle"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="24dp"
-        android:text="Tiếp tục với Google"
-        android:textColor="#1E293B"
-        android:textAllCaps="false"
-        app:icon="@drawable/ic_google"
-        app:iconTint="@null"
-        app:iconGravity="textStart"
-        app:iconPadding="12dp"
-        app:cornerRadius="30dp"
-        app:strokeWidth="1dp"
-        app:strokeColor="#E2E8F0"
-        app:backgroundTint="#FFFFFF"
-        app:layout_constraintTop_toBottomOf="@id/socialDivider" />
-
-    <!-- Footer Section -->
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
+        <!-- Footer Section -->
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bạn mới dùng app? "
-            android:textColor="#64748B" />
+            android:orientation="horizontal"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnGoogle"
+            app:layout_constraintVertical_bias="1.0">
 
-        <TextView
-            android:id="@+id/tvRegister"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Đăng ký"
-            android:textColor="#3B82F6"
-            android:textStyle="bold" />
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bạn mới dùng app? "
+                android:textColor="#64748B" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/tvRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đăng ký"
+                android:textColor="#3B82F6"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

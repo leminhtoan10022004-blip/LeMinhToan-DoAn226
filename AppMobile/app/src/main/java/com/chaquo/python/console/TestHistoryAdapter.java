@@ -36,8 +36,13 @@ public class TestHistoryAdapter extends RecyclerView.Adapter<TestHistoryAdapter.
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         LichSuLamBai history = historyList.get(position);
 
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
-        String dateStr = sdf.format(new Date(history.getThoiGianKT()));
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault());
+        
+        // FIX: Xử lý hiển thị ngày tháng từ Timestamp thay vì long
+        String dateStr = "---";
+        if (history.getThoiGianKT() != null) {
+            dateStr = sdf.format(history.getThoiGianKT().toDate());
+        }
         holder.tvDate.setText("(" + dateStr + ")");
 
         if (history.getMaTest() != null) {

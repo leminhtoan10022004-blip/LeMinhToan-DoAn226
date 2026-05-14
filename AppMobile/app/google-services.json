@@ -13,7 +13,20 @@
           "package_name": "com.chaquo.python.console"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "1064745511507-f1nffv9s8k0cm8o8h3ndntb1kn93k729.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.chaquo.python.console",
+            "certificate_hash": "166d0cc483e5710f9923ff64f95d6c73a071d4c4"
+          }
+        },
+        {
+          "client_id": "1064745511507-j50lcklo87sc54jgl2ojbqq5rd3jn71c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAD8nDmsT50Dx4dsUre6bFRVTYhRBpy_zM"
@@ -21,7 +34,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1064745511507-j50lcklo87sc54jgl2ojbqq5rd3jn71c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

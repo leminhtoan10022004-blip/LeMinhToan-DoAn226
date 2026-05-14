@@ -1,6 +1,7 @@
 package com.chaquo.python.console;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -35,7 +36,8 @@ public class MLPSampleActivity extends AppCompatActivity {
             try {
                 performPrediction();
             } catch (Exception e) {
-                Toast.makeText(this, "Error input: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.e("MLPSample", "Error in prediction", e);
+                Toast.makeText(this, "Lỗi: " + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -64,7 +66,7 @@ public class MLPSampleActivity extends AppCompatActivity {
         btnPredict = findViewById(R.id.btnPredict);
         tvResult = findViewById(R.id.tvResult);
 
-        // Set default values for easier testing
+        // Giá trị mặc định để test nhanh
         etMbti.setText("INTJ");
         etHolland.setText("R");
         etDisc.setText("D");
@@ -77,8 +79,8 @@ public class MLPSampleActivity extends AppCompatActivity {
     private void performPrediction() {
         Python py = Python.getInstance();
         PyObject pyModule = py.getModule("career_mlp");
+        pyModule.callAttr("init_model");
 
-        // Collect all data
         String mbti = etMbti.getText().toString();
         String holland = etHolland.getText().toString();
         String disc = etDisc.getText().toString();
@@ -103,6 +105,6 @@ public class MLPSampleActivity extends AppCompatActivity {
                 mbti, holland, o, c, e, a, n, disc,
                 toan, ly, hoa, sinh, van, anh, tin, dia, su);
 
-        tvResult.setText("Predicted Career:\n" + result.toString());
+        tvResult.setText("Kết quả dự đoán:\n" + result.toString());
     }
 }

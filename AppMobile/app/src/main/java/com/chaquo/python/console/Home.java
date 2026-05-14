@@ -43,7 +43,6 @@ public class Home extends AppCompatActivity {
         
         db = FirebaseFirestore.getInstance();
         
-        // Tự động import dữ liệu từ ERD.json vào Firestore nếu database đang trống
         kiemTraVaImportDuLieu();
 
         tvWelcome = findViewById(R.id.tvWelcome);
@@ -106,7 +105,6 @@ public class Home extends AppCompatActivity {
     private void kiemTraVaImportDuLieu() {
         db.collection("Nganh").limit(1).get().addOnCompleteListener(task -> {
             if (task.isSuccessful() && task.getResult().isEmpty()) {
-                // Nếu chưa có ngành nào, thực hiện import toàn bộ dữ liệu mẫu
                 FirestoreImporter.importData(this);
                 Toast.makeText(this, "Đang khởi tạo dữ liệu mẫu...", Toast.LENGTH_LONG).show();
             }
@@ -166,13 +164,11 @@ public class Home extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), Notification.class);
                 intent.putExtra("USER_ID", userId);
                 startActivity(intent);
-                finish();
                 return true;
             } else if (id == R.id.it_account) {
                 Intent intent = new Intent(getApplicationContext(), Account.class);
                 intent.putExtra("USER_ID", userId);
                 startActivity(intent);
-                finish();
                 return true;
             }
             return false;

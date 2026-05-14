@@ -145,7 +145,7 @@
                         android:orientation="vertical"
                         android:clickable="true"
                         android:focusable="true"
-                        android:visibility="visible">
+                        android:visibility="gone">
 
                         <ImageView
                             android:layout_width="40dp"

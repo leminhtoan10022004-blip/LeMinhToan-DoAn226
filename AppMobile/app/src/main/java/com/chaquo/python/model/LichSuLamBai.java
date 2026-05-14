@@ -1,13 +1,15 @@
 package com.chaquo.python.model;
 
+import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.PropertyName;
+import java.util.Date;
 
 public class LichSuLamBai {
     private String MaLichSu;
     private String MaNguoiDung;
     private String MaTest;
-    private long ThoiGianBD;
-    private long ThoiGianKT;
+    private Timestamp ThoiGianBD;
+    private Timestamp ThoiGianKT;
     private String MaKetQua;
     private String TrangThai;
 
@@ -29,14 +31,28 @@ public class LichSuLamBai {
     public void setMaTest(String MaTest) { this.MaTest = MaTest; }
 
     @PropertyName("ThoiGianBD")
-    public long getThoiGianBD() { return ThoiGianBD; }
+    public Timestamp getThoiGianBD() { return ThoiGianBD; }
+
     @PropertyName("ThoiGianBD")
-    public void setThoiGianBD(long ThoiGianBD) { this.ThoiGianBD = ThoiGianBD; }
+    public void setThoiGianBD(Object value) {
+        if (value instanceof Timestamp) {
+            this.ThoiGianBD = (Timestamp) value;
+        } else if (value instanceof Long) {
+            this.ThoiGianBD = new Timestamp(new Date((Long) value));
+        }
+    }
 
     @PropertyName("ThoiGianKT")
-    public long getThoiGianKT() { return ThoiGianKT; }
+    public Timestamp getThoiGianKT() { return ThoiGianKT; }
+    
     @PropertyName("ThoiGianKT")
-    public void setThoiGianKT(long ThoiGianKT) { this.ThoiGianKT = ThoiGianKT; }
+    public void setThoiGianKT(Object value) {
+        if (value instanceof Timestamp) {
+            this.ThoiGianKT = (Timestamp) value;
+        } else if (value instanceof Long) {
+            this.ThoiGianKT = new Timestamp(new Date((Long) value));
+        }
+    }
 
     @PropertyName("MaKetQua")
     public String getMaKetQua() { return MaKetQua; }

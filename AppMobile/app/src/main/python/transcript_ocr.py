@@ -1,82 +1,33 @@
-from paddleocr import PaddleOCR
-from transformers import pipeline
 import json
-import cv2
 import os
-
-# Khởi tạo OCR (nên để global để tránh khởi tạo lại nhiều lần)
-_ocr = None
-_llm = None
-
-def get_ocr():
-    global _ocr
-    if _ocr is None:
-        # Tắt enable_mkldnn vì không hỗ trợ trên Android/ARM thông thường qua pip
-        _ocr = PaddleOCR(lang='vi', use_angle_cls=True, show_log=False)
-    return _ocr
-
-def get_llm():
-    global _llm
-    if _llm is None:
-        # Lưu ý: google/flan-t5-base rất nặng (~1GB). 
-        # Trên mobile có thể gặp lỗi bộ nhớ (OOM).
-        _llm = pipeline("text2text-generation", model="google/flan-t5-base")
-    return _llm
 
 def process_transcript_image(image_path):
     """
-    Quy trình: Ảnh -> PaddleOCR -> LLM -> JSON
+    Mock OCR: Vì PaddleOCR và Transformers quá nặng cho Mobile, 
+    chúng ta sẽ trả về kết quả giả lập để test luồng MLP.
     """
     try:
-        if not os.path.exists(image_path):
-            return json.dumps({"error": f"File không tồn tại: {image_path}"})
+        # Giả lập thời gian xử lý
+        import time
+        time.sleep(1) 
 
-        # 1. OCR
-        ocr = get_ocr()
-        result = ocr.ocr(image_path, cls=True)
-
-        if not result or not result[0]:
-            return json.dumps({"error": "Không nhận dạng được chữ nào trong ảnh."})
-
-        # Gom text từ kết quả OCR
-        ocr_text = "\n".join([line[1][0] for line in result[0]])
-
-        # 2. LLM (Chuyển đổi sang JSON)
-        llm = get_llm()
-        
-        prompt = f"""
-        Chuyển bảng điểm sau thành JSON với cấu trúc chính xác:
-        {{
-            "hoc_sinh": "tên học sinh",
-            "nam_hoc": "năm học",
+        # Trả về kết quả bảng điểm mẫu để có thể chạy MLP
+        ket_qua = {
+            "hoc_sinh": "Học sinh mẫu",
+            "nam_hoc": "2023-2024",
             "bang_diem": [
-                {{"mon_hoc": "tên môn", "diem_hk1": số, "diem_hk2": số}}
+                {"mon_hoc": "Toán", "diem_tb": 8.5},
+                {"mon_hoc": "Lý", "diem_tb": 8.0},
+                {"mon_hoc": "Hóa", "diem_tb": 7.5},
+                {"mon_hoc": "Văn", "diem_tb": 7.0},
+                {"mon_hoc": "Anh", "diem_tb": 8.5},
+                {"mon_hoc": "Sinh", "diem_tb": 6.5},
+                {"mon_hoc": "Tin", "diem_tb": 9.0},
+                {"mon_hoc": "Địa", "diem_tb": 7.0},
+                {"mon_hoc": "Sử", "diem_tb": 6.0}
             ]
-        }}
-
-        Chỉ trả về JSON, không thêm text giải thích.
-
-        Nội dung bảng điểm:
-        {ocr_text}
-
-        JSON:
-        """
-
-        response = llm(prompt, max_length=1000)[0]['generated_text']
-
-        # 3. Parse JSON từ response của LLM
-        try:
-            start_idx = response.find('{')
-            end_idx = response.rfind('}') + 1
-            if start_idx != -1 and end_idx != 0:
-                json_str = response[start_idx:end_idx]
-                ket_qua = json.loads(json_str)
-                # Trả về JSON string để Java/Kotlin dễ xử lý
-                return json.dumps(ket_qua, ensure_ascii=False)
-            else:
-                return json.dumps({"error": "LLM không trả về định dạng JSON hợp lệ", "raw_response": response})
-        except Exception as e:
-            return json.dumps({"error": f"Lỗi parse JSON: {str(e)}", "raw_response": response})
+        }
+        return json.dumps(ket_qua, ensure_ascii=False)
 
     except Exception as e:
         return json.dumps({"error": f"Lỗi hệ thống: {str(e)}"})

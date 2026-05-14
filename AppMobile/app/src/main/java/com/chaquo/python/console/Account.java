@@ -51,15 +51,17 @@ public class Account extends AppCompatActivity {
         
         db = FirebaseFirestore.getInstance();
         
-        // Lấy userId từ SharedPreferences
         SharedPreferences pref = getSharedPreferences("UserPrefs", MODE_PRIVATE);
         userId = pref.getString("USER_ID", null);
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, 0, systemBars.right, 0);
-            return insets;
-        });
+        View mainView = findViewById(R.id.main);
+        if (mainView != null) {
+            ViewCompat.setOnApplyWindowInsetsListener(mainView, (v, insets) -> {
+                Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+                v.setPadding(systemBars.left, 0, systemBars.right, 0);
+                return insets;
+            });
+        }
 
         initViews();
         setupBottomNavigation();
@@ -77,7 +79,14 @@ public class Account extends AppCompatActivity {
             finish();
         });
 
-        btnBack.setOnClickListener(v -> onBackPressed());
+        btnBack.setOnClickListener(v -> {
+            Intent intent = new Intent(this, Home.class);
+            intent.putExtra("USER_ID", userId);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(intent);
+            finish();
+        });
+        
         btnEditProfile.setOnClickListener(v -> {
             Intent intent = new Intent(this, EditProfileActivity.class);
             intent.putExtra("USER_ID", userId);
@@ -137,7 +146,6 @@ public class Account extends AppCompatActivity {
     }
 
     private void loadInterests() {
-        // Lấy từ bảng NguoiDung_BanTin theo đúng sơ đồ ERD của bạn
         db.collection("NguoiDung_BanTin")
                 .whereEqualTo("MaNguoiDung", userId)
                 .get()
@@ -159,7 +167,10 @@ public class Account extends AppCompatActivity {
         bottomNav.setOnItemSelectedListener(item -> {
             int id = item.getItemId();
             if (id == R.id.it_home) {
-                startActivity(new Intent(this, Home.class).putExtra("USER_ID", userId));
+                Intent intent = new Intent(this, Home.class);
+                intent.putExtra("USER_ID", userId);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
                 finish();
                 return true;
             }

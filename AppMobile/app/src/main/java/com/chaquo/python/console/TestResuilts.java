@@ -23,15 +23,14 @@ import com.chaquo.python.Python;
 import com.chaquo.python.android.AndroidPlatform;
 import com.chaquo.python.model.CongViec;
 import com.chaquo.python.model.KetQuaPhanTich;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -48,6 +47,7 @@ public class TestResuilts extends AppCompatActivity {
     private FirebaseFirestore db;
     private LinearLayout layoutTopScales;
     private ProgressBar loadingBar;
+    private Map<String, String> scaleDescriptions = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,12 +68,18 @@ public class TestResuilts extends AppCompatActivity {
             return insets;
         });
 
-        String resultId = getIntent().getStringExtra("RESULT_ID");
-        if (resultId != null) {
-            fetchTestResultAndRecommend(resultId);
-        } else {
-            tvResultDescription.setText("Không tìm thấy dữ liệu kết quả.");
-        }
+        loadDescriptionsFromFirestore(() -> {
+            String resultId = getIntent().getStringExtra("RESULT_ID");
+            String aiCareer = getIntent().getStringExtra("AI_CAREER_RESULT");
+
+            if (aiCareer != null) {
+                displayAICareerResult(aiCareer);
+            } else if (resultId != null) {
+                fetchTestResultAndRecommend(resultId);
+            } else {
+                tvResultDescription.setText("Không tìm thấy dữ liệu kết quả.");
+            }
+        });
     }
 
     private void initViews() {
@@ -94,6 +100,27 @@ public class TestResuilts extends AppCompatActivity {
         jobAdapter = new JobAdapter(jobList);
         rvResultJobs.setLayoutManager(new LinearLayoutManager(this));
         rvResultJobs.setAdapter(jobAdapter);
+    }
+
+    private void loadDescriptionsFromFirestore(final Runnable onComplete) {
+        loadingBar.setVisibility(View.VISIBLE);
+        db.collection("ThangDo").get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
+                        String code = doc.getId(); 
+                        String desc = doc.getString("MoTa");
+                        if (code != null && desc != null) {
+                            scaleDescriptions.put(code, desc);
+                        }
+                    }
+                    loadingBar.setVisibility(View.GONE);
+                    onComplete.run();
+                })
+                .addOnFailureListener(e -> {
+                    Log.e("TestResults", "Error loading descriptions", e);
+                    loadingBar.setVisibility(View.GONE);
+                    onComplete.run();
+                });
     }
 
     private void fetchTestResultAndRecommend(String resultId) {
@@ -134,73 +161,116 @@ public class TestResuilts extends AppCompatActivity {
     }
 
     private void addScaleToUI(String name, Integer value) {
+        String description = scaleDescriptions.get(name);
+        if (description == null) {
+            Log.w("TestResults", "No description found for scale: " + name);
+            return;
+        }
+
+        String formattedDesc = description;
+        if (description.contains(":")) {
+            String[] parts = description.split(":");
+            if (parts.length > 1) {
+                String trait = parts[1].trim();
+                formattedDesc = "Bạn là người " + trait.substring(0, 1).toLowerCase() + trait.substring(1);
+            }
+        } else {
+            formattedDesc = "Bạn có xu hướng " + description;
+        }
+
+        if (!formattedDesc.endsWith(".")) formattedDesc += ".";
+
         TextView textView = new TextView(this);
-        textView.setText("• Nhóm " + name + ": " + value + " điểm");
-        textView.setTextColor(Color.parseColor("#1976D2"));
-        textView.setPadding(0, 8, 0, 8);
-        textView.setTextSize(16);
-        textView.setTypeface(null, android.graphics.Typeface.BOLD);
+        textView.setText("• " + formattedDesc);
+        textView.setTextColor(Color.parseColor("#2C3E50"));
+        textView.setPadding(0, 12, 0, 12);
+        textView.setTextSize(15);
+        textView.setLineSpacing(1.1f, 1.1f);
         layoutTopScales.addView(textView);
     }
 
     private void runPythonRecommendation(List<String> topScales) {
-        new Thread(() -> {
-            try {
-                Python py = Python.getInstance();
-                PyObject pyModule = py.getModule("career_recommender");
-                
-                String scalesJson = new Gson().toJson(topScales);
-                String erdJson = loadJSONFromAsset("ERD.json");
-                
-                if (erdJson == null) throw new Exception("Thiếu file ERD.json");
-
-                PyObject result = pyModule.callAttr("recommend_jobs", scalesJson, erdJson);
-                JSONArray recommendedJobs = new JSONArray(result.toString());
-                
-                runOnUiThread(() -> {
-                    loadingBar.setVisibility(View.GONE);
-                    if (recommendedJobs.length() > 0) {
-                        loadJobsFromFirestore(recommendedJobs);
-                    } else {
-                        tvResultDescription.setText("Không tìm thấy nghề nghiệp phù hợp nhất. Hãy thử khám phá thêm các danh mục khác.");
+        loadingBar.setVisibility(View.VISIBLE);
+        db.collection("CongViec").get().addOnSuccessListener(jobsDocs -> {
+            db.collection("CongViec_ThangDo").get().addOnSuccessListener(mappingDocs -> {
+                try {
+                    JSONObject erdJson = new JSONObject();
+                    JSONObject jobsObj = new JSONObject();
+                    for (DocumentSnapshot doc : jobsDocs) {
+                        jobsObj.put(doc.getId(), new JSONObject(doc.getData()));
                     }
-                });
+                    erdJson.put("CongViec", jobsObj);
 
-            } catch (Exception e) {
-                Log.e("AI_ERROR", "Error: " + e.getMessage());
-                runOnUiThread(() -> {
+                    JSONObject mappingObj = new JSONObject();
+                    for (DocumentSnapshot doc : mappingDocs) {
+                        mappingObj.put(doc.getId(), new JSONObject(doc.getData()));
+                    }
+                    erdJson.put("CongViec_ThangDo", mappingObj);
+
+                    String erdJsonString = erdJson.toString();
+                    String scalesJson = new Gson().toJson(topScales);
+
+                    new Thread(() -> {
+                        try {
+                            Python py = Python.getInstance();
+                            PyObject pyModule = py.getModule("career_recommender");
+                            PyObject result = pyModule.callAttr("recommend_jobs", scalesJson, erdJsonString);
+                            JSONArray recommendedJobs = new JSONArray(result.toString());
+
+                            runOnUiThread(() -> {
+                                loadingBar.setVisibility(View.GONE);
+                                loadJobsFromFirestore(recommendedJobs);
+                            });
+                        } catch (Exception e) {
+                            Log.e("AI_ERROR", "Error: " + e.getMessage());
+                            runOnUiThread(() -> loadingBar.setVisibility(View.GONE));
+                        }
+                    }).start();
+
+                } catch (Exception e) {
+                    Log.e("DATA_ERROR", "Error building JSON", e);
                     loadingBar.setVisibility(View.GONE);
-                    tvResultDescription.setText("Lỗi xử lý phân tích AI.");
-                });
-            }
-        }).start();
+                }
+            });
+        });
     }
 
-    private String loadJSONFromAsset(String fileName) {
-        try {
-            InputStream is = getAssets().open(fileName);
-            byte[] buffer = new byte[is.available()];
-            is.read(buffer);
-            is.close();
-            return new String(buffer, StandardCharsets.UTF_8);
-        } catch (IOException ex) {
-            return null;
-        }
+    private void displayAICareerResult(String career) {
+        tvResultDescription.setText("Dựa trên phân tích toàn diện từ 4 bài test và kết quả học tập, AI nhận thấy bạn có tiềm năng lớn nhất trong lĩnh vực: " + career);
+        tvResultDescription.setTextColor(Color.parseColor("#E91E63"));
+        tvResultDescription.setTextSize(18);
+        
+        db.collection("CongViec")
+                .whereEqualTo("TenCongViec", career)
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    jobList.clear();
+                    for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
+                        CongViec job = doc.toObject(CongViec.class);
+                        job.setMaCongViec(doc.getId());
+                        jobList.add(job);
+                    }
+                    jobAdapter.notifyDataSetChanged();
+                });
     }
 
     private void loadJobsFromFirestore(JSONArray recommendedJobs) {
         jobList.clear();
         try {
-            JSONObject topJob = recommendedJobs.getJSONObject(0);
-            tvResultDescription.setText("Kết quả phân tích cho thấy bạn có xu hướng phù hợp nhất với công việc: " + 
-                    topJob.getString("TenCongViec") + ". Dưới đây là danh sách gợi ý chi tiết:");
+            if (recommendedJobs.length() > 0) {
+                JSONObject topJob = recommendedJobs.getJSONObject(0);
+                tvResultDescription.setText("Dựa trên đặc điểm cá nhân, bạn có xu hướng phù hợp nhất với công việc: " + 
+                        topJob.getString("TenCongViec") + ". Dưới đây là lộ trình gợi ý cho bạn:");
+            }
 
             for (int i = 0; i < Math.min(recommendedJobs.length(), 5); i++) {
                 String jobId = recommendedJobs.getJSONObject(i).getString("MaCongViec");
                 db.collection("CongViec").document(jobId).get()
                         .addOnSuccessListener(doc -> {
                             if (doc.exists()) {
-                                jobList.add(doc.toObject(CongViec.class));
+                                CongViec job = doc.toObject(CongViec.class);
+                                job.setMaCongViec(doc.getId());
+                                jobList.add(job);
                                 jobAdapter.notifyDataSetChanged();
                             }
                         });
