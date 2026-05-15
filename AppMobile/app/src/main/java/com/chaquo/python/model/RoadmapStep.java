@@ -7,10 +7,9 @@ public class RoadmapStep {
     private int BuocSo;
     private String TenBuoc;
     private String MoTa;
-    private String ThoiGian; // Thêm thời gian dự kiến
-    private List<String> KyNang; // Thêm danh sách kỹ năng cần đạt
-    private boolean isCompleted; // Trạng thái hoàn thành (để người dùng tương tác)
-    private String HinhAnh; // Thêm hình ảnh cho bước
+    private String ThoiGian;
+    private List<String> KyNang;
+    private String HinhAnh;
 
     public RoadmapStep() {}
 
@@ -43,7 +42,4 @@ public class RoadmapStep {
     public String getHinhAnh() { return HinhAnh; }
     @PropertyName("HinhAnh")
     public void setHinhAnh(String HinhAnh) { this.HinhAnh = HinhAnh; }
-
-    public boolean isCompleted() { return isCompleted; }
-    public void setCompleted(boolean completed) { isCompleted = completed; }
 }

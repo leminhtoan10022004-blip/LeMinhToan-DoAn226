@@ -1,17 +1,21 @@
 package com.chaquo.python.console;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.chaquo.python.model.RoadmapStep;
+import com.google.android.material.button.MaterialButton;
 
 import java.util.List;
 
@@ -69,6 +73,19 @@ public class RoadmapAdapter extends RecyclerView.Adapter<RoadmapAdapter.RoadmapV
 
         holder.lineTop.setVisibility(position == 0 ? View.INVISIBLE : View.VISIBLE);
         holder.lineBottom.setVisibility(position == roadmapSteps.size() - 1 ? View.INVISIBLE : View.VISIBLE);
+
+        holder.btnAskAI.setOnClickListener(v -> {
+            Intent intent = new Intent(holder.itemView.getContext(), ChatBotActivity.class);
+            intent.putExtra("PRESET_MESSAGE", "Hãy hướng dẫn tôi chi tiết cách thực hiện bước: " + step.getTenBuoc());
+            holder.itemView.getContext().startActivity(intent);
+        });
+
+        holder.btnResources.setOnClickListener(v -> {
+            Toast.makeText(holder.itemView.getContext(), "Đang mở tài liệu cho: " + step.getTenBuoc(), Toast.LENGTH_SHORT).show();
+            // Ví dụ mở một trang web học tập mẫu
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/search?q=tài+liệu+học+" + step.getTenBuoc()));
+            holder.itemView.getContext().startActivity(browserIntent);
+        });
     }
 
     @Override
@@ -81,6 +98,7 @@ public class RoadmapAdapter extends RecyclerView.Adapter<RoadmapAdapter.RoadmapV
         ImageView ivStepImage;
         View lineTop, lineBottom;
         LinearLayout layoutSkillsContainer;
+        MaterialButton btnAskAI, btnResources;
 
         public RoadmapViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -94,6 +112,8 @@ public class RoadmapAdapter extends RecyclerView.Adapter<RoadmapAdapter.RoadmapV
             lineTop = itemView.findViewById(R.id.lineTop);
             lineBottom = itemView.findViewById(R.id.lineBottom);
             layoutSkillsContainer = itemView.findViewById(R.id.layoutSkillsContainer);
+            btnAskAI = itemView.findViewById(R.id.btnAskAI);
+            btnResources = itemView.findViewById(R.id.btnResources);
         }
     }
 }

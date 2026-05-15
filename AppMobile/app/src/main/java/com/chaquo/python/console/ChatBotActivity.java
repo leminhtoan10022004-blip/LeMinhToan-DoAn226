@@ -39,6 +39,12 @@ public class ChatBotActivity extends AppCompatActivity {
         messageList.add(new Message("Chào bạn! Tôi là trợ lý AI hướng nghiệp. Tôi có thể giúp gì cho bạn hôm nay?", false));
         adapter.notifyDataSetChanged();
 
+        // Kiểm tra xem có tin nhắn mẫu được gửi từ Roadmap không
+        String presetMessage = getIntent().getStringExtra("PRESET_MESSAGE");
+        if (presetMessage != null && !presetMessage.isEmpty()) {
+            sendMessage(presetMessage);
+        }
+
         btnSendMessage.setOnClickListener(v -> {
             String text = etMessage.getText().toString().trim();
             if (!text.isEmpty()) {
@@ -63,7 +69,9 @@ public class ChatBotActivity extends AppCompatActivity {
 
     private String getBotResponse(String userText) {
         userText = userText.toLowerCase();
-        if (userText.contains("nghề") || userText.contains("việc")) {
+        if (userText.contains("hướng dẫn") || userText.contains("bước")) {
+            return "Để hoàn thành bước này, bạn nên tập trung vào việc thực hành các kỹ năng thực tế và tham khảo các tài liệu chuyên sâu mà tôi đã đính kèm trong phần Lộ trình.";
+        } else if (userText.contains("nghề") || userText.contains("việc")) {
             return "Bạn nên hoàn thành các bài trắc nghiệm MBTI và Holland để tôi có cơ sở tư vấn chính xác nhất nhé!";
         } else if (userText.contains("mbti")) {
             return "Bài test MBTI giúp bạn hiểu về tính cách cốt lõi, từ đó chọn môi trường làm việc phù hợp.";
