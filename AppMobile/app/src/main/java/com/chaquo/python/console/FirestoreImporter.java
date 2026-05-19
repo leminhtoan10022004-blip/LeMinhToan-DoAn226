@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.Log;
 
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.SetOptions;
 import com.google.firebase.firestore.WriteBatch;
 
 import org.json.JSONArray;
@@ -29,10 +30,16 @@ public class FirestoreImporter {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         try {
             JSONObject root = new JSONObject(json);
-            Iterator<String> collections = root.keys();
+            
+            // Chỉ định danh sách các collection muốn import
+            String[] targetCollections = {"Sach", "TroChoi"};
 
-            while (collections.hasNext()) {
-                String collectionName = collections.next();
+            for (String collectionName : targetCollections) {
+                if (!root.has(collectionName)) {
+                    Log.w(TAG, "Không tìm thấy collection: " + collectionName + " trong file JSON");
+                    continue;
+                }
+
                 JSONObject documents = root.getJSONObject(collectionName);
                 Iterator<String> docIds = documents.keys();
 
@@ -45,13 +52,13 @@ public class FirestoreImporter {
 
                     if (docData instanceof JSONObject) {
                         Map<String, Object> map = jsonToMap((JSONObject) docData);
-                        batch.set(db.collection(collectionName).document(docId), map);
+                        // Sử dụng SetOptions.merge() để không ghi đè mất dữ liệu cũ nếu trùng ID
+                        batch.set(db.collection(collectionName).document(docId), map, SetOptions.merge());
                         count++;
                     } else if (docData instanceof JSONArray) {
-                        // Xử lý trường hợp document là một mảng (như LoTrinh)
                         Map<String, Object> wrapper = new HashMap<>();
                         wrapper.put("steps", jsonToList((JSONArray) docData));
-                        batch.set(db.collection(collectionName).document(docId), wrapper);
+                        batch.set(db.collection(collectionName).document(docId), wrapper, SetOptions.merge());
                         count++;
                     }
 

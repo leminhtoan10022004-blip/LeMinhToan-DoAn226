@@ -6545,6 +6545,675 @@
       "CVTD-149": { "MaCongViec": "CV-025", "MaThangDo": "TD-MBTI-JP", "TrongSo": 0.6 }
   },
 
+
+  "Sach": {
+    "S-001": {
+      "MaCongViec": "CV-001",
+      "TenSach": "Code Dạo Ký Sự - Lập trình viên đâu phải chỉ biết code",
+      "MoTa": "Sách chia sẻ về trải nghiệm, kỹ năng mềm và định hướng nghề nghiệp thực tế cho lập trình viên.",
+      "HinhAnh": "code_dao_ky_su.png",
+      "DuongDan": "https://book.toidicodedao.com/",
+      "TacGia": "Phạm Huy Hoàng",
+      "NamXuatBan": "2017"
+    },
+    "S-002": {
+      "MaCongViec": "CV-001",
+      "TenSach": "Clean Code: A Handbook of Agile Software Craftsmanship",
+      "MoTa": "Sách hướng dẫn cách viết mã nguồn sạch, rõ ràng, dễ đọc và dễ bảo trì.",
+      "HinhAnh": "clean_code.png",
+      "DuongDan": "https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/013235088X",
+      "TacGia": "Robert C. Martin",
+      "NamXuatBan": "2008 (1st Edition)"
+    },
+    "S-003": {
+      "MaCongViec": "CV-001",
+      "TenSach": "Grokking Algorithms",
+      "MoTa": "Cuốn sách giải thích các thuật toán nền tảng một cách trực quan qua hình vẽ minh họa.",
+      "HinhAnh": "grokking_algorithms.png",
+      "DuongDan": "https://www.manning.com/books/grokking-algorithms",
+      "TacGia": "Aditya Bhargava",
+      "NamXuatBan": "2016"
+    },
+    "S-004": {
+      "MaCongViec": "CV-002",
+      "TenSach": "Hillier's Fundamentals of Motor Vehicle Technology",
+      "MoTa": "Tài liệu chuyên sâu về công nghệ ô tô, cấu tạo và nguyên lý hoạt động của các hệ thống trên xe.",
+      "HinhAnh": "motor_vehicle_technology.png",
+      "DuongDan": "",
+      "TacGia": "V.A.W. Hillier & Peter Coombes",
+      "NamXuatBan": "2004 (5th Edition)"
+    },
+    "S-005": {
+      "MaCongViec": "CV-002",
+      "TenSach": "Kỹ thuật Sửa chữa Ô tô",
+      "MoTa": "Sách giáo trình giảng dạy thực hành các kỹ thuật bảo dưỡng, chẩn đoán và sửa chữa ô tô.",
+      "HinhAnh": "ky_thuat_sua_chua_oto.png",
+      "DuongDan": "",
+      "TacGia": "Nhiều tác giả Việt Nam",
+      "NamXuatBan": "2020"
+    },
+    "S-006": {
+      "MaCongViec": "CV-002",
+      "TenSach": "The Machine That Changed the World",
+      "MoTa": "Cuốn sách phân tích về hệ thống sản xuất tinh gọn Lean Manufacturing làm thay đổi ngành công nghiệp ô tô.",
+      "HinhAnh": "the_machine_changed_the_world.png",
+      "DuongDan": "",
+      "TacGia": "James P. Womack, Daniel T. Jones",
+      "NamXuatBan": "1990"
+    },
+    "S-007": {
+      "MaCongViec": "CV-003",
+      "TenSach": "101 Things I Learned in Architecture School",
+      "MoTa": "Những bài học cô đọng về tư duy thiết kế kiến trúc, bản vẽ và không gian.",
+      "HinhAnh": "101_things_architecture_school.png",
+      "DuongDan": "",
+      "TacGia": "Matthew Frederick",
+      "NamXuatBan": "2007"
+    },
+    "S-008": {
+      "MaCongViec": "CV-003",
+      "TenSach": "Architecture: Form, Space, and Order",
+      "MoTa": "Giáo trình kinh điển về các nguyên lý cơ bản của hình khối, không gian và bố cục trong kiến trúc.",
+      "HinhAnh": "architecture_form_space_order.png",
+      "DuongDan": "",
+      "TacGia": "Francis D. K. Ching",
+      "NamXuatBan": "2023 (5th Edition)"
+    },
+    "S-009": {
+      "MaCongViec": "CV-003",
+      "TenSach": "Không Gian Trong Kiến Trúc",
+      "MoTa": "Sách tiếng Việt phân tích vai trò của không gian trong thiết kế kiến trúc.",
+      "HinhAnh": "khong_gian_trong_kien_truc.png",
+      "DuongDan": "",
+      "TacGia": "Hoàng Đạo Kính",
+      "NamXuatBan": "2015"
+    },
+    "S-010": {
+      "MaCongViec": "CV-004",
+      "TenSach": "The Intelligent Investor",
+      "MoTa": "Sách nền tảng về đầu tư giá trị, phân tích an toàn vốn và biên độ an toàn.",
+      "HinhAnh": "intelligent_investor.png",
+      "DuongDan": "",
+      "TacGia": "Benjamin Graham",
+      "NamXuatBan": "1949 (Revised 2024)"
+    },
+    "S-011": {
+      "MaCongViec": "CV-004",
+      "TenSach": "Principles: Life and Work",
+      "MoTa": "Chia sẻ hệ thống nguyên tắc quản lý rủi ro, ra quyết định và vận hành quỹ đầu tư.",
+      "HinhAnh": "principles_ray_dalio.png",
+      "DuongDan": "",
+      "TacGia": "Ray Dalio",
+      "NamXuatBan": "2017"
+    },
+    "S-012": {
+      "MaCongViec": "CV-004",
+      "TenSach": "The Psychology of Money",
+      "MoTa": "Phân tích hành vi, cảm xúc và yếu tố tâm lý ảnh hưởng đến quyết định tài chính cá nhân.",
+      "HinhAnh": "psychology_of_money.png",
+      "DuongDan": "",
+      "TacGia": "Morgan Housel",
+      "NamXuatBan": "2020"
+    },
+    "S-013": {
+      "MaCongViec": "CV-005",
+      "TenSach": "The Bramble Bush",
+      "MoTa": "Kinh điển về tư duy pháp lý, cách tiếp cận và học luật hiệu quả.",
+      "HinhAnh": "bramble_bush.png",
+      "DuongDan": "",
+      "TacGia": "Karl N. Llewellyn",
+      "NamXuatBan": "1951"
+    },
+    "S-014": {
+      "MaCongViec": "CV-005",
+      "TenSach": "Point Made: How to Write Like the Nation's Top Advocates",
+      "MoTa": "Hướng dẫn viết luận cứ pháp lý sắc bén, thuyết phục dựa trên các vụ án thực tế.",
+      "HinhAnh": "point_made.png",
+      "DuongDan": "",
+      "TacGia": "Noah Messing",
+      "NamXuatBan": "2011"
+    },
+    "S-015": {
+      "MaCongViec": "CV-005",
+      "TenSach": "Sức Mạnh Của Ngôn Từ",
+      "MoTa": "Kỹ năng giao tiếp, đàm phán và tranh luận hiệu quả trong môi trường pháp lý.",
+      "HinhAnh": "suc_manh_cua_ngon_tu.png",
+      "DuongDan": "",
+      "TacGia": "Don Gabor",
+      "NamXuatBan": "2010"
+    },
+    "S-016": {
+      "MaCongViec": "CV-006",
+      "TenSach": "The Non-Designer's Design Book",
+      "MoTa": "Giới thiệu 4 nguyên tắc thiết kế cơ bản: Cận kề, Căn chỉnh, Lặp lại, Tương phản.",
+      "HinhAnh": "non_designers_design_book.png",
+      "DuongDan": "",
+      "TacGia": "Robin Williams",
+      "NamXuatBan": "2014 (4th Edition)"
+    },
+    "S-017": {
+      "MaCongViec": "CV-006",
+      "TenSach": "Grid Systems in Graphic Design",
+      "MoTa": "Kinh điển về hệ thống lưới, bố cục và tỷ lệ trong thiết kế đồ họa.",
+      "HinhAnh": "grid_systems_graphic_design.png",
+      "DuongDan": "",
+      "TacGia": "Josef Müller-Brockmann",
+      "NamXuatBan": "1961"
+    },
+    "S-018": {
+      "MaCongViec": "CV-006",
+      "TenSach": "Thinking with Type",
+      "MoTa": "Sách chuyên sâu về nghệ thuật sắp chữ, kiểu chữ và giao diện đọc.",
+      "HinhAnh": "thinking_with_type.png",
+      "DuongDan": "",
+      "TacGia": "Ellen Lupton",
+      "NamXuatBan": "2010 (2nd Edition)"
+    },
+    "S-019": {
+      "MaCongViec": "CV-010",
+      "TenSach": "Stick and Rudder: An Explanation of the Art of Flying",
+      "MoTa": "Giải thích trực quan về khí động học và kỹ thuật lái máy bay cơ bản.",
+      "HinhAnh": "stick_and_rudder.png",
+      "DuongDan": "",
+      "TacGia": "Wolfgang Langewiesche",
+      "NamXuatBan": "1944"
+    },
+    "S-020": {
+      "MaCongViec": "CV-010",
+      "TenSach": "Pilot's Handbook of Aeronautical Knowledge (FAA)",
+      "MoTa": "Cẩm nang chính thức của Cục Hàng không Liên bang Mỹ về kiến thức hàng không.",
+      "HinhAnh": "pilots_handbook_aeronautical_knowledge.png",
+      "DuongDan": "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/phak",
+      "TacGia": "Federal Aviation Administration",
+      "NamXuatBan": "2023"
+    },
+    "S-021": {
+      "MaCongViec": "CV-010",
+      "TenSach": "Fly the Wing",
+      "MoTa": "Sách hướng dẫn lái máy bay hiệu suất cao, dành cho phi công chuyên nghiệp.",
+      "HinhAnh": "fly_the_wing.png",
+      "DuongDan": "",
+      "TacGia": "Billy Walker & Jim Webb",
+      "NamXuatBan": "2012 (4th Edition)"
+    },
+    "S-022": {
+      "MaCongViec": "CV-011",
+      "TenSach": "Salt, Fat, Acid, Heat",
+      "MoTa": "Giải thích bốn yếu tố cốt lõi tạo nên món ăn ngon và cách cân bằng chúng.",
+      "HinhAnh": "salt_fat_acid_heat.png",
+      "DuongDan": "",
+      "TacGia": "Samin Nosrat",
+      "NamXuatBan": "2017"
+    },
+    "S-023": {
+      "MaCongViec": "CV-011",
+      "TenSach": "On Food and Cooking",
+      "MoTa": "Sách kinh điển về khoa học thực phẩm, giải thích biến đổi hóa lý khi nấu ăn.",
+      "HinhAnh": "on_food_and_cooking.png",
+      "DuongDan": "",
+      "TacGia": "Harold McGee",
+      "NamXuatBan": "2004 (Revised)"
+    },
+    "S-024": {
+      "MaCongViec": "CV-011",
+      "TenSach": "Kitchen Confidential",
+      "MoTa": "Hồi ký chân thực về hậu trường bếp nhà hàng chuyên nghiệp.",
+      "HinhAnh": "kitchen_confidential.png",
+      "DuongDan": "",
+      "TacGia": "Anthony Bourdain",
+      "NamXuatBan": "2000"
+    },
+    "S-025": {
+      "MaCongViec": "CV-012",
+      "TenSach": "Shigley's Mechanical Engineering Design",
+      "MoTa": "Giáo trình thiết kế cơ khí hàng đầu về chi tiết máy, độ bền và ứng suất.",
+      "HinhAnh": "shigleys_mechanical_design.png",
+      "DuongDan": "",
+      "TacGia": "Richard G. Budynas, J. Keith Nisbett",
+      "NamXuatBan": "2020 (11th Edition)"
+    },
+    "S-026": {
+      "MaCongViec": "CV-012",
+      "TenSach": "Machinery's Handbook",
+      "MoTa": "Cẩm nang cơ khí không thể thiếu với tra cứu tiêu chuẩn, dung sai và tính toán.",
+      "HinhAnh": "machinerys_handbook.png",
+      "DuongDan": "",
+      "TacGia": "Erik Oberg",
+      "NamXuatBan": "2020 (31st Edition)"
+    },
+    "S-027": {
+      "MaCongViec": "CV-012",
+      "TenSach": "The Design of Everyday Things",
+      "MoTa": "Nguyên lý thiết kế lấy người dùng làm trung tâm, khả năng nhận thức và phản hồi.",
+      "HinhAnh": "design_of_everyday_things.png",
+      "DuongDan": "",
+      "TacGia": "Don Norman",
+      "NamXuatBan": "2013 (Revised)"
+    },
+    "S-028": {
+      "MaCongViec": "CV-013",
+      "TenSach": "The Art of Electronics",
+      "MoTa": "Kinh điển về thiết kế mạch tương tự và số, lý thuyết đi kèm ứng dụng thực tế.",
+      "HinhAnh": "art_of_electronics.png",
+      "DuongDan": "",
+      "TacGia": "Paul Horowitz, Winfield Hill",
+      "NamXuatBan": "2015 (3rd Edition)"
+    },
+    "S-029": {
+      "MaCongViec": "CV-013",
+      "TenSach": "Practical Electronics for Inventors",
+      "MoTa": "Hướng dẫn thực hành linh kiện, mạch điện và dự án DIY cho người mới.",
+      "HinhAnh": "practical_electronics_for_inventors.png",
+      "DuongDan": "",
+      "TacGia": "Paul Scherz, Simon Monk",
+      "NamXuatBan": "2016 (4th Edition)"
+    },
+    "S-030": {
+      "MaCongViec": "CV-013",
+      "TenSach": "Giáo trình Cơ sở Kỹ thuật Điện / Điện tử Mạch",
+      "MoTa": "Giáo trình cơ bản về mạch điện, điện tử dùng trong đào tạo kỹ sư tại Việt Nam.",
+      "HinhAnh": "giao_trinh_co_so_dien_tu.png",
+      "DuongDan": "",
+      "TacGia": "Nhiều tác giả Việt Nam",
+      "NamXuatBan": "2022"
+    },
+    "S-031": {
+      "MaCongViec": "CV-014",
+      "TenSach": "Structures: Or Why Things Don't Fall Down",
+      "MoTa": "Giải thích trực quan về cơ học kết cấu, sức bền vật liệu và khả năng chịu lực.",
+      "HinhAnh": "structures_or_why_things_dont_fall_down.png",
+      "DuongDan": "",
+      "TacGia": "J.E. Gordon",
+      "NamXuatBan": "1978"
+    },
+    "S-032": {
+      "MaCongViec": "CV-014",
+      "TenSach": "Civil Engineer's Reference Book",
+      "MoTa": "Sách tra cứu tổng hợp cho kỹ sư xây dựng dân dụng và công trình.",
+      "HinhAnh": "civil_engineers_reference_book.png",
+      "DuongDan": "",
+      "TacGia": "Alan Blake",
+      "NamXuatBan": "2000s"
+    },
+    "S-033": {
+      "MaCongViec": "CV-014",
+      "TenSach": "Giáo trình Sức bền vật liệu & Cơ học kết cấu",
+      "MoTa": "Giáo trình nền tảng về tính toán ứng suất, biến dạng và kết cấu công trình.",
+      "HinhAnh": "suc_ben_vat_lieu_co_hoc_ket_cau.png",
+      "DuongDan": "",
+      "TacGia": "Nhiều tác giả Việt Nam",
+      "NamXuatBan": "2021"
+    },
+    "S-034": {
+      "MaCongViec": "CV-016",
+      "TenSach": "Bank Management & Financial Services",
+      "MoTa": "Sách chuyên về quản trị ngân hàng, rủi ro và dịch vụ tài chính.",
+      "HinhAnh": "bank_management_financial_services.png",
+      "DuongDan": "",
+      "TacGia": "Peter S. Rose, Sylvia C. Hudgins",
+      "NamXuatBan": "2012"
+    },
+    "S-035": {
+      "MaCongViec": "CV-016",
+      "TenSach": "Cẩm nang Nghiệp vụ Ngân hàng Thương mại",
+      "MoTa": "Hướng dẫn nghiệp vụ tín dụng, thanh toán, huy động vốn trong ngân hàng thương mại.",
+      "HinhAnh": "cam_nang_nghiep_vu_ngan_hang.png",
+      "DuongDan": "",
+      "TacGia": "Nhiều tác giả Việt Nam",
+      "NamXuatBan": "2023"
+    },
+    "S-036": {
+      "MaCongViec": "CV-018",
+      "TenSach": "Marketing Management",
+      "MoTa": "Giáo trình kinh điển về quản trị marketing, phân tích thị trường và chiến lược.",
+      "HinhAnh": "marketing_management_kotler.png",
+      "DuongDan": "",
+      "TacGia": "Philip Kotler, Kevin Lane Keller",
+      "NamXuatBan": "2015 (15th Edition)"
+    },
+    "S-037": {
+      "MaCongViec": "CV-018",
+      "TenSach": "Positioning: The Battle for Your Mind",
+      "MoTa": "Sách nền tảng về định vị thương hiệu trong tâm trí khách hàng.",
+      "HinhAnh": "positioning_battle_for_your_mind.png",
+      "DuongDan": "",
+      "TacGia": "Al Ries, Jack Trout",
+      "NamXuatBan": "1981"
+    },
+    "S-038": {
+      "MaCongViec": "CV-018",
+      "TenSach": "Contagious: Why Things Catch On",
+      "MoTa": "Phân tích yếu tố khiến nội dung, sản phẩm trở nên lan tỏa mạnh mẽ.",
+      "HinhAnh": "contagious_jonah_berger.png",
+      "DuongDan": "",
+      "TacGia": "Jonah Berger",
+      "NamXuatBan": "2013"
+    },
+    "S-039": {
+      "MaCongViec": "CV-020",
+      "TenSach": "Work Rules!",
+      "MoTa": "Kinh nghiệm xây dựng văn hóa nhân sự, tuyển dụng và phát triển nhân tài tại Google.",
+      "HinhAnh": "work_rules_google.png",
+      "DuongDan": "",
+      "TacGia": "Laszlo Bock",
+      "NamXuatBan": "2015"
+    },
+    "S-040": {
+      "MaCongViec": "CV-020",
+      "TenSach": "First, Break All the Rules",
+      "MoTa": "Nghiên cứu về khác biệt của nhà quản lý xuất sắc dựa trên khảo sát Gallup.",
+      "HinhAnh": "first_break_all_the_rules.png",
+      "DuongDan": "",
+      "TacGia": "Marcus Buckingham, Curt Coffman",
+      "NamXuatBan": "1999"
+    },
+    "S-041": {
+      "MaCongViec": "CV-020",
+      "TenSach": "Giáo trình Quản trị Nhân lực",
+      "MoTa": "Giáo trình về tuyển dụng, đào tạo, đánh giá và đãi ngộ nhân sự.",
+      "HinhAnh": "quan_tri_nhan_luc.png",
+      "DuongDan": "",
+      "TacGia": "Nhiều tác giả Việt Nam",
+      "NamXuatBan": "2022"
+    },
+    "S-042": {
+      "MaCongViec": "CV-021",
+      "TenSach": "Light Science and Magic",
+      "MoTa": "Sách chuyên sâu về kỹ thuật chiếu sáng trong nhiếp ảnh chuyên nghiệp.",
+      "HinhAnh": "light_science_and_magic.png",
+      "DuongDan": "",
+      "TacGia": "Fil Hunter, Steven Biver",
+      "NamXuatBan": "2015 (5th Edition)"
+    },
+    "S-043": {
+      "MaCongViec": "CV-021",
+      "TenSach": "Understanding Exposure",
+      "MoTa": "Hướng dẫn kiểm soát khẩu độ, tốc độ màn trập và ISO để có phơi sáng đúng.",
+      "HinhAnh": "understanding_exposure.png",
+      "DuongDan": "",
+      "TacGia": "Bryan Peterson",
+      "NamXuatBan": "2016 (4th Edition)"
+    },
+    "S-044": {
+      "MaCongViec": "CV-021",
+      "TenSach": "The Photographer's Eye",
+      "MoTa": "Phân tích bố cục, khung hình và cách sắp xếp yếu tố thị giác trong ảnh.",
+      "HinhAnh": "photographers_eye.png",
+      "DuongDan": "",
+      "TacGia": "Michael Freeman",
+      "NamXuatBan": "2017 (2nd Edition)"
+    }
+  },
+
+  "TroChoi": {
+    "TC-001": {
+      "MaCongViec": "CV-001",
+      "TenTroChoi": "ScratchJr / Coding Games for Kids",
+      "MoTa": "Ứng dụng di động giúp làm quen với tư duy lập trình logic, kéo thả khối lệnh và xây dựng kịch bản cơ bản.",
+      "Icon": "scratch_jr_mobile_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=org.scratchjr.android"
+    },
+    "TC-002": {
+      "MaCongViec": "CV-002",
+      "TenTroChoi": "Car Mechanic Simulator 21 Mobile",
+      "MoTa": "Phiên bản di động mô phỏng chi tiết quy trình sửa chữa, tìm lỗi động cơ, phục chế và sơn các dòng xe ô tô.",
+      "Icon": "car_mechanic_21_mobile_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.playway.cms2017"
+    },
+    "TC-003": {
+      "MaCongViec": "CV-002",
+      "TenTroChoi": "Fix My Car: Custom Mods!",
+      "MoTa": "Game di động tập trung vào việc tháo dỡ, nâng cấp hiệu suất và lắp ráp chi tiết các bộ phận cơ khí của xe hơi.",
+      "Icon": "fix_my_car_mobile_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.firerabbit.itunes.fmcpremium"
+    },
+    "TC-004": {
+      "MaCongViec": "CV-002",
+      "TenTroChoi": "Retro Garage - Car Mechanic",
+      "MoTa": "Mô phỏng quản lý xưởng sửa chữa ô tô cổ trên điện thoại, tự tay thay thế sửa chữa hệ truyền động, phanh và gầm xe.",
+      "Icon": "retro_garage_mobile_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.retro.garage"
+    },
+    "TC-005": {
+      "MaCongViec": "CV-003",
+      "TenTroChoi": "TheoTown - City Simulator",
+      "MoTa": "Game mô phỏng quy hoạch đô thị chuyên sâu trên mobile, tự tay thiết kế mạng lưới giao thông, khu dân cư và hạ tầng kiến trúc.",
+      "Icon": "theotown_mobile_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=info.flowersoft.theotown.theotown"
+    },
+    "TC-006": {
+      "MaCongViec": "CV-003",
+      "TenTroChoi": "The Sims Mobile",
+      "MoTa": "Phiên bản di động chính thức cho phép tự do xây dựng, thiết kế cấu trúc nhà cửa và sắp đặt không gian nội thất duyên dáng.",
+      "Icon": "sims_mobile_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.ea.gp.simsmobile"
+    },
+    "TC-007": {
+      "MaCongViec": "CV-003",
+      "TenTroChoi": "Townscaper Mobile",
+      "MoTa": "Bản port di động hoàn hảo giúp kiến tạo ngẫu hứng các khu phố, thánh đường mang tính mỹ thuật kiến trúc cao chỉ với các cú chạm.",
+      "Icon": "townscaper_mobile_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.rawfury.townscaper"
+    },
+    "TC-008": {
+      "MaCongViec": "CV-004",
+      "TenTroChoi": "SimCompanies",
+      "MoTa": "Game mô phỏng kinh tế vĩ mô cực hay trên điện thoại, quản lý dòng vốn, chuỗi cung ứng sản xuất và giao dịch thị trường.",
+      "Icon": "sim_companies_mobile_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.simcompanies.simcompanies"
+    },
+    "TC-009": {
+      "MaCongViec": "CV-004",
+      "TenTroChoi": "Landlord Tycoon",
+      "MoTa": "Trò chơi kinh doanh, đầu tư bất động sản sử dụng bản đồ thực tế dựa trên định vị GPS cho người dùng mobile.",
+      "Icon": "landlord_tycoon_mobile_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.landlordgame.eu2"
+    },
+    "TC-010": {
+      "MaCongViec": "CV-004",
+      "TenTroChoi": "Transit King Tycoon",
+      "MoTa": "Quản lý logistics, tối ưu hóa chi phí vận chuyển, đầu tư chuỗi cung ứng để tối đa hóa lợi nhuận doanh nghiệp.",
+      "Icon": "transit_king_mobile_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=fi.bongoplaya.transitking"
+    },
+    "TC-011": {
+      "MaCongViec": "CV-005",
+      "TenTroChoi": "Ace Attorney Trilogy Mobile",
+      "MoTa": "Game phá án đình đám trên di động, người chơi tìm chứng cứ ngoại phạm, tranh luận đối chất bảo vệ thân chủ tại tòa án.",
+      "Icon": "ace_attorney_mobile_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=jp.co.capcom.at123"
+    },
+    "TC-012": {
+      "MaCongViec": "CV-005",
+      "TenTroChoi": "Case Hunter: Brain funny Cases",
+      "MoTa": "Trò chơi trinh thám di động luyện kỹ năng phân tích hiện trường, tìm kiếm manh mối logic để giải quyết vụ án.",
+      "Icon": "case_hunter_mobile_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.casehunter.android"
+    },
+    "TC-013": {
+      "MaCongViec": "CV-005",
+      "TenTroChoi": "Idol Court - Be The Judge",
+      "MoTa": "Mô phỏng việc đưa ra phán quyết trong các tình huống tranh chấp dựa trên bằng chứng và các điều luật cơ bản.",
+      "Icon": "idol_court_mobile_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.voodoo.judge.run"
+    },
+    "TC-014": {
+      "MaCongViec": "CV-006",
+      "TenTroChoi": "Canva Mobile App (Design Challenges)",
+      "MoTa": "Ứng dụng tích hợp các thử thách thiết kế phối màu, sắp xếp bố cục chữ (Typography) ngay trên màn hình cảm ứng.",
+      "Icon": "canva_mobile_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.canva.editor"
+    },
+    "TC-015": {
+      "MaCongViec": "CV-006",
+      "TenTroChoi": "I Love Hue Too",
+      "MoTa": "Trò chơi giải đố hình học tối giản, rèn luyện tư duy nhạy bén về sắc độ, độ tương phản và phân tích phổ màu sắc nghệ thuật.",
+      "Icon": "ilovehue_mobile_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.flyingcactus.ilovehue2"
+    },
+    "TC-016": {
+      "MaCongViec": "CV-006",
+      "TenTroChoi": "Fontmania",
+      "MoTa": "Ứng dụng trò chơi sáng tạo sắp xếp chữ nghệ thuật, tối ưu khoảng cách Kerning và thiết kế font chữ độc đáo.",
+      "Icon": "fontmania_mobile_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.apalon.fontmania"
+    },
+    "TC-017": {
+      "MaCongViec": "CV-010",
+      "TenTroChoi": "RFS - Real Flight Simulator",
+      "MoTa": "Trải nghiệm lái máy bay thương mại chuyên nghiệp trên mobile với đầy đủ bảng điều khiển HUD, điều kiện thời tiết và lộ trình bay thực tế.",
+      "Icon": "rfs_mobile_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=it.rortos.realflightsimulator"
+    },
+    "TC-018": {
+      "MaCongViec": "CV-010",
+      "TenTroChoi": "Infinite Flight Simulator",
+      "MoTa": "Hệ thống mô phỏng phi công di động chất lượng cao, tính toán lực đẩy, điều hướng và hạ cánh chính xác.",
+      "Icon": "infinite_flight_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.fds.infiniteflight"
+    },
+    "TC-019": {
+      "MaCongViec": "CV-011",
+      "TenTroChoi": "Cooking Simulator Mobile",
+      "MoTa": "Phiên bản di động chính thức mô phỏng làm bếp thực tế, cân đong gia vị, kiểm soát nhiệt độ lò nướng và chế biến.",
+      "Icon": "cooking_sim_mobile_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.playway.cookingsimulator"
+    },
+    "TC-020": {
+      "MaCongViec": "CV-011",
+      "TenTroChoi": "Too Many Cooks",
+      "MoTa": "Game nấu ăn phối hợp đồng đội trên mobile, phân chia công việc sơ chế và làm món trong thời gian giới hạn.",
+      "Icon": "too_many_cooks_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.playstack.toomanycooks"
+    },
+    "TC-021": {
+      "MaCongViec": "CV-011",
+      "TenTroChoi": "Good Pizza, Great Pizza",
+      "MoTa": "Quản lý tiệm bánh, tối ưu hóa nguyên liệu, cân đối ngân sách thu chi và làm hài lòng các yêu cầu ẩm thực khó tính.",
+      "Icon": "good_pizza_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.tapblaze.pizzaboy"
+    },
+    "TC-022": {
+      "MaCongViec": "CV-012",
+      "TenTroChoi": "Spaceflight Simulator",
+      "MoTa": "Mô phỏng cơ học vũ trụ trên mobile, tự tay tính toán lắp ráp tên lửa đa tầng và điều hướng quỹ đạo bay lên mặt trăng.",
+      "Icon": "spaceflight_sim_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.StefMorojna.SpaceflightSimulator"
+    },
+    "TC-023": {
+      "MaCongViec": "CV-012",
+      "TenTroChoi": "Evertech Sandbox",
+      "MoTa": "Thế giới mở trên di động giúp thiết kế các phương tiện cơ khí chuyển động từ khối hộp, bánh răng và động cơ lực học.",
+      "Icon": "evertech_sandbox_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.gandtech.evertechsandbox"
+    },
+    "TC-024": {
+      "MaCongViec": "CV-012",
+      "TenTroChoi": "Poly Bridge Mobile",
+      "MoTa": "Game giải đố vật lý kết cấu kinh điển trên điện thoại, xây cầu tối ưu lực kéo, ứng suất và giới hạn tải trọng vật liệu.",
+      "Icon": "poly_bridge_mobile_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.drycactus.polybridge"
+    },
+    "TC-025": {
+      "MaCongViec": "CV-013",
+      "TenTroChoi": "Mindy - Logic Gates Circuit",
+      "MoTa": "Trò chơi giải đố mạch điện tử di động, lắp ghép các cổng logic AND, OR, XOR để truyền tải tín hiệu số.",
+      "Icon": "mindy_gates_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.dustland.mindy"
+    },
+    "TC-026": {
+      "MaCongViec": "CV-013",
+      "TenTroChoi": "Make It True: Logic Gates",
+      "MoTa": "Tìm hiểu và vận hành sơ đồ cấu trúc của một bộ vi xử lý máy tính bằng cách kết nối các bảng mạch logic.",
+      "Icon": "make_it_true_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.Smartix.MakeItTrue"
+    },
+    "TC-027": {
+      "MaCongViec": "CV-013",
+      "TenTroChoi": "Assembly Line 2",
+      "MoTa": "Thiết kế dây chuyền nhà máy tự động hóa trên mobile, quản lý băng tải, máy lắp ráp để tối ưu công suất dây chuyền.",
+      "Icon": "assembly_line_2_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.olympus.assemblyline2"
+    },
+    "TC-028": {
+      "MaCongViec": "CV-014",
+      "TenTroChoi": "Construction Simulator 3 Lite",
+      "MoTa": "Điều khiển buồng lái các xe cơ giới hạng nặng như xe xúc đất, máy ủi, xe lu để trực tiếp hoàn thiện hạ tầng công trình công cộng.",
+      "Icon": "con_sim_3_mobile_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.astragon.cs3"
+    },
+    "TC-029": {
+      "MaCongViec": "CV-014",
+      "TenTroChoi": "Bridge Construction Simulator",
+      "MoTa": "Mô phỏng thi công kỹ thuật hạ tầng cầu đường, kiểm tra khả năng chịu lực của dầm thép, bê tông cốt thép.",
+      "Icon": "bridge_con_sim_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.boombitgames.BridgeProjectSimulator"
+    },
+    "TC-030": {
+      "MaCongViec": "CV-016",
+      "TenTroChoi": "Bank Tycoon - Money Clicker",
+      "MoTa": "Quản lý mô hình ngân hàng bán lẻ, tối ưu hóa quy trình giao dịch tiền tệ và phê duyệt các khoản tín dụng.",
+      "Icon": "bank_tycoon_mobile_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.alex.banktycoon"
+    },
+    "TC-031": {
+      "MaCongViec": "CV-016",
+      "TenTroChoi": "Idle Bank Tycoon: Money Empire",
+      "MoTa": "Vận hành hệ thống tài chính ngân hàng di động, tuyển dụng thủ quỹ, nâng cấp hầm chứa bảo mật và quản lý rủi ro rửa tiền.",
+      "Icon": "idle_bank_mobile_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.kolibri.idle.bank.tycoon"
+    },
+    "TC-032": {
+      "MaCongViec": "CV-018",
+      "TenTroChoi": "Startup Panic",
+      "MoTa": "Game mô phỏng hành trình khởi nghiệp công nghệ, phân chia tính năng code, đối đầu hacker và quản trị nhân sự.",
+      "Icon": "startup_panic_mobile_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.tinybuild.startuppanic"
+    },
+    "TC-033": {
+      "MaCongViec": "CV-018",
+      "TenTroChoi": "Game Dev Tycoon Mobile",
+      "MoTa": "Tựa game huyền thoại trên di động giả lập vận hành studio game, nghiên cứu thị trường và lên chiến dịch marketing sản phẩm.",
+      "Icon": "gamedev_tycoon_mobile_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.greenheartgames.gdt"
+    },
+    "TC-034": {
+      "MaCongViec": "CV-020",
+      "TenTroChoi": "Office Master - HR Simulator",
+      "MoTa": "Trải nghiệm vị trí quản lý nhân sự tổng hợp, tuyển dụng ứng viên, bố trí phòng ban và xử lý các mâu thuẫn văn phòng.",
+      "Icon": "office_master_hr_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.loltap.officemaster"
+    },
+    "TC-035": {
+      "MaCongViec": "CV-020",
+      "TenTroChoi": "Prison Architect: Mobile",
+      "MoTa": "Phân bổ nhân lực quản lý, thiết kế phân khu chức năng phức tạp và tối ưu hóa hoạt động của tổ chức trên màn hình cảm ứng.",
+      "Icon": "prison_architect_mobile_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.paradoxplaza.prisonarchitect"
+    },
+    "TC-036": {
+      "MaCongViec": "CV-021",
+      "TenTroChoi": "Pocket Photography - Camera Sim",
+      "MoTa": "Giả lập máy ảnh DSLR cơ bản trên điện thoại, tinh chỉnh các thông số màn trập, tiêu cự để chụp ảnh nghệ thuật.",
+      "Icon": "pocket_photo_mobile_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.pocket.photo.sim"
+    },
+    "TC-037": {
+      "MaCongViec": "CV-021",
+      "TenTroChoi": "Snapmatic - Photo Puzzle",
+      "MoTa": "Trò chơi tìm kiếm góc chụp nghệ thuật, căn chỉnh ánh sáng môi trường phù hợp với yêu cầu của thẻ thử thách nhiếp ảnh.",
+      "Icon": "snapmatic_mobile_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.snapmatic.puzzle"
+    },
+    "TC-038": {
+      "MaCongViec": "CV-021",
+      "TenTroChoi": "TOEM Mobile",
+      "MoTa": "Hành trình mang máy ảnh đi khám phá thế giới vẽ tay tối giản, giải đáp các bí ẩn đời sống bằng những bức ảnh chụp sáng tạo.",
+      "Icon": "toem_mobile_icon.webp",
+      "DuongDan": "https://play.google.com/store/apps/details?id=com.something.toem"
+    }
+  },
+
 "KyNang_NguoiDung": {
     "KNND-001": {
       "MaNguoiDung": "ND-001",

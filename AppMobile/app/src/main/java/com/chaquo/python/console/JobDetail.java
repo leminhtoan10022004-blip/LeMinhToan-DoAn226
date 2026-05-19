@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -26,6 +27,7 @@ import com.google.android.material.floatingactionbutton.ExtendedFloatingActionBu
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -55,7 +57,7 @@ public class JobDetail extends AppCompatActivity {
         jobCode = getIntent().getStringExtra("jobCode");
         
         if (jobCode == null) {
-            jobCode = "CV-001";
+            jobCode = "CV-001"; // Mặc định cho test
         }
 
         // Lấy userId từ SharedPreferences
@@ -67,7 +69,8 @@ public class JobDetail extends AppCompatActivity {
         initViews();
         loadJobDetailsFromFirestore();
         loadRoadmapFromFirestore();
-        setupSampleResources();
+        loadBooksFromFirestore();
+        loadGamesFromFirestore();
         checkFollowStatus();
 
         if (fabSaveRoadmap != null) {
@@ -154,11 +157,10 @@ public class JobDetail extends AppCompatActivity {
         } else {
             Map<String, Object> data = new HashMap<>();
             data.put("MaNguoiDung", userId);
-            data.put("MaBanTin", jobCode); // Ở đây tạm coi mỗi lộ trình là 1 bản tin đặc biệt
+            data.put("MaBanTin", jobCode);
             data.put("TrangThai", "Đang theo dõi");
             data.put("NgayDocLanCuoi", Timestamp.now());
             data.put("YeuThich", true);
-            // Thêm trường này để hiển thị UI nhanh hơn
             data.put("TenCongViec", tvJobTitleDetail.getText().toString());
 
             db.collection("NguoiDung_BanTin")
@@ -192,12 +194,9 @@ public class JobDetail extends AppCompatActivity {
                         tvEducationDetail.setText(education != null ? education : "");
                         tvJobDescriptionDetail.setText(description != null ? description : "");
                         
+                        // Xử lý ảnh header
                         if (imageUrl != null && !imageUrl.isEmpty()) {
-                            Glide.with(this)
-                                    .load(imageUrl)
-                                    .placeholder(R.drawable.background)
-                                    .error(R.drawable.background)
-                                    .into(imgJobHeader);
+                            loadResourceImage(imageUrl, imgJobHeader, R.drawable.background);
                         }
 
                         if (industryId != null) fetchIndustryName(industryId);
@@ -220,7 +219,8 @@ public class JobDetail extends AppCompatActivity {
                 .addOnSuccessListener(documentSnapshot -> {
                     if (documentSnapshot.exists()) {
                         roadmapList.clear();
-                        List<Map<String, Object>> steps = (List<Map<String, Object>>) documentSnapshot.get("data");
+                        // Sử dụng key "steps" như trong FirestoreImporter
+                        List<Map<String, Object>> steps = (List<Map<String, Object>>) documentSnapshot.get("steps");
 
                         if (steps != null) {
                             for (Map<String, Object> stepMap : steps) {
@@ -258,32 +258,111 @@ public class JobDetail extends AppCompatActivity {
         return String.valueOf(salary);
     }
 
-    private void setupSampleResources() {
+    private void loadBooksFromFirestore() {
+        if (jobCode == null) return;
         layoutBooks.removeAllViews();
-        layoutGames.removeAllViews();
-        addResourceIcon(layoutBooks, "Tài liệu 1", "https://google.com", R.drawable.information);
-        addResourceIcon(layoutGames, "Trò chơi 1", "https://google.com", R.drawable.orientation);
+        db.collection("Sach")
+                .whereEqualTo("MaCongViec", jobCode)
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
+                        String name = doc.getString("TenSach");
+                        String url = doc.getString("DuongDan");
+                        String image = doc.getString("HinhAnh");
+                        addResourceItem(layoutBooks, name, url, image, R.drawable.information);
+                    }
+                    if (queryDocumentSnapshots.isEmpty()) {
+                        addEmptyMessage(layoutBooks, "Chưa có sách gợi ý");
+                    }
+                });
     }
 
-    private void addResourceIcon(LinearLayout parent, String label, String url, int iconRes) {
+    private void loadGamesFromFirestore() {
+        if (jobCode == null) return;
+        layoutGames.removeAllViews();
+        db.collection("TroChoi")
+                .whereEqualTo("MaCongViec", jobCode)
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
+                        String name = doc.getString("TenTroChoi");
+                        String url = doc.getString("DuongDan");
+                        String image = doc.getString("Icon");
+                        addResourceItem(layoutGames, name, url, image, R.drawable.orientation);
+                    }
+                    if (queryDocumentSnapshots.isEmpty()) {
+                        addEmptyMessage(layoutGames, "Chưa có trò chơi mô phỏng");
+                    }
+                });
+    }
+
+    private void addEmptyMessage(LinearLayout parent, String message) {
+        TextView tv = new TextView(this);
+        tv.setText(message);
+        tv.setTextSize(12);
+        tv.setTextColor(Color.GRAY);
+        tv.setPadding(20, 20, 20, 20);
+        parent.addView(tv);
+    }
+
+    private void addResourceItem(LinearLayout parent, String label, String url, String imageSource, int defaultIcon) {
         LinearLayout container = new LinearLayout(this);
         container.setOrientation(LinearLayout.VERTICAL);
-        container.setGravity(Gravity.CENTER);
-        container.setPadding(0, 0, 40, 0);
+        container.setGravity(Gravity.CENTER_HORIZONTAL);
+        container.setPadding(0, 0, 48, 0);
+        container.setLayoutParams(new LinearLayout.LayoutParams(300, ViewGroup.LayoutParams.WRAP_CONTENT));
 
-        ImageView icon = new ImageView(this);
-        icon.setLayoutParams(new LinearLayout.LayoutParams(120, 120));
-        icon.setImageResource(iconRes);
-        icon.setPadding(10, 10, 10, 10);
+        // Card giả lập cho ảnh
+        ImageView imageView = new ImageView(this);
+        LinearLayout.LayoutParams imgParams = new LinearLayout.LayoutParams(220, 280);
+        imgParams.setMargins(0, 0, 0, 12);
+        imageView.setLayoutParams(imgParams);
+        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        
+        loadResourceImage(imageSource, imageView, defaultIcon);
 
-        TextView text = new TextView(this);
-        text.setText(label);
-        text.setTextSize(10);
-        text.setGravity(Gravity.CENTER);
+        TextView textView = new TextView(this);
+        textView.setText(label);
+        textView.setTextSize(11);
+        textView.setTextColor(Color.parseColor("#333333"));
+        textView.setGravity(Gravity.CENTER);
+        textView.setMaxLines(2);
+        textView.setEllipsize(android.text.TextUtils.TruncateAt.END);
 
-        container.addView(icon);
-        container.addView(text);
-        container.setOnClickListener(v -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url))));
+        container.addView(imageView);
+        container.addView(textView);
+        
+        container.setOnClickListener(v -> {
+            if (url != null && !url.isEmpty()) {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+            } else {
+                Toast.makeText(this, "Không có liên kết tài liệu", Toast.LENGTH_SHORT).show();
+            }
+        });
+        
         parent.addView(container);
+    }
+
+    private void loadResourceImage(String source, ImageView imageView, int placeholder) {
+        if (source == null || source.isEmpty()) {
+            imageView.setImageResource(placeholder);
+            return;
+        }
+
+        if (source.startsWith("http")) {
+            Glide.with(this).load(source).placeholder(placeholder).error(placeholder).into(imageView);
+        } else {
+            // Xử lý nếu source là tên file trong drawable (bỏ đuôi file)
+            String resourceName = source;
+            if (resourceName.contains(".")) {
+                resourceName = resourceName.substring(0, resourceName.lastIndexOf("."));
+            }
+            int resId = getResources().getIdentifier(resourceName, "drawable", getPackageName());
+            if (resId != 0) {
+                imageView.setImageResource(resId);
+            } else {
+                imageView.setImageResource(placeholder);
+            }
+        }
     }
 }

@@ -18,6 +18,7 @@ public class MainActivity extends Activity {
         }
         
         Intent intent = new Intent(this, MLPSampleActivity.class);
+        FirestoreImporter.importData(this);
         startActivity(intent);
         finish();
     }
