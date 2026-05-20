@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,15 +22,21 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.chaquo.python.model.CongViec;
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.chaquo.python.model.RoadmapStep;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -55,22 +62,15 @@ public class JobDetail extends AppCompatActivity {
         setContentView(R.layout.activity_job_detail);
 
         jobCode = getIntent().getStringExtra("jobCode");
-        
-        if (jobCode == null) {
-            jobCode = "CV-001"; // Mặc định cho test
-        }
+        if (jobCode == null) jobCode = "CV-001";
 
-        // Lấy userId từ SharedPreferences
         SharedPreferences pref = getSharedPreferences("UserPrefs", MODE_PRIVATE);
         userId = pref.getString("USER_ID", null);
 
         db = FirebaseFirestore.getInstance();
         
         initViews();
-        loadJobDetailsFromFirestore();
-        loadRoadmapFromFirestore();
-        loadBooksFromFirestore();
-        loadGamesFromFirestore();
+        resolveJobCodeAndLoadData();
         checkFollowStatus();
 
         if (fabSaveRoadmap != null) {
@@ -107,16 +107,140 @@ public class JobDetail extends AppCompatActivity {
         rvRoadmap.setAdapter(roadmapAdapter);
     }
 
-    private void checkFollowStatus() {
-        if (userId == null || jobCode == null) return;
+    private void resolveJobCodeAndLoadData() {
+        if (jobCode.startsWith("BT-")) {
+            db.collection("BanTin").document(jobCode).get()
+                    .addOnSuccessListener(doc -> {
+                        if (doc.exists()) {
+                            String realCode = doc.getString("MaCongViec");
+                            if (realCode != null) this.jobCode = realCode;
+                        }
+                        loadAllData();
+                    })
+                    .addOnFailureListener(e -> loadAllData());
+        } else {
+            loadAllData();
+        }
+    }
 
-        db.collection("NguoiDung_BanTin")
-                .document(userId + "_" + jobCode)
-                .get()
+    private void loadAllData() {
+        loadJobDetailsFromFirestore();
+        loadRoadmap();
+        loadBooksFromFirestore();
+        loadGamesFromFirestore();
+    }
+
+    private void loadRoadmap() {
+        db.collection("LoTrinh").document(jobCode).get()
                 .addOnSuccessListener(documentSnapshot -> {
-                    isFollowing = documentSnapshot.exists();
-                    updateFollowButtonUI();
+                    roadmapList.clear();
+                    if (documentSnapshot.exists()) {
+                        Map<String, Object> data = documentSnapshot.getData();
+                        if (data != null) {
+                            if (data.containsKey("steps") && data.get("steps") instanceof List) {
+                                List<Map<String, Object>> steps = (List<Map<String, Object>>) data.get("steps");
+                                for (Map<String, Object> stepMap : steps) addStepFromMap(stepMap);
+                            } else {
+                                for (Object val : data.values()) {
+                                    if (val instanceof Map) addStepFromMap((Map<String, Object>) val);
+                                }
+                            }
+                        }
+                    }
+                    
+                    if (roadmapList.isEmpty()) {
+                        loadRoadmapFromAssets();
+                    } else {
+                        sortAndRefreshRoadmap();
+                    }
+                })
+                .addOnFailureListener(e -> loadRoadmapFromAssets());
+    }
+
+    private void loadRoadmapFromAssets() {
+        try {
+            InputStream is = getAssets().open("ERD.json");
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            String json = new String(buffer, StandardCharsets.UTF_8);
+            JSONObject root = new JSONObject(json);
+            JSONObject loTrinhRoot = root.getJSONObject("LoTrinh");
+
+            if (loTrinhRoot.has(jobCode)) {
+                roadmapList.clear();
+                JSONArray stepsArray = loTrinhRoot.getJSONArray(jobCode);
+                for (int i = 0; i < stepsArray.length(); i++) {
+                    JSONObject stepJson = stepsArray.getJSONObject(i);
+                    RoadmapStep step = new RoadmapStep();
+                    step.setBuocSo(stepJson.optInt("BuocSo"));
+                    step.setTenBuoc(stepJson.optString("TenBuoc"));
+                    step.setMoTa(stepJson.optString("MoTa"));
+                    step.setThoiGian(stepJson.optString("ThoiGian", "Đang cập nhật"));
+                    step.setHinhAnh(stepJson.optString("HinhAnh", ""));
+                    
+                    if (stepJson.has("KyNang")) {
+                        JSONArray skillsArr = stepJson.getJSONArray("KyNang");
+                        List<String> skills = new ArrayList<>();
+                        for (int j = 0; j < skillsArr.length(); j++) skills.add(skillsArr.getString(j));
+                        step.setKyNang(skills);
+                    }
+                    roadmapList.add(step);
+                }
+                sortAndRefreshRoadmap();
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Error loading roadmap from assets", e);
+        }
+    }
+
+    private void addStepFromMap(Map<String, Object> stepMap) {
+        if (stepMap == null) return;
+        RoadmapStep step = new RoadmapStep();
+        Object buocSoObj = stepMap.get("BuocSo");
+        if (buocSoObj instanceof Long) step.setBuocSo(((Long) buocSoObj).intValue());
+        else if (buocSoObj instanceof Integer) step.setBuocSo((Integer) buocSoObj);
+        step.setTenBuoc((String) stepMap.get("TenBuoc"));
+        step.setMoTa((String) stepMap.get("MoTa"));
+        step.setThoiGian((String) stepMap.get("ThoiGian"));
+        step.setHinhAnh((String) stepMap.get("HinhAnh"));
+        if (stepMap.get("KyNang") instanceof List) step.setKyNang((List<String>) stepMap.get("KyNang"));
+        roadmapList.add(step);
+    }
+
+    private void sortAndRefreshRoadmap() {
+        Collections.sort(roadmapList, (s1, s2) -> Integer.compare(s1.getBuocSo(), s2.getBuocSo()));
+        runOnUiThread(() -> roadmapAdapter.notifyDataSetChanged());
+    }
+
+    private void loadJobDetailsFromFirestore() {
+        db.collection("CongViec").document(jobCode).get()
+                .addOnSuccessListener(doc -> {
+                    if (doc.exists()) {
+                        tvJobTitleDetail.setText(doc.getString("TenCongViec"));
+                        Long min = doc.getLong("LuongToiThieu");
+                        Long max = doc.getLong("LuongToiDa");
+                        tvSalaryDetail.setText(formatSalary(min != null ? min : 0) + " - " + formatSalary(max != null ? max : 0));
+                        tvHotnessDetail.setText(doc.getString("DoHot"));
+                        tvEducationDetail.setText(doc.getString("YeuCauDaoTao"));
+                        tvJobDescriptionDetail.setText(doc.getString("MoTa"));
+                        String imageUrl = doc.getString("HinhAnh");
+                        if (imageUrl != null) loadResourceImage(imageUrl, imgJobHeader, R.drawable.background, 0);
+                        
+                        String industryId = doc.getString("MaNganh");
+                        if (industryId != null) {
+                            db.collection("Nganh").document(industryId).get()
+                                    .addOnSuccessListener(d -> { if (d.exists()) tvJobCategory.setText(d.getString("TenNganh")); });
+                        }
+                    }
                 });
+    }
+
+    private void checkFollowStatus() {
+        if (userId == null) return;
+        db.collection("NguoiDung_BanTin").document(userId + "_" + jobCode).get()
+                .addOnSuccessListener(doc -> { isFollowing = doc.exists(); updateFollowButtonUI(); });
     }
 
     private void updateFollowButtonUI() {
@@ -136,233 +260,81 @@ public class JobDetail extends AppCompatActivity {
             Toast.makeText(this, "Vui lòng đăng nhập để thực hiện", Toast.LENGTH_SHORT).show();
             return;
         }
-
         if (isFollowing) {
-            new AlertDialog.Builder(this)
-                    .setTitle("Hủy theo dõi")
-                    .setMessage("Bạn có chắc chắn muốn ngừng theo dõi lộ trình này không?")
-                    .setPositiveButton("Hủy theo dõi", (dialog, which) -> {
-                        db.collection("NguoiDung_BanTin")
-                                .document(userId + "_" + jobCode)
-                                .delete()
-                                .addOnSuccessListener(aVoid -> {
-                                    isFollowing = false;
-                                    updateFollowButtonUI();
-                                    Toast.makeText(JobDetail.this, "Đã hủy theo dõi lộ trình", Toast.LENGTH_SHORT).show();
-                                })
-                                .addOnFailureListener(e -> Toast.makeText(JobDetail.this, "Lỗi: " + e.getMessage(), Toast.LENGTH_SHORT).show());
-                    })
-                    .setNegativeButton("Đóng", null)
-                    .show();
+            db.collection("NguoiDung_BanTin").document(userId + "_" + jobCode).delete()
+                    .addOnSuccessListener(aVoid -> { isFollowing = false; updateFollowButtonUI(); });
         } else {
             Map<String, Object> data = new HashMap<>();
             data.put("MaNguoiDung", userId);
             data.put("MaBanTin", jobCode);
             data.put("TrangThai", "Đang theo dõi");
             data.put("NgayDocLanCuoi", Timestamp.now());
-            data.put("YeuThich", true);
             data.put("TenCongViec", tvJobTitleDetail.getText().toString());
-
-            db.collection("NguoiDung_BanTin")
-                    .document(userId + "_" + jobCode)
-                    .set(data)
-                    .addOnSuccessListener(aVoid -> {
-                        isFollowing = true;
-                        updateFollowButtonUI();
-                        Toast.makeText(JobDetail.this, "Đã bắt đầu theo dõi lộ trình!", Toast.LENGTH_SHORT).show();
-                    })
-                    .addOnFailureListener(e -> Toast.makeText(JobDetail.this, "Lỗi: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+            db.collection("NguoiDung_BanTin").document(userId + "_" + jobCode).set(data)
+                    .addOnSuccessListener(aVoid -> { isFollowing = true; updateFollowButtonUI(); });
         }
-    }
-
-    private void loadJobDetailsFromFirestore() {
-        db.collection("CongViec").document(jobCode).get()
-                .addOnSuccessListener(documentSnapshot -> {
-                    if (documentSnapshot.exists()) {
-                        String title = documentSnapshot.getString("TenCongViec");
-                        Long minSalary = documentSnapshot.getLong("LuongToiThieu");
-                        Long maxSalary = documentSnapshot.getLong("LuongToiDa");
-                        String hot = documentSnapshot.getString("DoHot");
-                        String education = documentSnapshot.getString("YeuCauDaoTao");
-                        String description = documentSnapshot.getString("MoTa");
-                        String industryId = documentSnapshot.getString("MaNganh");
-                        String imageUrl = documentSnapshot.getString("HinhAnh");
-
-                        tvJobTitleDetail.setText(title != null ? title : "");
-                        tvSalaryDetail.setText(formatSalary(minSalary != null ? minSalary : 0) + " - " + formatSalary(maxSalary != null ? maxSalary : 0));
-                        tvHotnessDetail.setText(hot != null ? hot : "");
-                        tvEducationDetail.setText(education != null ? education : "");
-                        tvJobDescriptionDetail.setText(description != null ? description : "");
-                        
-                        // Xử lý ảnh header
-                        if (imageUrl != null && !imageUrl.isEmpty()) {
-                            loadResourceImage(imageUrl, imgJobHeader, R.drawable.background);
-                        }
-
-                        if (industryId != null) fetchIndustryName(industryId);
-                    }
-                })
-                .addOnFailureListener(e -> Log.e(TAG, "Error loading job details", e));
-    }
-
-    private void fetchIndustryName(String maNganh) {
-        db.collection("Nganh").document(maNganh).get()
-                .addOnSuccessListener(doc -> {
-                    if (doc.exists()) {
-                        tvJobCategory.setText(doc.getString("TenNganh"));
-                    }
-                });
-    }
-
-    private void loadRoadmapFromFirestore() {
-        db.collection("LoTrinh").document(jobCode).get()
-                .addOnSuccessListener(documentSnapshot -> {
-                    if (documentSnapshot.exists()) {
-                        roadmapList.clear();
-                        // Sử dụng key "steps" như trong FirestoreImporter
-                        List<Map<String, Object>> steps = (List<Map<String, Object>>) documentSnapshot.get("steps");
-
-                        if (steps != null) {
-                            for (Map<String, Object> stepMap : steps) {
-                                addStepFromMap(stepMap);
-                            }
-                        }
-                        roadmapAdapter.notifyDataSetChanged();
-                    }
-                })
-                .addOnFailureListener(e -> Log.e(TAG, "Error loading roadmap", e));
-    }
-
-    private void addStepFromMap(Map<String, Object> stepMap) {
-        if (stepMap == null) return;
-        RoadmapStep step = new RoadmapStep();
-        
-        Object buocSo = stepMap.get("BuocSo");
-        if (buocSo instanceof Long) step.setBuocSo(((Long) buocSo).intValue());
-        else if (buocSo instanceof Integer) step.setBuocSo((Integer) buocSo);
-        
-        step.setTenBuoc((String) stepMap.get("TenBuoc"));
-        step.setMoTa((String) stepMap.get("MoTa"));
-        step.setThoiGian((String) stepMap.get("ThoiGian"));
-        step.setHinhAnh((String) stepMap.get("HinhAnh"));
-        
-        if (stepMap.containsKey("KyNang") && stepMap.get("KyNang") instanceof List) {
-            step.setKyNang((List<String>) stepMap.get("KyNang"));
-        }
-        
-        roadmapList.add(step);
     }
 
     private String formatSalary(long salary) {
-        if (salary >= 1000000) return (salary / 1000000) + " Triệu";
-        return String.valueOf(salary);
+        return (salary >= 1000000) ? (salary / 1000000) + " Triệu" : String.valueOf(salary);
     }
 
     private void loadBooksFromFirestore() {
-        if (jobCode == null) return;
         layoutBooks.removeAllViews();
-        db.collection("Sach")
-                .whereEqualTo("MaCongViec", jobCode)
-                .get()
-                .addOnSuccessListener(queryDocumentSnapshots -> {
-                    for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
-                        String name = doc.getString("TenSach");
-                        String url = doc.getString("DuongDan");
-                        String image = doc.getString("HinhAnh");
-                        addResourceItem(layoutBooks, name, url, image, R.drawable.information);
-                    }
-                    if (queryDocumentSnapshots.isEmpty()) {
-                        addEmptyMessage(layoutBooks, "Chưa có sách gợi ý");
-                    }
-                });
+        db.collection("Sach").whereEqualTo("MaCongViec", jobCode).get().addOnSuccessListener(snaps -> {
+            for (QueryDocumentSnapshot doc : snaps) {
+                addResourceItem(layoutBooks, doc.getString("TenSach"), doc.getString("DuongDan"), doc.getString("HinhAnh"), R.drawable.information, 65, 95, 6);
+            }
+            if (snaps.isEmpty()) addEmptyMessage(layoutBooks, "Chưa có sách gợi ý");
+        });
     }
 
     private void loadGamesFromFirestore() {
-        if (jobCode == null) return;
         layoutGames.removeAllViews();
-        db.collection("TroChoi")
-                .whereEqualTo("MaCongViec", jobCode)
-                .get()
-                .addOnSuccessListener(queryDocumentSnapshots -> {
-                    for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
-                        String name = doc.getString("TenTroChoi");
-                        String url = doc.getString("DuongDan");
-                        String image = doc.getString("Icon");
-                        addResourceItem(layoutGames, name, url, image, R.drawable.orientation);
-                    }
-                    if (queryDocumentSnapshots.isEmpty()) {
-                        addEmptyMessage(layoutGames, "Chưa có trò chơi mô phỏng");
-                    }
-                });
+        db.collection("TroChoi").whereEqualTo("MaCongViec", jobCode).get().addOnSuccessListener(snaps -> {
+            for (QueryDocumentSnapshot doc : snaps) {
+                addResourceItem(layoutGames, doc.getString("TenTroChoi"), doc.getString("DuongDan"), doc.getString("Icon"), R.drawable.orientation, 60, 60, 12);
+            }
+            if (snaps.isEmpty()) addEmptyMessage(layoutGames, "Chưa có trò chơi mô phỏng");
+        });
     }
 
     private void addEmptyMessage(LinearLayout parent, String message) {
         TextView tv = new TextView(this);
-        tv.setText(message);
-        tv.setTextSize(12);
-        tv.setTextColor(Color.GRAY);
-        tv.setPadding(20, 20, 20, 20);
+        tv.setText(message); tv.setTextSize(11); tv.setTextColor(Color.GRAY);
+        tv.setPadding(dpToPx(16), dpToPx(8), dpToPx(16), dpToPx(8));
         parent.addView(tv);
     }
 
-    private void addResourceItem(LinearLayout parent, String label, String url, String imageSource, int defaultIcon) {
+    private void addResourceItem(LinearLayout parent, String label, String url, String imageSource, int defaultIcon, int widthDp, int heightDp, int radiusDp) {
         LinearLayout container = new LinearLayout(this);
-        container.setOrientation(LinearLayout.VERTICAL);
-        container.setGravity(Gravity.CENTER_HORIZONTAL);
-        container.setPadding(0, 0, 48, 0);
-        container.setLayoutParams(new LinearLayout.LayoutParams(300, ViewGroup.LayoutParams.WRAP_CONTENT));
+        container.setOrientation(LinearLayout.VERTICAL); container.setGravity(Gravity.CENTER_HORIZONTAL);
+        container.setPadding(0, 0, dpToPx(20), 0);
+        container.setLayoutParams(new LinearLayout.LayoutParams(dpToPx(widthDp + 20), ViewGroup.LayoutParams.WRAP_CONTENT));
 
-        // Card giả lập cho ảnh
         ImageView imageView = new ImageView(this);
-        LinearLayout.LayoutParams imgParams = new LinearLayout.LayoutParams(220, 280);
-        imgParams.setMargins(0, 0, 0, 12);
-        imageView.setLayoutParams(imgParams);
+        imageView.setLayoutParams(new LinearLayout.LayoutParams(dpToPx(widthDp), dpToPx(heightDp)));
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        
-        loadResourceImage(imageSource, imageView, defaultIcon);
+        loadResourceImage(imageSource, imageView, defaultIcon, radiusDp);
 
         TextView textView = new TextView(this);
-        textView.setText(label);
-        textView.setTextSize(11);
-        textView.setTextColor(Color.parseColor("#333333"));
-        textView.setGravity(Gravity.CENTER);
-        textView.setMaxLines(2);
-        textView.setEllipsize(android.text.TextUtils.TruncateAt.END);
+        textView.setText(label); textView.setTextSize(9); textView.setTextColor(Color.parseColor("#555555"));
+        textView.setGravity(Gravity.CENTER); textView.setMaxLines(2);
 
-        container.addView(imageView);
-        container.addView(textView);
-        
-        container.setOnClickListener(v -> {
-            if (url != null && !url.isEmpty()) {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
-            } else {
-                Toast.makeText(this, "Không có liên kết tài liệu", Toast.LENGTH_SHORT).show();
-            }
-        });
-        
+        container.addView(imageView); container.addView(textView);
+        container.setOnClickListener(v -> { if (url != null && !url.isEmpty()) startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url))); });
         parent.addView(container);
     }
 
-    private void loadResourceImage(String source, ImageView imageView, int placeholder) {
-        if (source == null || source.isEmpty()) {
-            imageView.setImageResource(placeholder);
-            return;
-        }
+    private void loadResourceImage(String source, ImageView imageView, int placeholder, int radiusDp) {
+        if (source == null || source.isEmpty()) { imageView.setImageResource(placeholder); return; }
+        Object reqSource = source.startsWith("http") ? source : getResources().getIdentifier(source.replace(".png","").replace(".webp",""), "drawable", getPackageName());
+        if (reqSource.equals(0)) reqSource = placeholder;
+        Glide.with(this).load(reqSource).placeholder(placeholder).error(placeholder)
+                .transform(new CenterCrop(), new RoundedCorners(dpToPx(radiusDp > 0 ? radiusDp : 1))).into(imageView);
+    }
 
-        if (source.startsWith("http")) {
-            Glide.with(this).load(source).placeholder(placeholder).error(placeholder).into(imageView);
-        } else {
-            // Xử lý nếu source là tên file trong drawable (bỏ đuôi file)
-            String resourceName = source;
-            if (resourceName.contains(".")) {
-                resourceName = resourceName.substring(0, resourceName.lastIndexOf("."));
-            }
-            int resId = getResources().getIdentifier(resourceName, "drawable", getPackageName());
-            if (resId != 0) {
-                imageView.setImageResource(resId);
-            } else {
-                imageView.setImageResource(placeholder);
-            }
-        }
+    private int dpToPx(int dp) {
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, getResources().getDisplayMetrics());
     }
 }
