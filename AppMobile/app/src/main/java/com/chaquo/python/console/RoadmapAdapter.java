@@ -1,10 +1,12 @@
 package com.chaquo.python.console;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -15,16 +17,27 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.chaquo.python.model.RoadmapStep;
+import com.chaquo.python.model.TaiLieu;
 import com.google.android.material.button.MaterialButton;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RoadmapAdapter extends RecyclerView.Adapter<RoadmapAdapter.RoadmapViewHolder> {
 
     private List<RoadmapStep> roadmapSteps;
+    private String jobCode;
+    private FirebaseFirestore db;
 
     public RoadmapAdapter(List<RoadmapStep> roadmapSteps) {
         this.roadmapSteps = roadmapSteps;
+        this.db = FirebaseFirestore.getInstance();
+    }
+
+    public void setJobCode(String jobCode) {
+        this.jobCode = jobCode;
     }
 
     @NonNull
@@ -76,16 +89,65 @@ public class RoadmapAdapter extends RecyclerView.Adapter<RoadmapAdapter.RoadmapV
 
         holder.btnAskAI.setOnClickListener(v -> {
             Intent intent = new Intent(holder.itemView.getContext(), ChatBotActivity.class);
-            intent.putExtra("PRESET_MESSAGE", "Hãy hướng dẫn tôi chi tiết cách thực hiện bước: " + step.getTenBuoc());
+            intent.putExtra("PRESET_MESSAGE", "Hãy hướng dẫn tôi chi tiết cách thực hiện bước: " + step.getTenBuoc() + " trong lộ trình nghề nghiệp này.");
             holder.itemView.getContext().startActivity(intent);
         });
 
         holder.btnResources.setOnClickListener(v -> {
-            Toast.makeText(holder.itemView.getContext(), "Đang mở tài liệu cho: " + step.getTenBuoc(), Toast.LENGTH_SHORT).show();
-            // Ví dụ mở một trang web học tập mẫu
-            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/search?q=tài+liệu+học+" + step.getTenBuoc()));
-            holder.itemView.getContext().startActivity(browserIntent);
+            openResourceLink(holder, step);
         });
+    }
+
+    private void openResourceLink(RoadmapViewHolder holder, RoadmapStep step) {
+        if (jobCode == null) {
+            Toast.makeText(holder.itemView.getContext(), "Vui lòng đợi dữ liệu tải xong", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Truy vấn tài liệu thực tế từ Firestore
+        db.collection("TaiLieu")
+                .whereEqualTo("idLoTrinh", jobCode)
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    List<TaiLieu> taiLieuList = new ArrayList<>();
+                    for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
+                        taiLieuList.add(doc.toObject(TaiLieu.class));
+                    }
+
+                    if (taiLieuList.isEmpty()) {
+                        // Nếu không có tài liệu cụ thể, tìm kiếm Google làm dự phòng
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/search?q=tài+liệu+học+" + step.getTenBuoc()));
+                        holder.itemView.getContext().startActivity(browserIntent);
+                    } else if (taiLieuList.size() == 1) {
+                        // Nếu chỉ có 1 tài liệu, dẫn đến trang web đó luôn
+                        String url = taiLieuList.get(0).getDuongDan();
+                        if (url != null && !url.isEmpty()) {
+                            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                            holder.itemView.getContext().startActivity(browserIntent);
+                        }
+                    } else {
+                        // Nếu có nhiều tài liệu, hiển thị danh sách để chọn
+                        List<String> titles = new ArrayList<>();
+                        for (TaiLieu tl : taiLieuList) titles.add(tl.getTenTaiLieu());
+                        
+                        new AlertDialog.Builder(holder.itemView.getContext())
+                                .setTitle("Chọn tài liệu tham khảo")
+                                .setAdapter(new ArrayAdapter<>(holder.itemView.getContext(), android.R.layout.simple_list_item_1, titles), (dialog, which) -> {
+                                    String url = taiLieuList.get(which).getDuongDan();
+                                    if (url != null && !url.isEmpty()) {
+                                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                                        holder.itemView.getContext().startActivity(browserIntent);
+                                    }
+                                })
+                                .setNegativeButton("Đóng", null)
+                                .show();
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    // Fallback
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/search?q=tài+liệu+học+" + step.getTenBuoc()));
+                    holder.itemView.getContext().startActivity(browserIntent);
+                });
     }
 
     @Override

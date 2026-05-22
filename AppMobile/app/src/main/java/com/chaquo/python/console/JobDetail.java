@@ -62,7 +62,7 @@ public class JobDetail extends AppCompatActivity {
         setContentView(R.layout.activity_job_detail);
 
         jobCode = getIntent().getStringExtra("jobCode");
-        if (jobCode == null) jobCode = "CV-001";
+        if (jobCode == null || jobCode.isEmpty()) jobCode = "CV-001";
 
         SharedPreferences pref = getSharedPreferences("UserPrefs", MODE_PRIVATE);
         userId = pref.getString("USER_ID", null);
@@ -114,13 +114,40 @@ public class JobDetail extends AppCompatActivity {
                         if (doc.exists()) {
                             String realCode = doc.getString("MaCongViec");
                             if (realCode != null) this.jobCode = realCode;
+                        } else {
+                            this.jobCode = resolveJobCodeFromAssets(this.jobCode);
                         }
-                        loadAllData();
+                        updateAndLoad();
                     })
-                    .addOnFailureListener(e -> loadAllData());
+                    .addOnFailureListener(e -> {
+                        this.jobCode = resolveJobCodeFromAssets(this.jobCode);
+                        updateAndLoad();
+                    });
         } else {
-            loadAllData();
+            updateAndLoad();
         }
+    }
+
+    private void updateAndLoad() {
+        roadmapAdapter.setJobCode(this.jobCode);
+        loadAllData();
+    }
+
+    private String resolveJobCodeFromAssets(String btCode) {
+        try {
+            InputStream is = getAssets().open("ERD.json");
+            byte[] buffer = new byte[is.available()];
+            is.read(buffer);
+            is.close();
+            JSONObject root = new JSONObject(new String(buffer, StandardCharsets.UTF_8));
+            JSONObject banTinRoot = root.getJSONObject("BanTin");
+            if (banTinRoot.has(btCode)) {
+                return banTinRoot.getJSONObject(btCode).optString("MaCongViec", btCode);
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Error resolving code from assets", e);
+        }
+        return btCode;
     }
 
     private void loadAllData() {
@@ -146,12 +173,10 @@ public class JobDetail extends AppCompatActivity {
                                 }
                             }
                         }
-                    }
-                    
-                    if (roadmapList.isEmpty()) {
-                        loadRoadmapFromAssets();
+                        if (roadmapList.isEmpty()) loadRoadmapFromAssets();
+                        else sortAndRefreshRoadmap();
                     } else {
-                        sortAndRefreshRoadmap();
+                        loadRoadmapFromAssets();
                     }
                 })
                 .addOnFailureListener(e -> loadRoadmapFromAssets());
@@ -160,12 +185,10 @@ public class JobDetail extends AppCompatActivity {
     private void loadRoadmapFromAssets() {
         try {
             InputStream is = getAssets().open("ERD.json");
-            int size = is.available();
-            byte[] buffer = new byte[size];
+            byte[] buffer = new byte[is.available()];
             is.read(buffer);
             is.close();
-            String json = new String(buffer, StandardCharsets.UTF_8);
-            JSONObject root = new JSONObject(json);
+            JSONObject root = new JSONObject(new String(buffer, StandardCharsets.UTF_8));
             JSONObject loTrinhRoot = root.getJSONObject("LoTrinh");
 
             if (loTrinhRoot.has(jobCode)) {
@@ -179,19 +202,12 @@ public class JobDetail extends AppCompatActivity {
                     step.setMoTa(stepJson.optString("MoTa"));
                     step.setThoiGian(stepJson.optString("ThoiGian", "Đang cập nhật"));
                     step.setHinhAnh(stepJson.optString("HinhAnh", ""));
-                    
-                    if (stepJson.has("KyNang")) {
-                        JSONArray skillsArr = stepJson.getJSONArray("KyNang");
-                        List<String> skills = new ArrayList<>();
-                        for (int j = 0; j < skillsArr.length(); j++) skills.add(skillsArr.getString(j));
-                        step.setKyNang(skills);
-                    }
                     roadmapList.add(step);
                 }
                 sortAndRefreshRoadmap();
             }
         } catch (Exception e) {
-            Log.e(TAG, "Error loading roadmap from assets", e);
+            Log.e(TAG, "Error loading from assets", e);
         }
     }
 
@@ -205,7 +221,6 @@ public class JobDetail extends AppCompatActivity {
         step.setMoTa((String) stepMap.get("MoTa"));
         step.setThoiGian((String) stepMap.get("ThoiGian"));
         step.setHinhAnh((String) stepMap.get("HinhAnh"));
-        if (stepMap.get("KyNang") instanceof List) step.setKyNang((List<String>) stepMap.get("KyNang"));
         roadmapList.add(step);
     }
 
@@ -227,7 +242,7 @@ public class JobDetail extends AppCompatActivity {
                         tvJobDescriptionDetail.setText(doc.getString("MoTa"));
                         String imageUrl = doc.getString("HinhAnh");
                         if (imageUrl != null) loadResourceImage(imageUrl, imgJobHeader, R.drawable.background, 0);
-                        
+
                         String industryId = doc.getString("MaNganh");
                         if (industryId != null) {
                             db.collection("Nganh").document(industryId).get()

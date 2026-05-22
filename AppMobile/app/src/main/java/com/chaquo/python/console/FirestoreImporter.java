@@ -30,9 +30,7 @@ public class FirestoreImporter {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         try {
             JSONObject root = new JSONObject(json);
-            
-            // Chỉ định danh sách các collection muốn import
-            String[] targetCollections = {"Sach", "TroChoi"};
+            String[] targetCollections = {"Sach", "TroChoi", "TaiLieu"};
 
             for (String collectionName : targetCollections) {
                 if (!root.has(collectionName)) {
@@ -52,7 +50,7 @@ public class FirestoreImporter {
 
                     if (docData instanceof JSONObject) {
                         Map<String, Object> map = jsonToMap((JSONObject) docData);
-                        // Sử dụng SetOptions.merge() để không ghi đè mất dữ liệu cũ nếu trùng ID
+                        // Sử dụng SetOptions.merge() để cập nhật hoặc thêm mới mà không xóa dữ liệu cũ
                         batch.set(db.collection(collectionName).document(docId), map, SetOptions.merge());
                         count++;
                     } else if (docData instanceof JSONArray) {
@@ -62,6 +60,7 @@ public class FirestoreImporter {
                         count++;
                     }
 
+                    // WriteBatch giới hạn 500 operations, nên commit mỗi 400
                     if (count >= 400) {
                         batch.commit();
                         batch = db.batch();

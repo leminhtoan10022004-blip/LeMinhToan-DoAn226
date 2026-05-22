@@ -19,7 +19,6 @@
         <intent>
             <action android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" />
         </intent>
-        <!-- Required to resolve Camera app on Android 11+ -->
         <intent>
             <action android:name="android.media.action.IMAGE_CAPTURE" />
         </intent>
@@ -34,7 +33,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!-- Declaring GMS version helps with package validation and fixing SecurityException -->
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />

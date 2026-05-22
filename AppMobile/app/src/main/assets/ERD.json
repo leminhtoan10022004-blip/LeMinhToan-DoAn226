@@ -7109,5 +7109,176 @@
       "Icon": "toem_mobile_icon.webp",
       "DuongDan": "https://play.google.com/store/apps/details?id=com.something.toem"
     }
+  },
+
+  "TaiLieu": {
+    "TL-001": {
+      "idLoTrinh": "CV-001",
+      "tenTaiLieu": "Tài liệu Lập trình căn bản (Ngôn ngữ Python, Java, C++)",
+      "duongDan": "https://codegym.vn/blog/tong-hop-tai-lieu-hoc-lap-trinh-co-ban-cho-nguoi-moi/",
+      "loai": "sach",
+      "icon": "icon_web.png",
+      "moTa": "Giáo trình cơ bản về lập trình do Bộ môn CNTT biên soạn, phù hợp bước 1-2-3 của lộ trình."
+    },
+    "TL-002": {
+      "idLoTrinh": "CV-001",
+      "tenTaiLieu": "Khóa học 'Trở thành lập trình viên' - CodeGym",
+      "duongDan": "https://codegym.vn/tong-hop-khoa-hoc-tai-codegym/?action=filter_courses&times%5B%5D=fulltime",
+      "loai": "khoaHoc",
+      "icon": "icon_web.png",
+      "moTa": "Khóa học miễn phí trực tuyến, bao gồm bài tập thực hành, phù hợp bước 3-4."
+    },
+    "TL-003": {
+      "idLoTrinh": "CV-001",
+      "tenTaiLieu": "Git & GitHub cơ bản (Kênh YouTube 'Gà Lại Lập Trình')",
+      "duongDan": "https://youtu.be/5k1H7ZAnim0?si=isCJd3C6hrifGTFh",
+      "loai": "video",
+      "icon": "icon_youtube.png",
+      "moTa": "Video hướng dẫn sử dụng Git cho quy trình làm việc nhóm, phù hợp bước 4-5."
+    },
+    "TL-004": {
+      "idLoTrinh": "CV-002",
+      "tenTaiLieu": "Giáo trình Vẽ kỹ thuật cơ khí & AutoCAD",
+      "duongDan": "https://www.autocadcokhi.com/2023/04/Autocad-co-khi.html",
+      "loai": "sach",
+      "icon": "icon_web.png",
+      "moTa": "Tài liệu cơ bản về bản vẽ kỹ thuật, dùng cho bước 1 của lộ trình Kỹ sư ô tô."
+    },
+    "TL-005": {
+      "idLoTrinh": "CV-002",
+      "tenTaiLieu": "Video hướng dẫn SolidWorks cơ bản đến nâng cao (HowKteam)",
+      "duongDan": "https://youtu.be/h7EB5k4JJqo?si=Po7oy1xKzAOJGJKT",
+      "loai": "video",
+      "icon": "icon_youtube.png",
+      "moTa": "Playlist hướng dẫn thiết kế 3D chi tiết máy, dùng cho bước 1 và bước 3 của lộ trình."
+    },
+    "TL-006": {
+      "idLoTrinh": "CV-003",
+      "tenTaiLieu": "Giáo trình Nguyên lý thiết kế kiến trúc - NXB Xây dựng",
+      "duongDan": "https://www.studocu.vn/vn/document/dai-hoc-xay-dung-ha-noi/psychosociale-basiskennis/giao-trinh-nguyen-ly-thiet-ke-kien-truc-nha-o-th-skts-tran-dinh-hieu-137914/61334253",
+      "loai": "sach",
+      "icon": "icon_web.png",
+      "moTa": "Tài liệu nền tảng cho bước 1 và 2 của lộ trình Kiến trúc sư."
+    },
+    "TL-007": {
+      "idLoTrinh": "CV-003",
+      "tenTaiLieu": "Master Revit Architecture (Kênh 'Kiến Trúc ABC')",
+      "duongDan": "https://youtu.be/LnlDQxt6THA?si=8aRXkGCWoVtndW4t",
+      "loai": "video",
+      "icon": "icon_youtube.png",
+      "moTa": "Video hướng dẫn sử dụng Revit từ cơ bản đến lập hồ sơ, dùng cho bước 2 và 5."
+    },
+    "TL-008": {
+      "idLoTrinh": "CV-004",
+      "tenTaiLieu": "Mô hình tài chính DCF - Phân tích đầu tư",
+      "duongDan": "https://www.studocu.vn/vn/document/truong-dai-hoc-van-lang/tai-chinh-doanh-nghiep/2-tai-chinh-doanh-nghiep/86608845",
+      "loai": "baiViet",
+      "icon": "icon_web.png",
+      "moTa": "Bài viết kèm ví dụ về định giá doanh nghiệp, phù hợp bước 2 và 4 của Chuyên gia tài chính."
+    },
+    "TL-009": {
+      "idLoTrinh": "CV-004",
+      "tenTaiLieu": "Khóa Excel Nâng cao cho Tài chính (Pivot, Power Query, DCF)",
+      "duongDan": "https://khoahoctructuyen.edu.vn/excel-ung-dung-trong-phan-tich-tai-chinh",
+      "loai": "khoaHoc",
+      "icon": "icon_web.png",
+      "moTa": "Khóa học trực tuyến (có thể trên Unica hoặc Udemy), dùng cho bước 3."
+    },
+    "TL-010": {
+      "idLoTrinh": "CV-005",
+      "tenTaiLieu": "Bộ Luật Dân sự 2015 và các văn bản hướng dẫn",
+      "duongDan": "https://thuvienphapluat.vn/chinh-sach-phap-luat-moi/vn/ho-tro-phap-luat/tu-van-phap-luat/43255/tong-hop-van-ban-huong-dan-bo-luat-dan-su-2015",
+      "loai": "baiViet",
+      "icon": "icon_web.png",
+      "moTa": "Tài liệu pháp lý cơ bản cho luật sư, dùng xuyên suốt bước 1-2-3."
+    },
+    "TL-011": {
+      "idLoTrinh": "CV-006",
+      "tenTaiLieu": "Sách 'Nguyên lý thị giác' (Principles of Color Design)",
+      "duongDan": "https://www.studocu.vn/vn/document/truong-dai-hoc-my-thuat-cong-nghiep/nguyen-ly-thi-giac/nguyen-ly-design-thi-giac-ng-hong-hung/48203866",
+      "loai": "sach",
+      "icon": "icon_web.png",
+      "moTa": "Tài liệu kinh điển về màu sắc và bố cục, dùng cho bước 1 lộ trình TK đồ họa."
+    },
+    "TL-012": {
+      "idLoTrinh": "CV-006",
+      "tenTaiLieu": "Playlist Photoshop & Illustrator (Kênh 'Học Design Cùng Ngọc')",
+      "duongDan": "https://youtu.be/WP8eswvWZeo?si=Ki920k-UaqOeD38g",
+      "loai": "video",
+      "icon": "icon_youtube.png",
+      "moTa": "Video hướng dẫn chi tiết từ cơ bản đến nâng cao, dùng cho bước 2."
+    },
+    "TL-013": {
+      "idLoTrinh": "CV-007",
+      "tenTaiLieu": "Khóa học dựng phim Premiere Pro cơ bản (Kênh 'Vũ Nguyễn')",
+      "duongDan": "https://youtu.be/Z7FoVc6dWlQ?si=SVCBjyg-SIE9Jgs-",
+      "loai": "video",
+      "icon": "icon_youtube.png",
+      "moTa": "Phù hợp bước 2 của lộ trình Đạo diễn/Biên tập viên."
+    },
+    "TL-014": {
+      "idLoTrinh": "CV-008",
+      "tenTaiLieu": "Tài liệu Giải phẫu học & Thực hành lâm sàng cho Bác sĩ",
+      "duongDan": "https://tailieuykhoamienphi.com/",
+      "loai": "sach",
+      "icon": "icon_web.png",
+      "moTa": "Sách Y khoa cơ bản (Netter, Gray's Anatomy bản dịch), dùng cho bước 1-2."
+    },
+    "TL-015": {
+      "idLoTrinh": "CV-010",
+      "tenTaiLieu": "Tài liệu Học lý thuyết bay (Khí động học, Dẫn đường) - Cục HKVN",
+      "duongDan": "https://www.studocu.vn/vn/document/hoc-vien-hang-khong-viet-nam/hang-khong-dan-dung/hang-khong-viet-nam/49110840",
+      "loai": "baiViet",
+      "icon": "icon_web.png",
+      "moTa": "Tài liệu chính thống cho bước 2 của lộ trình Phi công."
+    },
+    "TL-016": {
+      "idLoTrinh": "CV-011",
+      "tenTaiLieu": "Giáo trình Kỹ thuật chế biến món ăn (NXB Lao động)",
+      "duongDan": "https://fr.scribd.com/document/550811540/GIAO-TRINH-K%E1%BB%B9-Thu%E1%BA%ADt-Ch%E1%BA%BF-Bi%E1%BA%BFn-Cac-Mon-%C4%82n",
+      "loai": "sach",
+      "icon": "icon_web.png",
+      "moTa": "Tài liệu bước 1-3 cho lộ trình Đầu bếp."
+    },
+    "TL-017": {
+      "idLoTrinh": "CV-013",
+      "tenTaiLieu": "Tài liệu Arduino và Vi điều khiển STM32 (tiếng Việt)",
+      "duongDan": "https://www.studocu.vn/vn/document/university-of-information-technology/vi-xu-ly-vi-dieu-khien/chuong-gioi-thieu-stm32/97900319",
+      "loai": "baiViet",
+      "icon": "icon_web.png",
+      "moTa": "Trang web tổng hợp bài học, project mẫu cho bước 2-3-4 của Kỹ sư Điện-Điện tử."
+    },
+    "TL-018": {
+      "idLoTrinh": "CV-018",
+      "tenTaiLieu": "Khóa học Digital Marketing (SEO, Google Ads) - Nguyễn Hữu Trường",
+      "duongDan": "https://youtu.be/8uXiKis5lFs?si=exitDjOT3VOhMEX8",
+      "loai": "video",
+      "icon": "icon_youtube.png",
+      "moTa": "Kênh YouTube chuyên sâu về digital marketing, dùng cho bước 2 lộ trình Chuyên gia Marketing."
+    },
+    "TL-019": {
+      "idLoTrinh": "CV-021",
+      "tenTaiLieu": "Sách 'Hiểu về phơi sáng' (Understanding Exposure)",
+      "duongDan": "https://tinhte.vn/thread/suu-tam-ky-thuat-nhiep-anh-co-ban.576558/",
+      "loai": "sach",
+      "icon": "icon_web.png",
+      "moTa": "Tài liệu cốt lõi cho bước 1 (Nắm tam giác phơi sáng) của Nhiếp ảnh gia."
+    },
+    "TL-020": {
+      "idLoTrinh": "CV-024",
+      "tenTaiLieu": "Hồ sơ đào tạo Tiếp viên hàng không - Vietnam Airlines",
+      "duongDan": "https://www.studocu.vn/vn/document/truong-dai-hoc-van-lang/hanh-vi-tieu-dung/vn-airlines-fshxfxfxdf/105402806",
+      "loai": "baiViet",
+      "icon": "icon_web.png",
+      "moTa": "Tài liệu hướng dẫn nghiệp vụ, an toàn bay, dùng cho bước 2-3."
+    },
+    "TL-021": {
+      "idLoTrinh": "CV-025",
+      "tenTaiLieu": "Giáo trình Nghiệp vụ Hướng dẫn viên du lịch (Tổng cục Du lịch)",
+      "duongDan": "https://www.studocu.vn/vn/document/truong-dai-hoc-ngoai-ngu-hue/huong-dan-du-lich/giao-trinh-nghiep-vu-huong-dan/118817973",
+      "loai": "sach",
+      "icon": "icon_web.png",
+      "moTa": "Tài liệu chính thống cho bước 1-2-4 của lộ trình Hướng dẫn viên."
+    }
   }
 }
