@@ -37,8 +37,7 @@ public class TestHistoryAdapter extends RecyclerView.Adapter<TestHistoryAdapter.
         LichSuLamBai history = historyList.get(position);
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault());
-        
-        // FIX: Xử lý hiển thị ngày tháng từ Timestamp thay vì long
+
         String dateStr = "---";
         if (history.getThoiGianKT() != null) {
             dateStr = sdf.format(history.getThoiGianKT().toDate());

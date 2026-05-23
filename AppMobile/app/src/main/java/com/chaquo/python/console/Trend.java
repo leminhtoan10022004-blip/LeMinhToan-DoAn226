@@ -73,7 +73,6 @@ public class Trend extends AppCompatActivity {
         rvLatestNews.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         rvLatestNews.setAdapter(newsAdapter);
 
-        // Setup Trending Skills
         rvTrendingSkills = findViewById(R.id.rvTrendingSkills);
         skillList = new ArrayList<>();
         skillAdapter = new SkillAdapter(skillList);

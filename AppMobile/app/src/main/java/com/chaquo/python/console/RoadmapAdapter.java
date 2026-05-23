@@ -104,7 +104,6 @@ public class RoadmapAdapter extends RecyclerView.Adapter<RoadmapAdapter.RoadmapV
             return;
         }
 
-        // Truy vấn tài liệu thực tế từ Firestore
         db.collection("TaiLieu")
                 .whereEqualTo("idLoTrinh", jobCode)
                 .get()
@@ -115,18 +114,15 @@ public class RoadmapAdapter extends RecyclerView.Adapter<RoadmapAdapter.RoadmapV
                     }
 
                     if (taiLieuList.isEmpty()) {
-                        // Nếu không có tài liệu cụ thể, tìm kiếm Google làm dự phòng
                         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/search?q=tài+liệu+học+" + step.getTenBuoc()));
                         holder.itemView.getContext().startActivity(browserIntent);
                     } else if (taiLieuList.size() == 1) {
-                        // Nếu chỉ có 1 tài liệu, dẫn đến trang web đó luôn
                         String url = taiLieuList.get(0).getDuongDan();
                         if (url != null && !url.isEmpty()) {
                             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
                             holder.itemView.getContext().startActivity(browserIntent);
                         }
                     } else {
-                        // Nếu có nhiều tài liệu, hiển thị danh sách để chọn
                         List<String> titles = new ArrayList<>();
                         for (TaiLieu tl : taiLieuList) titles.add(tl.getTenTaiLieu());
                         
@@ -144,7 +140,6 @@ public class RoadmapAdapter extends RecyclerView.Adapter<RoadmapAdapter.RoadmapV
                     }
                 })
                 .addOnFailureListener(e -> {
-                    // Fallback
                     Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/search?q=tài+liệu+học+" + step.getTenBuoc()));
                     holder.itemView.getContext().startActivity(browserIntent);
                 });

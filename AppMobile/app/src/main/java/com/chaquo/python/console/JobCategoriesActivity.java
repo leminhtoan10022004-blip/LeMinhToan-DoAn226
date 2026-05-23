@@ -82,8 +82,7 @@ public class JobCategoriesActivity extends AppCompatActivity {
             Nganh cat = categories.get(position);
             holder.tvTitle.setText(cat.getTenNganh());
             holder.tvDescription.setText(cat.getMoTa());
-            
-            // Ẩn phần chỉ số (Vị trí tuyển, Tăng trưởng, Lương) trong màn hình Danh mục
+
             holder.layoutStats.setVisibility(View.GONE);
 
             holder.itemView.setOnClickListener(v -> {

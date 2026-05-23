@@ -109,7 +109,7 @@ public class SignUp extends AppCompatActivity {
         user.setHo(etLastName.getText().toString().trim());
         user.setTen(etFirstName.getText().toString().trim());
         user.setSDT(etPhone.getText().toString().trim());
-        user.setNgayTao(new Timestamp(new Date())); // Dùng Timestamp nếu Model bạn là Timestamp
+        user.setNgayTao(new Timestamp(new Date()));
         user.setVaiTro("User");
         user.setTrangThai("Active");
 

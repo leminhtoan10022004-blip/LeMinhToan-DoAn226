@@ -52,10 +52,8 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.QuizViewHolder
             holder.imgQuiz.setImageResource(R.drawable.mbti_icon);
         }
 
-        // Sự kiện click để chuyển sang trang câu hỏi chi tiết
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, DetailQuestion.class);
-            // Truyền Document ID (MaTest) để DetailQuestion tải đúng dữ liệu từ Firestore
             intent.putExtra("TEST_ID", quiz.getMaTest());
             context.startActivity(intent);
         });

@@ -42,16 +42,15 @@ public class OptionAdapter extends RecyclerView.Adapter<OptionAdapter.OptionView
         DapAn option = options.get(position);
         holder.tvOptionText.setText(option.getNoiDung());
 
-        // Hiển thị trạng thái đã chọn (highlight)
         boolean isSelected = (selectedOption != null && selectedOption.getMaDapAn().equals(option.getMaDapAn()));
         
         MaterialCardView card = (MaterialCardView) holder.itemView;
         if (isSelected) {
-            card.setStrokeColor(Color.parseColor("#4A148C")); // Màu tím đậm khi chọn
+            card.setStrokeColor(Color.parseColor("#4A148C"));
             card.setStrokeWidth(4);
             card.setCardBackgroundColor(Color.parseColor("#F3E5F5"));
         } else {
-            card.setStrokeColor(Color.parseColor("#E0E0E0")); // Màu xám nhạt mặc định
+            card.setStrokeColor(Color.parseColor("#E0E0E0"));
             card.setStrokeWidth(2);
             card.setCardBackgroundColor(Color.WHITE);
         }
