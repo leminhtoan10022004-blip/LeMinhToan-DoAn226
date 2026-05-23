@@ -4,7 +4,7 @@ from sklearn.neural_network import MLPClassifier
 from sklearn.preprocessing import LabelEncoder
 from os.path import dirname, join
 
-# Global variables để cache mô hình
+
 _mlp_model = None
 _le_mbti = None
 _le_holland = None
@@ -34,7 +34,6 @@ def init_model():
         X = df[feature_cols].values
         y = df['nghe_nghiep'].values
 
-        # Sử dụng mô hình nhỏ hơn để phù hợp với mobile
         _mlp_model = MLPClassifier(hidden_layer_sizes=(64, 32), max_iter=500, random_state=42)
         _mlp_model.fit(X, y)
         return True
@@ -48,7 +47,7 @@ def predict_career(mbti_code, holland_code, big5_o, big5_c, big5_e, big5_a, big5
         return "Lỗi: Không thể khởi tạo mô hình AI."
 
     try:
-        # Encode inputs
+
         try: mbti_val = _le_mbti.transform([mbti_code])[0]
         except: mbti_val = 0
 
