@@ -15,7 +15,7 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         ndk {
-            abiFilters "armeabi-v7a", "arm64-v8a", "x86_64"
+            abiFilters "arm64-v8a", "x86_64"
         }
     }
 
@@ -38,7 +38,10 @@ android {
 
 chaquopy {
     defaultConfig {
+        buildPython "/opt/homebrew/Caskroom/miniconda/base/envs/doan_py310/bin/python"
+
         version "3.10"
+
         pip {
             install "pandas"
             install "scikit-learn"
@@ -46,6 +49,8 @@ chaquopy {
             install "numpy"
             install "six"
             install "opencv-python-headless"
+            install "certifi"
+            install "requests"
         }
     }
 }
@@ -58,20 +63,18 @@ dependencies {
     implementation 'com.google.android.material:material:1.12.0'
     implementation 'androidx.activity:activity:1.9.3'
     implementation 'androidx.core:core-ktx:1.13.1'
-    
+
     // Google & Firebase
     implementation platform('com.google.firebase:firebase-bom:34.12.0')
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.firebase:firebase-firestore'
     implementation 'com.google.firebase:firebase-storage'
 
-    // Hạ xuống 20.7.0 để khắc phục lỗi SecurityException: Unknown calling package name
     implementation 'com.google.android.gms:play-services-auth:20.7.0'
-    
+
     implementation 'com.github.bumptech.glide:glide:4.16.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
 
-    // Gson
     implementation 'com.google.code.gson:gson:2.14.0'
 
     testImplementation 'androidx.arch.core:core-testing:2.0.0'
