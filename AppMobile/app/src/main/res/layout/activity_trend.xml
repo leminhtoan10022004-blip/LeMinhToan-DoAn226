@@ -49,7 +49,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Dựa trên phân tích từ dữ liệu Firestore"
+                    android:text="Phân tích thông minh bởi Gemini AI 2.5"
                     android:textColor="#CCFFFFFF"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -98,7 +98,7 @@
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/item_news_card" />
 
-            <!-- Forecast Card (Static) -->
+            <!-- AI Forecast Card (Dynamic) -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -118,16 +118,17 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="💡 Dự báo chuyên gia Q2/2026"
+                        android:text="✨ Dự báo xu hướng bởi AI"
                         android:textColor="#0D47A1"
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/tvAiForecast"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:lineSpacingExtra="6dp"
-                        android:text="• Các ngành liên quan đến Chip &amp; Bán dẫn tăng trưởng 25%.\n• Nhân sự thực hành AI được săn đón với mức lương cao hơn 30%.\n• Nhu cầu dịch vụ số hóa tại các thành phố lớn đạt đỉnh mới."
+                        android:text="Đang phân tích dữ liệu thị trường..."
                         android:textColor="#1565C0"
                         android:textSize="13sp" />
                 </LinearLayout>
