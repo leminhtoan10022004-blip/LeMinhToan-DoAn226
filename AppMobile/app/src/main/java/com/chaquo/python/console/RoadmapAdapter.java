@@ -30,6 +30,11 @@ public class RoadmapAdapter extends RecyclerView.Adapter<RoadmapAdapter.RoadmapV
     private List<RoadmapStep> roadmapSteps;
     private String jobCode;
     private FirebaseFirestore db;
+    
+    // Thêm các biến lưu trữ dữ liệu context
+    private String jobDetailJson = "";
+    private String roadmapStepsJson = "";
+    private String resourcesJson = "";
 
     public RoadmapAdapter(List<RoadmapStep> roadmapSteps) {
         this.roadmapSteps = roadmapSteps;
@@ -38,6 +43,12 @@ public class RoadmapAdapter extends RecyclerView.Adapter<RoadmapAdapter.RoadmapV
 
     public void setJobCode(String jobCode) {
         this.jobCode = jobCode;
+    }
+    
+    public void setContextData(String jobDetail, String steps, String resources) {
+        this.jobDetailJson = jobDetail;
+        this.roadmapStepsJson = steps;
+        this.resourcesJson = resources;
     }
 
     @NonNull
@@ -89,6 +100,10 @@ public class RoadmapAdapter extends RecyclerView.Adapter<RoadmapAdapter.RoadmapV
 
         holder.btnAskAI.setOnClickListener(v -> {
             Intent intent = new Intent(holder.itemView.getContext(), ChatBotActivity.class);
+            intent.putExtra("isRoadmapMode", true);
+            intent.putExtra("jobDetailJson", jobDetailJson);
+            intent.putExtra("roadmapStepsJson", roadmapStepsJson);
+            intent.putExtra("resourcesJson", resourcesJson);
             intent.putExtra("PRESET_MESSAGE", "Hãy hướng dẫn tôi chi tiết cách thực hiện bước: " + step.getTenBuoc() + " trong lộ trình nghề nghiệp này.");
             holder.itemView.getContext().startActivity(intent);
         });

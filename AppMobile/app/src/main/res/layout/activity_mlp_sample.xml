@@ -1,113 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#F5F5F5">
+    android:layout_height="match_parent">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:layout_height="match_parent"
+        android:background="#F8F9FA">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="MLP Career Prediction Sample"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:textColor="#333"
-            android:layout_gravity="center"
-            android:layout_marginBottom="20dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Personality Codes"
-            android:textStyle="bold"
-            android:layout_marginBottom="10dp" />
-
-        <EditText
-            android:id="@+id/etMbti"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="MBTI (e.g., INTJ)"
-            android:layout_marginBottom="10dp" />
+            android:orientation="vertical"
+            android:padding="20dp">
 
-        <EditText
-            android:id="@+id/etHolland"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Holland (e.g., R)"
-            android:layout_marginBottom="10dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PHÂN TÍCH NGHỀ NGHIỆP AI"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#1B5E20"
+                android:layout_gravity="center"
+                android:layout_marginBottom="24dp" />
 
-        <EditText
-            android:id="@+id/etDisc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="DISC (e.g., D)"
-            android:layout_marginBottom="10dp" />
+            <!-- Group: Tính cách -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                android:layout_marginBottom="16dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mã số tính cách (MBTI/Holland/DISC)"
+                        android:textStyle="bold"
+                        android:textColor="#333"
+                        android:layout_marginBottom="12dp" />
+                    <EditText android:id="@+id/etMbti" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="MBTI" android:layout_marginBottom="8dp"/>
+                    <EditText android:id="@+id/etHolland" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Holland" android:layout_marginBottom="8dp"/>
+                    <EditText android:id="@+id/etDisc" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="DISC" android:layout_marginBottom="8dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Big Five (0.0 - 1.0)"
-            android:textStyle="bold"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Big Five (O-C-E-A-N)"
+                        android:textStyle="bold"
+                        android:textColor="#333"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp" />
+                    <GridLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:columnCount="5" android:alignmentMode="alignMargins">
+                        <EditText android:id="@+id/etO" android:layout_width="60dp" android:hint="O" android:inputType="numberDecimal" android:gravity="center"/>
+                        <EditText android:id="@+id/etC" android:layout_width="60dp" android:hint="C" android:inputType="numberDecimal" android:gravity="center"/>
+                        <EditText android:id="@+id/etE" android:layout_width="60dp" android:hint="E" android:inputType="numberDecimal" android:gravity="center"/>
+                        <EditText android:id="@+id/etA" android:layout_width="60dp" android:hint="A" android:inputType="numberDecimal" android:gravity="center"/>
+                        <EditText android:id="@+id/etN" android:layout_width="60dp" android:hint="N" android:inputType="numberDecimal" android:gravity="center"/>
+                    </GridLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-            <EditText android:id="@+id/etO" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:hint="O" android:inputType="numberDecimal"/>
-            <EditText android:id="@+id/etC" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:hint="C" android:inputType="numberDecimal"/>
-            <EditText android:id="@+id/etE" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:hint="E" android:inputType="numberDecimal"/>
-            <EditText android:id="@+id/etA" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:hint="A" android:inputType="numberDecimal"/>
-            <EditText android:id="@+id/etN" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:hint="N" android:inputType="numberDecimal"/>
+            <!-- Group: Điểm số -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                android:layout_marginBottom="16dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bảng điểm học tập"
+                        android:textStyle="bold"
+                        android:textColor="#333"
+                        android:layout_marginBottom="12dp" />
+                    <GridLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:columnCount="3" android:alignmentMode="alignMargins">
+                        <EditText android:id="@+id/etToan" android:layout_width="80dp" android:hint="Toán" android:inputType="numberDecimal" android:gravity="center"/>
+                        <EditText android:id="@+id/etLy" android:layout_width="80dp" android:hint="Lý" android:inputType="numberDecimal" android:gravity="center"/>
+                        <EditText android:id="@+id/etHoa" android:layout_width="80dp" android:hint="Hóa" android:inputType="numberDecimal" android:gravity="center"/>
+                        <EditText android:id="@+id/etSinh" android:layout_width="80dp" android:hint="Sinh" android:inputType="numberDecimal" android:gravity="center"/>
+                        <EditText android:id="@+id/etVan" android:layout_width="80dp" android:hint="Văn" android:inputType="numberDecimal" android:gravity="center"/>
+                        <EditText android:id="@+id/etAnh" android:layout_width="80dp" android:hint="Anh" android:inputType="numberDecimal" android:gravity="center"/>
+                        <EditText android:id="@+id/etTin" android:layout_width="80dp" android:hint="Tin" android:inputType="numberDecimal" android:gravity="center"/>
+                        <EditText android:id="@+id/etDia" android:layout_width="80dp" android:hint="Địa" android:inputType="numberDecimal" android:gravity="center"/>
+                        <EditText android:id="@+id/etSu" android:layout_width="80dp" android:hint="Sử" android:inputType="numberDecimal" android:gravity="center"/>
+                    </GridLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btnPredict"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="PHÂN TÍCH CHUYÊN SÂU"
+                android:textStyle="bold"
+                android:backgroundTint="#2E7D32"
+                android:textColor="#FFF"
+                app:cornerRadius="12dp"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Kết quả trực quan -->
+            <LinearLayout
+                android:id="@+id/layoutResultContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+                <TextView
+                    android:id="@+id/tvResultHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kết quả dự đoán"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="#333"
+                    android:layout_marginBottom="12dp" />
+
+                <TextView
+                    android:id="@+id/tvResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_light_green"
+                    android:padding="16dp"
+                    android:text="Dữ liệu phân tích sẽ hiển thị tại đây"
+                    android:textColor="#1B5E20"
+                    android:lineSpacingExtra="4dp" />
+            </LinearLayout>
+
         </LinearLayout>
+    </ScrollView>
+
+    <!-- Overlay Loading (Luôn trên cùng) -->
+    <LinearLayout
+        android:id="@+id/layoutLoading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E6000000"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true"
+        android:elevation="100dp">
+
+        <ProgressBar
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:indeterminateTint="#4CAF50" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="School Subjects (0 - 10)"
-            android:textStyle="bold"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp" />
-
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:columnCount="3">
-            <EditText android:id="@+id/etToan" android:layout_width="100dp" android:hint="Toán" android:inputType="numberDecimal"/>
-            <EditText android:id="@+id/etLy" android:layout_width="100dp" android:hint="Lý" android:inputType="numberDecimal"/>
-            <EditText android:id="@+id/etHoa" android:layout_width="100dp" android:hint="Hóa" android:inputType="numberDecimal"/>
-            <EditText android:id="@+id/etSinh" android:layout_width="100dp" android:hint="Sinh" android:inputType="numberDecimal"/>
-            <EditText android:id="@+id/etVan" android:layout_width="100dp" android:hint="Văn" android:inputType="numberDecimal"/>
-            <EditText android:id="@+id/etAnh" android:layout_width="100dp" android:hint="Anh" android:inputType="numberDecimal"/>
-            <EditText android:id="@+id/etTin" android:layout_width="100dp" android:hint="Tin" android:inputType="numberDecimal"/>
-            <EditText android:id="@+id/etDia" android:layout_width="100dp" android:hint="Địa" android:inputType="numberDecimal"/>
-            <EditText android:id="@+id/etSu" android:layout_width="100dp" android:hint="Sử" android:inputType="numberDecimal"/>
-        </GridLayout>
-
-        <Button
-            android:id="@+id/btnPredict"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Predict Career"
             android:layout_marginTop="20dp"
-            android:backgroundTint="#4CAF50"
-            android:textColor="#FFF" />
+            android:text="AI ĐANG TƯ DUY..."
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tvResult"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Result will appear here"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            android:padding="15dp"
-            android:background="#E8F5E9"
-            android:textColor="#2E7D32" />
-
+            android:layout_marginTop="8dp"
+            android:text="Hệ thống đang đối chiếu dữ liệu với mô hình MLP"
+            android:textColor="#CCCCCC"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:paddingHorizontal="40dp" />
     </LinearLayout>
-</ScrollView>
+
+</FrameLayout>

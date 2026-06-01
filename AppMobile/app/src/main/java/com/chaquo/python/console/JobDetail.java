@@ -26,9 +26,11 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.chaquo.python.model.RoadmapStep;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -53,8 +55,14 @@ public class JobDetail extends AppCompatActivity {
     private String jobCode;
     private LinearLayout layoutBooks, layoutGames;
     private ExtendedFloatingActionButton fabSaveRoadmap;
+    private FloatingActionButton fabAiRoadmap;
     private String userId;
     private boolean isFollowing = false;
+
+    // Dữ liệu để gửi cho AI
+    private Map<String, Object> jobDataMap = new HashMap<>();
+    private List<Map<String, Object>> booksList = new ArrayList<>();
+    private List<Map<String, Object>> gamesList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +84,10 @@ public class JobDetail extends AppCompatActivity {
         if (fabSaveRoadmap != null) {
             fabSaveRoadmap.setOnClickListener(v -> toggleFollowStatus());
         }
+
+        if (fabAiRoadmap != null) {
+            fabAiRoadmap.setOnClickListener(v -> openAiRoadmapAssistant());
+        }
     }
 
     private void initViews() {
@@ -95,6 +107,7 @@ public class JobDetail extends AppCompatActivity {
         tvEducationDetail = findViewById(R.id.tvEducationDetail);
         tvJobDescriptionDetail = findViewById(R.id.tvJobDescriptionDetail);
         fabSaveRoadmap = findViewById(R.id.fabSaveRoadmap);
+        fabAiRoadmap = findViewById(R.id.fabAiRoadmap);
         
         layoutBooks = findViewById(R.id.layoutBooks);
         layoutGames = findViewById(R.id.layoutGames);
@@ -105,6 +118,42 @@ public class JobDetail extends AppCompatActivity {
         rvRoadmap.setLayoutManager(new LinearLayoutManager(this));
         rvRoadmap.setNestedScrollingEnabled(false);
         rvRoadmap.setAdapter(roadmapAdapter);
+    }
+
+    private void updateAdapterContext() {
+        if (roadmapAdapter == null) return;
+        
+        jobDataMap.put("TenCongViec", tvJobTitleDetail.getText().toString());
+        jobDataMap.put("MoTa", tvJobDescriptionDetail.getText().toString());
+        jobDataMap.put("YeuCauDaoTao", tvEducationDetail.getText().toString());
+        
+        Gson gson = new Gson();
+        String jobJson = gson.toJson(jobDataMap);
+        String stepsJson = gson.toJson(roadmapList);
+        
+        Map<String, Object> resources = new HashMap<>();
+        resources.put("books", booksList);
+        resources.put("games", gamesList);
+        String resJson = gson.toJson(resources);
+        
+        roadmapAdapter.setContextData(jobJson, stepsJson, resJson);
+    }
+
+    private void openAiRoadmapAssistant() {
+        updateAdapterContext(); // Đảm bảo dữ liệu mới nhất
+        Intent intent = new Intent(this, ChatBotActivity.class);
+        intent.putExtra("isRoadmapMode", true);
+        
+        Gson gson = new Gson();
+        intent.putExtra("jobDetailJson", gson.toJson(jobDataMap));
+        intent.putExtra("roadmapStepsJson", gson.toJson(roadmapList));
+        
+        Map<String, Object> resources = new HashMap<>();
+        resources.put("books", booksList);
+        resources.put("games", gamesList);
+        intent.putExtra("resourcesJson", gson.toJson(resources));
+        
+        startActivity(intent);
     }
 
     private void resolveJobCodeAndLoadData() {
@@ -226,7 +275,10 @@ public class JobDetail extends AppCompatActivity {
 
     private void sortAndRefreshRoadmap() {
         Collections.sort(roadmapList, (s1, s2) -> Integer.compare(s1.getBuocSo(), s2.getBuocSo()));
-        runOnUiThread(() -> roadmapAdapter.notifyDataSetChanged());
+        runOnUiThread(() -> {
+            roadmapAdapter.notifyDataSetChanged();
+            updateAdapterContext();
+        });
     }
 
     private void loadJobDetailsFromFirestore() {
@@ -248,6 +300,7 @@ public class JobDetail extends AppCompatActivity {
                             db.collection("Nganh").document(industryId).get()
                                     .addOnSuccessListener(d -> { if (d.exists()) tvJobCategory.setText(d.getString("TenNganh")); });
                         }
+                        updateAdapterContext();
                     }
                 });
     }
@@ -296,21 +349,27 @@ public class JobDetail extends AppCompatActivity {
 
     private void loadBooksFromFirestore() {
         layoutBooks.removeAllViews();
+        booksList.clear();
         db.collection("Sach").whereEqualTo("MaCongViec", jobCode).get().addOnSuccessListener(snaps -> {
             for (QueryDocumentSnapshot doc : snaps) {
+                booksList.add(doc.getData());
                 addResourceItem(layoutBooks, doc.getString("TenSach"), doc.getString("DuongDan"), doc.getString("HinhAnh"), R.drawable.information, 65, 95, 6);
             }
             if (snaps.isEmpty()) addEmptyMessage(layoutBooks, "Chưa có sách gợi ý");
+            updateAdapterContext();
         });
     }
 
     private void loadGamesFromFirestore() {
         layoutGames.removeAllViews();
+        gamesList.clear();
         db.collection("TroChoi").whereEqualTo("MaCongViec", jobCode).get().addOnSuccessListener(snaps -> {
             for (QueryDocumentSnapshot doc : snaps) {
+                gamesList.add(doc.getData());
                 addResourceItem(layoutGames, doc.getString("TenTroChoi"), doc.getString("DuongDan"), doc.getString("Icon"), R.drawable.orientation, 60, 60, 12);
             }
             if (snaps.isEmpty()) addEmptyMessage(layoutGames, "Chưa có trò chơi mô phỏng");
+            updateAdapterContext();
         });
     }
 

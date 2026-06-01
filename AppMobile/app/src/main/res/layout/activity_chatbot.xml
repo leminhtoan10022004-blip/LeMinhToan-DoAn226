@@ -23,8 +23,21 @@
         android:layout_height="0dp"
         android:padding="8dp"
         android:clipToPadding="false"
-        app:layout_constraintBottom_toTopOf="@+id/layoutInput"
+        app:layout_constraintBottom_toTopOf="@+id/rvSuggestions"
         app:layout_constraintTop_toBottomOf="@+id/toolbarChat" />
+
+    <!-- Thêm RecyclerView cho các câu hỏi gợi ý -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSuggestions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="4dp"
+        android:background="#F5F5F5"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/layoutInput"
+        tools:listitem="@android:layout/simple_list_item_1" />
 
     <LinearLayout
         android:id="@+id/layoutInput"

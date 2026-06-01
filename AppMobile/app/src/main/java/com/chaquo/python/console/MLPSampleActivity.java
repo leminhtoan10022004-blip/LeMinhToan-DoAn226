@@ -1,9 +1,12 @@
 package com.chaquo.python.console;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -12,6 +15,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.chaquo.python.PyObject;
 import com.chaquo.python.Python;
 import com.chaquo.python.android.AndroidPlatform;
+import com.google.firebase.Timestamp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.UUID;
 
 public class MLPSampleActivity extends AppCompatActivity {
 
@@ -20,6 +33,10 @@ public class MLPSampleActivity extends AppCompatActivity {
     private EditText etToan, etLy, etHoa, etSinh, etVan, etAnh, etTin, etDia, etSu;
     private Button btnPredict;
     private TextView tvResult;
+    private LinearLayout layoutLoading;
+    
+    private FirebaseFirestore db;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +46,9 @@ public class MLPSampleActivity extends AppCompatActivity {
         if (!Python.isStarted()) {
             Python.start(new AndroidPlatform(this));
         }
+
+        db = FirebaseFirestore.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
         initViews();
 
@@ -65,8 +85,9 @@ public class MLPSampleActivity extends AppCompatActivity {
         
         btnPredict = findViewById(R.id.btnPredict);
         tvResult = findViewById(R.id.tvResult);
+        layoutLoading = findViewById(R.id.layoutLoading);
 
-        // Giá trị mặc định để test nhanh
+        // Giá trị mặc định
         etMbti.setText("INTJ");
         etHolland.setText("R");
         etDisc.setText("D");
@@ -77,34 +98,101 @@ public class MLPSampleActivity extends AppCompatActivity {
     }
 
     private void performPrediction() {
+        // Hiện màn hình load ngay lập tức trên UI thread
+        layoutLoading.setVisibility(View.VISIBLE);
+        layoutLoading.bringToFront(); // Đưa lên trên cùng
+        btnPredict.setEnabled(false);
+
         Python py = Python.getInstance();
         PyObject pyModule = py.getModule("career_mlp");
-        pyModule.callAttr("init_model");
 
-        String mbti = etMbti.getText().toString();
-        String holland = etHolland.getText().toString();
-        String disc = etDisc.getText().toString();
+        new Thread(() -> {
+            try {
+                pyModule.callAttr("init_model");
+
+                // Lấy dữ liệu từ UI
+                String mbti = etMbti.getText().toString();
+                String holland = etHolland.getText().toString();
+                String disc = etDisc.getText().toString();
+                
+                float o = Float.parseFloat(etO.getText().toString());
+                float c = Float.parseFloat(etC.getText().toString());
+                float e = Float.parseFloat(etE.getText().toString());
+                float a = Float.parseFloat(etA.getText().toString());
+                float n = Float.parseFloat(etN.getText().toString());
+                
+                float toan = Float.parseFloat(etToan.getText().toString());
+                float ly = Float.parseFloat(etLy.getText().toString());
+                float hoa = Float.parseFloat(etHoa.getText().toString());
+                float sinh = Float.parseFloat(etSinh.getText().toString());
+                float van = Float.parseFloat(etVan.getText().toString());
+                float anh = Float.parseFloat(etAnh.getText().toString());
+                float tin = Float.parseFloat(etTin.getText().toString());
+                float dia = Float.parseFloat(etDia.getText().toString());
+                float su = Float.parseFloat(etSu.getText().toString());
+
+                // AI xử lý
+                PyObject top5Results = pyModule.callAttr("predict_career_top_5", 
+                        mbti, holland, o, c, e, a, n, disc,
+                        toan, ly, hoa, sinh, van, anh, tin, dia, su);
+
+                List<PyObject> resultList = top5Results.asList();
+                
+                // Chuẩn bị kết quả
+                Map<String, Integer> careerProbabilities = new HashMap<>();
+                StringBuilder sb = new StringBuilder();
+                sb.append("GỢI Ý TOP 5 NGHỀ NGHIỆP PHÙ HỢP:\n\n");
+
+                for (int i = 0; i < resultList.size(); i++) {
+                    PyObject item = resultList.get(i);
+                    String career = item.get("career").toString();
+                    double prob = item.get("probability").toDouble();
+                    careerProbabilities.put(career, (int)prob);
+                    sb.append(String.format(Locale.getDefault(), "%d. %s: %.1f%%\n", (i + 1), career, prob));
+                }
+
+                String finalResultText = sb.toString();
+                String topCareer = resultList.get(0).get("career").toString();
+
+                // Lưu vào Firebase
+                saveResultToFirebase(topCareer, careerProbabilities, mbti, holland, disc);
+
+                runOnUiThread(() -> {
+                    tvResult.setText(finalResultText);
+                    layoutLoading.setVisibility(View.GONE);
+                    btnPredict.setEnabled(true);
+                });
+
+            } catch (Exception ex) {
+                runOnUiThread(() -> {
+                    tvResult.setText("Lỗi: " + ex.getMessage());
+                    layoutLoading.setVisibility(View.GONE);
+                    btnPredict.setEnabled(true);
+                });
+            }
+        }).start();
+    }
+
+    private void saveResultToFirebase(String topCareer, Map<String, Integer> probabilities, String mbti, String holland, String disc) {
+        if (mAuth.getCurrentUser() == null) return;
         
-        float o = Float.parseFloat(etO.getText().toString());
-        float c = Float.parseFloat(etC.getText().toString());
-        float e = Float.parseFloat(etE.getText().toString());
-        float a = Float.parseFloat(etA.getText().toString());
-        float n = Float.parseFloat(etN.getText().toString());
+        String userId = mAuth.getCurrentUser().getUid();
+        String resultId = UUID.randomUUID().toString();
         
-        float toan = Float.parseFloat(etToan.getText().toString());
-        float ly = Float.parseFloat(etLy.getText().toString());
-        float hoa = Float.parseFloat(etHoa.getText().toString());
-        float sinh = Float.parseFloat(etSinh.getText().toString());
-        float van = Float.parseFloat(etVan.getText().toString());
-        float anh = Float.parseFloat(etAnh.getText().toString());
-        float tin = Float.parseFloat(etTin.getText().toString());
-        float dia = Float.parseFloat(etDia.getText().toString());
-        float su = Float.parseFloat(etSu.getText().toString());
+        Map<String, Object> resultData = new HashMap<>();
+        resultData.put("MaKetQua", resultId);
+        resultData.put("MaNguoiDung", userId);
+        resultData.put("MaTest", "MLP_AI_ANALYSIS");
+        resultData.put("MaNganhPhuHop", topCareer);
+        resultData.put("NgayThucHien", Timestamp.now());
+        resultData.put("KetQuaChiTiet", probabilities);
+        
+        Map<String, String> inputs = new HashMap<>();
+        inputs.put("MBTI", mbti);
+        inputs.put("Holland", holland);
+        inputs.put("DISC", disc);
+        resultData.put("DuLieuDauVao", inputs);
 
-        PyObject result = pyModule.callAttr("predict_career", 
-                mbti, holland, o, c, e, a, n, disc,
-                toan, ly, hoa, sinh, van, anh, tin, dia, su);
-
-        tvResult.setText("Kết quả dự đoán:\n" + result.toString());
+        db.collection("KetQuaPhanTich").document(resultId).set(resultData);
     }
 }

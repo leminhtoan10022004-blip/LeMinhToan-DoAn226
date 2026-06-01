@@ -1,196 +1,240 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#2C2E43"
-    tools:context=".QuestionBank">
+    android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:id="@+id/headerLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="24dp"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/btnBack"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_marginBottom="16dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:clickable="true"
-                android:focusable="true"
-                android:src="@drawable/ic_back"
-                app:tint="@color/white" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ngân hàng câu hỏi"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Khám phá bản thân qua các bài trắc nghiệm chuẩn quốc tế"
-                android:textColor="#CCCCCC"
-                android:textSize="14sp" />
-        </LinearLayout>
+        android:layout_height="match_parent"
+        android:background="#2C2E43"
+        tools:context=".QuestionBank">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/bg_content_rounded"
-            android:padding="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/headerLayout">
+            android:layout_height="wrap_content">
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardAI"
+            <LinearLayout
+                android:id="@+id/headerLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="4dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:strokeColor="#E0E0E0"
-                app:strokeWidth="1dp">
+                android:orientation="vertical"
+                android:padding="24dp"
+                app:layout_constraintTop_toTopOf="parent">
 
-                <FrameLayout
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/ic_back"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ngân hàng câu hỏi"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Khám phá bản thân qua các bài trắc nghiệm chuẩn quốc tế"
+                    android:textColor="#CCCCCC"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_content_rounded"
+                android:padding="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/headerLayout">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardAI"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:strokeColor="#E0E0E0"
+                    app:strokeWidth="1dp">
 
-                    <LinearLayout
-                        android:id="@+id/layoutAIContent"
+                    <FrameLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="#F8F9FA"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="✨ Dự đoán nghề nghiệp AI (MLP)"
-                            android:textColor="#2C2E43"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="Kết hợp kết quả test và điểm học tập để AI tư vấn ngành nghề phù hợp nhất với bạn."
-                            android:textColor="#666666"
-                            android:textSize="13sp" />
+                        android:layout_height="wrap_content">
 
                         <LinearLayout
+                            android:id="@+id/layoutAIContent"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:orientation="horizontal">
+                            android:background="#F8F9FA"
+                            android:orientation="vertical"
+                            android:padding="16dp">
 
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/btnUploadTranscript"
-                                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                                android:layout_width="0dp"
+                            <TextView
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:layout_marginEnd="8dp"
-                                android:text="Tải bảng điểm"
-                                android:textSize="12sp"
-                                app:icon="@android:drawable/ic_menu_camera"
-                                app:cornerRadius="8dp"/>
+                                android:text="✨ Dự đoán nghề nghiệp AI (MLP)"
+                                android:textColor="#2C2E43"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
 
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/btnStartAIAnalysis"
-                                android:layout_width="0dp"
+                            <TextView
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Phân tích ngay"
-                                android:textSize="12sp"
-                                app:backgroundTint="#2C2E43"
-                                app:cornerRadius="8dp"/>
+                                android:layout_marginTop="4dp"
+                                android:text="Kết hợp kết quả test và điểm học tập để AI tư vấn ngành nghề phù hợp nhất với bạn."
+                                android:textColor="#666666"
+                                android:textSize="13sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:orientation="horizontal">
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btnUploadTranscript"
+                                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_marginEnd="8dp"
+                                    android:text="Tải bảng điểm"
+                                    android:textSize="12sp"
+                                    app:icon="@android:drawable/ic_menu_camera"
+                                    app:cornerRadius="8dp"/>
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btnStartAIAnalysis"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Phân tích ngay"
+                                    android:textSize="12sp"
+                                    app:backgroundTint="#2C2E43"
+                                    app:cornerRadius="8dp"/>
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tvOcrStatus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Chưa có dữ liệu bảng điểm"
+                                android:textColor="#FF9800"
+                                android:textSize="11sp"
+                                android:textStyle="italic" />
                         </LinearLayout>
 
-                        <TextView
-                            android:id="@+id/tvOcrStatus"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="Chưa có dữ liệu bảng điểm"
-                            android:textColor="#FF9800"
-                            android:textSize="11sp"
-                            android:textStyle="italic" />
-                    </LinearLayout>
+                        <!-- Lock Overlay -->
+                        <LinearLayout
+                            android:id="@+id/layoutLockOverlay"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#E6F8F9FA"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:visibility="gone">
 
-                    <!-- Lock Overlay -->
-                    <LinearLayout
-                        android:id="@+id/layoutLockOverlay"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="#E6F8F9FA"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:visibility="gone">
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@android:drawable/ic_lock_idle_lock"
+                                app:tint="#2C2E43" />
 
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@android:drawable/ic_lock_idle_lock"
-                            app:tint="#2C2E43" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Hoàn thành các bài test để mở khóa"
+                                android:textColor="#2C2E43"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="Hoàn thành các bài test để mở khóa"
-                            android:textColor="#2C2E43"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
+                    </FrameLayout>
+                </com.google.android.material.card.MaterialCardView>
 
-                </FrameLayout>
-            </com.google.android.material.card.MaterialCardView>
+                <TextView
+                    android:id="@+id/tvQuizzesTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="Các bài trắc nghiệm chính"
+                    android:textColor="#333333"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cardAI" />
 
-            <TextView
-                android:id="@+id/tvQuizzesTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="Các bài trắc nghiệm chính"
-                android:textColor="#333333"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cardAI" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvQuizzes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@id/tvQuizzesTitle"
+                    app:spanCount="2"
+                    tools:itemCount="4"
+                    tools:listitem="@layout/item_quiz" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvQuizzes"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:nestedScrollingEnabled="false"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:layout_constraintTop_toBottomOf="@id/tvQuizzesTitle"
-                app:spanCount="2"
-                tools:itemCount="4"
-                tools:listitem="@layout/item_quiz" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+    <!-- Màn hình chờ AI Loading -->
+    <LinearLayout
+        android:id="@+id/layoutLoading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CC000000"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ProgressBar
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:indeterminateTint="#4CAF50" />
+
+        <TextView
+            android:id="@+id/tvLoadingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="AI ĐANG PHÂN TÍCH..."
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Hệ thống đang nạp mô hình MLP và đối chiếu dữ liệu"
+            android:textColor="#CCCCCC"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:paddingHorizontal="40dp" />
+    </LinearLayout>
+
+</FrameLayout>

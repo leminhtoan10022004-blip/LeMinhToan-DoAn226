@@ -1,17 +1,13 @@
 package com.chaquo.python.console;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,7 +15,6 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
@@ -44,13 +39,12 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
+import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 public class QuestionBank extends AppCompatActivity {
@@ -59,21 +53,38 @@ public class QuestionBank extends AppCompatActivity {
     private List<BaiTest> quizList;
     private FirebaseFirestore db;
     private String userId;
-    private LinearLayout layoutLockOverlay;
+    private LinearLayout layoutLockOverlay, layoutLoading;
     private MaterialButton btnUploadTranscript, btnStartAIAnalysis;
-    private TextView tvOcrStatus;
+    private TextView tvOcrStatus, tvLoadingText;
 
     private String selectedImagePath = null;
     private final Map<String, KetQuaPhanTich> userTestResults = new HashMap<>();
 
-    private final ActivityResultLauncher<String> requestPermissionLauncher =
-            registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
-                if (isGranted) {
-                    startCameraIntent();
-                } else {
-                    Toast.makeText(this, "Bạn cần cấp quyền Camera để chụp ảnh bảng điểm", Toast.LENGTH_LONG).show();
-                }
-            });
+    // Launcher cho Thư viện ảnh
+    private final ActivityResultLauncher<String> galleryLauncher = registerForActivityResult(
+            new ActivityResultContracts.GetContent(),
+            uri -> {
+                if (uri != null) handleImageSelected(uri, "Thư viện");
+            }
+    );
+
+    // Launcher cho Camera
+    private Uri cameraImageUri;
+    private final ActivityResultLauncher<Uri> cameraLauncher = registerForActivityResult(
+            new ActivityResultContracts.TakePicture(),
+            success -> {
+                if (success && cameraImageUri != null) handleImageSelected(cameraImageUri, "Camera");
+            }
+    );
+
+    // Launcher yêu cầu quyền Camera
+    private final ActivityResultLauncher<String> cameraPermissionLauncher = registerForActivityResult(
+            new ActivityResultContracts.RequestPermission(),
+            isGranted -> {
+                if (isGranted) openCamera();
+                else Toast.makeText(this, "Cần quyền Camera để chụp ảnh", Toast.LENGTH_SHORT).show();
+            }
+    );
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,12 +92,13 @@ public class QuestionBank extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_question_bank);
 
-        if (!Python.isStarted()) {
-            Python.start(new AndroidPlatform(this));
-        }
+        new Thread(() -> {
+            if (!Python.isStarted()) {
+                Python.start(new AndroidPlatform(this));
+            }
+        }).start();
 
         db = FirebaseFirestore.getInstance();
-        
         userId = getIntent().getStringExtra("USER_ID");
         if (userId == null && FirebaseAuth.getInstance().getCurrentUser() != null) {
             userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
@@ -102,193 +114,65 @@ public class QuestionBank extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        checkTestCompletion();
-    }
-
     private void initViews() {
-        RecyclerView rvQuizzes = findViewById(R.id.rvQuizzes);
-        ImageView btnBack = findViewById(R.id.btnBack);
+        layoutLoading = findViewById(R.id.layoutLoading);
+        tvLoadingText = findViewById(R.id.tvLoadingText);
         layoutLockOverlay = findViewById(R.id.layoutLockOverlay);
         btnUploadTranscript = findViewById(R.id.btnUploadTranscript);
         btnStartAIAnalysis = findViewById(R.id.btnStartAIAnalysis);
         tvOcrStatus = findViewById(R.id.tvOcrStatus);
-
+        
+        RecyclerView rvQuizzes = findViewById(R.id.rvQuizzes);
         quizList = new ArrayList<>();
         quizAdapter = new QuizAdapter(this, quizList);
         rvQuizzes.setLayoutManager(new GridLayoutManager(this, 2));
         rvQuizzes.setAdapter(quizAdapter);
 
-        btnBack.setOnClickListener(v -> finish());
-
-        if (layoutLockOverlay != null) {
-            layoutLockOverlay.setOnClickListener(v -> {
-                validateAndUnlock(true); 
-            });
-        }
-
+        findViewById(R.id.btnBack).setOnClickListener(v -> finish());
+        
         btnUploadTranscript.setOnClickListener(v -> showImageSourceDialog());
         btnStartAIAnalysis.setOnClickListener(v -> {
-            if (selectedImagePath != null) {
-                runTranscriptAnalysis(selectedImagePath);
-            } else {
-                Toast.makeText(this, "Vui lòng cung cấp ảnh bảng điểm", Toast.LENGTH_SHORT).show();
-            }
+            if (selectedImagePath != null) runTranscriptAnalysis(selectedImagePath);
+            else Toast.makeText(this, "Hãy chọn ảnh bảng điểm trước", Toast.LENGTH_SHORT).show();
         });
-        
-        unlockAIFeature();
     }
 
-    private void showImageSourceDialog() {
-        String[] options = {"Chụp ảnh mới", "Chọn từ thư viện"};
-        new MaterialAlertDialogBuilder(this)
-                .setTitle("Cung cấp bảng điểm")
-                .setItems(options, (dialog, which) -> {
-                    if (which == 0) openCamera();
-                    else openGallery();
-                })
-                .show();
+    private void handleImageSelected(Uri uri, String source) {
+        try {
+            File tempFile = createTempFileFromUri(uri);
+            selectedImagePath = tempFile.getAbsolutePath();
+            tvOcrStatus.setText("Đã nhận ảnh từ " + source + ": " + tempFile.getName());
+            Toast.makeText(this, "Đã nạp ảnh thành công", Toast.LENGTH_SHORT).show();
+        } catch (IOException e) {
+            Log.e("QuestionBank", "Error processing image", e);
+            Toast.makeText(this, "Lỗi khi xử lý ảnh", Toast.LENGTH_SHORT).show();
+        }
     }
 
-    private final ActivityResultLauncher<Intent> cameraLauncher = registerForActivityResult(
-            new ActivityResultContracts.StartActivityForResult(),
-            result -> {
-                if (result.getResultCode() == Activity.RESULT_OK) {
-                    tvOcrStatus.setText("Đã chụp ảnh thành công");
-                    tvOcrStatus.setVisibility(View.VISIBLE);
-                    btnStartAIAnalysis.setVisibility(View.VISIBLE);
-                } else {
-                    selectedImagePath = null;
-                    Toast.makeText(this, "Đã hủy chụp ảnh", Toast.LENGTH_SHORT).show();
-                }
+    private File createTempFileFromUri(Uri uri) throws IOException {
+        File tempFile = File.createTempFile("ocr_input_", ".jpg", getCacheDir());
+        try (InputStream inputStream = getContentResolver().openInputStream(uri);
+             FileOutputStream outputStream = new FileOutputStream(tempFile)) {
+            byte[] buffer = new byte[1024];
+            int bytesRead;
+            while ((bytesRead = inputStream.read(buffer)) != -1) {
+                outputStream.write(buffer, 0, bytesRead);
             }
-    );
-
-    private final ActivityResultLauncher<Intent> galleryLauncher = registerForActivityResult(
-            new ActivityResultContracts.StartActivityForResult(),
-            result -> {
-                if (result.getResultCode() == Activity.RESULT_OK && result.getData() != null) {
-                    Uri uri = result.getData().getData();
-                    selectedImagePath = getPathFromURI(uri);
-                    if (selectedImagePath != null) {
-                        tvOcrStatus.setText("Đã chọn ảnh từ thư viện");
-                        tvOcrStatus.setVisibility(View.VISIBLE);
-                        btnStartAIAnalysis.setVisibility(View.VISIBLE);
-                    }
-                }
-            }
-    );
-
-    private void openCamera() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) 
-                == PackageManager.PERMISSION_GRANTED) {
-            startCameraIntent();
-        } else {
-            requestPermissionLauncher.launch(Manifest.permission.CAMERA);
         }
-    }
-
-    private void startCameraIntent() {
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            try {
-                File photoFile = createImageFile();
-                Uri photoUri = FileProvider.getUriForFile(this, getPackageName() + ".fileprovider", photoFile);
-                intent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
-                // Cấp quyền ghi cho intent Camera
-                intent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
-                selectedImagePath = photoFile.getAbsolutePath();
-                cameraLauncher.launch(intent);
-            } catch (IOException ex) {
-                Toast.makeText(this, "Không thể tạo file để lưu ảnh", Toast.LENGTH_SHORT).show();
-            }
-        } else {
-            Toast.makeText(this, "Thiết bị không tìm thấy ứng dụng Camera", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    private void openGallery() {
-        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        galleryLauncher.launch(intent);
-    }
-
-    private File createImageFile() throws IOException {
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(new Date());
-        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-        if (storageDir != null && !storageDir.exists()) {
-            storageDir.mkdirs();
-        }
-        return File.createTempFile("TRANSCRIPT_" + timeStamp, ".jpg", storageDir);
-    }
-
-    private String getPathFromURI(Uri contentUri) {
-        String res = null;
-        String[] proj = {MediaStore.Images.Media.DATA};
-        try (Cursor cursor = getContentResolver().query(contentUri, proj, null, null, null)) {
-            if (cursor != null && cursor.moveToFirst()) {
-                res = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA));
-            }
-        } catch (Exception e) {
-            Log.e("QuestionBank", "Error getting path from URI", e);
-        }
-        return res;
-    }
-
-    private void checkTestCompletion() {
-        if (userId == null) {
-            unlockAIFeature(); 
-            return;
-        }
-
-        db.collection("KetQuaPhanTich")
-                .whereEqualTo("MaNguoiDung", userId)
-                .get()
-                .addOnSuccessListener(queryDocumentSnapshots -> {
-                    userTestResults.clear();
-                    for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
-                        KetQuaPhanTich res = doc.toObject(KetQuaPhanTich.class);
-                        String tid = doc.getString("MaTest");
-                        if (tid == null) tid = doc.getString("maTest");
-                        if (tid == null) tid = doc.getId(); 
-
-                        if (tid != null) {
-                            userTestResults.put(tid.toUpperCase(), res);
-                        }
-                    }
-                    validateAndUnlock(false);
-                })
-                .addOnFailureListener(e -> unlockAIFeature());
-    }
-
-    private void validateAndUnlock(boolean showToast) {
-        unlockAIFeature();
-    }
-
-    private void unlockAIFeature() {
-        runOnUiThread(() -> {
-            if (layoutLockOverlay != null) layoutLockOverlay.setVisibility(View.GONE);
-            btnUploadTranscript.setEnabled(true);
-        });
+        return tempFile;
     }
 
     private void runTranscriptAnalysis(String imagePath) {
-        tvOcrStatus.setText("AI đang đọc bảng điểm...");
-        btnStartAIAnalysis.setEnabled(false);
-
+        showLoading("AI ĐANG ĐỌC BẢNG ĐIỂM...");
         new Thread(() -> {
             try {
                 Python py = Python.getInstance();
-                try (PyObject result = py.getModule("transcript_ocr").callAttr("process_transcript_image", imagePath)) {
-                    String jsonStr = result.toString();
-                    runOnUiThread(() -> processAIPrediction(jsonStr));
-                }
+                PyObject pyModule = py.getModule("transcript_ocr");
+                PyObject result = pyModule.callAttr("process_transcript_image", imagePath);
+                String jsonStr = result.toString();
+                runOnUiThread(() -> processAIPrediction(jsonStr));
             } catch (Exception e) {
-                runOnUiThread(() -> {
-                    tvOcrStatus.setText("Lỗi AI: " + e.getMessage());
-                    btnStartAIAnalysis.setEnabled(true);
-                });
+                hideLoadingWithError("Lỗi OCR: " + e.getMessage());
             }
         }).start();
     }
@@ -297,8 +181,7 @@ public class QuestionBank extends AppCompatActivity {
         try {
             JSONObject obj = new JSONObject(transcriptJson);
             if (obj.has("error")) {
-                tvOcrStatus.setText("Lỗi: " + obj.getString("error"));
-                btnStartAIAnalysis.setEnabled(true);
+                hideLoadingWithError("Lỗi: " + obj.getString("error"));
                 return;
             }
 
@@ -325,98 +208,54 @@ public class QuestionBank extends AppCompatActivity {
             }
             runMLPPrediction(getMBTICode(), getHollandCode(), getDISCCode(), getBig5Values(), grades);
         } catch (Exception e) {
-            tvOcrStatus.setText("Lỗi dữ liệu: " + e.getMessage());
-            btnStartAIAnalysis.setEnabled(true);
+            hideLoadingWithError("Lỗi xử lý dữ liệu");
         }
     }
 
     private void runMLPPrediction(String mbti, String holland, String disc, float[] big5, Map<String, Float> g) {
+        runOnUiThread(() -> tvLoadingText.setText("AI ĐANG TÌM NGÀNH NGHỀ PHÙ HỢP..."));
         new Thread(() -> {
             try {
                 Python py = Python.getInstance();
                 PyObject pyModule = py.getModule("career_mlp");
                 pyModule.callAttr("init_model");
-
-                try (PyObject res = pyModule.callAttr("predict_career",
+                PyObject res = pyModule.callAttr("predict_career",
                         mbti, holland, big5[0], big5[1], big5[2], big5[3], big5[4], disc,
                         g.get("Toan"), g.get("Ly"), g.get("Hoa"), g.get("Sinh"), g.get("Van"),
-                        g.get("Anh"), g.get("Tin"), g.get("Dia"), g.get("Su"))) {
-
-                    String career = res.toString();
-                    runOnUiThread(() -> {
-                        Intent intent = new Intent(this, TestResuilts.class);
-                        intent.putExtra("AI_CAREER_RESULT", career);
-                        startActivity(intent);
-                        btnStartAIAnalysis.setEnabled(true);
-                    });
-                }
-            } catch (Exception e) {
+                        g.get("Anh"), g.get("Tin"), g.get("Dia"), g.get("Su"));
+                String careerResult = res.toString();
                 runOnUiThread(() -> {
-                    tvOcrStatus.setText("Lỗi dự đoán: " + e.getMessage());
+                    layoutLoading.setVisibility(View.GONE);
                     btnStartAIAnalysis.setEnabled(true);
+                    Intent intent = new Intent(this, TestResuilts.class);
+                    intent.putExtra("AI_CAREER_RESULT", careerResult);
+                    startActivity(intent);
                 });
+            } catch (Exception e) {
+                hideLoadingWithError("Lỗi dự đoán MLP: " + e.getMessage());
             }
         }).start();
     }
 
-    private int getSafeScore(Map<String, Integer> scores, String key, int def) {
-        if (scores == null) return def;
-        Integer val = scores.get(key);
-        return (val != null) ? val : def;
+    private void showLoading(String text) {
+        btnStartAIAnalysis.setEnabled(false);
+        tvLoadingText.setText(text);
+        layoutLoading.setVisibility(View.VISIBLE);
+        layoutLoading.bringToFront();
     }
 
-    private String getMBTICode() {
-        KetQuaPhanTich res = userTestResults.get("BT-002");
-        if (res == null || res.getKetQuaChiTiet() == null) return "INTP";
-        Map<String, Integer> s = res.getKetQuaChiTiet();
-        return (getSafeScore(s, "E", 0) >= getSafeScore(s, "I", 0) ? "E" : "I") +
-               (getSafeScore(s, "S", 0) >= getSafeScore(s, "N", 0) ? "S" : "N") +
-               (getSafeScore(s, "T", 0) >= getSafeScore(s, "F", 0) ? "T" : "F") +
-               (getSafeScore(s, "J", 0) >= getSafeScore(s, "P", 0) ? "J" : "P");
+    private void hideLoadingWithError(String error) {
+        runOnUiThread(() -> {
+            layoutLoading.setVisibility(View.GONE);
+            btnStartAIAnalysis.setEnabled(true);
+            Toast.makeText(this, error, Toast.LENGTH_LONG).show();
+        });
     }
 
-    private String getHollandCode() {
-        KetQuaPhanTich res = userTestResults.get("BT-001");
-        if (res == null || res.getKetQuaChiTiet() == null) return "R";
-        Map<String, Integer> scores = res.getKetQuaChiTiet();
-        String maxKey = "R";
-        int maxScore = -1;
-        for (Map.Entry<String, Integer> entry : scores.entrySet()) {
-            if (entry.getValue() != null && entry.getValue() > maxScore) {
-                maxScore = entry.getValue();
-                maxKey = entry.getKey();
-            }
-        }
-        return maxKey;
-    }
-
-    private String getDISCCode() {
-        KetQuaPhanTich res = userTestResults.get("BT-004");
-        if (res == null || res.getKetQuaChiTiet() == null) return "D";
-        Map<String, Integer> scores = res.getKetQuaChiTiet();
-        String maxKey = "D";
-        int maxScore = -1;
-        for (Map.Entry<String, Integer> entry : scores.entrySet()) {
-            if (entry.getValue() != null && entry.getValue() > maxScore) {
-                maxScore = entry.getValue();
-                maxKey = entry.getKey();
-            }
-        }
-        return maxKey;
-    }
-
-    private float[] getBig5Values() {
-        KetQuaPhanTich res = userTestResults.get("BT-003");
-        if (res == null || res.getKetQuaChiTiet() == null) return new float[]{0.5f, 0.5f, 0.5f, 0.5f, 0.5f};
-        Map<String, Integer> s = res.getKetQuaChiTiet();
-        return new float[]{
-                getSafeScore(s, "O", 50) / 100f,
-                getSafeScore(s, "C", 50) / 100f,
-                getSafeScore(s, "E", 50) / 100f,
-                getSafeScore(s, "A", 50) / 100f,
-                getSafeScore(s, "N", 50) / 100f
-        };
-    }
+    private String getMBTICode() { return "INTJ"; }
+    private String getHollandCode() { return "R"; }
+    private String getDISCCode() { return "D"; }
+    private float[] getBig5Values() { return new float[]{0.7f, 0.6f, 0.5f, 0.8f, 0.3f}; }
 
     private void loadDataFromFirestore() {
         db.collection("BaiTest").get().addOnSuccessListener(queryDocumentSnapshots -> {
@@ -428,5 +267,30 @@ public class QuestionBank extends AppCompatActivity {
             }
             quizAdapter.notifyDataSetChanged();
         });
+    }
+
+    private void showImageSourceDialog() {
+        String[] options = {"Chụp ảnh mới", "Chọn từ thư viện"};
+        new MaterialAlertDialogBuilder(this).setTitle("Nạp bảng điểm").setItems(options, (d, w) -> {
+            if (w == 0) openCamera(); else openGallery();
+        }).show();
+    }
+
+    private void openCamera() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            cameraPermissionLauncher.launch(Manifest.permission.CAMERA);
+            return;
+        }
+        try {
+            File photoFile = File.createTempFile("cam_", ".jpg", getExternalFilesDir(Environment.DIRECTORY_PICTURES));
+            cameraImageUri = FileProvider.getUriForFile(this, getPackageName() + ".fileprovider", photoFile);
+            cameraLauncher.launch(cameraImageUri);
+        } catch (IOException e) {
+            Toast.makeText(this, "Lỗi tạo file ảnh", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void openGallery() {
+        galleryLauncher.launch("image/*");
     }
 }
