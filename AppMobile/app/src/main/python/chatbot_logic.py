@@ -34,7 +34,6 @@ def call_gemini_api(contents, system_instruction):
     }
 
     try:
-        print(f"Calling Gemini API with model: {model_name}")
         response = requests.post(url, headers=headers, json=payload, timeout=30)
         if response.status_code == 200:
             result = response.json()
@@ -64,10 +63,7 @@ def get_bot_response(user_input, user_data_json, chat_history_json):
         return f"Lỗi: {str(e)}"
 
 def get_roadmap_advice(user_input, job_detail_json, roadmap_steps_json, resources_json, user_data_json):
-    """
-    Tư vấn lộ trình chuyên sâu. 
-    BẮT BUỘC: AI phải tạo 3 câu hỏi tìm hiểu đặt trong dấu ngoặc vuông [...] ở cuối.
-    """
+    """Tư vấn lộ trình chuyên sâu"""
     try:
         job = json.loads(job_detail_json)
         steps = json.loads(roadmap_steps_json)
@@ -82,18 +78,8 @@ def get_roadmap_advice(user_input, job_detail_json, roadmap_steps_json, resource
             f"Bạn là chuyên gia 'Cố vấn Lộ trình AI' cho nghề {job_name}. "
             f"DỮ LIỆU NGÀNH: {job_desc}. "
             f"LỘ TRÌNH CHI TIẾT: {json.dumps(steps, ensure_ascii=False)}. "
-            f"TÀI NGUYÊN (Sách/Game): {json.dumps(resources, ensure_ascii=False)}. "
-            "\nNHIỆM VỤ CỦA BẠN:\n"
-            f"1. Nếu là lần đầu hoặc người dùng hỏi 'là gì', hãy dùng 'DỮ LIỆU NGÀNH' để giải thích thật hay {job_name} là làm những gì, bản chất là gì.\n"
-            "2. Gợi ý các bước học tập và sách/game tương ứng.\n"
-            "3. BẮT BUỘC - GỢI Ý CÂU HỎI: Cuối mỗi câu trả lời, bạn PHẢI luôn đưa ra đúng 3 câu hỏi gợi ý để người dùng nhấn vào.\n"
-            "Định dạng mỗi câu hỏi PHẢI đặt trong cặp ngoặc vuông [...].\n"
-            "Ví dụ:\n"
-            "🔍 **Gợi ý cho bạn:**\n"
-            f"* [Tìm hiểu {job_name} là gì?]\n"
-            f"* [Lộ trình học {job_name} chi tiết?]\n"
-            "* [Nên đọc sách gì để bắt đầu?]\n"
-            "4. Giọng văn: Thông thái, thực tế. Sử dụng Markdown."
+            f"TÀI NGUYÊN: {json.dumps(resources, ensure_ascii=False)}. "
+            "\nNHIỆM VỤ: Tư vấn lộ trình học tập và đưa ra 3 câu hỏi gợi ý trong ngoặc vuông [...]."
         )
 
         query = user_input if user_input.strip() else f"Chào tôi và giới thiệu tổng quan về nghề {job_name}."
@@ -101,3 +87,22 @@ def get_roadmap_advice(user_input, job_detail_json, roadmap_steps_json, resource
         return call_gemini_api(contents, system_instruction)
     except Exception as e:
         return f"Lỗi AI Roadmap: {str(e)}"
+
+def get_trend_prediction(trend_data_json, news_data_json):
+    """Phân tích xu hướng nghề nghiệp"""
+    try:
+        system_instruction = (
+            "Bạn là chuyên gia phân tích thị trường lao động. Hãy dựa trên dữ liệu xu hướng "
+            "và tin tức được cung cấp để đưa ra dự báo về các ngành nghề triển vọng nhất hiện nay. "
+            "Dùng Markdown để trình bày đẹp mắt."
+        )
+
+        user_prompt = (
+            f"DỮ LIỆU XU HƯỚNG: {trend_data_json}\n\n"
+            f"TIN TỨC THỊ TRƯỜNG: {news_data_json}"
+        )
+
+        contents = [{"role": "user", "parts": [{"text": user_prompt}]}]
+        return call_gemini_api(contents, system_instruction)
+    except Exception as e:
+        return f"Lỗi AI Trend: {str(e)}"

@@ -78,13 +78,29 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="16dp">
-                    <TextView
-                        android:layout_width="wrap_content"
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Bảng điểm học tập"
-                        android:textStyle="bold"
-                        android:textColor="#333"
-                        android:layout_marginBottom="12dp" />
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Bảng điểm học tập"
+                            android:textStyle="bold"
+                            android:textColor="#333" />
+                        <Button
+                            android:id="@+id/btnUploadTranscript"
+                            style="@style/Widget.MaterialComponents.Button.TextButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Nạp ảnh"
+                            app:icon="@android:drawable/ic_menu_camera" />
+                    </LinearLayout>
+
                     <GridLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:columnCount="3" android:alignmentMode="alignMargins">
                         <EditText android:id="@+id/etToan" android:layout_width="80dp" android:hint="Toán" android:inputType="numberDecimal" android:gravity="center"/>
                         <EditText android:id="@+id/etLy" android:layout_width="80dp" android:hint="Lý" android:inputType="numberDecimal" android:gravity="center"/>
@@ -141,7 +157,7 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- Overlay Loading (Luôn trên cùng) -->
+    <!-- Overlay Loading -->
     <LinearLayout
         android:id="@+id/layoutLoading"
         android:layout_width="match_parent"
@@ -160,6 +176,7 @@
             android:indeterminateTint="#4CAF50" />
 
         <TextView
+            android:id="@+id/tvLoadingText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -167,16 +184,6 @@
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Hệ thống đang đối chiếu dữ liệu với mô hình MLP"
-            android:textColor="#CCCCCC"
-            android:textSize="14sp"
-            android:gravity="center"
-            android:paddingHorizontal="40dp" />
     </LinearLayout>
 
 </FrameLayout>

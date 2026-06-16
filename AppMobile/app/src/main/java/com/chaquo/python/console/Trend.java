@@ -1,32 +1,26 @@
 package com.chaquo.python.console;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.ImageButton;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
 import androidx.core.text.HtmlCompat;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.chaquo.python.PyObject;
 import com.chaquo.python.Python;
 import com.chaquo.python.android.AndroidPlatform;
 import com.chaquo.python.model.BanTin;
+import com.google.android.material.card.MaterialCardView;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.gson.Gson;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Executor;
@@ -34,183 +28,132 @@ import java.util.concurrent.Executors;
 
 public class Trend extends AppCompatActivity {
 
-    private RecyclerView rvTrendingCategories, rvTrendingSkills, rvLatestNews;
-    private TrendAdapter trendAdapter;
-    private SkillAdapter skillAdapter;
+    private RecyclerView rvTrend, rvNews, rvSkills;
     private NewsAdapter newsAdapter;
+    private SkillAdapter skillAdapter;
     private List<Map<String, Object>> trendList;
-    private List<Map<String, Object>> skillList;
     private List<BanTin> newsList;
+    private List<Map<String, Object>> skillList;
     private FirebaseFirestore db;
-    private ImageButton btnBackTrend;
     private TextView tvAiForecast;
-
-    private int pendingNganhDetails = 0;
-    private boolean isNewsLoaded = false;
-
+    private MaterialCardView cardAiForecast;
     private final Executor executor = Executors.newSingleThreadExecutor();
+    private String lastAiResponse = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_trend);
-        
+
         db = FirebaseFirestore.getInstance();
-        
-        if (!Python.isStarted()) {
-            Python.start(new AndroidPlatform(this));
-        }
-
         initViews();
-        loadTrendingData();
-        loadTrendingSkills();
-        loadLatestNews();
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        loadData();
     }
 
     private void initViews() {
-        btnBackTrend = findViewById(R.id.btnBackTrend);
-        if (btnBackTrend != null) {
-            btnBackTrend.setOnClickListener(v -> finish());
-        }
+        View btnBack = findViewById(R.id.btnBackTrend);
+        btnBack.setOnClickListener(v -> finish());
 
-        tvAiForecast = findViewById(R.id.tvAiForecast);
-
-        rvTrendingCategories = findViewById(R.id.rvTrendingCategories);
+        // Ngành nghề bùng nổ
+        rvTrend = findViewById(R.id.rvTrendingCategories);
+        rvTrend.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         trendList = new ArrayList<>();
-        trendAdapter = new TrendAdapter(trendList);
-        rvTrendingCategories.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-        rvTrendingCategories.setAdapter(trendAdapter);
 
-        rvLatestNews = findViewById(R.id.rvLatestNews);
+        // Bản tin thị trường - CHUYỂN VỀ HÀNG NGANG
+        rvNews = findViewById(R.id.rvLatestNews);
+        rvNews.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         newsList = new ArrayList<>();
         newsAdapter = new NewsAdapter(newsList);
-        rvLatestNews.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-        rvLatestNews.setAdapter(newsAdapter);
+        rvNews.setAdapter(newsAdapter);
 
-        rvTrendingSkills = findViewById(R.id.rvTrendingSkills);
+        // Kỹ năng được săn đón - Lưới 2 cột
+        rvSkills = findViewById(R.id.rvTrendingSkills);
+        rvSkills.setLayoutManager(new GridLayoutManager(this, 2));
         skillList = new ArrayList<>();
         skillAdapter = new SkillAdapter(skillList);
-        rvTrendingSkills.setLayoutManager(new GridLayoutManager(this, 2));
-        rvTrendingSkills.setAdapter(skillAdapter);
+        rvSkills.setAdapter(skillAdapter);
+
+        tvAiForecast = findViewById(R.id.tvAiForecast);
+        cardAiForecast = findViewById(R.id.cardAiForecast);
+
+        // KHI NHẤN VÀO KHUNG AI DỰ BÁO -> MỞ CHAT
+        cardAiForecast.setOnClickListener(v -> {
+            if (!lastAiResponse.isEmpty() && !lastAiResponse.startsWith("Đang") && !lastAiResponse.startsWith("Lỗi")) {
+                Intent intent = new Intent(Trend.this, ChatBotActivity.class);
+                intent.putExtra("PRESET_MESSAGE", "Hãy giải thích chi tiết hơn về dự báo xu hướng này giúp tôi: " + lastAiResponse);
+                startActivity(intent);
+            }
+        });
     }
 
-    private void loadTrendingData() {
+    private void loadData() {
+        // Load xu hướng từ collection "XuHuong"
         db.collection("XuHuong")
+                .orderBy("SlgTuyen", Query.Direction.DESCENDING)
+                .limit(5)
                 .get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
                     trendList.clear();
-                    pendingNganhDetails = queryDocumentSnapshots.size();
-                    
-                    if (pendingNganhDetails == 0) {
-                        checkAndRunAi();
-                        return;
+                    for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
+                        trendList.add(doc.getData());
                     }
-
-                    for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
-                        Map<String, Object> xuHuong = document.getData();
-                        String maNganh = (String) xuHuong.get("MaNganh");
-                        if (maNganh != null) {
-                            fetchNganhDetails(maNganh, xuHuong);
-                        } else {
-                            pendingNganhDetails--;
-                        }
-                    }
-                    if (pendingNganhDetails == 0) checkAndRunAi();
+                    runAiPrediction();
                 })
-                .addOnFailureListener(e -> {
-                    Log.e("TrendData", "Error: " + e.getMessage());
-                    Toast.makeText(this, "Lỗi tải xu hướng", Toast.LENGTH_SHORT).show();
-                });
-    }
+                .addOnFailureListener(e -> Log.e("Trend", "Lỗi tải XuHuong: " + e.getMessage()));
 
-    private void fetchNganhDetails(String maNganh, Map<String, Object> xuHuong) {
-        db.collection("Nganh").document(maNganh).get()
-                .addOnSuccessListener(documentSnapshot -> {
-                    if (documentSnapshot.exists()) {
-                        Map<String, Object> finalData = new HashMap<>(xuHuong);
-                        finalData.put("TenNganh", documentSnapshot.getString("TenNganh"));
-                        trendList.add(finalData);
-                        trendAdapter.notifyDataSetChanged();
+        // Load tin tức từ collection "BanTin"
+        db.collection("BanTin")
+                .orderBy("NgayDang", Query.Direction.DESCENDING)
+                .limit(10)
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    newsList.clear();
+                    for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
+                        newsList.add(doc.toObject(BanTin.class));
                     }
-                    pendingNganhDetails--;
-                    if (pendingNganhDetails <= 0) checkAndRunAi();
+                    newsAdapter.notifyDataSetChanged();
+                    runAiPrediction();
                 })
-                .addOnFailureListener(e -> {
-                    pendingNganhDetails--;
-                    if (pendingNganhDetails <= 0) checkAndRunAi();
-                });
-    }
+                .addOnFailureListener(e -> Log.e("Trend", "Lỗi tải BanTin: " + e.getMessage()));
 
-    private void loadTrendingSkills() {
+        // Load kỹ năng từ collection "KyNang" (Bổ sung phần này)
         db.collection("KyNang")
                 .limit(6)
                 .get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
                     skillList.clear();
-                    for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
-                        skillList.add(document.getData());
+                    for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
+                        skillList.add(doc.getData());
                     }
                     skillAdapter.notifyDataSetChanged();
-                });
-    }
-
-    private void loadLatestNews() {
-        db.collection("BanTin")
-                .orderBy("NgayDang", Query.Direction.DESCENDING)
-                .limit(5)
-                .get()
-                .addOnSuccessListener(queryDocumentSnapshots -> {
-                    newsList.clear();
-                    for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
-                        BanTin news = document.toObject(BanTin.class);
-                        newsList.add(news);
-                    }
-                    newsAdapter.notifyDataSetChanged();
-                    isNewsLoaded = true;
-                    checkAndRunAi();
                 })
-                .addOnFailureListener(e -> {
-                    isNewsLoaded = true; // Vẫn đánh dấu xong để AI có thể chạy với dữ liệu xu hướng
-                    checkAndRunAi();
-                });
-    }
-
-    private void checkAndRunAi() {
-        if (pendingNganhDetails <= 0 && isNewsLoaded) {
-            runAiPrediction();
-        }
+                .addOnFailureListener(e -> Log.e("Trend", "Lỗi tải KyNang: " + e.getMessage()));
     }
 
     private void runAiPrediction() {
-        if (trendList.isEmpty()) {
-            runOnUiThread(() -> tvAiForecast.setText("Không có đủ dữ liệu xu hướng để phân tích."));
-            return;
-        }
+        if (trendList.isEmpty() || newsList.isEmpty()) return;
 
+        tvAiForecast.setText("AI đang phân tích thị trường...");
         executor.execute(() -> {
             try {
+                if (!Python.isStarted()) Python.start(new AndroidPlatform(this));
+                
                 String trendJson = new Gson().toJson(trendList);
                 String newsJson = new Gson().toJson(newsList);
 
                 Python py = Python.getInstance();
                 PyObject pyModule = py.getModule("chatbot_logic");
-                String aiResponse = pyModule.callAttr("get_trend_prediction", trendJson, newsJson).toString();
+                
+                // GỌI HÀM GEMINI 2.5 FLASH
+                final String aiResponse = pyModule.callAttr("get_trend_prediction", trendJson, newsJson).toString();
+                lastAiResponse = aiResponse;
 
                 runOnUiThread(() -> {
                     String formatted = aiResponse.replaceAll("\\*\\*(.*?)\\*\\*", "<b>$1</b>")
-                            .replaceAll("(?m)^\\s*\\*\\s+", "• ")
                             .replace("\n", "<br>");
                     tvAiForecast.setText(HtmlCompat.fromHtml(formatted, HtmlCompat.FROM_HTML_MODE_LEGACY));
                 });
             } catch (Exception e) {
-                Log.e("TrendAI", "Prediction Error: " + e.getMessage());
                 runOnUiThread(() -> tvAiForecast.setText("Lỗi AI: " + e.getMessage()));
             }
         });

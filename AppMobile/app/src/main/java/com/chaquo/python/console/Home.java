@@ -55,20 +55,30 @@ public class Home extends AppCompatActivity {
 
         userId = getIntent().getStringExtra("USER_ID");
 
+        // Nhấn nút bắt đầu ngay -> QuestionBank
         tvStartAction.setOnClickListener(v -> {
             Intent intent = new Intent(Home.this, QuestionBank.class);
             intent.putExtra("USER_ID", userId);
             startActivity(intent);
         });
 
-        View.OnClickListener toTrendListener = v -> {
-            Intent intent = new Intent(Home.this, Trend.class);
-            intent.putExtra("USER_ID", userId);
-            startActivity(intent);
-        };
+        // Nhấn Định hướng -> Dẫn đến danh sách bài test (QuestionBank)
+        if (btnOrientation != null) {
+            btnOrientation.setOnClickListener(v -> {
+                Intent intent = new Intent(Home.this, QuestionBank.class);
+                intent.putExtra("USER_ID", userId);
+                startActivity(intent);
+            });
+        }
 
-        if (btnOrientation != null) btnOrientation.setOnClickListener(toTrendListener);
-        if (btnTrend != null) btnTrend.setOnClickListener(toTrendListener);
+        // Nhấn Xu hướng -> Dẫn đến màn hình xu hướng (Trend)
+        if (btnTrend != null) {
+            btnTrend.setOnClickListener(v -> {
+                Intent intent = new Intent(Home.this, Trend.class);
+                intent.putExtra("USER_ID", userId);
+                startActivity(intent);
+            });
+        }
 
         if (btnJobs != null) {
             btnJobs.setOnClickListener(v -> {
